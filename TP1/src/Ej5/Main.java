@@ -21,18 +21,27 @@ public class Main {
 		System.out.println();
 	}
 	
-	public static void verificarComplejo(){
-		// Si es un numero complejo retorna string
+	public static void mostrarRaices(float a, float b, float c){
+		
 	}
 	
 	public static float[] Bhaskara(float a, float b, float c){
 		float x1, x2;
-		float raiz;
+		float raiz = 0;
+		float contenidoRaiz;
 		float[] raices;
 		
 		raices = new float[2];
+		contenidoRaiz = b*b-(4*a*c);
 		
-		raiz = (float) Math.sqrt(b*b-(4*a*c));
+		// Verificar si es raiz negativa
+		if(contenidoRaiz < 0){
+			
+		}else{
+			raiz = (float) Math.sqrt(contenidoRaiz);
+		}
+		
+		
 		
 		// Optimización
 		
