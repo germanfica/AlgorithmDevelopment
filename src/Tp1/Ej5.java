@@ -3,8 +3,8 @@ package tp1;
 import utilidades.TecladoIn;
 
 /*
-Implementar un algoritmo para obtener las raíces de ecuaciones de
-segundo grado ax2+bx+c=0
+	Implementar un algoritmo para obtener las raices de ecuaciones
+	de segundo grado ax2+bx+c=0
  */
 
 public class Ej5 {
@@ -41,9 +41,7 @@ public class Ej5 {
 			raiz = (float) Math.sqrt(contenidoRaiz);
 		}
 		
-		
-		
-		// Optimización
+		// OptimizaciÃ³n
 		
 		x1 = (float) (b*(-1) + raiz)/(2*a);
 		x2 = (float) (b*(-1) - raiz)/(2*a);
@@ -53,6 +51,4 @@ public class Ej5 {
 	
 		return raices;
 	}
-	
-	
 }
