@@ -1,6 +1,6 @@
-package Tp1;
+package tp1;
 
-import Utilidades.TecladoIn;
+import utilidades.TecladoIn;
 
 /*
 Implementar un algoritmo para obtener las raíces de ecuaciones de

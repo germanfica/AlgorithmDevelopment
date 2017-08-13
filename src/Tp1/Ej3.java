@@ -1,6 +1,6 @@
-package Tp1;
+package tp1;
 
-import Utilidades.TecladoIn;
+import utilidades.TecladoIn;
 
 /*
 Diseñar un algoritmo que permita leer N números enteros y muestre el
