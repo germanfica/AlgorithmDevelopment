@@ -7,7 +7,7 @@ Implementar un algoritmo para obtener las raíces de ecuaciones de
 segundo grado ax2+bx+c=0
  */
 
-public class Main {
+public class E5 {
 	public static void main(String[] args) {
 		float a, b, c; // Variables de la ecuacion
 		
