@@ -1,6 +1,6 @@
-package Ej1;
+package Tp1;
 
-import Utilities.TecladoIn;
+import Utilidades.TecladoIn;
 
 /*
 
@@ -18,7 +18,7 @@ ESCRIBIR (y)
 FIN ALGORITMO misterio
  */
 
-public class E1 {
+public class Ej1 {
 	
 	public static void main(String[] args) {
 		int numero1;

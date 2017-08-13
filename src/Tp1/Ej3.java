@@ -1,15 +1,15 @@
-package Ej3;
+package Tp1;
 
-import Utilities.TecladoIn;
+import Utilidades.TecladoIn;
 
 /*
-DiseÃ±ar un algoritmo que permita leer N nÃºmeros enteros y muestre el
+Diseñar un algoritmo que permita leer N números enteros y muestre el
 promedio de los mismos.
 
-Implementar en Java y comprobar la soluciÃ³n mediante una traza.
+Implementar en Java y comprobar la solución mediante una traza.
  */
 
-public class Main {
+public class Ej3 {
 	
 	public static void main(String[] args) {
 		int cantidad; // Cantidad de numeros

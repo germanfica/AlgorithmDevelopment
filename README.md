@@ -1,3 +1,3 @@
 # Desarrollo de Algoritmos
 
-Autor: Germ√°n Fica
+Autor: Germ·n Fica

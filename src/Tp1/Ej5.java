@@ -1,13 +1,13 @@
-package Ej5;
+package Tp1;
 
-import Utilities.TecladoIn;
+import Utilidades.TecladoIn;
 
 /*
-Implementar un algoritmo para obtener las raÃ­ces de ecuaciones de
+Implementar un algoritmo para obtener las raíces de ecuaciones de
 segundo grado ax2+bx+c=0
  */
 
-public class E5 {
+public class Ej5 {
 	public static void main(String[] args) {
 		float a, b, c; // Variables de la ecuacion
 		
@@ -43,7 +43,7 @@ public class E5 {
 		
 		
 		
-		// OptimizaciÃ³n
+		// Optimización
 		
 		x1 = (float) (b*(-1) + raiz)/(2*a);
 		x2 = (float) (b*(-1) - raiz)/(2*a);
