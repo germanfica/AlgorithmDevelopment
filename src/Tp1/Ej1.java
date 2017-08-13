@@ -3,18 +3,17 @@ package tp1;
 import utilidades.TecladoIn;
 
 /*
-
 ALGORITMO misterio() RETORNA Ø
-(* Este algoritmo ….. *)
-ENTERO x,y
-LEER(x)
-LEER(y)
-x ← x-y
-y ← x+y
-x ← y-x
-ESCRIBIR (“Los valores de x e y son”)
-ESCRIBIR (x)
-ESCRIBIR (y)
+	(* Comentario... *)
+	ENTERO x,y
+	LEER(x)
+	LEER(y)
+	x ← x-y
+	y ← x+y
+	x ← y-x
+	ESCRIBIR (“Los valores de x e y son”)
+	ESCRIBIR (x)
+	ESCRIBIR (y)
 FIN ALGORITMO misterio
  */
 
@@ -42,6 +41,5 @@ public class Ej1 {
 		System.out.println("Los valores de x e y son:");
 		System.out.println(numero1);
 		System.out.println(numero2);
-
 	}
 }
