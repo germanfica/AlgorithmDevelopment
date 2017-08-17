@@ -18,8 +18,16 @@ algoritmo deberá verificar que los caracteres ingresados son letras. Luego:
 
 public class Ej1 {
 	
-	public static void leerArreglo(){
+	public static void mostrarPosicion(){
 		
+	}
+	
+	public static void mostrarMenu(){
+		System.out.println("----- MENU -----");
+		System.out.println("0- Para finalizar el programa.");
+		System.out.println("1- Mostrar posición.");
+		System.out.println("2- Mostrar carácteres ingresados en orden inverso.");
+		System.out.println("3- Mostrar cantidad de x carácter.");
 	}
 	
 	public static void main(String[] args) {
@@ -29,6 +37,7 @@ public class Ej1 {
 		
 		letra = new char[limite];
 		
+		mostrarMenu();
 		while(i<limite){
 			System.out.println("Ingrese letras:");
 			letra[i] = TecladoIn.readNonwhiteChar();
