@@ -1,6 +1,6 @@
 package utilidades;
 
-public class Mensajes {
+public class Cartel {
 	
 	public static void mostrarAgradecimiento(int numero){
 		int limite = 10; // Limite del arreglo

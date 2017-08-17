@@ -1,6 +1,6 @@
 package tp3;
 
-import utilidades.Mensajes;
+import utilidades.Cartel;
 import utilidades.TecladoIn;
 
 /*
@@ -43,9 +43,9 @@ public class Ej1 {
 			letra[i] = TecladoIn.readNonwhiteChar();
 			
 			if(i==i-1)
-				Mensajes.mostrarAdvertencia(0);
+				Cartel.mostrarAdvertencia(0);
 			if(letra[i] == '0')
-				Mensajes.mostrarAgradecimiento(0);
+				Cartel.mostrarAgradecimiento(0);
 				i=limite;
 		}
 	}
