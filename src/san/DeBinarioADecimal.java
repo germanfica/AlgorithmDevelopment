@@ -10,7 +10,7 @@ public class DeBinarioADecimal {
 
 		for (int i = numeroBinario.length()-1; i >= 0; i--) {
 			if(numeroBinario.charAt(i)=='1')
-				resultado = resultado+Math.pow(2, temporal);
+				resultado = resultado+Math.pow(2, i);
 			temporal=temporal+1;
 		}
 		return resultado;
