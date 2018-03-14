@@ -2,6 +2,13 @@ package utilidades;
 
 public class Cartel {
 	
+	public static void mostrarMenu(int numero){
+		int limite = 10; // Limite del arreglo
+		String[] texto = new String[limite]; // Creación del objeto
+		texto[0] = "0- Para salir.";
+		System.out.println(texto[numero]);
+	}
+	
 	public static void mostrarAgradecimiento(int numero){
 		int limite = 10; // Limite del arreglo
 		String[] texto = new String[limite]; // Creación del objeto
