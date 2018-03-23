@@ -1,6 +1,6 @@
 package tp1;
 
-import utilidades.TecladoIn;
+import utilities.TecladoIn;
 
 /*
 ALGORITMO misterio() RETORNA Ø

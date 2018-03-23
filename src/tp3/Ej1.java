@@ -1,7 +1,7 @@
 package tp3;
 
-import utilidades.Cartel;
-import utilidades.TecladoIn;
+import utilities.Cartel;
+import utilities.TecladoIn;
 
 /*
 Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que ingrese letras. El

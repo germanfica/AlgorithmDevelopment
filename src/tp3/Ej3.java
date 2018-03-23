@@ -1,7 +1,6 @@
 package tp3;
 
-import utilidades.Cartel;
-import utilidades.TecladoIn;
+import utilities.TecladoIn;
 /*
 Diseñar un algoritmo que lea una "cadena de caracteres" y cargue a partir de ella un arreglo de palabras.
 El algoritmo debe mostrar:

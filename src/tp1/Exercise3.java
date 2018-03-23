@@ -3,13 +3,13 @@ package tp1;
 import utilities.TecladoIn;
 
 /*
-Dise�ar un algoritmo que permita leer N n�meros enteros y muestre el
-promedio de los mismos.
-
-Implementar en Java y comprobar la soluci�n mediante una traza.
+ * Dise�ar un algoritmo que permita leer N n�meros enteros y muestre el
+ * promedio de los mismos.
+ * 
+ * Implementar en Java y comprobar la soluci�n mediante una traza.
  */
 
-public class Ej3 {
+public class Exercise3 {
 	
 	public static void main(String[] args) {
 		int cantidad; // Cantidad de numeros
