@@ -1,17 +1,17 @@
-package tp1;
+package tp1_2017;
 
 import utilities.TecladoIn;
 
 /*
- * Implement an algorithm to obtain roots of second-degree equations, like:
- * ax2+bx+c=0
+	Implementar un algoritmo para obtener las raices de ecuaciones
+	de segundo grado ax2+bx+c=0
  */
 
-public class Exercise5 {
+public class Ej5 {
 	public static void main(String[] args) {
-		float a, b, c; // Equation variables
+		float a, b, c; // Variables de la ecuacion
 		
-		// Show message
+		// Mostrar catel
 		a = TecladoIn.readLineInt();
 		b = TecladoIn.readLineInt();
 		c = TecladoIn.readLineInt();
@@ -34,14 +34,14 @@ public class Exercise5 {
 		raices = new float[2];
 		contenidoRaiz = b*b-(4*a*c);
 		
-		// Check negative root
+		// Verificar si es raiz negativa
 		if(contenidoRaiz < 0){
 			
 		}else{
 			raiz = (float) Math.sqrt(contenidoRaiz);
 		}
 		
-		// Optimization
+		// Optimización
 		
 		x1 = (float) (b*(-1) + raiz)/(2*a);
 		x2 = (float) (b*(-1) - raiz)/(2*a);
