@@ -169,6 +169,8 @@ public class Ej1 {
 			System.out.println("0- Salir del programa.");
 			System.out.println("1- Cargar datos.");
 			System.out.println("2- Verificar regla de la compañía.");
+			System.out.println("3- Promedio de la cantidad de piezas.");
+			System.out.println("4- Verificar si las cantidades de piezas están ordenadas en forma creciente.");
 			opción = sc.nextInt(); // Leer opción
 			
 			switch(opción)
@@ -205,6 +207,46 @@ public class Ej1 {
 					}
 					break;
 				case 3:
+					int promedio; // Contador del índice de la cantidad de piezas
+					promedio = 0;
+					
+					System.out.println("Longitud " + pieza.length);
+					
+					for(int índice=0;índice<=(pieza.length-1);índice++)
+					{
+						if(!esPar(índice))
+						{
+							promedio = promedio + pieza[índice];
+						}
+					}
+					promedio=promedio/(pieza.length/2);
+					System.out.println("El promedio es: " + promedio);
+					break;
+				case 4:
+					int anterior, resultado;
+					resultado = 0;
+					anterior = 0;
+					for(int índice = 0; índice <= pieza.length-1;índice++)
+					{
+						if(!esPar(índice))
+						{
+							if(anterior>pieza[índice])
+							{
+								resultado = resultado + 1;
+							}
+							anterior = pieza[índice];
+						}
+					}
+					
+					if(resultado == 0)
+					{
+						System.out.println("Las cantidades de las piezas están ordenadas de manera creciente.");
+					}else
+					{
+						System.out.println("No está ordenando de forma creciente.");
+					}
+					break;
+				case 5:
 					
 					break;
 				case -1:
