@@ -89,15 +89,18 @@ public class Ej1 {
 	public static int esPrimo(int n)
 	{
 		int respuesta, índice;
-		respuesta = 1;
-		// Teorema fundamental de la aritsmética
-		if(n!=1 || n!=-1 || n!=0)
+		respuesta = 0;
+		// Teorema fundamental de la aritmética
+		if(n!=1 && n!=-1 && n!=0)
 		{
 			//Como n > 1, si n no es primo entonces existe un primo p
 			// tal que p|n y p<=raizCuadradaEntera(n)
 			int [] p;
 			p = cargarPrimos(raízCuadradaEntera(n));
 			
+			respuesta = 1; // Es primo
+			
+			// Determinar si no es primo
 			for(índice = 0;índice < p.length;índice++)
 			{
 				//System.out.println("n: " + n + " índice: " + índice);
@@ -149,7 +152,7 @@ public class Ej1 {
 					pieza = cargarDatos(pieza); // Cargar datos
 					break;
 				case 2:
-					System.out.println("Es primo: " + esPrimo(5));
+					System.out.println("Es primo: " + esPrimo(4));
 					break;
 				default:
 					System.out.println("Solo están disponibles las opciones del menú.");
