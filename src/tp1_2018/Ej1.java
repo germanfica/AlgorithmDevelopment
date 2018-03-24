@@ -81,9 +81,36 @@ public class Ej1 {
 		return pieza;
 	}
 	
+	/*
+	 * Calcular la potencia
+	 */
+	public static int potencia(int base, int exponente)
+	{
+		int resultado;
+		resultado = base * exponente;
+		
+		return resultado;
+	}
+	
+	/*
+	 * Determinar la parte entera de la raíz cuadrada de cualquier
+	 * número entero.
+	 */
 	public static int raízCuadradaEntera(int número) 
 	{
-		return número;
+		int parteEntera, base, exponente;
+		parteEntera = 0; // Indicar parte entera
+		base = parteEntera;
+		exponente = parteEntera;
+		
+		while(potencia(base, exponente)<=número)
+		{
+			parteEntera = parteEntera + 1;
+			base = parteEntera;
+			exponente = parteEntera;
+		}
+		
+		return parteEntera;
 	}
 	
 	public static int esPrimo(int n)
@@ -138,6 +165,7 @@ public class Ej1 {
 		while(terminarPrograma==false)
 		{
 			// Carteles del menú principal
+			System.out.println("-1- Probar eficiencia del algoritmo para determinar primos con 2147309137.");
 			System.out.println("0- Salir del programa.");
 			System.out.println("1- Cargar datos.");
 			System.out.println("2- Verificar regla de la compañía.");
@@ -151,8 +179,14 @@ public class Ej1 {
 				case 1:
 					pieza = cargarDatos(pieza); // Cargar datos
 					break;
-				case 2:
-					System.out.println("Es primo: " + esPrimo(4));
+				case -1:
+					// Eficiencia de 4 segundos con el número 2147309137
+					long start = System.currentTimeMillis();
+					System.out.println("Es primo: " + esPrimo(2147309137));
+					// calcular tiempo transcurrido
+					long end = System.currentTimeMillis();
+					long res = end - start;
+					System.out.println("Segundos: " + res / 1000);
 					break;
 				default:
 					System.out.println("Solo están disponibles las opciones del menú.");
