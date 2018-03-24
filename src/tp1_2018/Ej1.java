@@ -69,7 +69,7 @@ public class Ej1 {
 		// Crear scanner
 		Scanner sc = new Scanner(System.in);
 		
-		for(índice = 0; índice< pieza.length-1;índice++)
+		for(índice = 0; índice< pieza.length;índice++)
 		{
 			if(esPar(índice)) {
 				pieza[índice] = sc.nextInt(); // Código de la pieza
@@ -178,6 +178,34 @@ public class Ej1 {
 					break;
 				case 1:
 					pieza = cargarDatos(pieza); // Cargar datos
+					break;
+				case 2:
+					// Primos encontrados en los códigos de piezas
+					int primos;
+					primos = 0;
+					// PARA índice <- 0 HASTA longitud(pieza)-1 PASO 1
+					// 		código...	
+					// FIN PARA
+					for(int índice=0;índice <= pieza.length-1;índice++)
+					{
+						if(esPar(índice))
+						{
+							if(esPrimo(pieza[índice])==1)
+							{
+								primos = primos + 1;
+							}
+						}
+					}
+					if(primos>=2)
+					{
+						System.out.println("Se cumple la relga.");
+					}else
+					{
+						System.out.println("No se cumple la regla.");
+					}
+					break;
+				case 3:
+					
 					break;
 				case -1:
 					// Eficiencia de 4 segundos con el número 2147309137
