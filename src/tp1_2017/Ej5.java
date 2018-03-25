@@ -1,6 +1,6 @@
 package tp1_2017;
 
-import utilities.TecladoIn;
+import util.TecladoIn;
 
 /*
 	Implementar un algoritmo para obtener las raices de ecuaciones

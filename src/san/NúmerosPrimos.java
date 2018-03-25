@@ -1,7 +1,7 @@
 // NOTA: Este algoritmo no determina primos.
 package san;
 
-import utilities.TecladoIn;
+import util.TecladoIn;
 
 public class NúmerosPrimos {
 	public static void main(String[] args) {

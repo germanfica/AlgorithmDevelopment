@@ -1,6 +1,6 @@
 package tp1_2017;
 
-import utilities.TecladoIn;
+import util.TecladoIn;
 
 /*
  * Implement an algorithm to obtain roots of second-degree equations, like:

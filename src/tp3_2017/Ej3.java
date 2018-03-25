@@ -1,13 +1,6 @@
 package tp3_2017;
 
-import utilities.TecladoIn;
-/*
-Diseñar un algoritmo que lea una "cadena de caracteres" y cargue a partir de ella un arreglo de palabras.
-El algoritmo debe mostrar:
- . El contenido del arreglo en la posición que el usuario solicite.
- Esto debe poder repetirse varias veces hasta que el usuario decida salir del programa.
- (Por ejemplo si la frase es “que lindo dia” y la posición indicada es 3, el algoritmo deberá mostrar la palabra “dia”).
- */
+import util.TecladoIn;
 
 public class Ej3 {
 	

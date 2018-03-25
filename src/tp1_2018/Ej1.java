@@ -3,7 +3,11 @@ package tp1_2018;
 import java.util.Scanner;
 
 public class Ej1 {
+	private static Scanner sc;
 	
+	/**
+	 * Determina si un número entero es par.
+	 */
 	public static boolean esPar(int número)
 	{
 		boolean esPar = false;
@@ -13,7 +17,7 @@ public class Ej1 {
 		return esPar;
 	}
 	
-	/*
+	/**
 	 * Determinar la cantidad de divisores enteros de un número entero.
 	 */
 	public static int divisoresEnteros(int número)
@@ -59,7 +63,7 @@ public class Ej1 {
 		return resultado;
 	}
 	
-	/* Condición A: Cargar los códigos de los productos en las posiciones pares.
+	/** Condición A: Cargar los códigos de los productos en las posiciones pares.
 	 * @param pieza Arreglo principal
 	 */
 	public static int[] cargarDatos(int[] pieza)
@@ -67,7 +71,7 @@ public class Ej1 {
 		int índice;
 		
 		// Crear scanner
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		
 		for(índice = 0; índice< pieza.length;índice++)
 		{
@@ -81,7 +85,7 @@ public class Ej1 {
 		return pieza;
 	}
 	
-	/*
+	/**
 	 * Calcular la potencia
 	 */
 	public static int potencia(int base, int exponente)
@@ -92,7 +96,7 @@ public class Ej1 {
 		return resultado;
 	}
 	
-	/*
+	/**
 	 * Determinar la parte entera de la raíz cuadrada de cualquier
 	 * número entero.
 	 */
@@ -113,8 +117,10 @@ public class Ej1 {
 		return parteEntera;
 	}
 	
-	public static int esPrimo(int n)
-	{
+	/**
+	 * Determina si un número entero es primo o no.
+	 */
+	public static int esPrimo(int n) {
 		int respuesta, índice;
 		respuesta = 0;
 		// Teorema fundamental de la aritmética
@@ -141,6 +147,69 @@ public class Ej1 {
 		
 		return respuesta;
 	}
+	
+	/**
+	 * Indica si los elementos impares de un arreglo de enteros estan
+	 * ordenados de manera creciente o no.
+	 * @param pieza arreglo de enteros.
+	 * 
+	 * @return Devuelve 1 si los elementos impares estan ordenado crecientemente
+	 * sino 0.
+	 */
+	public static int esCreciente(int[] pieza) {
+		int respuesta = 1;
+		
+		for(int índice = 0; índice <= pieza.length-1;índice++) {
+			if(!esPar(índice)) {
+				if(pieza[índice-1]>pieza[índice]) {
+					respuesta = 0;
+				}
+			}
+		}
+		
+		return respuesta;
+	}
+	
+	/**
+	 * Determina el promedio de los elementos impares de un arreglo de
+	 * enteros.
+	 * @param pieza arreglo de enteros.
+	 * @return Promedio.
+	 */
+	public static int promedio(int[] pieza)
+	{
+		int promedio = 0;
+		
+		for(int índice=0;índice<=(pieza.length-1);índice++) {
+			if(!esPar(índice)) {
+				promedio = promedio + pieza[índice];
+			}
+		}
+		promedio=promedio/(pieza.length/2);
+		
+		return promedio;
+	}
+	
+	/**
+	 * Determina la cantidad de primos que hay en las posiciones pares
+	 * de un arreglo de enteros.
+	 * @param pieza arreglo de enteros.
+	 * @return
+	 */
+	public static int primosPosPar(int[] pieza)
+	{
+		int primos = 0;
+
+		for(int índice=0;índice <= pieza.length-1;índice++) {
+			if(esPar(índice)) {
+				if(esPrimo(pieza[índice])==1) {
+					primos = primos + 1;
+				}
+			}
+		}
+		
+		return primos;
+	}
 		
 	/*
 	 * Leer n piezas y mostrar menú con opciones.
@@ -150,7 +219,7 @@ public class Ej1 {
 		int opción, longitud, cn;
 		int[] pieza;
 		
-		Scanner sc = new Scanner(System.in); // Crear scanner
+		sc = new Scanner(System.in); // Crear scanner
 		
 		System.out.println("Bienvenido! Porfavor cargue la cantidad incial de piezas para"
 				+ "esta sesión."); // Mostrar cartel de bienvenida
@@ -182,23 +251,7 @@ public class Ej1 {
 					pieza = cargarDatos(pieza); // Cargar datos
 					break;
 				case 2:
-					// Primos encontrados en los códigos de piezas
-					int primos;
-					primos = 0;
-					// PARA índice <- 0 HASTA longitud(pieza)-1 PASO 1
-					// 		código...	
-					// FIN PARA
-					for(int índice=0;índice <= pieza.length-1;índice++)
-					{
-						if(esPar(índice))
-						{
-							if(esPrimo(pieza[índice])==1)
-							{
-								primos = primos + 1;
-							}
-						}
-					}
-					if(primos>=2)
+					if(primosPosPar(pieza)>=2)
 					{
 						System.out.println("Se cumple la relga.");
 					}else
@@ -207,38 +260,10 @@ public class Ej1 {
 					}
 					break;
 				case 3:
-					int promedio; // Contador del índice de la cantidad de piezas
-					promedio = 0;
-					
-					System.out.println("Longitud " + pieza.length);
-					
-					for(int índice=0;índice<=(pieza.length-1);índice++)
-					{
-						if(!esPar(índice))
-						{
-							promedio = promedio + pieza[índice];
-						}
-					}
-					promedio=promedio/(pieza.length/2);
-					System.out.println("El promedio es: " + promedio);
+					System.out.println("El promedio es: " + promedio(pieza));
 					break;
 				case 4:
-					int anterior, resultado;
-					resultado = 0;
-					anterior = 0;
-					for(int índice = 0; índice <= pieza.length-1;índice++)
-					{
-						if(!esPar(índice))
-						{
-							if(anterior>pieza[índice])
-							{
-								resultado = resultado + 1;
-							}
-							anterior = pieza[índice];
-						}
-					}
-					
-					if(resultado == 0)
+					if(esCreciente(pieza) == 1)
 					{
 						System.out.println("Las cantidades de las piezas están ordenadas de manera creciente.");
 					}else

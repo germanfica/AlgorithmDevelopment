@@ -1,6 +1,6 @@
 package san;
 
-import utilities.TecladoIn;
+import util.TecladoIn;
 
 public class DeBinarioADecimal {
 	
