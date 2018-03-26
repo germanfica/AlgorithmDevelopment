@@ -251,11 +251,9 @@ public class Ej1 {
 					pieza = cargarDatos(pieza); // Cargar datos
 					break;
 				case 2:
-					if(primosPosPar(pieza)>=2)
-					{
+					if(primosPosPar(pieza)>=2) {
 						System.out.println("Se cumple la relga.");
-					}else
-					{
+					}else {
 						System.out.println("No se cumple la regla.");
 					}
 					break;
@@ -263,15 +261,14 @@ public class Ej1 {
 					System.out.println("El promedio es: " + promedio(pieza));
 					break;
 				case 4:
-					if(esCreciente(pieza) == 1)
-					{
+					if(esCreciente(pieza) == 1) {
 						System.out.println("Las cantidades de las piezas están ordenadas de manera creciente.");
-					}else
-					{
+					}else {
 						System.out.println("No está ordenando de forma creciente.");
 					}
 					break;
 				case 5:
+					// Cuál es la pieza más usada?
 					
 					break;
 				case -1:
