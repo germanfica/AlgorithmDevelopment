@@ -173,6 +173,7 @@ public class Ej1 {
 			índice++;
 		}
 		
+		// Mal empleado.
 		/*
 		for(int índice = 0; índice <= pieza.length-1;índice++) {
 			if(!esPar(índice)) {
