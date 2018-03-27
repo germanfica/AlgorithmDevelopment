@@ -103,8 +103,7 @@ public class Ej1 {
 	 * Determinar la parte entera de la raíz cuadrada de cualquier
 	 * número entero.
 	 */
-	public static int raízCuadradaEntera(int número) 
-	{
+	public static int raízCuadradaEntera(int número) {
 		int parteEntera, base, exponente;
 		parteEntera = 0; // Indicar parte entera
 		base = parteEntera;
@@ -136,7 +135,18 @@ public class Ej1 {
 			
 			respuesta = 1; // Es primo
 			
-			// Determinar si no es primo
+			// Determinar si no es primo (nueva implementación)
+			índice = 0;
+			while(índice < p.length) {
+				if(n%p[índice]==0 && n!=p[índice]) {
+					respuesta = 0;
+					índice = p.length;
+				}
+				índice++;
+			}
+			
+			// Determinar si no es primo (no me convence)
+			/*
 			for(índice = 0;índice < p.length;índice++)
 			{
 				//System.out.println("n: " + n + " índice: " + índice);
@@ -146,6 +156,7 @@ public class Ej1 {
 					//System.out.println(n);
 				}
 			}
+			*/
 		}
 		
 		return respuesta;
@@ -154,6 +165,20 @@ public class Ej1 {
 	/**
 	 * Indica si los elementos impares de un arreglo de enteros estan
 	 * ordenados de manera creciente o no.
+	 * 
+	 * Sugerencia, probar con los siguientes valores:
+	 * . 3 (cod. pieza)
+	 * . 2 (cant. piezas)
+	 * . 1 (cod. pieza)
+	 * . 25 (cant. pieza)
+	 * Deberia retornar que está ordenado de manera creciente.
+	 * 
+	 * . 1 (cod. pieza)
+	 * . 25 (cant. pieza)
+	 * . 3 (cod. pieza)
+	 * . 2 (cant. pieza)
+	 * Deberia retornar que no está ordenado de forma creciente.
+	 * 
 	 * @param pieza arreglo de enteros.
 	 * 
 	 * @return Devuelve 1 si los elementos impares estan ordenado crecientemente
@@ -228,8 +253,12 @@ public class Ej1 {
 		return primos;
 	}
 	
-	public static int piezaMenosUsada(int[] pieza)
-	{
+	/**
+	 * Recorrer el arreglo de piezas y devolver la menos usada.
+	 * @param pieza
+	 * @return
+	 */
+	public static int piezaMenosUsada(int[] pieza) {
 		int piezaMenosUsada = pieza[1], índice;
 		
 		for(índice = 0;índice <= pieza.length-1;índice++) {
@@ -241,8 +270,12 @@ public class Ej1 {
 		return piezaMenosUsada;
 	}
 	
-	public static int piezaMásUsada(int[] pieza)
-	{
+	/**
+	 * Recorrer el arreglo de piezas y devolver la más usada.
+	 * @param pieza
+	 * @return
+	 */
+	public static int piezaMásUsada(int[] pieza) {
 		int piezaMásUsada = pieza[1], índice;
 		
 		for(índice = 0;índice <= pieza.length-1;índice++) {
@@ -254,7 +287,7 @@ public class Ej1 {
 		return piezaMásUsada;
 	}
 		
-	/*
+	/**
 	 * Leer n piezas y mostrar menú con opciones.
 	 */
 	public static void main(String[] args) {
@@ -327,6 +360,16 @@ public class Ej1 {
 					// calcular tiempo transcurrido
 					long end = System.currentTimeMillis();
 					long res = end - start;
+					System.out.println("Segundos: " + res / 1000);
+					break;
+				case -2:
+					// Determinar si un número es primo o no
+					int test = sc.nextInt();
+					start = System.currentTimeMillis();
+					System.out.println(test + " es primo? Respuesta: " + esPrimo(test));
+					// calcular tiempo transcurrido
+					end = System.currentTimeMillis();
+					res = end - start;
 					System.out.println("Segundos: " + res / 1000);
 					break;
 				default:
