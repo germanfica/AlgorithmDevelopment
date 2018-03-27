@@ -27,10 +27,8 @@ public class Ej1 {
 		resultado = 0; // Inicializar entero
 				
 		// Determinar divisores
-		for(índice = número; índice>1;índice--)
-		{
-			if(número%índice==0)
-			{
+		for(índice = número; índice>1;índice--) {
+			if(número%índice==0) {
 				resultado = resultado + 1;
 			}
 		}
@@ -38,6 +36,11 @@ public class Ej1 {
 		return resultado;
 	}
 	
+	/**
+	 * Cargar elementos posibles primos de un número a un arreglo.
+	 * @param n
+	 * @return
+	 */
 	public static int[] cargarPrimos(int n) 
 	{
 		int índice, primosEncontrados;
@@ -157,8 +160,20 @@ public class Ej1 {
 	 * sino 0.
 	 */
 	public static int esCreciente(int[] pieza) {
-		int respuesta = 1;
+		int respuesta = 1, índice = pieza[3];
 		
+		// Optimizado
+		while(índice <= pieza.length-1) 
+		{
+			if(pieza[índice-2]>pieza[índice] && !esPar(índice)) {
+				respuesta = 0;
+				índice = pieza.length-1;
+			}
+			
+			índice++;
+		}
+		
+		/*
 		for(int índice = 0; índice <= pieza.length-1;índice++) {
 			if(!esPar(índice)) {
 				if(pieza[índice-1]>pieza[índice]) {
@@ -166,6 +181,7 @@ public class Ej1 {
 				}
 			}
 		}
+		*/
 		
 		return respuesta;
 	}
@@ -191,8 +207,8 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Determina la cantidad de primos que hay en las posiciones pares
-	 * de un arreglo de enteros.
+	 * Determina la cantidad de primos que hay en las posiciones
+	 * pares de un arreglo de enteros.
 	 * @param pieza arreglo de enteros.
 	 * @return
 	 */
@@ -209,6 +225,32 @@ public class Ej1 {
 		}
 		
 		return primos;
+	}
+	
+	public static int piezaMenosUsada(int[] pieza)
+	{
+		int piezaMenosUsada = pieza[1], índice;
+		
+		for(índice = 0;índice <= pieza.length-1;índice++) {
+			if(pieza[índice] <= piezaMenosUsada && !esPar(índice)) {
+				piezaMenosUsada = pieza[índice-1];
+			}
+		}
+		
+		return piezaMenosUsada;
+	}
+	
+	public static int piezaMásUsada(int[] pieza)
+	{
+		int piezaMásUsada = pieza[1], índice;
+		
+		for(índice = 0;índice <= pieza.length-1;índice++) {
+			if(pieza[índice] >= piezaMásUsada && !esPar(índice)) {
+				piezaMásUsada = pieza[índice-1];
+			}
+		}
+		
+		return piezaMásUsada;
 	}
 		
 	/*
@@ -240,6 +282,8 @@ public class Ej1 {
 			System.out.println("2- Verificar regla de la compañía.");
 			System.out.println("3- Promedio de la cantidad de piezas.");
 			System.out.println("4- Verificar si las cantidades de piezas están ordenadas en forma creciente.");
+			System.out.println("5- La pieza más usada.");
+			System.out.println("6- La pieza menos usada.");
 			opción = sc.nextInt(); // Leer opción
 			
 			switch(opción)
@@ -269,7 +313,11 @@ public class Ej1 {
 					break;
 				case 5:
 					// Cuál es la pieza más usada?
-					
+					System.out.println("La pieza más usada es: " + piezaMásUsada(pieza));
+					break;
+				case 6:
+					// Cuál es la pieza menos usada?
+					System.out.println("La pieza menos usada es: " + piezaMenosUsada(pieza));
 					break;
 				case -1:
 					// Eficiencia de 4 segundos con el número 2147309137
