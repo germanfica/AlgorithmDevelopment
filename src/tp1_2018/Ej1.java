@@ -308,7 +308,7 @@ public class Ej1 {
 				
 		// Menú principal
 		terminarPrograma = false;
-		while(terminarPrograma==false && cn>=2)
+		while(!terminarPrograma && cn>=2)
 		{
 			// Carteles del menú principal
 			System.out.println("0- Salir del programa.");
