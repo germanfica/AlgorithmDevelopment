@@ -184,14 +184,16 @@ public class Ej1 {
 	 * @return Devuelve 1 si los elementos impares estan ordenado crecientemente
 	 * sino 0.
 	 */
-	public static int esCreciente(int[] pieza) {
-		int respuesta = 1, índice = pieza[3];
+	public static boolean esCreciente(int[] pieza) {
+		boolean respuesta;
+		int índice = pieza[3];
+		respuesta = true;
 		
 		// Optimizado
-		while(índice <= pieza.length-1 && respuesta!=0) 
+		while(índice <= pieza.length-1 && !respuesta) 
 		{
 			if(pieza[índice-2]>pieza[índice] && !esPar(índice)) {
-				respuesta = 0;
+				respuesta = false;
 			}
 			
 			índice++;
@@ -306,10 +308,9 @@ public class Ej1 {
 				
 		// Menú principal
 		terminarPrograma = false;
-		while(terminarPrograma==false)
+		while(terminarPrograma==false && cn>=2)
 		{
 			// Carteles del menú principal
-			System.out.println("-1- Probar eficiencia del algoritmo para determinar primos con 2147309137.");
 			System.out.println("0- Salir del programa.");
 			System.out.println("1- Cargar datos.");
 			System.out.println("2- Verificar regla de la compañía.");
@@ -338,7 +339,7 @@ public class Ej1 {
 					System.out.println("El promedio es: " + promedio(pieza));
 					break;
 				case 4:
-					if(esCreciente(pieza) == 1) {
+					if(esCreciente(pieza)) {
 						System.out.println("Las cantidades de las piezas están ordenadas de manera creciente.");
 					}else {
 						System.out.println("No está ordenando de forma creciente.");
