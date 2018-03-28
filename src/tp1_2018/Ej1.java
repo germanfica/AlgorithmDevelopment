@@ -122,9 +122,10 @@ public class Ej1 {
 	/**
 	 * Determina si un número entero es primo o no.
 	 */
-	public static int esPrimo(int n) {
-		int respuesta, índice;
-		respuesta = 0;
+	public static boolean esPrimo(int n) {
+		boolean respuesta;
+		int índice;
+		respuesta = false;
 		// Teorema fundamental de la aritmética
 		if(n!=1 && n!=-1 && n!=0)
 		{
@@ -133,13 +134,13 @@ public class Ej1 {
 			int [] p;
 			p = cargarPrimos(raízCuadradaEntera(n));
 			
-			respuesta = 1; // Es primo
+			respuesta = true; // Es primo
 			
 			// Determinar si no es primo (nueva implementación)
 			índice = 0;
 			while(índice < p.length) {
 				if(n%p[índice]==0 && n!=p[índice]) {
-					respuesta = 0;
+					respuesta = false;
 					índice = p.length;
 				}
 				índice++;
@@ -244,10 +245,8 @@ public class Ej1 {
 		int primos = 0;
 
 		for(int índice=0;índice <= pieza.length-1;índice++) {
-			if(esPar(índice)) {
-				if(esPrimo(pieza[índice])==1) {
-					primos = primos + 1;
-				}
+			if(esPrimo(pieza[índice]) && esPar(índice)){
+				primos = primos + 1;
 			}
 		}
 		
@@ -287,28 +286,14 @@ public class Ej1 {
 		
 		return piezaMásUsada;
 	}
-		
-	/**
-	 * Leer n piezas y mostrar menú con opciones.
-	 */
-	public static void main(String[] args) {
+	
+	public static void mostrarMenú(int[] pieza)
+	{
+		int opción;
 		boolean terminarPrograma;
-		int opción, longitud, cn;
-		int[] pieza;
-		
-		sc = new Scanner(System.in); // Crear scanner
-		
-		System.out.println("Bienvenido! Porfavor cargue la cantidad incial de piezas para"
-				+ "esta sesión."); // Mostrar cartel de bienvenida
-		
-		cn = sc.nextInt(); // Leer cantidad de piezas		
-		longitud = cn *2; // Calcular la longitud del arreglo
-		
-		pieza = new int[longitud]; // Inicilizar arreglo
-				
 		// Menú principal
 		terminarPrograma = false;
-		while(!terminarPrograma && cn>=2)
+		while(!terminarPrograma)
 		{
 			// Carteles del menú principal
 			System.out.println("0- Salir del programa.");
@@ -377,5 +362,31 @@ public class Ej1 {
 					break;
 			}
 		}
+	}
+		
+	/**
+	 * Leer n piezas y mostrar menú con opciones.
+	 */
+	public static void main(String[] args) {
+		int longitud, cn;
+		int[] pieza;
+		
+		sc = new Scanner(System.in); // Crear scanner
+		
+		System.out.println("Bienvenido! Porfavor cargue la cantidad incial de piezas para"
+				+ "esta sesión."); // Mostrar cartel de bienvenida
+		
+		cn = sc.nextInt(); // Leer cantidad de piezas		
+		longitud = cn *2; // Calcular la longitud del arreglo
+		
+		pieza = new int[longitud]; // Inicilizar arreglo
+		
+		if(cn>=2){
+			mostrarMenú(pieza);
+		}else
+		{
+			System.out.println("Ingrese como mínimo 2 piezas. Hasta la próxima.");
+		}
+		
 	}
 }
