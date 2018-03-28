@@ -188,11 +188,10 @@ public class Ej1 {
 		int respuesta = 1, índice = pieza[3];
 		
 		// Optimizado
-		while(índice <= pieza.length-1) 
+		while(índice <= pieza.length-1 && respuesta!=0) 
 		{
 			if(pieza[índice-2]>pieza[índice] && !esPar(índice)) {
 				respuesta = 0;
-				índice = pieza.length-1;
 			}
 			
 			índice++;
