@@ -1,16 +1,16 @@
 # Desarrollo de Algoritmos
 
-// Cu·l es la pieza m·s usada?
-int Ìndice, respuesta, anterior;
+// Cu√°l es la pieza m√°s usada?
+int √≠ndice, respuesta, anterior;
 
 anterior = 0;
 
-for(Ìndice = 0; Ìndice<= pieza.length-1 ;Ìndice++)
+for(√≠ndice = 0; √≠ndice<= pieza.length-1 ;√≠ndice++)
 {
-	if(pieza[Ìndice]>=anterior)
+	if(pieza[√≠ndice]>=anterior)
 	{
-		anterior = pieza[Ìndice];
+		anterior = pieza[√≠ndice];
 	}
 }
 
-Autor: Germ·n Fica
+Autor: Germ√°n Fica
