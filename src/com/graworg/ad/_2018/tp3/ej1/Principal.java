@@ -5,26 +5,6 @@ import java.util.Scanner;
 
 import com.graworg.ad.util.TecladoIn;
 
-/*
- * 1. Retomar el ejercicio visto en clase sobre el TDA Producto. de
- * Tipo de Dato Item de Stock.
- * Generar un arreglo de productos y luego generar la carga de los mismos,
- * luego hacer un menú que realice en forma modularizada lo siguiente:
- * 	
- * 	a)Listado de ítems: Por cada ítem muestre su nro.de código,
- * 	descripción, precio unitario y cantidad de stock.
- * 	
- * 	b) Contar la cantidad de items que tienen 0 en cantidad
- * 	de stock.
- * 	
- * 	c) Contar la cantidad de items con un precio unitario menor
- * 	a un valor dado.
- * 	
- * 	d) Aumentar a todos los ítems un porcentaje de aumento al
- * 	precio unitario.
-
- */
-
 public class Principal {
 	private static Scanner sc = new Scanner(System.in);
 	private static Producto[] productos = new Producto[0];
@@ -154,9 +134,24 @@ public class Principal {
 	/**
 	 * Aumentar a todos los productos un porcentaje de aumento al precio unitario.
 	 */
+	public static void aumentarPrecioUnitarioDeTodosLosProductosUn(float porcentaje) {
+		int índice;
+		float auxiliar;
+		
+		for(índice = 0;índice <= productos.length-1;índice++) {	
+			auxiliar = (productos[índice].getPrecioUnitario()*porcentaje)/100 + productos[índice].getPrecioUnitario();
+			productos[índice].setPrecioUnitario(auxiliar);
+		}
+	}
+	
+	/**
+	 * Mostrar todos los productos con precio unitario con un cierto porcentaje.
+	 */
 	public static void opción5()
 	{
-		
+		float porcentaje;
+		System.out.print("Porcentaje a aumentar: "); porcentaje = sc.nextFloat();
+		aumentarPrecioUnitarioDeTodosLosProductosUn(porcentaje);
 	}
 	
 	public static void mostrarMenú() {
