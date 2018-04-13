@@ -1,4 +1,4 @@
-package com.graworg.ad.tp4._2017;
+package com.graworg.ad._2017.tp4;
 /*
  * 5. Diseñe un algoritmo para recorrer matrices de enteros previamente
  * cargadas y mostrar su contenido recorriéndola en espiral:

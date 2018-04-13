@@ -1,4 +1,4 @@
-package com.graworg.ad.tp1._2018;
+package com.graworg.ad._2018.tp1;
 
 import java.util.Scanner;
 

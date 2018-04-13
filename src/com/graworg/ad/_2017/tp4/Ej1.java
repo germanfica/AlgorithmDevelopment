@@ -1,4 +1,4 @@
-package com.graworg.ad.tp4._2017;
+package com.graworg.ad._2017.tp4;
 
 public class Ej1 {
 	/*

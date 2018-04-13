@@ -8,12 +8,12 @@ public class NúmerosPrimos {
 		/* Leer una cadena de números y reconocer cuántos de ellos son
 		 * primos. Para finalizar el conteo ingresar -1.
 		 */
-		int num, i;
+		int num;//, i;
 		System.out.println("ingrese numero: ");
 		num = TecladoIn.readLineInt();
 		while(num >=0)
 		{
-			i = num - 1;
+			//i = num - 1;
 			primo(num, 1);
 			System.out.println("ingrese numero: ");
 			num = TecladoIn.readLineInt();

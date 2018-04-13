@@ -1,4 +1,4 @@
-package com.graworg.ad.tp1._2017;
+package com.graworg.ad._2017.tp1;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
