@@ -1,6 +1,5 @@
 package com.graworg.ad._2018.tp3.ej1;
 
-//import java.util.List;
 import java.util.Scanner;
 
 import com.graworg.ad.util.TecladoIn;
@@ -63,12 +62,12 @@ public class Principal {
 	 * @param productos
 	 * @return
 	 */
-	public static Producto[] cargaProductos(Producto[] productos){
+	public static Producto[] cargaDeProductos(Producto[] productos){
 		int código, cantidadDeStock;
 		float precioUnitario;
 		String descripción;
 		
-		for(int i = 0;i<=productos.length;i++){
+		for(int i = 0;i<=productos.length-1;i++){
 			System.out.println("Ingrese producto:");
 			System.out.print(" Código: "); código = sc.nextInt();
 			System.out.print(" Descripción: "); descripción = TecladoIn.readLine();
@@ -149,7 +148,7 @@ public class Principal {
 		int opción;
 		
 		// Inicializar variables
-		productos = new Producto[5];
+		productos = new Producto[3]; // Crear y dar tamaño de arreglo de productos
 		salir = false;
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
@@ -174,7 +173,7 @@ public class Principal {
 				salir = true;
 				break;
 			case 1:
-				productos = cargaProductos(productos);
+				productos = cargaDeProductos(productos);
 				break;
 			case 2:
 				if(productos[0]!=null) { opción2(productos); } else {System.err.println("Debe cargar al menos un producto."); }
