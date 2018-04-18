@@ -10,6 +10,11 @@ public class Principal {
 	private static Producto[] productos = new Producto[0];
 	//private List<Object> list;
 	
+	
+	
+	
+	
+	
 	public static Producto crearProducto(int código, String descripción, float precioUnitario, int cantidadDeStock)
 	{
 		Producto producto = new Producto();

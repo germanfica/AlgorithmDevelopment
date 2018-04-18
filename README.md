@@ -44,3 +44,15 @@ como por ejemplo:
 	public static String readLine(){}
 
 
+# 18/04/18
+Los constructores son públicas y estáticas por defecto en Java.
+
+Las propias del tipo creo que son métodos estáticos
+
+https://stackoverflow.com/questions/2649213/in-laymans-terms-what-does-static-mean-in-java
+
+static means that the variable or method marked as such is available at the class level. In other words, you don't need to create an instance of the class to access it.
+
+
+
+
