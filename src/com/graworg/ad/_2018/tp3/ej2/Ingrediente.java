@@ -1,4 +1,4 @@
-package com.graworg.ad._2018_tp3.ej2;
+package com.graworg.ad._2018.tp3.ej2;
 
 public class Ingrediente {
 	private String ingrediente;
