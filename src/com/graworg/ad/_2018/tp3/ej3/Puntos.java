@@ -6,30 +6,29 @@ public class Puntos {
 	
 	// MOstrar no tiene que ir en el objecto
 	
-	//Constructor
-	public Puntos(String nom){
+	/*
+	 * Constructor: Inicializar puntos en 0
+	 */
+	public Puntos(String nom) {
 		nombre = nom;
 		puntos = 0;
 	}
 	
 	// Observadores
-	public String getNombre(){
+	public String getNombre() {
 		return nombre;
 	}
 	
-	public int getPuntos(){
+	public int getPuntos() {
 		return puntos;
 	}
 	
-	public String toString(){
+	public String toString() {
 		return nombre + puntos;
 	}
 	
-	public boolean equals(Puntos p){
-		if(p.getNombre()==nombre && p.getPuntos()==puntos){
-			
-		}
-		return p.equals(p);
+	public boolean equals(Puntos p) {
+		return p.getNombre()==nombre && p.getPuntos()==puntos;
 	}
 	
 	// Modificadores
@@ -37,15 +36,15 @@ public class Puntos {
 	/**
 	 * Cambia el nombre
 	 */
-	public void setNombre(String n){
-		
+	public void setNombre(String n) {
+		nombre = n;
 	}
 	
 	/**
 	 * Cambia los puntos por d
 	 */
-	public void setPuntos(int d){
-		
+	public void setPuntos(int d) {
+		puntos = d;
 	}
 	
 	// Propias del tipo
@@ -54,8 +53,8 @@ public class Puntos {
 	 * Suma el valor al atributo puntos
 	 * @param mas
 	 */
-	public void sumarPuntos(int mas){
-		
+	public void sumarPuntos(int mas) {
+		puntos = puntos + mas;
 	}
 	
 	/**
@@ -63,7 +62,18 @@ public class Puntos {
 	 * puntos, devuelve true si se pudo efectuar
 	 * la operación.
 	 */
-	public void canjearPuntos(){
+	public boolean canjearPuntos(int canje) {
+		int num;
+		boolean respuesta;
 		
+		respuesta = false;
+		
+		num = canje - puntos;
+		
+		if(num>0){
+			respuesta = true;
+		}
+		
+		return respuesta;
 	}
 }
