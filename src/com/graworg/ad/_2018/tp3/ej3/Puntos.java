@@ -4,6 +4,8 @@ public class Puntos {
 	private String nombre;
 	private int puntos;
 	
+	// MOstrar no tiene que ir en el objecto
+	
 	//Constructor
 	public Puntos(String nom){
 		nombre = nom;
@@ -24,6 +26,9 @@ public class Puntos {
 	}
 	
 	public boolean equals(Puntos p){
+		if(p.getNombre()==nombre && p.getPuntos()==puntos){
+			
+		}
 		return p.equals(p);
 	}
 	
