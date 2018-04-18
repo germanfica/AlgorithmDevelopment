@@ -5,17 +5,11 @@ import java.util.Scanner;
 
 import com.graworg.ad.util.TecladoIn;
 
-public class Principal {
+public class Principal_inefficient {
 	private static Scanner sc = new Scanner(System.in);
+	private static Producto[] productos = new Producto[0];
+	//private List<Object> list;
 	
-	/**
-	 * Crea un nuevo producto
-	 * @param código
-	 * @param descripción
-	 * @param precioUnitario
-	 * @param cantidadDeStock
-	 * @return
-	 */
 	public static Producto crearProducto(int código, String descripción, float precioUnitario, int cantidadDeStock)
 	{
 		Producto producto = new Producto();
@@ -27,10 +21,34 @@ public class Principal {
 		return producto;
 	}
 	
+	public static void cargarProducto(int código, String descripción, float precioUnitario, int cantidadDeStock)
+	{	
+		Producto[] productosAnteriores;
+		int nuevaLongitud, índice;
+		
+		productosAnteriores = productos; // Almacena los productos anteriores
+		nuevaLongitud = productos.length + 1; // Longitud del nuevo arreglo
+		
+		productos = new Producto[nuevaLongitud]; // Crear nuevo arreglo
+		
+		// Agregar los elementos al nuevo arreglo
+		for(índice = 0; índice <= productos.length -1 ;índice ++)
+		{
+			// Agregar todos los elementos del arreglo anterior al nuevo arreglo.
+			if(índice <= productosAnteriores.length -1) {
+				productos[índice] = productosAnteriores[índice];
+			}else {
+				// Una vez agregado todos los elementos del arreglo anterior al nuevo arreglo,
+				// en la última posición del nuevo arreglo se agrega el nuevo elemento.
+				productos[índice] = crearProducto(código, descripción, precioUnitario, cantidadDeStock);
+			}
+		}
+	}
+	
 	/**
 	 * Contar la cantidad de productos con un precio unitario menor a un valor dado.
 	 */
-	public static int contarLosProductosConPrecioUnitarioMenorA(Producto[] productos, float precio)
+	public static int contarLosProductosConPrecioUnitarioMenorA(float precio)
 	{
 		int contador, índice;
 		contador = 0;
@@ -46,49 +64,29 @@ public class Principal {
 	}
 	
 	/**
-	 * Aumentar a todos los productos un porcentaje de aumento al precio unitario.
+	 * Solicitación de los datos para cargar un nuevo producto en específico
 	 */
-	public static void aumentarPrecioUnitarioDeTodosLosProductosUn(Producto[] productos, float porcentaje) {
-		int índice;
-		float auxiliar;
-		
-		for(índice = 0;índice <= productos.length-1;índice++) {	
-			auxiliar = (productos[índice].getPrecioUnitario()*porcentaje)/100 + productos[índice].getPrecioUnitario();
-			productos[índice].setPrecioUnitario(auxiliar);
-		}
-	}
-	
-	/**
-	 * Solicitación de los datos para cargar al arreglo productos
-	 * @param productos
-	 * @return
-	 */
-	public static Producto[] cargaProductos(Producto[] productos){
+	public static void opción1() {
 		int código, cantidadDeStock;
 		float precioUnitario;
 		String descripción;
 		
-		for(int i = 0;i<=productos.length;i++){
-			System.out.println("Ingrese producto:");
-			System.out.print(" Código: "); código = sc.nextInt();
-			System.out.print(" Descripción: "); descripción = TecladoIn.readLine();
-			System.out.print(" Precio unitario: "); precioUnitario = sc.nextFloat();
-			System.out.print(" Cantidad de Stock: "); cantidadDeStock = sc.nextInt();
-			
-			productos[i] = crearProducto(código, descripción, precioUnitario, cantidadDeStock);
-			System.out.println("Producto cargado con éxito.");
-			System.out.println(""); // Salto de línea
-		}
+		System.out.print("Código: "); código = sc.nextInt();
+		System.out.print("Descripción: "); descripción = TecladoIn.readLine();
+		System.out.print("Precio unitario: "); precioUnitario = sc.nextFloat();
+		System.out.print("Cantidad de Stock: "); cantidadDeStock = sc.nextInt();
 		
-		return productos;
+		cargarProducto(código, descripción, precioUnitario, cantidadDeStock);
+		
+		System.out.println("Cargado con éxito.");
 	}
-
+	
 	/**
 	 * Mostrar listado de todos los productos. Además,
 	 * por cada producto mostrar su código, descripción,
 	 * precio unitario y cantidad de stock.
 	 */
-	public static void opción2(Producto[] productos) {
+	public static void opción2() {
 		int índice, índiceFinal;
 		
 		índiceFinal = productos.length -1;
@@ -107,7 +105,7 @@ public class Principal {
 	 * Contar la cantidad de productos que tienen 0 en 
 	 * cantidad de stock.
 	 */
-	public static void opción3(Producto[] productos) {
+	public static void opción3() {
 		int índice, índiceFinal, contador;
 		
 		índiceFinal = productos.length -1;
@@ -125,31 +123,41 @@ public class Principal {
 	/**
 	 * Mostrar la cantidad de productos con un precio unitario menor a un valor dado.
 	 */
-	public static void opción4(Producto[] productos)
+	public static void opción4()
 	{
 		float precio;
 		System.out.print("Valor: "); precio = sc.nextFloat();
 		System.out.println("La cantidad de productos con un precio\n" +
-				"unitario menor a " + precio + " son: " + contarLosProductosConPrecioUnitarioMenorA(productos, precio));
+				"unitario menor a " + precio + " son: " + contarLosProductosConPrecioUnitarioMenorA(precio));
+	}
+	
+	/**
+	 * Aumentar a todos los productos un porcentaje de aumento al precio unitario.
+	 */
+	public static void aumentarPrecioUnitarioDeTodosLosProductosUn(float porcentaje) {
+		int índice;
+		float auxiliar;
+		
+		for(índice = 0;índice <= productos.length-1;índice++) {	
+			auxiliar = (productos[índice].getPrecioUnitario()*porcentaje)/100 + productos[índice].getPrecioUnitario();
+			productos[índice].setPrecioUnitario(auxiliar);
+		}
 	}
 	
 	/**
 	 * Mostrar todos los productos con precio unitario con un cierto porcentaje.
 	 */
-	public static void opción5(Producto[] productos)
+	public static void opción5()
 	{
 		float porcentaje;
 		System.out.print("Porcentaje a aumentar: "); porcentaje = sc.nextFloat();
-		aumentarPrecioUnitarioDeTodosLosProductosUn(productos, porcentaje);
+		aumentarPrecioUnitarioDeTodosLosProductosUn(porcentaje);
 	}
 	
 	public static void mostrarMenú() {
-		Producto[] productos;
 		boolean salir;
 		int opción;
 		
-		// Inicializar variables
-		productos = new Producto[5];
 		salir = false;
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
@@ -174,19 +182,19 @@ public class Principal {
 				salir = true;
 				break;
 			case 1:
-				productos = cargaProductos(productos);
+				opción1();
 				break;
 			case 2:
-				if(productos[0]!=null) { opción2(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos.length!=0) { opción2(); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 3:
-				if(productos[0]!=null) { opción3(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos.length!=0) { opción3(); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 4:
-				if(productos[0]!=null) { opción4(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos.length!=0) { opción4(); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 5:
-				if(productos[0]!=null) { opción5(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos.length!=0) { opción5(); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			default:
 				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
