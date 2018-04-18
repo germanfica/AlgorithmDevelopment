@@ -2,8 +2,20 @@ package com.graworg.ad._2018.tp3.ej3;
 
 import java.util.Scanner;
 
-public class Test {
+/*
+ *  Escribir un programa TestPuntosHeladeria que permita:
+ *  - Cargar y operar un objeto de la clase Puntos.
+ *  
+ *  Debe contar con un menú de opciones para probar toda la funcionalidad del TDA.
+ */
+
+public class TestPuntosHeladeria {
 	private static Scanner sc = new Scanner(System.in);
+	
+	public static void cargarPuntos(){
+		
+	}
+	
 	
 	public static void menú() {
 		boolean salir;
@@ -18,13 +30,7 @@ public class Test {
 		{
 			System.out.print(
 					"[0] Salir\n" +
-					"[1] Cargar producto\n" +
-					"[2] Mostrar listado de productos\n" +
-					"[3] Cantidad de productos con stock 0\n" +
-					"[4] Cantidad de productos con un precio\n" +
-						"unitario menor a un valor dado\n" + 
-					"[5] Aumentar a todos los productos un\n" +
-						"porcentaje de aumento al precio unitario.\n"
+					"[1] Cargar puntos\n"
 					);
 			
 			opción = sc.nextInt();
@@ -34,7 +40,7 @@ public class Test {
 				salir = true;
 				break;
 			case 1:
-				System.out.println("Opción 1");
+				System.out.println("Cargar");
 				break;
 			default:
 				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
