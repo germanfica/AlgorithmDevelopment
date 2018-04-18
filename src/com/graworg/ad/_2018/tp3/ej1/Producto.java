@@ -1,6 +1,6 @@
 package com.graworg.ad._2018.tp3.ej1;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Producto {
 	private int código;
@@ -31,13 +31,18 @@ public class Producto {
 	 */
 	
 	// ERROR CONCEPTURAL
+	/*
 	public void asd()
 	{
 		System.out.println(descripción);
 	}
+	*/
+	
 	// ERROR CONCEPTURAL
+	/*
 	public void setFeg() {
 		Scanner sc = new Scanner(System.in);
 		descripción = sc.next();
 	}
+	*/
 }

@@ -1,7 +1,9 @@
 package com.graworg.ad._2018.tp3.ej1;
 
-public class Test {
+public class Test_Principal_inefficient {
 	public static void main(String[] args) {
+		// Es la clase test de Principal_inefficient
+		/*
 		Producto producto = new Producto();
 		producto.setDescripción("asd");
 		producto.asd();
@@ -9,5 +11,6 @@ public class Test {
 		System.out.println(producto.getDescripción().toString());
 		producto.setFeg();
 		System.out.println(producto.getDescripción());
+		*/
 	}
 }
