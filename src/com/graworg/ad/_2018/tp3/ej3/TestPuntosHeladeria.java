@@ -78,35 +78,8 @@ public class TestPuntosHeladeria {
 	}
 	
 	/*
-	 * [2] Guardar todos los cambios recientes en el archivo clientes.txt
+	 * [1] Volver a cargar los clientes del archivo clientes.txt
 	 */
-	public static void guardarALosClientesEnUnArchivo(Cliente[] clientes) {
-		BufferedWriter bw = null;
-		FileWriter fw = null;
-
-		try {
-			String contenido = clientesToString(clientes);
-
-			fw = new FileWriter(NOMBRE_ARCHIVO);
-			bw = new BufferedWriter(fw);
-			bw.write(contenido);
-
-			System.out.println("Listo.");
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (bw != null)
-					bw.close();
-				if (fw != null)
-					fw.close();
-			} catch (IOException ex) {
-				ex.printStackTrace(); // Error al leer o escribir en el archivo
-			}
-		}
-	}
-	
 	/**
 	 * Cargar a un arreglo todos los clientes de un archivo determinado
 	 * @param longitud
@@ -139,6 +112,43 @@ public class TestPuntosHeladeria {
         }
 		
 		return clientes;
+	}
+	
+	/*
+	 * [2] Guardar todos los cambios recientes en el archivo clientes.txt
+	 */
+	public static void guardarALosClientesEnUnArchivo(Cliente[] clientes) {
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+
+		try {
+			String contenido = clientesToString(clientes);
+
+			fw = new FileWriter(NOMBRE_ARCHIVO);
+			bw = new BufferedWriter(fw);
+			bw.write(contenido);
+
+			System.out.println("Listo.");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (bw != null)
+					bw.close();
+				if (fw != null)
+					fw.close();
+			} catch (IOException ex) {
+				ex.printStackTrace(); // Error al leer o escribir en el archivo
+			}
+		}
+	}
+	
+	/*
+	 * [3] Modificar la cantidad máxima de puntos logrables
+	 */
+	public static void modificarLaCantidadMáximaDePuntosLogrables() {
+		
 	}
 	
 	/*
