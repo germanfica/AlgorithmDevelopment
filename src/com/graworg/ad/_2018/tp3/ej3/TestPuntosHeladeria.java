@@ -41,22 +41,19 @@ public class TestPuntosHeladeria {
 	private static Scanner sc;
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
 	
-	/*
-	 * Cargar puntaje
+	/**
+	 * Cambiar el puntaje de un cliente
+	 * @return
 	 */
-	public static Cliente cambiarPuntos(){
-		String nombreDelCliente;
-		int puntosDelCliente;
+	public static Cliente cambiarPuntosAlCliente(Cliente cliente){
+		int nuevaCantidadDePuntosParaElCliente;
 		
 		sc = new Scanner(System.in);
-		
-		System.out.println("Ingrese el nombre del cliente: ");
-		nombreDelCliente = sc.next(); // Leer nombre cliente
+
 		System.out.println("Ingrese la cantidad de puntos: ");
-		puntosDelCliente = sc.nextInt(); // Leer puntos del cliente
+		nuevaCantidadDePuntosParaElCliente = sc.nextInt(); // Leer puntos del cliente
 		
-		Cliente cliente = new Cliente(nombreDelCliente);
-		cliente.setPuntos(puntosDelCliente);
+		cliente.setPuntos(nuevaCantidadDePuntosParaElCliente);
 		
 		return cliente;
 	}
