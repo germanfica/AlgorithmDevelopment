@@ -42,65 +42,8 @@ import java.util.Scanner;
  */
 
 public class TestPuntosHeladeria {
-	private static Scanner sc = new Scanner(System.in);
-	static final int CANTNUMEROS = 10;
-    static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
-	
-	/*
-	 * Guardar los datos del cliente en el disco
-	 */
-	public static void guardarClienteEnElDisco(Cliente[] data) {
-		try {
-			// Abrir un archivo para escribir, llamado Cliente.data.
-			FileOutputStream archivoDeguardado = new FileOutputStream("Cliente.dat");
-			
-			// Crear ObjectOutputStream para poner objetos en el archivo a guardar.
-			ObjectOutputStream guardar = new ObjectOutputStream(archivoDeguardado);
-			
-			// Ahora lo guardamos
-			guardar.writeObject(data);
-			
-			// Cierramos el archivo
-			guardar.close(); // Esto también cierra archivoDeguardado
-			
-			System.out.println("Cliente guardado con éxito.");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	/*
-	 * Cargar los datos del cliente desde disco.
-	 */
-	public static String cargarLosDatosDelClienteDesdeElDisco() {
-		String data = "";
-		
-		try {
-			// Open file to read from, named SavedObj.sav.
-			FileInputStream archivoDeguardado = new FileInputStream("Cliente.dat");
-			
-			// Create an ObjectInputStream to get objects from save file.
-			ObjectInputStream guardar = new ObjectInputStream(archivoDeguardado);
-			
-			// Now we do the restore.
-			// readObject() returns a generic Object, we cast those back
-			// into their original class type.
-			// For primitive types, use the corresponding reference class.
-			data = (String) guardar.readObject();
-			
-			// Close the file.
-			guardar.close(); // This also closes saveFile.
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return data;
-	}
+	private static Scanner sc;
+    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
 	
 	/*
 	 * Cargar puntaje
@@ -108,6 +51,8 @@ public class TestPuntosHeladeria {
 	public static Cliente cambiarPuntos(){
 		String nombreDelCliente;
 		int puntosDelCliente;
+		
+		sc = new Scanner(System.in);
 		
 		System.out.println("Ingrese el nombre del cliente: ");
 		nombreDelCliente = sc.next(); // Leer nombre cliente
@@ -120,29 +65,60 @@ public class TestPuntosHeladeria {
 		return cliente;
 	}
 	
-	//System.out.print("Bienvenido a El rico helado\nIngrese nombre del primer cliente: ");
-	//nombreDelCliente = sc.next();
+	/**
+	 * Cargar a un arreglo todos los clientes de un archivo determinado
+	 * @param longitud
+	 * @return
+	 */
+	public static Cliente[] clientesDesdeArchivo(int longitud) {
+		Cliente[] clientes = new Cliente[longitud];
+    	
+    	try{
+    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
+    		
+    		sc = new Scanner(buff);
+    		sc.useDelimiter("\\s*,\\s*");
+    		int i = 0;
+    		while(sc.hasNext()) {
+    			Cliente cliente = new Cliente(sc.next());
+    			cliente.setPuntos(sc.nextInt());
+    	    	clientes[i] = cliente;
+    	    	//System.out.println(clientes[i].toString());
+    			i = i + 1;
+    		}    		
+    		buff.close();
+    	}
+    	catch (FileNotFoundException ex) {
+            System.err.println(ex.getMessage() + "\nEl archivo no existe.");
+        }
+        catch (IOException ex) {
+            System.err.println("Error al leer o escribir en el archivo.");
+        }
+		
+		return clientes;
+	}
 	
 	public static void menú() {
-		Cliente[] cliente;
-		String nombreDelCliente;
+		Cliente[] clientes;
 		boolean salir;
 		int opción;
 		
 		// Inicializar variables
 		salir = false;
 		
-		// Crear repositorio de clientes
-		cliente = new Cliente[200]; // Máximo 200 clientes
+		// Crear y cargar el repositorio de clientes desde un archivo
+		clientes = clientesDesdeArchivo(200); // Máximo 200 clientes
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
+		
+		sc = new Scanner(System.in);
 		
 		while(!salir)
 		{
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir\n" +
-					"[1] Cargar clientes desde un archivo\n" + // Me puede ahorrar mucho trabajo.
+					"[1] Recargar clientes desde el archivo\n" + // Ahorra mucho tiempo.
 					"[2] Modificar la cantidad máxima de puntos logrables\n" +
 					// Observadoras
 					"[3] Mostrar nombre del cliente\n" +
@@ -170,7 +146,7 @@ public class TestPuntosHeladeria {
 				//cliente = cambiarPuntos();
 				break;
 			case 2:
-				System.out.println(cliente.toString());
+				System.out.println(clientes.toString());
 				break;
 			default:
 				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
