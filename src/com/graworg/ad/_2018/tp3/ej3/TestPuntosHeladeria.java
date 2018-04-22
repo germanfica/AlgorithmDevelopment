@@ -27,7 +27,7 @@ import java.util.Scanner;
  *  para esta nueva versión.
  *  
  *  3. Considerá diseñar algún mecanismo para guardar la información de
- *  todos los clientes con un máximo de 200 clientes.
+ *  todos los clientes con un máximo de 200 clientes. (IMPLEMENTADO)
  *  
  *  Como un detalle de implementación te pedimos que utilices un menú de opciones para:
  *  a) Cargar los clientes a partir de un archivo dado por el dueño de la heladería.
@@ -144,8 +144,14 @@ public class TestPuntosHeladeria {
 	/*
 	 * [4] Mostrar nombre del cliente
 	 */
-	public static void mostrarNombreDelCliente(Cliente cliente) {
-		System.out.println("Nombre del cliente: " + cliente.getNombre());
+	public static void mostrarNombreDelCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int ID;
+		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt();
+		
+		System.out.println("Nombre del cliente con el ID " + ID + " es: " +  clientes[ID].getNombre());
 	}
 	
 	/*
@@ -271,12 +277,12 @@ public class TestPuntosHeladeria {
 			
 			// Mostrar cartel de opciones
 			System.out.print(
-					"[0] Salir\n (IMPLEMENTADO)" +
+					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Volver a cargar los clientes del archivo clientes.txt (IMPLEMENTADO)\n" + // Ahorra mucho tiempo.
 					"[2] Guardar todos los cambios recientes en el archivo clientes.txt (IMPLEMENTADO)\n" +
 					"[3] Modificar la cantidad máxima de puntos logrables\n" +
 					// Observadoras
-					"[4] Mostrar nombre del cliente\n" +
+					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
 					"[5] Mostrar puntos del cliente\n" +
 					"[6] Mostrar cliente con su puntaje\n" +
 					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
@@ -309,6 +315,11 @@ public class TestPuntosHeladeria {
 				break;
 			case 2:
 				guardarALosClientesEnUnArchivo(clientes);
+				break;
+			case 4:
+				mostrarNombreDelCliente(clientes);
+			case 10:
+				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
 				break;
 			case 11:
 				canjeDePuntosAlCliente(clientes);
