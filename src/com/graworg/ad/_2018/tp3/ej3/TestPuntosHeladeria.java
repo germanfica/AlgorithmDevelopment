@@ -42,6 +42,7 @@ import java.util.Scanner;
 public class TestPuntosHeladeria {
 	private static Scanner sc;
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
+    private static int CANTIDAD_MAX_CLIENTES = 200; // Máximo 200 clientes
 	
 	/**
 	 * Cambiar el puntaje de un cliente
@@ -194,7 +195,11 @@ public class TestPuntosHeladeria {
 		System.out.println("Ingrese la cantidad de puntos a canjear: ");
 		canje = sc.nextInt();
 		
-		clientes[ID].canjearPuntos(canje);
+		if(clientes[ID].canjearPuntos(canje)) {
+			System.out.println("Se pudo efectuar la operación.");
+		}else {
+			System.out.println("No fue posible efectuar la operación.");
+		}
 	}
 	
 	/*
@@ -256,19 +261,19 @@ public class TestPuntosHeladeria {
 		salir = false;
 		
 		// Crear y cargar el repositorio de clientes desde un archivo
-		clientes = clientesDesdeArchivo(200); // Máximo 200 clientes
+		clientes = clientesDesdeArchivo(CANTIDAD_MAX_CLIENTES); // Máximo 200 clientes
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
-		sc = new Scanner(System.in);
-		
 		while(!salir)
 		{
+			sc = new Scanner(System.in);
+			
 			// Mostrar cartel de opciones
 			System.out.print(
-					"[0] Salir\n" +
-					"[1] Volver a cargar los clientes del archivo clientes.txt\n" + // Ahorra mucho tiempo.
-					"[2] Guardar todos los cambios recientes en el archivo clientes.txt\n" +
+					"[0] Salir\n (IMPLEMENTADO)" +
+					"[1] Volver a cargar los clientes del archivo clientes.txt (IMPLEMENTADO)\n" + // Ahorra mucho tiempo.
+					"[2] Guardar todos los cambios recientes en el archivo clientes.txt (IMPLEMENTADO)\n" +
 					"[3] Modificar la cantidad máxima de puntos logrables\n" +
 					// Observadoras
 					"[4] Mostrar nombre del cliente\n" +
@@ -280,9 +285,9 @@ public class TestPuntosHeladeria {
 					"[9] Modificar puntos del cliente\n" +
 					// Propias del tipo
 					"[10] Sumar puntos al cliente\n" +
-					"[11] Canjear puntos al cliente\n" +
-					"[12] Mostrar el cliente de mayor puntaje logrado\n" +
-					"[13] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
+					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
+					"[12] Mostrar el cliente de mayor puntaje logrado (IMPLEMENTADO)\n" +
+					"[13] Mostrar si hay clientes que no tienen puntos actualmente (IMPLEMENTADO)\n" // Boolean
 					);
 			
 			// Leer opción del menú principal
@@ -300,7 +305,7 @@ public class TestPuntosHeladeria {
 				salir = true;
 				break;
 			case 1:
-				//cliente = cambiarPuntos();
+				clientes = clientesDesdeArchivo(CANTIDAD_MAX_CLIENTES);
 				break;
 			case 2:
 				guardarALosClientesEnUnArchivo(clientes);
