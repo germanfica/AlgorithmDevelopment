@@ -62,18 +62,23 @@ public class TestPuntosHeladeria {
 	
 	public static String clientesToString(Cliente[] clientes) {
 		String textoPlano = "";
+		int i = 0;
 		
-		for(int i = 0; i <= clientes.length-1 ; i++) {
+		while(i <= clientes.length-1 && clientes[i]!=null) {
 			if(i==0) {
 				textoPlano = textoPlano + clientes[i].getNombre() + ", " + clientes[i].getPuntos();
 			}else {
 				textoPlano = textoPlano + ", " + clientes[i].getNombre() + ", " + clientes[i].getPuntos();
 			}
+			i = i +1;
 		}
 		
 		return textoPlano;
 	}
 	
+	/*
+	 * [2] Guardar todos los cambios recientes en el archivo clientes.txt
+	 */
 	public static void guardarALosClientesEnUnArchivo(Cliente[] clientes) {
 		BufferedWriter bw = null;
 		FileWriter fw = null;
@@ -180,15 +185,46 @@ public class TestPuntosHeladeria {
 	/*
 	 * [11] Canjear puntos del cliente
 	 */
-	public static void canjearPuntosDelCliente() {
+	public static void canjeDePuntosAlCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int ID, canje;
+		sc = new Scanner(System.in);
+		ID = sc.nextInt();
 		
+		System.out.println("Ingrese la cantidad de puntos a canjear: ");
+		canje = sc.nextInt();
+		
+		clientes[ID].canjearPuntos(canje);
 	}
 	
 	/*
 	 * [12] Mostrar el cliente de mayor puntaje logrado
 	 */
 	public static void mostrarElClienteDeMayorPuntajeLogrado(Cliente[] clientes) {
+		int elÍndiceDelClienteConMayorPuntajeLogrado = 0;
+		int puntajeDelClienteAnterior = clientes[1].getPuntos();
+		int i = 0;
 		
+		while(i<= clientes.length-1 && clientes[i]!=null) {
+			if(clientes[i].getPuntos()>puntajeDelClienteAnterior) {
+				puntajeDelClienteAnterior = clientes[i].getPuntos();
+				elÍndiceDelClienteConMayorPuntajeLogrado = i;
+			}
+			i = i + 1;
+		}
+		
+		/*
+		for(int i = 1; i<= clientes.length-1 ;i++) {
+			if(clientes[i]!=null) {
+				if(clientes[i].getPuntos()>puntajeDelClienteAnterior) {
+					puntajeDelClienteAnterior = clientes[i].getPuntos();
+					elÍndiceDelClienteConMayorPuntajeLogrado = i;
+				}
+			}
+		}
+		*/
+		
+		System.out.println("El cliente con el mayor puntaje logrado es: " + clientes[elÍndiceDelClienteConMayorPuntajeLogrado].getNombre() + " con " + clientes[elÍndiceDelClienteConMayorPuntajeLogrado].getPuntos() + " puntos.");
 	}
 	
 	/*
@@ -198,7 +234,7 @@ public class TestPuntosHeladeria {
 		boolean hayClientesQueNoTienenPuntos = false;
 		int i = 0;
 		
-		while(i <= clientes.length-1 && hayClientesQueNoTienenPuntos==false) {
+		while(i <= clientes.length-1 && hayClientesQueNoTienenPuntos==false && clientes[i]!=null) {
 			if(clientes[i].getPuntos()==0) {
 				hayClientesQueNoTienenPuntos = true;
 			}
@@ -244,7 +280,7 @@ public class TestPuntosHeladeria {
 					"[9] Modificar puntos del cliente\n" +
 					// Propias del tipo
 					"[10] Sumar puntos al cliente\n" +
-					"[11] Canjear puntos del cliente\n" +
+					"[11] Canjear puntos al cliente\n" +
 					"[12] Mostrar el cliente de mayor puntaje logrado\n" +
 					"[13] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
 					);
@@ -267,7 +303,13 @@ public class TestPuntosHeladeria {
 				//cliente = cambiarPuntos();
 				break;
 			case 2:
-				System.out.println(clientes.toString());
+				guardarALosClientesEnUnArchivo(clientes);
+				break;
+			case 11:
+				canjeDePuntosAlCliente(clientes);
+				break;
+			case 12:
+				mostrarElClienteDeMayorPuntajeLogrado(clientes);
 				break;
 			case 13:
 				mostrarSiHayClientesQueNoTienenPuntosActualmente(clientes);
