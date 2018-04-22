@@ -58,6 +58,10 @@ public class TestPuntosHeladeria {
 		return cliente;
 	}
 	
+	public static void guardarALosClientesEnUnArchivo() {
+		
+	}
+	
 	/**
 	 * Cargar a un arreglo todos los clientes de un archivo determinado
 	 * @param longitud
@@ -112,8 +116,9 @@ public class TestPuntosHeladeria {
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir\n" +
-					"[1] Recargar clientes desde el archivo\n" + // Ahorra mucho tiempo.
-					"[2] Modificar la cantidad máxima de puntos logrables\n" +
+					"[1] Recargar los clientes desde el archivo clientes.txt\n" + // Ahorra mucho tiempo.
+					"[2] Guardar todos los cambios recientes en el archivo clientes.txt\n" +
+					"[3] Modificar la cantidad máxima de puntos logrables\n" +
 					// Observadoras
 					"[3] Mostrar nombre del cliente\n" +
 					"[4] Mostrar puntos del cliente\n" +
@@ -134,6 +139,13 @@ public class TestPuntosHeladeria {
 			
 			switch (opción) {
 			case 0:
+				System.err.println("¿Quiere guardar todos los cambios hechos en el archivo clientes.txt? SI/NO");
+				String respuesta = "";
+				sc = new Scanner(System.in);
+				respuesta = sc.next();
+				if(respuesta.toLowerCase().equals("SI") || respuesta.toLowerCase().equals("SÍ")) {
+					guardarALosClientesEnUnArchivo();
+				}
 				salir = true;
 				break;
 			case 1:
