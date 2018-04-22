@@ -156,6 +156,61 @@ public class TestPuntosHeladeria {
 		System.out.println("El cliente " + cliente.getNombre() + " tiene " + cliente.getPuntos() + " puntos.");
 	}
 	
+	/*
+	 * [8] Modificar el nombre del cliente
+	 */
+	public static void modificarElNombreDelCliente(Cliente cliente, String nombre) {
+		cliente.setNombre(nombre);
+	}
+	
+	/*
+	 * [9] Modificar los puntos del cliente
+	 */
+	public static void modificarLosPuntosDelCliente() {
+		
+	}
+	
+	/*
+	 * [10] Sumar puntos al cliente
+	 */
+	public static void sumarPuntosAlCliente() {
+		
+	}
+	
+	/*
+	 * [11] Canjear puntos del cliente
+	 */
+	public static void canjearPuntosDelCliente() {
+		
+	}
+	
+	/*
+	 * [12] Mostrar el cliente de mayor puntaje logrado
+	 */
+	public static void mostrarElClienteDeMayorPuntajeLogrado(Cliente[] clientes) {
+		
+	}
+	
+	/*
+	 * [13] Mostrar si hay clientes que no tienen puntos actualmente.
+	 */
+	public static void mostrarSiHayClientesQueNoTienenPuntosActualmente(Cliente[] clientes) {
+		boolean hayClientesQueNoTienenPuntos = false;
+		int i = 0;
+		
+		while(i <= clientes.length-1 && hayClientesQueNoTienenPuntos==false) {
+			if(clientes[i].getPuntos()==0) {
+				hayClientesQueNoTienenPuntos = true;
+			}
+			i = i +1;
+		}
+		if(hayClientesQueNoTienenPuntos == true) {
+			System.out.println("Hay clientes que no tienen puntos actualmente.");
+		}else {
+			System.out.println("Todos los clientes tienen puntos actualmente.");
+		}
+	}
+	
 	public static void menú() {
 		Cliente[] clientes;
 		boolean salir;
@@ -183,14 +238,14 @@ public class TestPuntosHeladeria {
 					"[4] Mostrar nombre del cliente\n" +
 					"[5] Mostrar puntos del cliente\n" +
 					"[6] Mostrar cliente con su puntaje\n" +
-					"[7] Verificar si dos clientes son iguales\n" +
+					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
 					// Modificadoras
 					"[8] Modificar nombre del cliente\n" +
 					"[9] Modificar puntos del cliente\n" +
 					// Propias del tipo
 					"[10] Sumar puntos al cliente\n" +
 					"[11] Canjear puntos del cliente\n" +
-					"[12] Mostrar cliente de mayor puntaje logrado\n" +
+					"[12] Mostrar el cliente de mayor puntaje logrado\n" +
 					"[13] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
 					);
 			
@@ -213,6 +268,9 @@ public class TestPuntosHeladeria {
 				break;
 			case 2:
 				System.out.println(clientes.toString());
+				break;
+			case 13:
+				mostrarSiHayClientesQueNoTienenPuntosActualmente(clientes);
 				break;
 			default:
 				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
