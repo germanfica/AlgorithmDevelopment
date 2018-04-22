@@ -11,26 +11,22 @@ import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /*
- * 	Escribir un programa TestPuntosHeladeria que permita:
+ * 	1. Escribir un programa TestPuntosHeladeria que permita:
  *  - Cargar y operar con los datos de un cliente.
  *  
- *  Debe contar con un menú de opciones para probar toda la funcionalidad del TDA.
+ *  a) Debe contar con un menú de opciones para probar toda la funcionalidad del TDA.
  *  
- *  Implementar en el puntaje de la heladería:
- * 	Una cantidad máxima de puntos logrables (única e igual para todos los clientes).
- * 		
- * 	Si un cliente se excede esa cantidad, el usuario está obligado a canjear por algún premio.
+ *  2. Implementar en el puntaje de la heladería:
+ * 	 - Una cantidad máxima de puntos logrables (única e igual para todos los clientes). La
+ *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
+ *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
+ *   algún premio.
+ *   - El usuario podría modificar el tope máximo de puntos y consultarlo cuando desee.
  *  
- *  La cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
+ *  a) Para incluir esto en el modelo UML e implementación en java, cómo lo harías?
  *  
- *  Para incluir esto en el modelo UML e implementación en java, cómo lo harías?
- *  
- *  Modificá tu TDA original y escribí en los comentarios las mejoras realizadas para esta nueva versión.
- *  
- *  El usuario podría modificar el tope máximo de puntos y consultarlo cuando desee.
- *  Considere esto en su implementación.
- *  
- *  
+ *  b) Modificá tu TDA original y escribí en los comentarios las mejoras realizadas
+ *  para esta nueva versión.
  *  
  *  3. Considerá diseñar algún mecanismo para guardar la información de
  *  todos los clientes con un máximo de 200 clientes.
@@ -158,7 +154,9 @@ public class TestPuntosHeladeria {
 					"[8] Modificar puntos del cliente\n" +
 					// Propias del tipo
 					"[9] Sumar puntos al cliente\n" +
-					"[10] Canjear puntos del cliente\n"
+					"[10] Canjear puntos del cliente\n" +
+					"[11] Mostrar cliente de mayor puntaje logrado\n" +
+					"[12] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
 					);
 			
 			// Leer opción del menú principal
