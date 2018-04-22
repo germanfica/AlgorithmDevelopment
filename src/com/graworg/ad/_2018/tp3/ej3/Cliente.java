@@ -10,6 +10,7 @@ package com.graworg.ad._2018.tp3.ej3;
 public class Cliente {
 	private String nombre;
 	private int puntos;
+	public static int cantidadMáximaDePuntosLogrables = 5000;
 	
 	// Constructores
 	
@@ -20,18 +21,34 @@ public class Cliente {
 	
 	// Observadores
 	
+	/**
+	 * Retorna el nombre del cliente
+	 * @return
+	 */
 	public String getNombre() {
 		return nombre;
 	}
 	
+	/**
+	 * Retorna la cantidad de puntos acumulados por el cliente
+	 * @return
+	 */
 	public int getPuntos() {
 		return puntos;
 	}
 	
+	/**
+	 * Retorna en texto plano todos los atributos del cliente
+	 */
 	public String toString() {
 		return "Cliente: " + nombre + "\nPuntaje: " + puntos;
 	}
 	
+	/**
+	 * Verifica los clientes son iguales
+	 * @param cliente
+	 * @return
+	 */
 	public boolean equals(Cliente cliente) {
 		return cliente.getNombre()==nombre && cliente.puntos==this.puntos;
 	}
@@ -50,39 +67,51 @@ public class Cliente {
 	}
 	
 	/**
-	 * Cambiar el puntaje
+	 * Cambiar el puntaje del cliente
+	 * @param puntos
 	 */
 	/*
 	 * Actualización del día 21 de Abril del 2018 a las 12:35:
 	 *  - Nombre del parámetro "d" por "puntos"
 	 */
 	public void setPuntos(int puntos) {
-		this.puntos = puntos;
+		if(puntos<cantidadMáximaDePuntosLogrables) {
+			this.puntos = puntos;
+		}else {
+			this.puntos = cantidadMáximaDePuntosLogrables;
+		}
 	}
 	
 	// Propias del tipo
 	
 	/**
-	 * Sumar más puntos
+	 * Sumar más puntos al cliente pero con una cantidad máxima de puntos logrables
 	 * @param mas
 	 */
 	public void sumarPuntos(int mas) {
-		puntos = puntos + mas;
+		if(mas<cantidadMáximaDePuntosLogrables) {
+			puntos = puntos + mas;
+		}else {
+			puntos = cantidadMáximaDePuntosLogrables;
+		}
 	}
 	
 	/**
-	 * Canjear los puntos. Resta el valor del parámetro al atributo puntos, devuelve
-	 * true si se pudo efectuar la operación.
+	 * Canjear los puntos del cliente. Resta el valor del parámetro al atributo puntos,
+	 * devuelve true si se pudo efectuar la operación.
+	 * @param canje
+	 * @return
 	 */
 	public boolean canjearPuntos(int canje) {
-		int num;
+		int número;
 		boolean respuesta;
 		
 		respuesta = false;
 		
-		num = canje - puntos;
+		número = puntos - canje;
 		
-		if(num>0){
+		if(número>0){
+			puntos = puntos - canje;
 			respuesta = true;
 		}
 		
