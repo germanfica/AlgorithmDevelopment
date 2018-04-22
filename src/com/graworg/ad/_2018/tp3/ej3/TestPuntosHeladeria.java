@@ -116,22 +116,22 @@ public class TestPuntosHeladeria {
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir\n" +
-					"[1] Recargar los clientes desde el archivo clientes.txt\n" + // Ahorra mucho tiempo.
+					"[1] Volver a cargar los clientes del archivo clientes.txt\n" + // Ahorra mucho tiempo.
 					"[2] Guardar todos los cambios recientes en el archivo clientes.txt\n" +
 					"[3] Modificar la cantidad máxima de puntos logrables\n" +
 					// Observadoras
-					"[3] Mostrar nombre del cliente\n" +
-					"[4] Mostrar puntos del cliente\n" +
-					"[5] Mostrar cliente con su puntaje\n" +
-					"[6] Verificar los clientes son iguales\n" +
+					"[4] Mostrar nombre del cliente\n" +
+					"[5] Mostrar puntos del cliente\n" +
+					"[6] Mostrar cliente con su puntaje\n" +
+					"[7] Verificar los clientes son iguales\n" +
 					// Modificadoras
-					"[7] Modificar nombre del cliente\n" +
-					"[8] Modificar puntos del cliente\n" +
+					"[8] Modificar nombre del cliente\n" +
+					"[9] Modificar puntos del cliente\n" +
 					// Propias del tipo
-					"[9] Sumar puntos al cliente\n" +
-					"[10] Canjear puntos del cliente\n" +
-					"[11] Mostrar cliente de mayor puntaje logrado\n" +
-					"[12] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
+					"[10] Sumar puntos al cliente\n" +
+					"[11] Canjear puntos del cliente\n" +
+					"[12] Mostrar cliente de mayor puntaje logrado\n" +
+					"[13] Mostrar si hay clientes que no tienen puntos actualmente.\n" // Boolean
 					);
 			
 			// Leer opción del menú principal
