@@ -47,7 +47,7 @@ public class Cliente {
 	}
 	
 	/**
-	 * Verifica los clientes son iguales
+	 * Verifica si el cliente actual es igual al cliente enviado por parámetro
 	 * @param cliente
 	 * @return
 	 */

@@ -38,7 +38,7 @@ import java.util.Scanner;
  *  
  *  c) Identificar si hay clientes que no tienen puntos actualmente.
  */
-
+// Probablemente me conviene modificar segun un id.
 public class TestPuntosHeladeria {
 	private static Scanner sc;
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
@@ -122,7 +122,7 @@ public class TestPuntosHeladeria {
     	    	clientes[i] = cliente;
     	    	//System.out.println(clientes[i].toString());
     			i = i + 1;
-    		}    		
+    		}
     		buff.close();
     	}
     	catch (FileNotFoundException ex) {
@@ -133,6 +133,27 @@ public class TestPuntosHeladeria {
         }
 		
 		return clientes;
+	}
+	
+	/*
+	 * [4] Mostrar nombre del cliente
+	 */
+	public static void mostrarNombreDelCliente(Cliente cliente) {
+		System.out.println("Nombre del cliente: " + cliente.getNombre());
+	}
+	
+	/*
+	 * [5] Mostrar puntos del cliente
+	 */
+	public static void mostrarLosPuntosDelCliente(Cliente cliente) {
+		System.out.println("Puntos del cliente: " + cliente.getPuntos());
+	}
+	
+	/*
+	 * [6] Mostrar cliente con su puntaje
+	 */
+	public static void mostrarClienteConSuPuntaje(Cliente cliente) {
+		System.out.println("El cliente " + cliente.getNombre() + " tiene " + cliente.getPuntos() + " puntos.");
 	}
 	
 	public static void menú() {
@@ -162,7 +183,7 @@ public class TestPuntosHeladeria {
 					"[4] Mostrar nombre del cliente\n" +
 					"[5] Mostrar puntos del cliente\n" +
 					"[6] Mostrar cliente con su puntaje\n" +
-					"[7] Verificar los clientes son iguales\n" +
+					"[7] Verificar si dos clientes son iguales\n" +
 					// Modificadoras
 					"[8] Modificar nombre del cliente\n" +
 					"[9] Modificar puntos del cliente\n" +
