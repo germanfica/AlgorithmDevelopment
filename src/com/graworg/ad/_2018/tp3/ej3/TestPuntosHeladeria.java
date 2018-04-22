@@ -1,13 +1,9 @@
 package com.graworg.ad._2018.tp3.ej3;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /*
@@ -72,13 +68,14 @@ public class TestPuntosHeladeria {
 	 */
 	public static Cliente[] clientesDesdeArchivo(int longitud) {
 		Cliente[] clientes = new Cliente[longitud];
+		int i = 0;
     	
     	try{
     		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
     		
     		sc = new Scanner(buff);
     		sc.useDelimiter("\\s*,\\s*");
-    		int i = 0;
+    		
     		while(sc.hasNext()) {
     			Cliente cliente = new Cliente(sc.next());
     			cliente.setPuntos(sc.nextInt());
