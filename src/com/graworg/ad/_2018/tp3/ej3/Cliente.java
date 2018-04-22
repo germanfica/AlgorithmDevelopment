@@ -5,8 +5,10 @@ package com.graworg.ad._2018.tp3.ej3;
  *  - Nombre de la clase "Puntos" a "Cliente", por lo que ahora tiene más sentido
  *    que el cliente tenga puntos y no al revés.
  *  - Nombres más descriptivos a los parámetros.
+ *  - Se agregaron comentarios, a excepción del constructor para reforzar el
+ *  entendimiento de los mismos.
  */
-// Nota: los métodos de objetivo mostrar cartel no tienen que ir en el objecto/clase.
+// Nota: los métodos de objetivo mostrar cartel no deben ir en el objecto/clase.
 public class Cliente {
 	private String nombre;
 	private int puntos;
@@ -31,7 +33,7 @@ public class Cliente {
 	
 	/**
 	 * Retorna la cantidad de puntos acumulados por el cliente
-	 * @return
+	 * @return puntos
 	 */
 	public int getPuntos() {
 		return puntos;
@@ -57,6 +59,7 @@ public class Cliente {
 	
 	/**
 	 * Cambiar nombre del cliente
+	 * @param nombre
 	 */
 	/*
 	 * Actualización del día 21 de Abril del 2018 a las 12:31:
