@@ -1,8 +1,10 @@
 package com.graworg.ad._2018.tp3.ej3;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -58,8 +60,45 @@ public class TestPuntosHeladeria {
 		return cliente;
 	}
 	
-	public static void guardarALosClientesEnUnArchivo() {
+	public static String clientesToString(Cliente[] clientes) {
+		String textoPlano = "";
 		
+		for(int i = 0; i <= clientes.length-1 ; i++) {
+			if(i==0) {
+				textoPlano = textoPlano + clientes[i].getNombre() + ", " + clientes[i].getPuntos();
+			}else {
+				textoPlano = textoPlano + ", " + clientes[i].getNombre() + ", " + clientes[i].getPuntos();
+			}
+		}
+		
+		return textoPlano;
+	}
+	
+	public static void guardarALosClientesEnUnArchivo(Cliente[] clientes) {
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+
+		try {
+			String contenido = clientesToString(clientes);
+
+			fw = new FileWriter(NOMBRE_ARCHIVO);
+			bw = new BufferedWriter(fw);
+			bw.write(contenido);
+
+			System.out.println("Listo.");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (bw != null)
+					bw.close();
+				if (fw != null)
+					fw.close();
+			} catch (IOException ex) {
+				ex.printStackTrace(); // Error al leer o escribir en el archivo
+			}
+		}
 	}
 	
 	/**
