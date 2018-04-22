@@ -183,7 +183,7 @@ public class TestPuntosHeladeria {
 				sc = new Scanner(System.in);
 				respuesta = sc.next();
 				if(respuesta.toLowerCase().equals("SI") || respuesta.toLowerCase().equals("SÍ")) {
-					guardarALosClientesEnUnArchivo();
+					guardarALosClientesEnUnArchivo(clientes);
 				}
 				salir = true;
 				break;
