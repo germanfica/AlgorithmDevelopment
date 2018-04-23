@@ -199,7 +199,7 @@ public class TestPuntosHeladeria {
 		nombre = sc.nextLine();
 		
 		clientes[ID].setNombre(nombre);
-		System.out.println("Se ha cambiado con éxito.");
+		System.out.println("El nombre se ha cambiado con éxito.");
 	}
 	
 	/**
@@ -219,11 +219,25 @@ public class TestPuntosHeladeria {
 		return cliente;
 	}
 	
-	/*
-	 * [9] Modificar los puntos del cliente
+	/**
+	 * Cambiar el puntaje de un cliente determinado
 	 */
-	public static void modificarLosPuntosAlCliente() {
+	/*
+	 * [9] Modificar el puntaje de un cliente
+	 */
+	public static void modificarPuntajeAlCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int ID, puntos;
 		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt(); // Leer ID del cliente
+		
+		sc = new Scanner(System.in); // Es necesario
+		System.out.println("Ingrese el nuevo puntaje para el cliente con id "+ ID +": ");
+		puntos = sc.nextInt();
+		
+		clientes[ID].setPuntos(puntos);
+		System.out.println("El puntaje se ha cambiado con éxito.");
 	}
 	
 	/*
@@ -332,7 +346,7 @@ public class TestPuntosHeladeria {
 					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
 					// Modificadoras
 					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
-					"[9] Modificar puntos al cliente\n" +
+					"[9] Modificar el puntaje de un cliente (IMPLEMENTADO)\n" +
 					// Propias del tipo
 					"[10] Sumar puntos al cliente\n" +
 					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
@@ -374,6 +388,9 @@ public class TestPuntosHeladeria {
 				break;
 			case 8:
 				modificarElNombreAlCliente(clientes);
+				break;
+			case 9:
+				modificarPuntajeAlCliente(clientes);
 				break;
 			case 10:
 				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
