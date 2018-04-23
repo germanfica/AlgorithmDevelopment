@@ -45,6 +45,11 @@ public class TestPuntosHeladeria {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
     private static int CANTIDAD_MAX_CLIENTES = 200; // Máximo 200 clientes
 	
+    /**
+     * Convierte un arreglo de clientes a texto plano
+     * @param clientes
+     * @return
+     */
 	public static String clientesToString(Cliente[] clientes) {
 		String textoPlano = "";
 		int i = 0;
@@ -101,6 +106,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [2] Guardar todos los cambios recientes en el archivo clientes.txt
 	 */
+	/**
+	 * Guardar el arreglo clientes en el archivo clientes.txt
+	 * @param clientes
+	 */
 	public static void guardarALosClientesEnUnArchivo(Cliente[] clientes) {
 		BufferedWriter bw = null;
 		FileWriter fw = null;
@@ -131,6 +140,9 @@ public class TestPuntosHeladeria {
 	/*
 	 * [3] Modificar la cantidad máxima de puntos logrables
 	 */
+	/**
+	 * Modificar la cantidad máxima de puntos logrables
+	 */
 	public static void modificarLaCantidadMáximaDePuntosLogrables() {
 		int cantidadMáximaDePuntosLogrables;
 		
@@ -148,6 +160,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [4] Mostrar nombre del cliente
 	 */
+	/**
+	 * Mostrar el nombre de un cliente determinado del arreglo clientes
+	 * @param clientes
+	 */
 	public static void mostrarNombreDelCliente(Cliente[] clientes) {
 		int ID;
 		
@@ -162,6 +178,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [5] Mostrar puntos del cliente
 	 */
+	/**
+	 * Mostrar el puntaje de un cliente determinado del arreglo clientes
+	 * @param clientes
+	 */
 	public static void mostrarLosPuntosDelCliente(Cliente[] clientes) {
 		int ID;
 		
@@ -175,6 +195,10 @@ public class TestPuntosHeladeria {
 	
 	/*
 	 * [6] Mostrar cliente con su puntaje
+	 */
+	/**
+	 * Mostrar el nombre y puntaje de un cliente determinado del arreglo clientes
+	 * @param clientes
 	 */
 	public static void mostrarClienteConSuPuntaje(Cliente[] clientes) {
 		int ID;
@@ -191,6 +215,10 @@ public class TestPuntosHeladeria {
 	 * [7] Mostrar si dos clientes son iguales
 	 * Nota: hay muchos casos prácticos para usar el método equals del objeto Cliente,
 	 * este es sólo una de las aplicaciones posibles.
+	 */
+	/**
+	 * Mostrar si un cliente es igual a otro cliente del arreglo clientes
+	 * @param clientes
 	 */
 	public static void mostrarSiDosClientesSonIguales(Cliente[] clientes) {
 		int ID_1, ID_2;
@@ -215,6 +243,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [8] Modificar el nombre del cliente
 	 */
+	/**
+	 * Modificar el nombre de un cliente determinado del arreglo clientes
+	 * @param clientes
+	 */
 	public static void modificarElNombreAlCliente(Cliente[] clientes) {
 		System.out.println("Ingrese el ID del cliente: ");
 		String nombre;
@@ -231,11 +263,12 @@ public class TestPuntosHeladeria {
 		System.out.println("El nombre se ha cambiado con éxito.");
 	}
 	
-	/**
-	 * Cambiar el puntaje de un cliente determinado
-	 */
 	/*
 	 * [9] Modificar el puntaje de un cliente
+	 */
+	/**
+	 * Modificar el puntaje de un cliente determinado del arreglo clientes
+	 * @param clientes
 	 */
 	public static void modificarPuntajeAlCliente(Cliente[] clientes) {
 		System.out.println("Ingrese el ID del cliente: ");
@@ -256,8 +289,10 @@ public class TestPuntosHeladeria {
 	 * [10] Sumar puntos al cliente
 	 * Nota: si un cliente excede la cantidad máxima de puntos logrables,
 	 * el usuario está obligado a canjear los puntos por algún premio.
-	 * 
-	 * ¿Después sumo la diferencia con el canje?
+	 */
+	/**
+	 * Sumar puntos a un cliente determinado del arreglo clientes
+	 * @param clientes
 	 */
 	public static void sumarPuntosAlCliente(Cliente[] clientes) {
 		System.out.println("Ingrese el ID del cliente: ");
@@ -282,6 +317,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [11] Canjear puntos del cliente
 	 */
+	/**
+	 * Canjear el puntaje de un cliente determinado del arreglo clientes
+	 * @param clientes
+	 */
 	public static void canjeDePuntosAlCliente(Cliente[] clientes) {
 		System.out.println("Ingrese el ID del cliente: ");
 		int ID, canje;
@@ -300,6 +339,10 @@ public class TestPuntosHeladeria {
 	
 	/*
 	 * [12] Mostrar el cliente de mayor puntaje logrado
+	 */
+	/**
+	 * Mostrar el cliente de mayor puntaje logrado del arreglo clientes
+	 * @param clientes
 	 */
 	public static void mostrarElClienteDeMayorPuntajeLogrado(Cliente[] clientes) {
 		int elÍndiceDelClienteConMayorPuntajeLogrado = 0;
@@ -331,6 +374,10 @@ public class TestPuntosHeladeria {
 	/*
 	 * [13] Mostrar si hay clientes que no tienen puntos actualmente.
 	 */
+	/**
+	 * Mostrar si actualmente hay clientes que no tiene puntos en el arreglo de clientes
+	 * @param clientes
+	 */
 	public static void mostrarSiHayClientesQueNoTienenPuntosActualmente(Cliente[] clientes) {
 		boolean hayClientesQueNoTienenPuntos = false;
 		int i = 0;
@@ -348,7 +395,10 @@ public class TestPuntosHeladeria {
 		}
 	}
 	
-	public static void menú() {
+	/**
+	 * Mostrar menú de opciones
+	 */
+	public static void mostrarMenú() {
 		Cliente[] clientes;
 		boolean salir;
 		int opción;
@@ -448,6 +498,6 @@ public class TestPuntosHeladeria {
 	}
 	
 	public static void main(String[] args) {
-		menú();
+		mostrarMenú();
 	}
 }
