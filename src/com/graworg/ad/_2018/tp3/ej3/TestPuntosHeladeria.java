@@ -32,11 +32,11 @@ import java.util.Scanner;
  *  Como un detalle de implementación te pedimos que utilices un menú de opciones para:
  *  a) Cargar los clientes a partir de un archivo dado por el dueño de la heladería.
  *  (podés usar el archivo que publicamos en este link:
- *  http://pedco.uncoma.edu.ar/mod/resource/view.php?id=203583)
+ *  http://pedco.uncoma.edu.ar/mod/resource/view.php?id=203583) (IMPLEMENTADO)
  *  
- *  b) Identificar a uno de los clientes que tenga mayor puntaje logrado. Mostrar sus datos.
+ *  b) Identificar a uno de los clientes que tenga mayor puntaje logrado. Mostrar sus datos. (IMPLEMENTADO)
  *  
- *  c) Identificar si hay clientes que no tienen puntos actualmente.
+ *  c) Identificar si hay clientes que no tienen puntos actualmente. (IMPLEMENTADO)
  */
 // Probablemente me conviene modificar segun un id.
 public class TestPuntosHeladeria {
@@ -148,7 +148,17 @@ public class TestPuntosHeladeria {
 	 * [3] Modificar la cantidad máxima de puntos logrables
 	 */
 	public static void modificarLaCantidadMáximaDePuntosLogrables() {
+		int cantidadMáximaDePuntosLogrables;
 		
+		sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese la nueva cantidad máxima de puntos logrables: ");
+		
+		cantidadMáximaDePuntosLogrables = sc.nextInt();
+		
+		Cliente.cantidadMáximaDePuntosLogrables = cantidadMáximaDePuntosLogrables;
+		
+		System.out.println("Operación ejecutada con éxito\nAhora la nueva cantidad máxima de puntos logrables es de: " + Cliente.cantidadMáximaDePuntosLogrables + " puntos.");
 	}
 	
 	/*
@@ -290,7 +300,7 @@ public class TestPuntosHeladeria {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Volver a cargar los clientes del archivo clientes.txt (IMPLEMENTADO)\n" + // Ahorra mucho tiempo.
 					"[2] Guardar todos los cambios recientes en el archivo clientes.txt (IMPLEMENTADO)\n" +
-					"[3] Modificar la cantidad máxima de puntos logrables\n" +
+					"[3] Modificar la cantidad máxima de puntos logrables (IMPLEMENTADO)\n" +
 					// Observadoras
 					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
 					"[5] Mostrar puntos del cliente\n" +
@@ -326,8 +336,12 @@ public class TestPuntosHeladeria {
 			case 2:
 				guardarALosClientesEnUnArchivo(clientes);
 				break;
+			case 3:
+				modificarLaCantidadMáximaDePuntosLogrables();
+				break;
 			case 4:
 				mostrarNombreDelCliente(clientes);
+				break;
 			case 10:
 				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
 				break;
