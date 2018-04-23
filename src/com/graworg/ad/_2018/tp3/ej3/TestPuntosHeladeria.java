@@ -204,23 +204,6 @@ public class TestPuntosHeladeria {
 	}
 	
 	/**
-	 * Cambiar el puntaje de un cliente
-	 * @return
-	 */
-	public static Cliente cambiarPuntosAlCliente(Cliente cliente){
-		int nuevaCantidadDePuntosParaElCliente;
-		
-		sc = new Scanner(System.in);
-
-		System.out.println("Ingrese la cantidad de puntos: ");
-		nuevaCantidadDePuntosParaElCliente = sc.nextInt(); // Leer puntos del cliente
-		
-		cliente.setPuntos(nuevaCantidadDePuntosParaElCliente);
-		
-		return cliente;
-	}
-	
-	/**
 	 * Cambiar el puntaje de un cliente determinado
 	 */
 	/*
@@ -241,16 +224,6 @@ public class TestPuntosHeladeria {
 		System.out.println("El puntaje se ha cambiado con éxito.");
 	}
 	
-	/**
-	 * 2. Implementar en el puntaje de la heladería:
-	 * 	 - Una cantidad máxima de puntos logrables (igual para todos los clientes). La
-	 *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
-	 *   - El dueño podría modificar el tope máximo de puntos y consultarlo cuando desee.
-	 *   
-	 *   
-	 *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
-	 *   algún premio.
-	 */
 	/*
 	 * [10] Sumar puntos al cliente
 	 * Nota: si un cliente excede la cantidad máxima de puntos logrables,
@@ -258,8 +231,23 @@ public class TestPuntosHeladeria {
 	 * 
 	 * ¿Después sumo la diferencia con el canje?
 	 */
-	public static void sumarPuntosAlCliente() {
+	public static void sumarPuntosAlCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int mas;
+		int ID;
 		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt(); // Leer ID del cliente
+		
+		sc = new Scanner(System.in); // Es necesario para poder leer la cadena completa.
+		System.out.println("Ingrese la cantidad de puntos que le quiere dar al cliente " + clientes[ID].getNombre() + " de id "+ ID +": ");
+		mas = sc.nextInt();
+		
+		clientes[ID].sumarPuntos(mas);
+		
+		System.out.println("El cliente ha excedido la cantidad máxima de puntos logrables.\nDebe canjear por algún premio: ");
+		
+		System.out.println("Los puntos se han sumado con éxito.");
 	}
 	
 	/*
