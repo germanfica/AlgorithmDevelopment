@@ -15,11 +15,11 @@ import java.util.Scanner;
  *  a) Debe contar con un menú de opciones para probar toda la funcionalidad del TDA.
  *  
  *  2. Implementar en el puntaje de la heladería:
- * 	 - Una cantidad máxima de puntos logrables (única e igual para todos los clientes). La
+ * 	 - Una cantidad máxima de puntos logrables (igual para todos los clientes). La
  *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
+ *   - El dueño podría modificar el tope máximo de puntos y consultarlo cuando desee.
  *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
  *   algún premio.
- *   - El usuario podría modificar el tope máximo de puntos y consultarlo cuando desee.
  *  
  *  a) Para incluir esto en el modelo UML e implementación en java, cómo lo harías?
  *  
@@ -240,8 +240,22 @@ public class TestPuntosHeladeria {
 		System.out.println("El puntaje se ha cambiado con éxito.");
 	}
 	
+	/**
+	 * 2. Implementar en el puntaje de la heladería:
+	 * 	 - Una cantidad máxima de puntos logrables (igual para todos los clientes). La
+	 *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
+	 *   - El dueño podría modificar el tope máximo de puntos y consultarlo cuando desee.
+	 *   
+	 *   
+	 *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
+	 *   algún premio.
+	 */
 	/*
 	 * [10] Sumar puntos al cliente
+	 * Nota: si un cliente excede la cantidad máxima de puntos logrables,
+	 * el usuario está obligado a canjear los puntos por algún premio.
+	 * 
+	 * ¿Después sumo la diferencia con el canje?
 	 */
 	public static void sumarPuntosAlCliente() {
 		
