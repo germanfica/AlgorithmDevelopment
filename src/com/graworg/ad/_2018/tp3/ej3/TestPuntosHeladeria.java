@@ -10,14 +10,15 @@ import java.util.Scanner;
 
 /*
  * 	1. Escribir un programa TestPuntosHeladeria que permita:
- *  - Cargar y operar con los datos de un cliente.
+ *  - Cargar y operar con los datos de un cliente. (IMPLEMENTADO)
  *  
  *  a) Debe contar con un menú de opciones para probar toda la funcionalidad del TDA.
  *  
  *  2. Implementar en el puntaje de la heladería:
  * 	 - Una cantidad máxima de puntos logrables (igual para todos los clientes). La
- *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos.
- *   - El dueño podría modificar el tope máximo de puntos y consultarlo cuando desee.
+ *   cantidad máxima fue definida por el dueño de la heladería como 5000 puntos. (IMPLEMENTADO)
+ *   - El dueño podría modificar el tope máximo de puntos y consultarlo cuando desee
+ *   (IMPLEMENTADO).
  *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
  *   algún premio.
  *  
