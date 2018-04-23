@@ -41,8 +41,8 @@ import java.util.Scanner;
  */
 // Probablemente me conviene modificar segun un id.
 public class TestPuntosHeladeria {
-	private static Scanner sc;
-    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
+	private static Scanner sc; // Scanner
+    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt"; // Ruta del archivo
     private static int CANTIDAD_MAX_CLIENTES = 200; // Máximo 200 clientes
 	
     /**

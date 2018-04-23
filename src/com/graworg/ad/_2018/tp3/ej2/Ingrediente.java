@@ -1,9 +1,9 @@
 package com.graworg.ad._2018.tp3.ej2;
 /*
  * Actualizaciones:
- *  - Se ha quitado muestraIngrediente ya que no es buena práctica mostrar por
+ *  - Se ha quitado el método muestraIngrediente ya que no es buena práctica mostrar por
  *  pantalla carteles en objectos/clases.
- *  - En lugar de muestraIngrediente se agregó un método observador toString,
+ *  - En lugar del método muestraIngrediente se agregó otro método observador llamado toString,
  *  con el objetivo de retornar todos los atributos del objeto ingrediente en
  *  texto plano.
  *  - Nombres más descriptivos a los parámetros.
