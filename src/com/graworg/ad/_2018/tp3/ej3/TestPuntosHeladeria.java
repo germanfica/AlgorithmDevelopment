@@ -149,8 +149,9 @@ public class TestPuntosHeladeria {
 	 * [4] Mostrar nombre del cliente
 	 */
 	public static void mostrarNombreDelCliente(Cliente[] clientes) {
-		System.out.println("Ingrese el ID del cliente: ");
 		int ID;
+		
+		System.out.println("Ingrese el ID del cliente: ");
 		
 		sc = new Scanner(System.in);
 		ID = sc.nextInt();
@@ -162,8 +163,9 @@ public class TestPuntosHeladeria {
 	 * [5] Mostrar puntos del cliente
 	 */
 	public static void mostrarLosPuntosDelCliente(Cliente[] clientes) {
-		System.out.println("Ingrese el ID del cliente: ");
 		int ID;
+		
+		System.out.println("Ingrese el ID del cliente: ");
 		
 		sc = new Scanner(System.in);
 		ID = sc.nextInt();
@@ -175,13 +177,39 @@ public class TestPuntosHeladeria {
 	 * [6] Mostrar cliente con su puntaje
 	 */
 	public static void mostrarClienteConSuPuntaje(Cliente[] clientes) {
-		System.out.println("Ingrese el ID del cliente: ");
 		int ID;
+		
+		System.out.println("Ingrese el ID del cliente: ");
 		
 		sc = new Scanner(System.in);
 		ID = sc.nextInt();
 		
 		System.out.println("El cliente de nombre " + clientes[ID].getNombre() + " y ID " + ID + " tiene " + clientes[ID].getPuntos() + " puntos.");
+	}
+	
+	/*
+	 * [7] Mostrar si dos clientes son iguales
+	 * Nota: hay muchos casos prácticos para usar el método equals del objeto Cliente,
+	 * este es sólo una de las aplicaciones posibles.
+	 */
+	public static void mostrarSiDosClientesSonIguales(Cliente[] clientes) {
+		int ID_1, ID_2;
+		
+		System.out.println("Ingrese el ID del primer cliente: ");
+		
+		sc = new Scanner(System.in);
+		ID_1 = sc.nextInt(); // Leer ID del primer cliente
+		
+		System.out.println("Ingrese el ID del segundo cliente: ");
+		
+		sc = new Scanner(System.in);
+		ID_2 = sc.nextInt(); // Leer ID del segundo cliente
+		
+		if(clientes[ID_1].equals(clientes[ID_2])) {
+			System.out.println("Los clientes son iguales.");
+		}else {
+			System.out.println("Los clientes no son iguales.");
+		}
 	}
 	
 	/*
@@ -347,7 +375,7 @@ public class TestPuntosHeladeria {
 					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
 					"[5] Mostrar puntos del cliente (IMPLEMENTADO)\n" +
 					"[6] Mostrar cliente con su puntaje (IMPLEMENTADO)\n" +
-					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
+					"[7] Mostrar si dos clientes son iguales (IMPLEMENTADO)\n" +
 					// Modificadoras
 					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
 					"[9] Modificar el puntaje de un cliente (IMPLEMENTADO)\n" +
@@ -392,6 +420,9 @@ public class TestPuntosHeladeria {
 				break;
 			case 8:
 				modificarElNombreAlCliente(clientes);
+				break;
+			case 7:
+				mostrarSiDosClientesSonIguales(clientes);
 				break;
 			case 9:
 				modificarPuntajeAlCliente(clientes);
