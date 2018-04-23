@@ -243,11 +243,12 @@ public class TestPuntosHeladeria {
 		System.out.println("Ingrese la cantidad de puntos que le quiere dar al cliente " + clientes[ID].getNombre() + " de id "+ ID +": ");
 		mas = sc.nextInt();
 		
-		clientes[ID].sumarPuntos(mas);
-		
-		System.out.println("El cliente ha excedido la cantidad máxima de puntos logrables.\nDebe canjear por algún premio: ");
-		
-		System.out.println("Los puntos se han sumado con éxito.");
+		if(clientes[ID].getPuntos()+mas>Cliente.cantidadMáximaDePuntosLogrables) {
+			System.out.println("El cliente ha excedido la cantidad máxima de puntos logrables.\nDebe primero canjear sus puntos por algún premio.");
+		}else {
+			clientes[ID].sumarPuntos(mas);
+			System.out.println("Los puntos se han sumado con éxito.");
+		}
 	}
 	
 	/*
@@ -351,7 +352,7 @@ public class TestPuntosHeladeria {
 					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
 					"[9] Modificar el puntaje de un cliente (IMPLEMENTADO)\n" +
 					// Propias del tipo
-					"[10] Sumar puntos al cliente\n" +
+					"[10] Sumar puntos al cliente (IMPLEMENTADO)\n" +
 					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
 					"[12] Mostrar el cliente de mayor puntaje logrado (IMPLEMENTADO)\n" +
 					"[13] Mostrar si hay clientes que no tienen puntos actualmente (IMPLEMENTADO)\n" // Boolean
@@ -396,6 +397,7 @@ public class TestPuntosHeladeria {
 				modificarPuntajeAlCliente(clientes);
 				break;
 			case 10:
+				sumarPuntosAlCliente(clientes);
 				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
 				break;
 			case 11:
