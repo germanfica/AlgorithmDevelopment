@@ -171,14 +171,20 @@ public class TestPuntosHeladeria {
 		sc = new Scanner(System.in);
 		ID = sc.nextInt();
 		
-		System.out.println("Nombre del cliente con el ID " + ID + " es: " +  clientes[ID].getNombre());
+		System.out.println("Nombre del cliente con el ID " + ID + ": " +  clientes[ID].getNombre());
 	}
 	
 	/*
 	 * [5] Mostrar puntos del cliente
 	 */
-	public static void mostrarLosPuntosDelCliente(Cliente cliente) {
-		System.out.println("Puntos del cliente: " + cliente.getPuntos());
+	public static void mostrarLosPuntosDelCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int ID;
+		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt();
+		
+		System.out.println("Puntos del cliente con el ID " + ID + ": " + clientes[ID].getPuntos());
 	}
 	
 	/*
@@ -303,7 +309,7 @@ public class TestPuntosHeladeria {
 					"[3] Modificar la cantidad máxima de puntos logrables (IMPLEMENTADO)\n" +
 					// Observadoras
 					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
-					"[5] Mostrar puntos del cliente\n" +
+					"[5] Mostrar puntos del cliente (IMPLEMENTADO)\n" +
 					"[6] Mostrar cliente con su puntaje\n" +
 					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
 					// Modificadoras
@@ -342,6 +348,9 @@ public class TestPuntosHeladeria {
 			case 4:
 				mostrarNombreDelCliente(clientes);
 				break;
+			case 5:
+				mostrarLosPuntosDelCliente(clientes);
+				break;
 			case 10:
 				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
 				break;
@@ -355,7 +364,7 @@ public class TestPuntosHeladeria {
 				mostrarSiHayClientesQueNoTienenPuntosActualmente(clientes);
 				break;
 			default:
-				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}
