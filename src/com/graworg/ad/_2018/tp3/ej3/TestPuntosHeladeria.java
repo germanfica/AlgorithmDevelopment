@@ -44,23 +44,6 @@ public class TestPuntosHeladeria {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp3/ej3/clientes.txt";
     private static int CANTIDAD_MAX_CLIENTES = 200; // Máximo 200 clientes
 	
-	/**
-	 * Cambiar el puntaje de un cliente
-	 * @return
-	 */
-	public static Cliente cambiarPuntosAlCliente(Cliente cliente){
-		int nuevaCantidadDePuntosParaElCliente;
-		
-		sc = new Scanner(System.in);
-
-		System.out.println("Ingrese la cantidad de puntos: ");
-		nuevaCantidadDePuntosParaElCliente = sc.nextInt(); // Leer puntos del cliente
-		
-		cliente.setPuntos(nuevaCantidadDePuntosParaElCliente);
-		
-		return cliente;
-	}
-	
 	public static String clientesToString(Cliente[] clientes) {
 		String textoPlano = "";
 		int i = 0;
@@ -190,21 +173,56 @@ public class TestPuntosHeladeria {
 	/*
 	 * [6] Mostrar cliente con su puntaje
 	 */
-	public static void mostrarClienteConSuPuntaje(Cliente cliente) {
-		System.out.println("El cliente " + cliente.getNombre() + " tiene " + cliente.getPuntos() + " puntos.");
+	public static void mostrarClienteConSuPuntaje(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		int ID;
+		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt();
+		
+		System.out.println("El cliente de nombre " + clientes[ID].getNombre() + " y ID " + ID + " tiene " + clientes[ID].getPuntos() + " puntos.");
 	}
 	
 	/*
 	 * [8] Modificar el nombre del cliente
 	 */
-	public static void modificarElNombreDelCliente(Cliente cliente, String nombre) {
-		cliente.setNombre(nombre);
+	public static void modificarElNombreAlCliente(Cliente[] clientes) {
+		System.out.println("Ingrese el ID del cliente: ");
+		String nombre;
+		int ID;
+		
+		sc = new Scanner(System.in);
+		ID = sc.nextInt(); // Leer ID del cliente
+		
+		sc = new Scanner(System.in); // Es necesario para poder leer la cadena completa.
+		System.out.println("Ingrese el nuevo nombre para el cliente con id "+ ID +": ");
+		nombre = sc.nextLine();
+		
+		clientes[ID].setNombre(nombre);
+		System.out.println("Se ha cambiado con éxito.");
+	}
+	
+	/**
+	 * Cambiar el puntaje de un cliente
+	 * @return
+	 */
+	public static Cliente cambiarPuntosAlCliente(Cliente cliente){
+		int nuevaCantidadDePuntosParaElCliente;
+		
+		sc = new Scanner(System.in);
+
+		System.out.println("Ingrese la cantidad de puntos: ");
+		nuevaCantidadDePuntosParaElCliente = sc.nextInt(); // Leer puntos del cliente
+		
+		cliente.setPuntos(nuevaCantidadDePuntosParaElCliente);
+		
+		return cliente;
 	}
 	
 	/*
 	 * [9] Modificar los puntos del cliente
 	 */
-	public static void modificarLosPuntosDelCliente() {
+	public static void modificarLosPuntosAlCliente() {
 		
 	}
 	
@@ -310,11 +328,11 @@ public class TestPuntosHeladeria {
 					// Observadoras
 					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
 					"[5] Mostrar puntos del cliente (IMPLEMENTADO)\n" +
-					"[6] Mostrar cliente con su puntaje\n" +
+					"[6] Mostrar cliente con su puntaje (IMPLEMENTADO)\n" +
 					"[7] Verificar si dos clientes son iguales\n" + // DUDOSO
 					// Modificadoras
-					"[8] Modificar nombre del cliente\n" +
-					"[9] Modificar puntos del cliente\n" +
+					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
+					"[9] Modificar puntos al cliente\n" +
 					// Propias del tipo
 					"[10] Sumar puntos al cliente\n" +
 					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
@@ -350,6 +368,12 @@ public class TestPuntosHeladeria {
 				break;
 			case 5:
 				mostrarLosPuntosDelCliente(clientes);
+				break;
+			case 6:
+				mostrarClienteConSuPuntaje(clientes);
+				break;
+			case 8:
+				modificarElNombreAlCliente(clientes);
 				break;
 			case 10:
 				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
