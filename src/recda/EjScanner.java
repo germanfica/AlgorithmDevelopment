@@ -30,11 +30,12 @@ public class EjScanner {
  */    
 	static final int CANTNUMEROS = 5;
     static final String NOMBRE_ARCHIVO = "src/recda/archivo1.txt";
+    static Scanner s, sc;
     
-    private static void leerArchivo_1(){
+    public static void leerArchivo_1(){
     	try{
     		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
-    		Scanner s = new Scanner(buff);
+    		s = new Scanner(buff);
     		for (int i = 0; i < CANTNUMEROS  ; i++){
     			//System.out.println( Integer.parseInt(buff.readLine()));
     			System.out.println(s.nextInt());
@@ -50,10 +51,10 @@ public class EjScanner {
         }
     }
 
-    private static void leerArchivo_2(){
+    public static void leerArchivo_2(){
     	try{
     		BufferedReader buff = new BufferedReader(new FileReader("src/recda/archivo2.txt"));
-    		Scanner s = new Scanner(buff);
+    		s = new Scanner(buff);
     		//Si falla la lectura del float, cambiar el '.' por coma, cuestion de configuracion de idiomas.
     		//s = new Scanner("123141   4243.433     unaPalabra\no muchas palabras seguidas.");
     		System.out.println("Scanner nos da herramientas comodas para leer datos primitivos de distinto tipo");
@@ -70,7 +71,7 @@ public class EjScanner {
         }
     }
     
-    private static void leerDesdeUnaCadenaDeTexto() {
+    public static void leerDesdeUnaCadenaDeTexto() {
     	//Lectura con delimitadores distintos de espcacios en blanco.
         String entrada = "Juan Perez, 150, Luis Soto, 43";
         Scanner sc = new Scanner(entrada);
@@ -90,13 +91,13 @@ public class EjScanner {
     /*
      * if (sc.next().equals("3")) { break; }
      */
-    private static void leerArchivo_3() {
+    public static void leerArchivo_3() {
     	Cliente[] clientes = new Cliente[200];
     	
     	try{
     		BufferedReader buff = new BufferedReader(new FileReader("src/recda/archivo3.txt"));
     		
-    		Scanner sc = new Scanner(buff);
+    		sc = new Scanner(buff);
     		sc.useDelimiter("\\s*,\\s*");
     		int i = 0;
     		while(sc.hasNext()) {
