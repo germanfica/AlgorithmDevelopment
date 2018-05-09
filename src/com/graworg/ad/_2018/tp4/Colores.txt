@@ -1,0 +1,1 @@
+verde, azul, rojo, naranja, amarrillo, negro
