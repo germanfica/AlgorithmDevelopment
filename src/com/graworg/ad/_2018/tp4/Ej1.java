@@ -48,8 +48,8 @@ public class Ej1 {
 			 
 		return sumatoria ; // Retorna la sumatoria de un número dado
 	}
-	// La calidad depende de la Cnatidad de colores 
-	
+        
+        // La calidad depende de la cantidad de colores	
 	public static int primeraCalidad(int n) {
 		// Declaración de variables
 		int factorial;
