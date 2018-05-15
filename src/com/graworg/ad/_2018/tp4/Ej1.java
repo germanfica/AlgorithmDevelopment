@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-// Comentario
+// Comentarios
 
 import com.graworg.ad._2018.tp3.ej3.Cliente;
 
