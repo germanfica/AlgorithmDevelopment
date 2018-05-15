@@ -107,10 +107,10 @@ public class Ej1 {
 	 */
 	public static void mostrarMenú() {
 		// Crear variables
-		String[] colores = new String[tamArrgelo];
-		String[] códigos = new String[tamArrgelo];
 		boolean salir;
 		int opción;
+		String[] colores = new String[tamArrgelo];
+		String[] códigos = new String[tamArrgelo];
 		
 		// Inicializar variables
 		salir = false;
@@ -124,22 +124,7 @@ public class Ej1 {
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Volver a cargar los clientes del archivo clientes.txt (IMPLEMENTADO)\n" + // Ahorra mucho tiempo.
-					"[2] Guardar todos los cambios recientes en el archivo clientes.txt (IMPLEMENTADO)\n" +
-					"[3] Modificar la cantidad máxima de puntos logrables (IMPLEMENTADO)\n" +
-					// Observadoras
-					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
-					"[5] Mostrar puntos del cliente (IMPLEMENTADO)\n" +
-					"[6] Mostrar cliente con su puntaje (IMPLEMENTADO)\n" +
-					"[7] Mostrar si dos clientes son iguales (IMPLEMENTADO)\n" +
-					// Modificadoras
-					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
-					"[9] Modificar el puntaje de un cliente (IMPLEMENTADO)\n" +
-					// Propias del tipo
-					"[10] Sumar puntos al cliente (IMPLEMENTADO)\n" +
-					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
-					"[12] Mostrar el cliente de mayor puntaje logrado (IMPLEMENTADO)\n" +
-					"[13] Mostrar si hay clientes que no tienen puntos actualmente (IMPLEMENTADO)\n" // Boolean
+					"[1] Volver a cargar los clientes del archivo clientes.txt \n"
 					);
 			
 			// Leer opción del menú principal
