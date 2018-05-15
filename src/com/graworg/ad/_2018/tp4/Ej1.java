@@ -2,12 +2,15 @@ package com.graworg.ad._2018.tp4;
 
 import java.util.Scanner;
 
+import com.graworg.ad._2018.tp3.ej3.Cliente;
 import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
+	// Constantes
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
 	private static final int precioBase = 100; // $100.-
 	private static final int tamArrgelo = 20;
+	// Scanner
 	private static Scanner sc;
 	
 	/**
@@ -55,7 +58,7 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3) Carga a un arreglo de String todos los colores de un archivo determinado.
+	 * (3) Carga a un arreglo de String todos los colores de un determinado archivo.
 	 * 
 	 * @see Ahora suponga que los colores usados son provistos en un archivo de texto.
 	 * Realice la carga de un arreglo de Strings a partir del archivo y muestre el color
@@ -74,7 +77,7 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (4) Convierte en mayúscula los colores que están en minúscula.
+	 * (4) Convierte a mayúsculas todos los colores que están en minúscula.
 	 * 
 	 * @see Todos los colores usados y recuperados del archivo de texto están en
 	 * minúscula. Lo mejor es guardarlos en mayúscula, entonces antes de cargar el
@@ -96,6 +99,63 @@ public class Ej1 {
 		}
 		
 		return nuevoContenido;
+	}
+	
+
+	/**
+	 * Mostrar menú de opciones
+	 */
+	public static void mostrarMenú() {
+		// Crear variables
+		String[] colores = new String[tamArrgelo];
+		String[] códigos = new String[tamArrgelo];
+		boolean salir;
+		int opción;
+		
+		// Inicializar variables
+		salir = false;
+		
+		System.out.println("Bienvenido a la consola de la aplicación");
+		
+		while(!salir)
+		{
+			sc = new Scanner(System.in);
+			
+			// Mostrar cartel de opciones
+			System.out.print(
+					"[0] Salir (IMPLEMENTADO)\n" +
+					"[1] Volver a cargar los clientes del archivo clientes.txt (IMPLEMENTADO)\n" + // Ahorra mucho tiempo.
+					"[2] Guardar todos los cambios recientes en el archivo clientes.txt (IMPLEMENTADO)\n" +
+					"[3] Modificar la cantidad máxima de puntos logrables (IMPLEMENTADO)\n" +
+					// Observadoras
+					"[4] Mostrar nombre del cliente (IMPLEMENTADO)\n" +
+					"[5] Mostrar puntos del cliente (IMPLEMENTADO)\n" +
+					"[6] Mostrar cliente con su puntaje (IMPLEMENTADO)\n" +
+					"[7] Mostrar si dos clientes son iguales (IMPLEMENTADO)\n" +
+					// Modificadoras
+					"[8] Modificar nombre al cliente (IMPLEMENTADO)\n" +
+					"[9] Modificar el puntaje de un cliente (IMPLEMENTADO)\n" +
+					// Propias del tipo
+					"[10] Sumar puntos al cliente (IMPLEMENTADO)\n" +
+					"[11] Canjear puntos al cliente (IMPLEMENTADO)\n" +
+					"[12] Mostrar el cliente de mayor puntaje logrado (IMPLEMENTADO)\n" +
+					"[13] Mostrar si hay clientes que no tienen puntos actualmente (IMPLEMENTADO)\n" // Boolean
+					);
+			
+			// Leer opción del menú principal
+			opción = sc.nextInt();
+			
+			switch (opción) {
+			case 0:
+				salir = true;
+				break;
+			case 1:
+				break;
+			default:
+				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				break;
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
