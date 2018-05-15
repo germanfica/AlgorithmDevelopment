@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+// Comentario
+
 import com.graworg.ad._2018.tp3.ej3.Cliente;
 
 /* En una empresa de diseño gráfico se utilizan distintos números para catalogar los colores usados en la
