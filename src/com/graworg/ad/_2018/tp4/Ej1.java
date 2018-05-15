@@ -10,28 +10,9 @@ import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
-    private static final int precioBase = 100; // $100.-
+    @SuppressWarnings("unused")
+	private static final int precioBase = 100; // $100.-
 	private static int tamArrgelo = 20;
-	
-	/**
-     * Convierte un arreglo a texto plano.
-     * 
-     * @param clientes
-     * @return
-     */
-	public static String coloresToString(String[] BDColores) {
-		String textoPlano = "";
-
-		for (int i =0; i<=BDColores.length-1; i++){	
-			if(i==0) {
-				textoPlano = textoPlano + BDColores[i];
-			}else {
-				textoPlano = textoPlano + ", " + BDColores[i];
-			}
-		}
-		
-		return textoPlano;
-	}
 	
 	/**
 	 * (1) Retorna la sumatoria de un número dado.
@@ -85,36 +66,19 @@ public class Ej1 {
 	 * con los códigos numéricos asociados a cada uno.
 	 * @return
 	 */
-	public static String[] leerArchivo() {
-		String[] colores = new String[tamArrgelo]; // Creación del arreglo
- 		int i = 0;
+	public static void mostrarContenidoDelArchivo() {
+		Scanner sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
 		
-    	try {
-    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que están en el archivo de texto
-    		Scanner sc;
-    		sc = new Scanner(buff); // Le asigno al scanner la tarea para buscar los colores dentro del archivo de texto
-    		
-    		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
-    		
-    		// Objetivo: es almacenar los colores uno por uno
-    		while(sc.hasNext()) {
-    			colores[i] = sc.next();
-    			System.out.println("Color: " + colores[i] + " Código: " + colores[i]);
-    		}
-    		buff.close();
-    	}
-    	catch (FileNotFoundException ex) {
-            System.err.println(ex.getMessage() + "\nEl archivo no existe.");
-        }
-        catch (IOException ex) {
-            System.err.println("Error al leer o escribir en el archivo.");
-        }
+		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
 		
-		return colores;
+		// Objetivo: es almacenar los colores uno por uno
+		while(sc.hasNext()) {
+			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
+		}
 	}
 	
 	/**
-	 * (4) Convierte en mayúscula los colores que están en minúscula de un arrreglo.
+	 * (4) Convierte en mayúscula los colores que están en minúscula.
 	 * 
 	 * @see Todos los colores usados y recuperados del archivo de texto están en
 	 * minúscula. Lo mejor es guardarlos en mayúscula, entonces antes de cargar el
@@ -125,9 +89,8 @@ public class Ej1 {
 	public static String pasarAMayúsculas(String contenido) {
 		String nuevoContenido = "";
 
-		Scanner sc;
-		
-		sc = new Scanner(contenido);
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(contenido);
 		
 		sc.useDelimiter("\\s*,\\s*");
 		
@@ -141,9 +104,12 @@ public class Ej1 {
 	}
 	
 	public static void main(String[] args) {
-		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO); // Guardar los cambios
+		//Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO); // Guardar los cambios
 		
-		System.out.println(Archivo.leer(NOMBRE_ARCHIVO));
+		//System.out.println(Archivo.leer(NOMBRE_ARCHIVO));
+		
+		mostrarContenidoDelArchivo();
+		
 		
 		//cantidadDeElementosDelArreglo(coloresDesdeArchivo());
 				
