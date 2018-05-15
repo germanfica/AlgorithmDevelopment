@@ -2,7 +2,6 @@ package com.graworg.ad._2018.tp4;
 
 import java.util.Scanner;
 
-import com.graworg.ad._2018.tp3.ej3.Cliente;
 import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
@@ -70,7 +69,7 @@ public class Ej1 {
 		
 		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
 		
-		// Objetivo: es almacenar los colores uno por uno
+		// Objetivo: almacenar los colores uno por uno
 		while(sc.hasNext()) {
 			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
 		}
@@ -101,60 +100,15 @@ public class Ej1 {
 		return nuevoContenido;
 	}
 	
-
-	/**
-	 * Mostrar menú de opciones
-	 */
-	public static void mostrarMenú() {
-		// Crear variables
-		boolean salir;
-		int opción;
-		String[] colores = new String[tamArrgelo];
-		String[] códigos = new String[tamArrgelo];
-		
-		// Inicializar variables
-		salir = false;
-		
-		System.out.println("Bienvenido a la consola de la aplicación");
-		
-		while(!salir)
-		{
-			sc = new Scanner(System.in);
-			
-			// Mostrar cartel de opciones
-			System.out.print(
-					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Volver a cargar los clientes del archivo clientes.txt \n"
-					);
-			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
-			
-			switch (opción) {
-			case 0:
-				salir = true;
-				break;
-			case 1:
-				break;
-			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
-				break;
-			}
-		}
-	}
-	
 	public static void main(String[] args) {
-		//Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO); // Guardar los cambios
+		// (1)
+		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
 		
-		//System.out.println(Archivo.leer(NOMBRE_ARCHIVO));
+		// (2)
+		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
 		
+		// (3)
+		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO); // (4) Guardar los cambios
 		mostrarContenidoDelArchivo();
-		
-		
-		//cantidadDeElementosDelArreglo(coloresDesdeArchivo());
-				
-		//cantidadDeColores = cantidadDeElementosDelArreglo(coloresDesdeArchivo());
-		
-		//System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(cantidadDeColores) * precioBase +".-");
 	}
 }

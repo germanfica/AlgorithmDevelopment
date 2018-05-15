@@ -1,1 +1,1 @@
-rojo, 1, verde, 2, rosa, 3, negro, 4
+ROJO, 1, VERDE, 2, ROSA, 3, NEGRO, 4
