@@ -1,18 +1,14 @@
 package com.graworg.ad._2018.tp4;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
-    @SuppressWarnings("unused")
 	private static final int precioBase = 100; // $100.-
-	private static int tamArrgelo = 20;
+	private static final int tamArrgelo = 20;
+	private static Scanner sc;
 	
 	/**
 	 * (1) Retorna la sumatoria de un número dado.
@@ -67,7 +63,7 @@ public class Ej1 {
 	 * @return
 	 */
 	public static void mostrarContenidoDelArchivo() {
-		Scanner sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
+		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
 		
 		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
 		
@@ -88,9 +84,8 @@ public class Ej1 {
 	 */
 	public static String pasarAMayúsculas(String contenido) {
 		String nuevoContenido = "";
-
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(contenido);
+		
+		sc = new Scanner(contenido);
 		
 		sc.useDelimiter("\\s*,\\s*");
 		
