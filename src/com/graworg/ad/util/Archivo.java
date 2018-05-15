@@ -27,8 +27,6 @@ public class Archivo {
 			bw = new BufferedWriter(fw);
 			bw.write(contenido);
 
-			System.out.println("Listo.");
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
