@@ -153,32 +153,12 @@ public class Ej1 {
 	/**
 	 * (6)
 	 * 
-	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la impresión. Para
-	 * esto debe recorrer el arreglo de colores, considere que la impresión a realizar es de 1ra calidad
-	 * (no tiene cambiadas las vocales por “*”). ¿Cómo lo resolverías para ambos casos?
+	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la
+	 * impresión. Para esto debe recorrer el arreglo de colores, considere que la
+	 * impresión a realizar es de 1ra calidad (no tiene cambiadas las vocales por “*”).
+	 * ¿Cómo lo resolverías para ambos casos?
 	 */
 	
-	private static void delete(){
-		String[] colores;
-		// Cambiar mínuculas
-		//Archivo.guardar(cambiarVocales(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
-		
-		// (4) Guardar los cambios
-		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
-		
-		String hola = Archivo.leer(NOMBRE_ARCHIVO);
-		System.out.println(hola);
-		
-		
-		// (3 Parte 1)
-		//colores = cargaDeColores(tamArrgelo);
-		
-		// (3 Parte 2)
-		//mostrarElContenidoDelArreglo(colores);
-		
-		// (5)
-		cambioAVocales("ROJO, 1, AMARRILLO, 2");
-	}
 	
 	/**
 	 * Mostrar menú de opciones
