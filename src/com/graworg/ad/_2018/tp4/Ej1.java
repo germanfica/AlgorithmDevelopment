@@ -68,7 +68,10 @@ public class Ej1 {
 		String[] arreglo = new String[longitud];
 		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO);
 		
-		sc = new Scanner(contenidoDelArchivo);
+		// Converción a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
+		
+		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
 		
