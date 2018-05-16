@@ -189,6 +189,7 @@ public class Ej1 {
 	 */
 	public static void mostrarMenú() {
 		// Declaración de las variables
+		int[][] matrizColores;
 		String[] colores;
 		boolean salir;
 		int opción;
