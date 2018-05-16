@@ -120,6 +120,83 @@ public class Ej1 {
 	}
 	
 	/**
+	 * (5) Cambia las vocales a un '*' en las impresiones de primera calidad.
+	 * 
+	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las vocales. Para usarla
+	 * antes de convertir a mayúscula, hay que cambiar las vocales a un ‘*’. La información es provista
+	 * por el mismo archivo de texto del punto 3.
+	 */
+	public static String cambiarVocales(String contenido){
+		String nuevoContenido = "";
+		
+		for(int i = 0; i<=contenido.length()-1 ;i++){
+			switch (contenido.charAt(i)) {
+			case 'A':
+				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				break;
+			case 'E':
+				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				break;
+			case 'I':
+				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				break;
+			case 'O':
+				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				break;
+			case 'U':
+				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				break;
+			default:
+				break;
+			}
+		}
+		
+		return nuevoContenido;
+	}
+	
+	
+	/**
+	 * (6)
+	 * 
+	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la impresión. Para
+	 * esto debe recorrer el arreglo de colores, considere que la impresión a realizar es de 1ra calidad
+	 * (no tiene cambiadas las vocales por “*”). ¿Cómo lo resolverías para ambos casos?
+	 */
+	
+	public static void mostrarMenú(){
+		String[] colores;
+		
+		// (1)
+		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
+		
+		// (2)
+		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
+		
+		// Cambiar mínuculas
+		//Archivo.guardar(cambiarVocales(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
+		
+		// (4) Guardar los cambios
+		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
+		
+		String hola = Archivo.leer(NOMBRE_ARCHIVO);
+		System.out.println(hola);
+		
+		
+		// (3 Parte 1)
+		colores = cargaDeColores(tamArrgelo);
+		
+		// (3 Parte 2)
+		mostrarElContenidoDelArreglo(colores);
+		
+		// (5)
+		
+	}
+	
+	public static void main(String[] args) {
+		mostrarMenú();
+	}
+	
+	/**
 	 * Mostrar el contenido del archivo
 	 */
 	public static void mostrarContenidoDelArchivo() {
@@ -131,30 +208,5 @@ public class Ej1 {
 		while(sc.hasNext()) {
 			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
 		}
-	}
-	
-	public static void mostrarMenú(){
-		String[] colores;
-		
-		// (1)
-		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
-		
-		// (2)
-		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
-		
-		// (4) Guardar los cambios
-		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
-		
-		// (3 Parte 1)
-		colores = cargaDeColores(tamArrgelo);
-		
-		// (3 Parte 2)
-		mostrarElContenidoDelArreglo(colores);
-		
-		// (4) 
-	}
-	
-	public static void main(String[] args) {
-		mostrarMenú();
 	}
 }
