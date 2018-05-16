@@ -101,12 +101,14 @@ FIN SEGÚN
 	/*
 	 * EL mismo que el anterior pero 
 	 */
-	private static String t2 = "";
+	
 	public static String paseAlRevesNúmeroTexto(int n){
+		String t2 = ""; // No hay problema en ponerla acá
 		if(n>0){
 			t2 = pasarATexto(n%10);
 			//mostrarNúmeroTexto(n/10);
-			t2 = t2 + paseAlRevesNúmeroTexto(n/10);
+			//t2 = t2 + ' ' + paseAlRevesNúmeroTexto(n/10);
+			t2 = paseAlRevesNúmeroTexto(n/10) + t2 + ' ';
 		}
 		return t2;
 	}
