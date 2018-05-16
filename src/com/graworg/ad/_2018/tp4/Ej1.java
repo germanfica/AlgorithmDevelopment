@@ -2,6 +2,7 @@ package com.graworg.ad._2018.tp4;
 
 import java.util.Scanner;
 
+import com.graworg.ad._2018.tp3.ej3.Cliente;
 import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
@@ -163,11 +164,8 @@ public class Ej1 {
 	 * (no tiene cambiadas las vocales por “*”). ¿Cómo lo resolverías para ambos casos?
 	 */
 	
-	public static void mostrarMenú(){
+	public static void mostrarMenús(){
 		String[] colores;
-		
-		// (1)
-		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
 		
 		// (2)
 		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
@@ -189,7 +187,47 @@ public class Ej1 {
 		mostrarElContenidoDelArreglo(colores);
 		
 		// (5)
+		cambiarVocales("ROJO, 1, AMARRILLO, 2");
+	}
+	
+	/**
+	 * Mostrar menú de opciones
+	 */
+	public static void mostrarMenú() {
+		boolean salir;
+		int opción;
 		
+		// Inicializar variables
+		salir = false;
+		
+		System.out.println("Bienvenido a la consola de la aplicación");
+		
+		while(!salir)
+		{
+			sc = new Scanner(System.in);
+			
+			// Mostrar cartel de opciones
+			System.out.print(
+					"[0] Salir (IMPLEMENTADO)\n" +
+					"[1] Mostrar precio del trabajo de segunda calidad\n" +
+					"[2] Mostrar el precio del trabajo de primera calidad\n"
+					);
+			
+			// Leer opción del menú principal
+			opción = sc.nextInt();
+			
+			switch (opción) {
+			case 0:
+				salir = true;
+				break;
+			case 1:
+				System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
+				break;
+			default:
+				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				break;
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
