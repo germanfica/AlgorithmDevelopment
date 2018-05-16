@@ -21,12 +21,16 @@ public class Ej2 {
 		// ARMAR UNA TRAZA
 		
 		if(n>0){
+			
+			/*
 			if(n%10==0){ // Consulta el último valor del número por ej. 2030, es decir ¿0==0? Sí 
 				cant = cantidadDigitos(n/10) + 1; // Como n/10 es cero entonces sumo 1
 			}else{
 				cant = cantidadDigitos(n/10);
 			}
-			System.out.println(n/10);
+			*/
+			cantidadDigitos(n/10);
+			System.out.println(n);
 		}
 		
 		return cant;

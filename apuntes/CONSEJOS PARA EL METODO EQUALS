@@ -1,0 +1,21 @@
+Asumo que el atributo nombre (por ejemplo) es ùnico, que es una clave, es univoco.
+
+El ejemplo màs claro es el de un auto. Para identificar la clave principal,
+del auto simplemente, se sabe que es la patente. Por lo tanto,
+para comparar si dos autos son iguales, el método equals solo necesita
+como párametro la patente
+equals(String patente)
+
+
+identificar los atributos unicos para equals
+
+El metodo equals y toString son observadores
+
+
+Propias del tipo serìas
+las que no son getter and setter, distinto de toString y equals
+
+
+las propias del tipo resuelven la lógica de esa clase y no está en otras clases
+
+equals está en todas las clases.

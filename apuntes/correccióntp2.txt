@@ -1,0 +1,23 @@
+﻿Corrección Germán Fica
+
+1) Variables (ejemplo cantidad ) ponerle el nombre más adecuado ej matrizCant
+
+2) Conviene cargar un arreglo de escuelas arrEscuela y otro de categorias. arrCateg y luego cargar la matriz de datos con el tamañno del arrEscuela y el de arrCateg. De esta manera el método de opcion3 recibiría 3 parámetros, los dos arreglso y la matriz.
+
+3) Opcion 4 (entero [][] matriz, texto [] escuelas, texto [] categorias) retorna vacio
+….
+   ESCRIBIR (“los siguientes colegios, categorias tienen menos de …...”)
+   PARA filaInicial ← 0 HASTA filaFinal PASO 1 HACER
+
+          PARA colunaInicial ← 0 HASTA colunaFinal PASO 1 HACER
+   
+                  SI matriz[filaInicial] [columnaInicial] < 7 HACER
+                       Escribir (“colegio” +  arrEscuela[filaInicial]  + 
+                                  “ la categoria “ + arrCateg[columnaInicial] )
+
+           FIN PARA
+     FIN PARA
+…...
+
+Reentrega: usar los arreglos con el código Java. 
+
