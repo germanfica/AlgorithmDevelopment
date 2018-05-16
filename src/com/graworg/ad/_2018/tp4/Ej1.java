@@ -125,20 +125,24 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (5) Cambia las vocales a un '*' en las impresiones de primera calidad.
+	 * (5) Cambia las vocales a un '*' en las impresiones de 2da calidad.
 	 * 
-	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las vocales. Para usarla
-	 * antes de convertir a mayúscula, hay que cambiar las vocales a un ‘*’. La información es provista
-	 * por el mismo archivo de texto del punto 3.
+	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las
+	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
+	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
-	public static String cambiarVocales(String contenido){
+	public static String cambioAVocales(String contenido){
 		String nuevoContenido = "";
 		char c;
 		
 		for(int i = 0; i<=contenido.length()-1 ;i++){
 			c = contenido.charAt(i);
+			
 			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
-				nuevoContenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
+				nuevoContenido = nuevoContenido + "*";
+				//nuevoContenido = contenido.substring(0,i) + '*' + contenido.substring(i+1) + nuevoContenido;
+			}else {
+				nuevoContenido = nuevoContenido + c;
 			}
 		}
 		
@@ -173,7 +177,7 @@ public class Ej1 {
 		//mostrarElContenidoDelArreglo(colores);
 		
 		// (5)
-		cambiarVocales("ROJO, 1, AMARRILLO, 2");
+		cambioAVocales("ROJO, 1, AMARRILLO, 2");
 	}
 	
 	/**
@@ -201,7 +205,8 @@ public class Ej1 {
 					"[1] Mostrar precio del trabajo de segunda calidad (IMPLEMENTADO)\n" +
 					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
 					"[3] Obtener los nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
-					"[4] Mostrar colores (IMPLEMENTADO)\n"
+					"[4] Mostrar colores (IMPLEMENTADO)\n" +
+					"[5] Impresión de 2da calidad\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -222,6 +227,9 @@ public class Ej1 {
 				break;
 			case 4:
 				mostrarColores(colores);
+				break;
+			case 5:
+				System.out.println(cambioAVocales(Archivo.leer(NOMBRE_ARCHIVO)));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
