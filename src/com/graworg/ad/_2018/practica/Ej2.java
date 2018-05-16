@@ -18,12 +18,15 @@ public class Ej2 {
 	public static int cantidadDigitos(int n){
 		int cant = 0;
 		
+		// ARMAR UNA TRAZA
+		
 		if(n>0){
-			if(n%10==0){
-				cant = cantidadDigitos(n/10) + 1;
+			if(n%10==0){ // Consulta el último valor del número por ej. 2030, es decir ¿0==0? Sí 
+				cant = cantidadDigitos(n/10) + 1; // Como n/10 es cero entonces sumo 1
 			}else{
 				cant = cantidadDigitos(n/10);
 			}
+			System.out.println(n/10);
 		}
 		
 		return cant;
@@ -40,6 +43,7 @@ public class Ej2 {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(cantidadDigitos(2030));
+		cantidadDigitos(2030);
+		//System.out.println(cantidadDigitos(2030));
 	}
 }
