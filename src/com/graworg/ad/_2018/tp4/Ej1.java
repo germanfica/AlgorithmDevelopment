@@ -147,27 +147,23 @@ public class Ej1 {
 	
 	
 	/**
-	 * (6) Mostrar si el color solicitado es usado en la impresión
+	 * (6) Verificar si el color solicitado es usado en la impresión
 	 * 
 	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la
 	 * impresión. Para esto debe recorrer el arreglo de colores, considere que la
 	 * impresión a realizar es de 1ra calidad (no tiene cambiadas las vocales por “*”).
 	 * ¿Cómo lo resolverías para ambos casos?
 	 */
-	public static boolean mostrarRareza(String[] colores) {
-		boolean respuesta = false;
-		
+	public static void verificarColorImpresión(String[] colores) {
 		sc = new Scanner(System.in);
 		
-		System.out.println("Ingrese color: ");
+		System.out.println("Ingrese el color: ");
 		
 		if(hayColor(colores, sc.next())) {
 			System.out.println("Hay");
 		}else {
 			System.out.println("No hay");
 		}
-		
-		return respuesta;
 	}
 	
 	public static boolean hayColor(String[] colores, String color) {
@@ -214,7 +210,8 @@ public class Ej1 {
 					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
 					"[3] Obtener los nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
 					"[4] Mostrar colores (IMPLEMENTADO)\n" +
-					"[5] Impresión de 2da calidad\n"
+					"[5] Impresión de 2da calidad\n" +
+					"[6] Verificar color en la impresión\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -240,7 +237,7 @@ public class Ej1 {
 				System.out.println(cambioAVocales(Archivo.leer(NOMBRE_ARCHIVO)));
 				break;
 			case 6:
-				mostrarRareza(colores);
+				verificarColorImpresión(colores);
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
