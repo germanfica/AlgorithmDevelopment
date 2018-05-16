@@ -57,36 +57,36 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3 Parte 1) Carga a un arreglo de String todos los colores de un determinado archivo.
+	 * (3.1) Carga a un arreglo de String todos los colores de un determinado archivo.
 	 * 
 	 * @see Ahora suponga que los colores usados son provistos en un archivo de texto.
 	 * Realice la carga de un arreglo de Strings a partir del archivo.
 	 * @return
 	 */
-	public static String[] cargaDeColores(int longitud) {
-		String[] contenido = new String[longitud];
+	public static String[] cargaDesdeArchivo(int longitud) {
+		String[] arreglo = new String[longitud];
 		
 		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
 		
-		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
+		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
 		
 		int i = 0;
 		
 		// Objetivo: almacenar los colores uno por uno
 		while(sc.hasNext()) {
-			contenido[i] = sc.next();
+			arreglo[i] = sc.next();
 			i=i+1;
 		}
 		
-		return contenido;
+		return arreglo;
 	}
 	
 	/**
-	 * (3 Parte 2)
+	 * (3.2)
 	 * 
 	 * @see Muestre el color con los códigos numéricos asociados a cada uno.
 	 */
-	public static void mostrarElContenidoDelArreglo(String[] colores) {
+	public static void mostrarColores(String[] colores) {
 		int i = 0;
 		while(i<=colores.length-1 && colores[i]!=null){
 			System.out.println("Color: " + colores[i] + "; Código: " + colores[i+1]);
@@ -165,10 +165,6 @@ public class Ej1 {
 	
 	private static void delete(){
 		String[] colores;
-		
-		// (2)
-		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
-		
 		// Cambiar mínuculas
 		//Archivo.guardar(cambiarVocales(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
 		
@@ -180,10 +176,10 @@ public class Ej1 {
 		
 		
 		// (3 Parte 1)
-		colores = cargaDeColores(tamArrgelo);
+		//colores = cargaDeColores(tamArrgelo);
 		
 		// (3 Parte 2)
-		mostrarElContenidoDelArreglo(colores);
+		//mostrarElContenidoDelArreglo(colores);
 		
 		// (5)
 		cambiarVocales("ROJO, 1, AMARRILLO, 2");
@@ -194,11 +190,13 @@ public class Ej1 {
 	 */
 	public static void mostrarMenú() {
 		// Declaración de las variables
+		String[] colores;
 		boolean salir;
 		int opción;
 		
 		// Inicialización de las variables
 		salir = false;
+		colores = cargaDesdeArchivo(tamArrgelo);
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
@@ -209,8 +207,10 @@ public class Ej1 {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Mostrar precio del trabajo de segunda calidad\n" +
-					"[2] Mostrar el precio del trabajo de primera calidad\n"
+					"[1] Mostrar precio del trabajo de segunda calidad (IMPLEMENTADO)\n" +
+					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
+					"[3] Cargar de nuevo Colores.txt (IMPLEMENTADO)\n" +
+					"[4] Mostrar colores (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -226,6 +226,12 @@ public class Ej1 {
 			case 2:
 				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
 				break;
+			case 3:
+				colores = cargaDesdeArchivo(tamArrgelo);
+				break;
+			case 4:
+				mostrarColores(colores);
+				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
@@ -235,19 +241,5 @@ public class Ej1 {
 	
 	public static void main(String[] args) {
 		mostrarMenú();
-	}
-	
-	/**
-	 * Mostrar el contenido del archivo
-	 */
-	public static void mostrarContenidoDelArchivo() {
-		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
-		
-		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
-		
-		// Objetivo: almacenar los colores uno por uno
-		while(sc.hasNext()) {
-			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
-		}
 	}
 }
