@@ -22,8 +22,7 @@ FIN MÓDULO mostrarNúmeroTexto
 		
 		if(n>0){
 			t1 = pasarATexto(n%10);
-			t1 = t1+t1;
-			paseANúmeroTexto(n/10);
+			t1 = t1 + paseANúmeroTexto(n/10);
 		}
 		
 		return t1;
@@ -88,9 +87,35 @@ FIN SEGÚN
 		return nombreDelNúmero;
 	}
 	
+	/*
+	 * El mismo que el anterior
+	 */
+	public static void mostrarAlRevesNúmeroTexto(int n){
+		String t1;
+		if(n>0){
+			t1 = pasarATexto(n%10);
+			mostrarNúmeroTexto(n/10);
+			System.out.println(t1); // GENIAAAAAAAAAL, muestra la desapilación
+		}
+	}
+	/*
+	 * EL mismo que el anterior pero 
+	 */
+	private static String t2 = "";
+	public static String paseAlRevesNúmeroTexto(int n){
+		if(n>0){
+			t2 = pasarATexto(n%10);
+			//mostrarNúmeroTexto(n/10);
+			t2 = t2 + paseAlRevesNúmeroTexto(n/10);
+		}
+		return t2;
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Bienvenido");
 		//mostrarNúmeroTexto(112);
 		System.out.println(paseANúmeroTexto(112));
+		//mostrarAlRevesNúmeroTexto(112);
+		System.out.println(paseAlRevesNúmeroTexto(112));
 	}
 }
