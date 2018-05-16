@@ -16,18 +16,19 @@ public class Ej2 {
 	 */
 	
 	public static int cantidadDigitos(int n){
-		int d = 0;
+		int cant = 0;
 		
+		if(n>0){
+			if(n%10==0){
+				cant = cantidadDigitos(n/10) + 1;
+			}else{
+				cant = cantidadDigitos(n/10);
+			}
+		}
 		
-		
-		return d;
+		return cant;
 	}
 	
-	public static void mostrarCeros(int n){
-		if(n>2){
-			
-		}
-	}
 	
 	public static void mostrarNúmeroTexto(int n){
 		String t1;
