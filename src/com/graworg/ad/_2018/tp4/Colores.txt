@@ -1,1 +1,1 @@
-ROJO, 1, AMARRILLO, 2
+rojo, 1, verde, 2, azul, 3, naranja, 4, celeste, 5, verde oscuro, 6, rosado, 7

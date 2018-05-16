@@ -2,7 +2,6 @@ package com.graworg.ad._2018.tp4;
 
 import java.util.Scanner;
 
-import com.graworg.ad._2018.tp3.ej3.Cliente;
 import com.graworg.ad.util.Archivo;
 
 public class Ej1 {
@@ -164,7 +163,7 @@ public class Ej1 {
 	 * (no tiene cambiadas las vocales por “*”). ¿Cómo lo resolverías para ambos casos?
 	 */
 	
-	public static void mostrarMenús(){
+	private static void delete(){
 		String[] colores;
 		
 		// (2)
@@ -194,10 +193,11 @@ public class Ej1 {
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrarMenú() {
+		// Declaración de las variables
 		boolean salir;
 		int opción;
 		
-		// Inicializar variables
+		// Inicialización de las variables
 		salir = false;
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
@@ -206,14 +206,14 @@ public class Ej1 {
 		{
 			sc = new Scanner(System.in);
 			
-			// Mostrar cartel de opciones
+			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Mostrar precio del trabajo de segunda calidad\n" +
 					"[2] Mostrar el precio del trabajo de primera calidad\n"
 					);
 			
-			// Leer opción del menú principal
+			// Leer opción para el menú principal
 			opción = sc.nextInt();
 			
 			switch (opción) {
@@ -222,6 +222,9 @@ public class Ej1 {
 				break;
 			case 1:
 				System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
+				break;
+			case 2:
+				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
