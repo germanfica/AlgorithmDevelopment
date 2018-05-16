@@ -133,26 +133,12 @@ public class Ej1 {
 	 */
 	public static String cambiarVocales(String contenido){
 		String nuevoContenido = "";
+		char c;
 		
 		for(int i = 0; i<=contenido.length()-1 ;i++){
-			switch (contenido.charAt(i)) {
-			case 'A':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'E':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'I':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'O':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'U':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			default:
-				break;
+			c = contenido.charAt(i);
+			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+				nuevoContenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
 			}
 		}
 		
@@ -214,7 +200,7 @@ public class Ej1 {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Mostrar precio del trabajo de segunda calidad (IMPLEMENTADO)\n" +
 					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
-					"[3] Cargar de nuevo Colores.txt (IMPLEMENTADO)\n" +
+					"[3] Obtener los nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
 					"[4] Mostrar colores (IMPLEMENTADO)\n"
 					);
 			
