@@ -132,24 +132,6 @@ public class Ej1 {
 	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
 	public static String cambioAVocales(String contenido){
-		String nuevoContenido = "";
-		char c;
-		
-		for(int i = 0; i<=contenido.length()-1 ;i++){
-			c = contenido.charAt(i);
-			
-			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
-				nuevoContenido = nuevoContenido + "*";
-				//nuevoContenido = contenido.substring(0,i) + '*' + contenido.substring(i+1) + nuevoContenido;
-			}else {
-				nuevoContenido = nuevoContenido + c;
-			}
-		}
-		
-		return nuevoContenido;
-	}
-	
-	public static String cambioAVocales2(String contenido){
 		char c;
 		
 		for(int i = 0; i<=contenido.length()-1 ;i++){
