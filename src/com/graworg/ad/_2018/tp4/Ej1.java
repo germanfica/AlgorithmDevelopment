@@ -208,7 +208,7 @@ public class Ej1 {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Mostrar precio del trabajo de segunda calidad (IMPLEMENTADO)\n" +
 					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
-					"[3] Obtener los nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
+					"[3] Obtener nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
 					"[4] Mostrar colores (IMPLEMENTADO)\n" +
 					"[5] Impresión de 2da calidad\n" +
 					"[6] Verificar si un color determinado es usado en la impresión\n"
