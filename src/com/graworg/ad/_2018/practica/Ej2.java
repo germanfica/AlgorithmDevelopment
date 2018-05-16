@@ -21,7 +21,7 @@ public class Ej2 {
 		// ARMAR UNA TRAZA
 		
 		if(n>0){
-			
+			// Cuenta la cantidad de digitos
 			/*
 			if(n%10==0){ // Consulta el último valor del número por ej. 2030, es decir ¿0==0? Sí 
 				cant = cantidadDigitos(n/10) + 1; // Como n/10 es cero entonces sumo 1
@@ -29,8 +29,13 @@ public class Ej2 {
 				cant = cantidadDigitos(n/10);
 			}
 			*/
-			cantidadDigitos(n/10);
-			System.out.println(n);
+			//
+			
+			System.out.println(n); // Descompone
+			cantidadDigitos(n/10); // Corre la coma un lugar hacia la izquierda del número
+			System.out.println(n); // Compone
+			
+			//System.out.println(n%10); // Muestra el módulo de izquierda a derecha
 		}
 		
 		return cant;
