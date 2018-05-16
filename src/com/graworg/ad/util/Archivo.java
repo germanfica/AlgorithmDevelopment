@@ -47,7 +47,6 @@ public class Archivo {
 	 * @param NOMBRE_ARCHIVO ruta completa del archivo
 	 * @return
 	 */
-	@SuppressWarnings("resource")
 	public static String leer(String NOMBRE_ARCHIVO) {
 		String contenido = "";
 		

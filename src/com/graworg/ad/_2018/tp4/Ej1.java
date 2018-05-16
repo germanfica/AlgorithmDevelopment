@@ -57,21 +57,40 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3) Carga a un arreglo de String todos los colores de un determinado archivo.
+	 * (3 Parte 1) Carga a un arreglo de String todos los colores de un determinado archivo.
 	 * 
 	 * @see Ahora suponga que los colores usados son provistos en un archivo de texto.
-	 * Realice la carga de un arreglo de Strings a partir del archivo y muestre el color
-	 * con los códigos numéricos asociados a cada uno.
+	 * Realice la carga de un arreglo de Strings a partir del archivo.
 	 * @return
 	 */
-	public static void mostrarContenidoDelArchivo() {
+	public static String[] cargaDeColores(int longitud) {
+		String[] contenido = new String[longitud];
+		
 		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
 		
 		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
 		
+		int i = 0;
+		
 		// Objetivo: almacenar los colores uno por uno
 		while(sc.hasNext()) {
-			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
+			contenido[i] = sc.next();
+			i=i+1;
+		}
+		
+		return contenido;
+	}
+	
+	/**
+	 * (3 Parte 2)
+	 * 
+	 * @see Muestre el color con los códigos numéricos asociados a cada uno.
+	 */
+	public static void mostrarElContenidoDelArreglo(String[] colores) {
+		int i = 0;
+		while(i<=colores.length-1 && colores[i]!=null){
+			System.out.println("Color: " + colores[i] + "; Código: " + colores[i+1]);
+			i=i+2;
 		}
 	}
 	
@@ -100,15 +119,42 @@ public class Ej1 {
 		return nuevoContenido;
 	}
 	
-	public static void main(String[] args) {
+	/**
+	 * Mostrar el contenido del archivo
+	 */
+	public static void mostrarContenidoDelArchivo() {
+		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
+		
+		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
+		
+		// Objetivo: almacenar los colores uno por uno
+		while(sc.hasNext()) {
+			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
+		}
+	}
+	
+	public static void mostrarMenú(){
+		String[] colores;
+		
 		// (1)
 		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
 		
 		// (2)
 		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
 		
-		// (3)
-		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO); // (4) Guardar los cambios
-		mostrarContenidoDelArchivo();
+		// (4) Guardar los cambios
+		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
+		
+		// (3 Parte 1)
+		colores = cargaDeColores(tamArrgelo);
+		
+		// (3 Parte 2)
+		mostrarElContenidoDelArreglo(colores);
+		
+		// (4) 
+	}
+	
+	public static void main(String[] args) {
+		mostrarMenú();
 	}
 }
