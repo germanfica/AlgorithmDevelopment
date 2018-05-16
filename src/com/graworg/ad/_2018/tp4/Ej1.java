@@ -210,8 +210,8 @@ public class Ej1 {
 					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
 					"[3] Obtener nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
 					"[4] Mostrar colores (IMPLEMENTADO)\n" +
-					"[5] Impresión de 2da calidad\n" +
-					"[6] Verificar si un color determinado es usado en la impresión\n"
+					"[5] Impresión de 2da calidad (IMPLEMENTADO)\n" +
+					"[6] Verificar si un color determinado es usado en la impresión (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
