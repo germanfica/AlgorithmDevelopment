@@ -211,7 +211,7 @@ public class Ej1 {
 					"[3] Obtener los nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
 					"[4] Mostrar colores (IMPLEMENTADO)\n" +
 					"[5] Impresión de 2da calidad\n" +
-					"[6] Verificar color en la impresión\n"
+					"[6] Verificar si un color determinado es usado en la impresión\n"
 					);
 			
 			// Leer opción para el menú principal
