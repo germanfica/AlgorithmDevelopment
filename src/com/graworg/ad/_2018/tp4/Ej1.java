@@ -149,6 +149,20 @@ public class Ej1 {
 		return nuevoContenido;
 	}
 	
+	public static String cambioAVocales2(String contenido){
+		char c;
+		
+		for(int i = 0; i<=contenido.length()-1 ;i++){
+			c = contenido.charAt(i);
+			
+			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+				contenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
+			}
+		}
+		
+		return contenido;
+	}
+	
 	
 	/**
 	 * (6)
