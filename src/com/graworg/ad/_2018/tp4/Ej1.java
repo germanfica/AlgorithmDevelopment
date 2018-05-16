@@ -57,7 +57,8 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3.1) Carga a un arreglo de String todos los colores de un determinado archivo.
+	 * (3.1) Carga de un determinado archivo a un arreglo de String todos los colores
+	 * con sus respectivos códigos asociados.
 	 * 
 	 * @see Ahora suponga que los colores usados son provistos en un archivo de texto.
 	 * Realice la carga de un arreglo de Strings a partir del archivo.
@@ -65,8 +66,9 @@ public class Ej1 {
 	 */
 	public static String[] cargaDesdeArchivo(int longitud) {
 		String[] arreglo = new String[longitud];
+		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO);
 		
-		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
+		sc = new Scanner(contenidoDelArchivo);
 		
 		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
 		
@@ -82,7 +84,7 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3.2)
+	 * (3.2) Mostrar todos los colores con sus respectivos códigos asociados.
 	 * 
 	 * @see Muestre el color con los códigos numéricos asociados a cada uno.
 	 */
