@@ -3,7 +3,11 @@ package com.graworg.ad._2018.tp4;
 import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
-
+/*
+ * Notas:
+ * Los códigos de colores sólo identifican un orden en el uso de colores, en una
+ * impresión determinada.
+ */
 public class Ej1 {
 	// Constantes
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
@@ -183,6 +187,18 @@ public class Ej1 {
 		
 		return respuesta;
 	}
+	
+	/**
+	 * (7) 
+	 * 
+	 * @see Se han guardado las impresiones realizadas en el mes en una matriz numérica.
+	 * Las columnas representan a los colores y las filas a las impresiones hechas en el mes. 
+	 * Recorrer recursivamente la matriz de impresiones por fila y mostrar la suma (factor
+	 * de impresión de 2da calidad).
+	 * 
+	 * Nota adicional: los códigos de orden no están ordenados por fila, ya que no todas
+	 * las impresiones usaron los mismo colores.
+	 */
 	
 	/**
 	 * Mostrar menú de opciones
