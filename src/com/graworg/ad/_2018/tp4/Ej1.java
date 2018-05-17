@@ -10,7 +10,8 @@ import com.graworg.ad.util.Archivo;
  */
 public class Ej1 {
 	// Constantes
-    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
+    private static final String COLORES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo Colorex.txt
+    private static final String IMPRESIONES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Impresiones.txt"; // Ruta del archivo Impresiones.txt
 	private static final int precioBase = 100; // $100.-
 	private static final int tamArrgelo = 20;
 	// Scanner
@@ -68,9 +69,9 @@ public class Ej1 {
 	 * Realice la carga de un arreglo de Strings a partir del archivo.
 	 * @return
 	 */
-	public static String[] cargaDesdeArchivo(int longitud) {
+	public static String[] cargaColoresDesdeArchivo(int longitud) {
 		String[] arreglo = new String[longitud];
-		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO);
+		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
 		
 		// Converción a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
@@ -192,13 +193,35 @@ public class Ej1 {
 	 * (7) 
 	 * 
 	 * @see Se han guardado las impresiones realizadas en el mes en una matriz numérica.
-	 * Las columnas representan a los colores y las filas a las impresiones hechas en el mes. 
+	 * Las columnas representan a los colores y las filas a las impresiones hechas en el mes.
 	 * Recorrer recursivamente la matriz de impresiones por fila y mostrar la suma (factor
 	 * de impresión de 2da calidad).
 	 * 
-	 * Nota adicional: los códigos de orden no están ordenados por fila, ya que no todas
-	 * las impresiones usaron los mismo colores.
+	 * Esto es sólo una nota adicional: los códigos de orden no están ordenados por fila, ya
+	 * que no todas las impresiones usaron los mismo colores.
 	 */
+	
+	public static int[][] cargaImpresionesDesdeArchivo(int longitudFila, int longitudColumna) {
+		int[][] matriz = new int[longitudFila][longitudColumna];
+		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
+		
+		// Converción a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
+		
+		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
+		
+		int i = 0;
+		
+		// Objetivo: almacenar los colores uno por uno
+		while(sc.hasNext()) {
+			//matriz[i] = sc.next();
+			i=i+1;
+		}
+		
+		return matriz;
+	}
 	
 	/**
 	 * Mostrar menú de opciones
@@ -212,7 +235,9 @@ public class Ej1 {
 		
 		// Inicialización de las variables
 		salir = false;
-		colores = cargaDesdeArchivo(tamArrgelo);
+		colores = cargaColoresDesdeArchivo(tamArrgelo);
+		matrizColores = cargaImpresionesDesdeArchivo(5, tamArrgelo);
+		
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
@@ -245,13 +270,13 @@ public class Ej1 {
 				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
 				break;
 			case 3:
-				colores = cargaDesdeArchivo(tamArrgelo);
+				colores = cargaColoresDesdeArchivo(tamArrgelo);
 				break;
 			case 4:
 				mostrarColores(colores);
 				break;
 			case 5:
-				System.out.println(cambioAVocales(Archivo.leer(NOMBRE_ARCHIVO)));
+				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO)));
 				break;
 			case 6:
 				verificarColorImpresión(colores);
