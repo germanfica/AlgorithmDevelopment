@@ -203,7 +203,7 @@ public class Ej1 {
 	
 	public static int[][] cargaImpresionesDesdeArchivo(int longitudFila, int longitudColumna) {
 		int[][] matriz = new int[longitudFila][longitudColumna];
-		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
+		String contenidoDelArchivo = Archivo.leer(IMPRESIONES_ARCHIVO);
 		
 		// Converción a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
