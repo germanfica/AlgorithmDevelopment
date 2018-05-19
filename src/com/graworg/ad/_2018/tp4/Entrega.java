@@ -53,16 +53,16 @@ public class Entrega {
 			System.out.println("No hay");
 		}
 	}
-	// La otra manera es ir quitando el contenido con un substring
-	public static boolean hayColor(String[] colores, String color, int i, boolean respuesta) {
+	
+	public static boolean hayColor(String[] colores, String color, int i, boolean rta) {
 		
-		if(i<=colores.length-1 && respuesta && colores[i]!=null) {
-			return respuesta;
+		if(i<=colores.length-1 && rta && colores[i]!=null) {
+			return rta;
 		}else {
 			if(colores[i].equals(color)) {
-				respuesta = true;
+				rta = true;
 			}
-			return hayColor(colores, color, i+2, respuesta);
+			return hayColor(colores, color, i+2, rta);
 		}
 	}
 	
