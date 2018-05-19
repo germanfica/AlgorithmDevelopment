@@ -29,17 +29,13 @@ public class Entrega {
 		// Inicialización de variables
 		c = ' ';
 		
-		if(i==contenido.length()-1) {
+		if(i == contenido.length()-1) {
 			return contenido;
 		}else {
 			c = contenido.charAt(i);
+			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') { c = '*'; }
 			
-			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
-				contenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
-			}
-			System.out.println(cambioAVocales(contenido, i+1));
-			
-			return contenido;
+			return c + cambioAVocales(contenido, i+1);
 		}
 	}
 	

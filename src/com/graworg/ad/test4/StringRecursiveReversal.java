@@ -13,7 +13,7 @@ public class StringRecursiveReversal {
             return reverse;
         }
     }
-     
+    
     public static void main(String a[]){
         StringRecursiveReversal srr = new StringRecursiveReversal();
         System.out.println("Result: "+srr.reverseString("german"));
