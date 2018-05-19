@@ -7,6 +7,8 @@ public class Entrega {
 	// Constantes
     private static final String COLORES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo Colorex.txt
 	private static final int tamArrgelo = 20;
+	private static final int precioBase = 100; // $100.-
+	private static final int cantColores = 4;
 	// Scanner
 	private static Scanner sc;
 	
@@ -73,6 +75,18 @@ public class Entrega {
 	 * forma inversa por pantalla y el resultado del factorial al final.
 	 * Esto es: 6 * 5 * 4 * 3 * 2 * 1 = 72
 	 */
+	public static int primeraCalidad(int n) {
+		// Declaración de variables
+		int factorial;
+		
+		if (n > 1) {
+			factorial = primeraCalidad(n - 1) * n; // Composición
+		} else {
+			factorial = 1; // Caso base
+		}
+			 
+		return factorial ; // Retorna el factorial de un número dado
+	}
 	
 	/**
 	 * (9)
@@ -108,7 +122,8 @@ public class Entrega {
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad.\n" +
-					"[6] Verificar si el color solicitado es usado en la impresión\n"
+					"[6] Verificar si el color solicitado es usado en la impresión\n" +
+					"[8] Mostrar el precio para el trabajo de primera calidad\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -124,6 +139,8 @@ public class Entrega {
 			case 6:
 				verificarColorImpresión(colores);
 				break;
+			case 8:
+				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(cantColores) * precioBase +".-");
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
