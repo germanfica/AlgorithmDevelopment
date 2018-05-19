@@ -101,7 +101,9 @@ public class Entrega {
 	 * A partir del punto 4 agregue la funcionalidad para identificar qué colores son palíndromos.
 	 * 
 	 * Def. palíndromo: palabra o expresión que es igual si se lee de izquierda a derecha que
-	 * de derecha a izquierda.
+	 * de derecha a izquierda. Es decir, Un palíndromo es una palabra, un número u otra
+	 * secuencia de caracteres que se lee de la misma manera hacia atrás y hacia adelante,
+	 * como "madam" o "racecar".
 	 */
 	public static boolean esPalíndromo(boolean respuesta) {
 		
