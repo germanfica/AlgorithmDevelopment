@@ -72,6 +72,23 @@ public class Entrega {
 		return respuesta;
 	}
 	
+	/**
+	 * (8)
+	 * 
+	 * @see 8. Modificar la solución para 2 y mostrar la formula de cálculo del factor de
+	 * forma inversa por pantalla y el resultado del factorial al final.
+	 * Esto es: 6 * 5 * 4 * 3 * 2 * 1 = 72
+	 */
+	
+	/**
+	 * (9)
+	 * 
+	 * @see . Hay colores que son muy difíciles de lograr en la imprenta y que están en
+	 * promoción. La forma de identificarlos es darles un nombre especial (creado por la imprenta)
+	 * que es palíndromo. A partir del punto 4 agregue la funcionalidad para identificar
+	 * qué colores son palíndromos.  
+	 */
+	
 	
 	/**
 	 * Mostrar menú de opciones
