@@ -106,7 +106,12 @@ public class Entrega {
 	 * como "madam" o "racecar".
 	 */
 	public static boolean esPalíndromo(boolean respuesta) {
-		
+		/*
+		 * To do:
+		 * - Guardar la oración que se lee de derecha a izquierda (original).
+		 * - Reconstruir la oración de izquierda a derecha y luego compararla con la
+		 * original (sería la de derecha a izquierda).
+		 */
 		return respuesta;
 	}
 	
