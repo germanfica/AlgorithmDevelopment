@@ -112,7 +112,6 @@ public class Entrega {
 		salir = false;
 		colores = cargaColoresDesdeArchivo(tamArrgelo);
 		
-		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
 		while(!salir)
@@ -122,8 +121,8 @@ public class Entrega {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad.\n" +
-					"[6] Verificar si el color solicitado es usado en la impresión\n" +
+					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad. (IMPLEMENTADO)\n" +
+					"[6] Verificar si el color solicitado es usado en la impresión (IMPLEMENTADO)\n" +
 					"[8] Mostrar el precio para el trabajo de primera calidad\n"
 					);
 			
