@@ -22,18 +22,25 @@ public class Entrega {
 	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
 	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
-	public static String cambioAVocales(String contenido){
+	public static String cambioAVocales(String contenido, int i){
+		// Declaración de variables
 		char c;
 		
-		for(int i = 0; i<=contenido.length()-1 ;i++){
+		// Inicialización de variables
+		c = ' ';
+		
+		if(i==contenido.length()-1) {
+			return contenido;
+		}else {
 			c = contenido.charAt(i);
 			
 			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
 				contenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
 			}
+			System.out.println(cambioAVocales(contenido, i+1));
+			
+			return contenido;
 		}
-		
-		return contenido;
 	}
 	
 	/**
@@ -110,7 +117,7 @@ public class Entrega {
 				salir = true;
 				break;
 			case 5:
-				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO)));
+				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO), 0));
 				break;
 			case 6:
 				verificarColorImpresión(colores);
