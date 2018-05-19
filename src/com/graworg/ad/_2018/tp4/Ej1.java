@@ -150,7 +150,6 @@ public class Ej1 {
 		return contenido;
 	}
 	
-	
 	/**
 	 * (6) Verificar si el color solicitado es usado en la impresión
 	 * 

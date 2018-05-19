@@ -94,8 +94,12 @@ public class Entrega {
 	 * 
 	 * @see . Hay colores que son muy difíciles de lograr en la imprenta y que están en
 	 * promoción. La forma de identificarlos es darles un nombre especial (creado por la imprenta)
-	 * que es palíndromo. A partir del punto 4 agregue la funcionalidad para identificar
-	 * qué colores son palíndromos.  
+	 * que es palíndromo.
+	 * 
+	 * A partir del punto 4 agregue la funcionalidad para identificar qué colores son palíndromos.
+	 * 
+	 * Def. palíndromo: palabra o expresión que es igual si se lee de izquierda a derecha que
+	 * de derecha a izquierda.
 	 */
 	
 	
