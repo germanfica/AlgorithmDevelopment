@@ -8,7 +8,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author German Fica
+ *
+ */
 public class Archivo {
+	private static Scanner sc;
+	
 	/**
 	 * Guarda una cadena de caracteres a un archivo de texto. El contenido
 	 * del archivo debe ser un string (cadena de carácteres). Es decir,
@@ -52,7 +59,6 @@ public class Archivo {
 		
     	try {
     		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que están en el archivo de texto
-    		Scanner sc;
     		sc = new Scanner(buff); // Le asigno al scanner la tarea para buscar los colores dentro del archivo de texto
     		
     		// Objetivo: es almacenar los colores uno por uno

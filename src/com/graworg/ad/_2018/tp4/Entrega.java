@@ -105,13 +105,15 @@ public class Entrega {
 	 * secuencia de caracteres que se lee de la misma manera hacia atrás y hacia adelante,
 	 * como "madam" o "racecar".
 	 */
-	public static boolean esPalíndromo(boolean respuesta) {
+	public static boolean esPalíndromo(String oración, boolean respuesta) {
 		/*
 		 * To do:
 		 * - Guardar la oración que se lee de derecha a izquierda (original).
 		 * - Reconstruir la oración de izquierda a derecha y luego compararla con la
 		 * original (sería la de derecha a izquierda).
 		 */
+		
+		
 		return respuesta;
 	}
 	
