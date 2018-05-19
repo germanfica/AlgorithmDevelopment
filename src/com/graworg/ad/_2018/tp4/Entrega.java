@@ -7,8 +7,6 @@ public class Entrega {
 	// Constantes
     private static final String COLORES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo Colorex.txt
 	private static final int tamArrgelo = 20;
-	private static final int precioBase = 100; // $100.-
-	private static final int cantColores = 4;
 	// Scanner
 	private static Scanner sc;
 	
@@ -71,18 +69,21 @@ public class Entrega {
 	/**
 	 * (8)
 	 * 
-	 * @see 8. Modificar la solución para 2 y mostrar la formula de cálculo del factor de
-	 * forma inversa por pantalla y el resultado del factorial al final.
+	 * @see 8. Modificar la solución del ejercicio 2 (dos):
+	 *  - Mostrar la formula de cálculo del factor de forma inversa por pantalla
+	 *  - Mostrar el resultado del factorial al final.
 	 * Esto es: 6 * 5 * 4 * 3 * 2 * 1 = 72
 	 */
 	public static int primeraCalidad(int n) {
 		// Declaración de variables
 		int factorial;
-		
+	
 		if (n > 1) {
-			factorial = primeraCalidad(n - 1) * n; // Composición
+			System.out.print(n + " * ");
+			factorial = primeraCalidad(n - 1) * n;
 		} else {
-			factorial = 1; // Caso base
+			System.out.print(n);
+			factorial = 1;
 		}
 			 
 		return factorial ; // Retorna el factorial de un número dado
@@ -140,7 +141,12 @@ public class Entrega {
 				verificarColorImpresión(colores);
 				break;
 			case 8:
-				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(cantColores) * precioBase +".-");
+				sc = new Scanner(System.in);
+				System.out.println("Ingrese la cantidad de colores a usar: ");
+				int cantColores = sc.nextInt();
+				// Mostrar el resultado del factorial al final
+				System.out.println(" = " + primeraCalidad(cantColores)/10);
+				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
