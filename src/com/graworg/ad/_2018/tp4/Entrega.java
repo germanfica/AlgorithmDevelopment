@@ -47,29 +47,23 @@ public class Entrega {
 		
 		System.out.println("Ingrese el color: ");
 		
-		if(hayColor(colores, sc.next())) {
+		if(hayColor(colores, sc.next().toUpperCase(), 0, false)) {
 			System.out.println("Hay");
 		}else {
 			System.out.println("No hay");
 		}
 	}
-	
-	public static boolean hayColor(String[] colores, String color) {
-		// Declaración de variables
-		boolean respuesta = false;
-		int i;
+	// La otra manera es ir quitando el contenido con un substring
+	public static boolean hayColor(String[] colores, String color, int i, boolean respuesta) {
 		
-		// Inicialización de variables
-		i = 0;
-		
-		do {
-			if(colores[i].equals(color.toUpperCase())) {
+		if(i<=colores.length-1 && respuesta && colores[i]!=null) {
+			return respuesta;
+		}else {
+			if(colores[i].equals(color)) {
 				respuesta = true;
 			}
-			i = i + 2;
-		}while(i<=colores.length-1 && !respuesta && colores[i]!=null);
-		
-		return respuesta;
+			return hayColor(colores, color, i+2, respuesta);
+		}
 	}
 	
 	/**
