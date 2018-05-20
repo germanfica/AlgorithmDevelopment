@@ -58,16 +58,20 @@ public class Test {
 		}
 	}
 	
-	public static boolean hayColor(String[] colores, String color, int i) {
+	// Intentar resolverlo con el substring,
+	// casi que podría, ya que los elementos que ya no uso los hago null
+	// para ir verificando hasta llegar al elemento que está en la fila 0
+	// Parece que no se puede recorrer un arreglo sin el índice como parámetro.
+	public static boolean hayColor(String[] colores, String color, int index) {
 		// Mientras no sea nulo todo bien
-		if(colores[i]!=null) {
-			if(i>=colores.length-1) {
+		if(colores[index]!=null) {
+			if(index>=colores.length-1) {
 				return false; // No hubieron coincidencias(:
 			}else {
-				if(colores[i].equals(color.toUpperCase())) {
+				if(colores[index].equals(color.toUpperCase())) {
 					return true; // Oh te encontré :D
 				}
-				return hayColor(colores, color, i+2);
+				return hayColor(colores, color, index+2);
 			}
 		}else {
 			return false;
