@@ -105,16 +105,29 @@ public class Entrega {
 	 * secuencia de caracteres que se lee de la misma manera hacia atrás y hacia adelante,
 	 * como "madam" o "racecar".
 	 */
-	public static boolean esPalíndromo(String oración, boolean respuesta) {
+	public static boolean esPalíndromo(String oración, String nuevaOración, int i) {
 		/*
 		 * To do:
 		 * - Guardar la oración que se lee de derecha a izquierda (original).
 		 * - Reconstruir la oración de izquierda a derecha y luego compararla con la
 		 * original (sería la de derecha a izquierda).
 		 */
+		char c = ' ';
 		
-		
-		return respuesta;
+		if(oración.length()-1<i) {
+			System.out.println(nuevaOración);
+			
+			if(nuevaOración.equals(oración.trim())) {
+				return true;
+			}else {
+				return false;
+			}
+		}else {
+			c = oración.charAt(i);
+			nuevaOración = c + nuevaOración;
+			
+			return esPalíndromo(oración, nuevaOración, i+1);
+		}
 	}
 	
 	
@@ -142,7 +155,8 @@ public class Entrega {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad. (IMPLEMENTADO)\n" +
 					"[6] Verificar si el color solicitado es usado en la impresión (IMPLEMENTADO)\n" +
-					"[8] Mostrar el precio para el trabajo de primera calidad\n"
+					"[8] Mostrar el precio para el trabajo de primera calidad\n" +
+					"[9] Determinar palindromidad\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -164,6 +178,9 @@ public class Entrega {
 				int cantColores = sc.nextInt();
 				// Mostrar el resultado del factorial al final
 				System.out.println(" = " + primeraCalidad(cantColores)/10);
+				break;
+			case 9:
+				System.out.println(esPalíndromo("perro", "", 0));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
