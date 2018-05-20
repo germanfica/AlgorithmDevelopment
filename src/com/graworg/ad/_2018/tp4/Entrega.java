@@ -55,8 +55,6 @@ public class Entrega {
 	}
 	
 	public static boolean hayColor(String[] colores, String color, int i) {
-		System.out.println(colores[i]);
-		
 		// Mientras no sea nulo todo bien
 		if(colores[i]!=null) {
 			if(i>=colores.length-1) {
