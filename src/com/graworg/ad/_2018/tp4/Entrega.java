@@ -115,9 +115,10 @@ public class Entrega {
 		char c = ' ';
 		
 		if(oración.length()-1<i) {
-			System.out.println(nuevaOración);
+			System.out.println(nuevaOración.replaceAll("\\s",""));
+			System.out.println(oración.replaceAll("\\s",""));
 			
-			if(nuevaOración.equals(oración.trim())) {
+			if(nuevaOración.replaceAll("\\s","").equals(oración.replaceAll("\\s",""))) {
 				return true;
 			}else {
 				return false;
@@ -180,7 +181,7 @@ public class Entrega {
 				System.out.println(" = " + primeraCalidad(cantColores)/10);
 				break;
 			case 9:
-				System.out.println(esPalíndromo("perro", "", 0));
+				System.out.println(esPalíndromo("tu mama mamut", "", 0));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
