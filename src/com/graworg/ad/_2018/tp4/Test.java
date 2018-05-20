@@ -63,6 +63,18 @@ public class Test {
 	// para ir verificando hasta llegar al elemento que está en la fila 0
 	// Parece que no se puede recorrer un arreglo sin el índice como parámetro.
 	// Considerese a "pos" como i, index, pos es el índice.
+	// Hay un manera que es copiando el arreglo y bla bla bla, es mejor
+	// pasar por parámetro la posición
+	/*
+	 * I came up with this for my Java 2 class.  Essentially you just give it the array and the starting point you want to add from (usually 0).  It doesn't require the CopyOfRange method either.
+	 * public static int recurSum(int[] array, int n) {
+	 * 	int sum = array[n];
+	 * 	if (n+1 < array.length) {
+	 * 	  sum += recurSum(array, n+1);
+	 * 	}
+	 * 	return sum;
+	 * }﻿
+	 */
 	public static boolean hayColor(String[] colores, String color, int pos) {
 		// Mientras no sea nulo todo bien
 		if(colores[pos]!=null) {
