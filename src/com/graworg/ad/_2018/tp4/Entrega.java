@@ -60,12 +60,12 @@ public class Entrega {
 		// Mientras no sea nulo todo bien
 		if(colores[i]!=null) {
 			if(i>=colores.length-1) {
+				return false;
+			}else {
 				if(colores[i].equals(color.toUpperCase())) {
 					return true;
-				}else {
-					return false;
 				}
-			}else {
+				
 				return hayColor(colores, color, i+2);
 			}
 		}else {
