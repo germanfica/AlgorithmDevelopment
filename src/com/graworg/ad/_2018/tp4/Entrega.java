@@ -115,9 +115,7 @@ public class Entrega {
 		char c = ' ';
 		
 		if(oración.length()-1<i) {
-			System.out.println(nuevaOración.replaceAll("\\s",""));
-			System.out.println(oración.replaceAll("\\s",""));
-			
+			// Nota: trim() no funciona.
 			if(nuevaOración.replaceAll("\\s","").equals(oración.replaceAll("\\s",""))) {
 				return true;
 			}else {
