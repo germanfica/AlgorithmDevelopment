@@ -129,7 +129,6 @@ public class Entrega {
 		}
 	}
 	
-	
 	/**
 	 * Mostrar menú de opciones
 	 */
