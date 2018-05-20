@@ -60,12 +60,11 @@ public class Entrega {
 		// Mientras no sea nulo todo bien
 		if(colores[i]!=null) {
 			if(i>=colores.length-1) {
-				return false;
+				return false; // No hubieron coincidencias(:
 			}else {
 				if(colores[i].equals(color.toUpperCase())) {
-					return true;
+					return true; // Oh te encontré :D
 				}
-				
 				return hayColor(colores, color, i+2);
 			}
 		}else {
