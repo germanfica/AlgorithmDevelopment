@@ -200,11 +200,11 @@ public class Entrega {
 		
 		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
 		
-		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
+		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
 		int i = 0;
 		
-		// Objetivo: almacenar los colores uno por uno
+		// Objetivo: almacenar los colores de a uno por uno
 		while(sc.hasNext()) {
 			arreglo[i] = sc.next();
 			i=i+1;
