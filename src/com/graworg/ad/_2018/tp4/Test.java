@@ -17,7 +17,7 @@ public class Test {
 	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
 	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
-	// Intentar resolverlo con el substring
+	// Intentar resolverlo con el substring. I MADEEE IT!! :D
 	public static String cambioEnLasVocales(String contenido){
 		// Declaración de variables
 		char c;
@@ -29,13 +29,12 @@ public class Test {
 			return contenido;
 		}else {
 			c = contenido.charAt(contenido.length()-1);
-			//System.out.println(c);
-			//System.out.println(contenido);
+			
 			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u'){
 				c = '*';
 			}
 			
-			return c + cambioEnLasVocales(contenido.substring(0, contenido.length()-1));
+			return "" + cambioEnLasVocales(contenido.substring(0, contenido.length()-1)) + c;
 		}
 	}
 	
