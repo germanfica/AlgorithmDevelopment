@@ -47,22 +47,29 @@ public class Entrega {
 		
 		System.out.println("Ingrese el color: ");
 		
-		if(hayColor(colores, sc.next().toUpperCase(), 0, false)) {
+		if(hayColor(colores, sc.next().toUpperCase(), 0)) {
 			System.out.println("Hay");
 		}else {
 			System.out.println("No hay");
 		}
 	}
 	
-	public static boolean hayColor(String[] colores, String color, int i, boolean rta) {
+	public static boolean hayColor(String[] colores, String color, int i) {
+		System.out.println(colores[i]);
 		
-		if(i<=colores.length-1 && rta && colores[i]!=null) {
-			return rta;
-		}else {
-			if(colores[i].equals(color)) {
-				rta = true;
+		// Mientras no sea nulo todo bien
+		if(colores[i]!=null) {
+			if(i>=colores.length-1) {
+				if(colores[i].equals(color.toUpperCase())) {
+					return true;
+				}else {
+					return false;
+				}
+			}else {
+				return hayColor(colores, color, i+2);
 			}
-			return hayColor(colores, color, i+2, rta);
+		}else {
+			return false;
 		}
 	}
 	
