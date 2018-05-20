@@ -62,16 +62,17 @@ public class Test {
 	// casi que podría, ya que los elementos que ya no uso los hago null
 	// para ir verificando hasta llegar al elemento que está en la fila 0
 	// Parece que no se puede recorrer un arreglo sin el índice como parámetro.
-	public static boolean hayColor(String[] colores, String color, int index) {
+	// Considerese a "pos" como i, index, pos es el índice.
+	public static boolean hayColor(String[] colores, String color, int pos) {
 		// Mientras no sea nulo todo bien
-		if(colores[index]!=null) {
-			if(index>=colores.length-1) {
+		if(colores[pos]!=null) {
+			if(pos>=colores.length-1) {
 				return false; // No hubieron coincidencias(:
 			}else {
-				if(colores[index].equals(color.toUpperCase())) {
+				if(colores[pos].equals(color.toUpperCase())) {
 					return true; // Oh te encontré :D
 				}
-				return hayColor(colores, color, index+2);
+				return hayColor(colores, color, pos+2);
 			}
 		}else {
 			return false;
