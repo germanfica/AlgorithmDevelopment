@@ -182,7 +182,10 @@ public class Entrega {
 				System.out.println(" = " + primeraCalidad(cantColores)/10);
 				break;
 			case 9:
-				System.out.println(esPalíndromo("tu mama mamut", "", 0));
+				sc = new Scanner(System.in);
+				System.out.println("Ingrese la oración a analizar: ");
+				String oración = sc.nextLine();
+				System.out.println(esPalíndromo(oración, "", 0));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
