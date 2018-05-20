@@ -118,6 +118,7 @@ public class Test {
 	 * secuencia de caracteres que se lee de la misma manera hacia atrás y hacia adelante,
 	 * como "madam" o "racecar".
 	 */
+	// Intentar resolverlo con el substring,
 	public static boolean esPalíndromo(String oración, String nuevaOración, int i) {
 		/*
 		 * To do:
