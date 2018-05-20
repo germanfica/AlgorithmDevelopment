@@ -157,8 +157,8 @@ public class Entrega {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad. (IMPLEMENTADO)\n" +
 					"[6] Verificar si el color solicitado es usado en la impresión (IMPLEMENTADO)\n" +
-					"[8] Mostrar factor\n" +
-					"[9] Determinar palindromidad\n"
+					"[8] Mostrar factor (IMPLEMENTADO)\n" +
+					"[9] Determinar palindromidad (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
