@@ -66,6 +66,7 @@ public class Archivo {
     			contenido = contenido + sc.next();
     		}
     		buff.close();
+    		sc.close();
     	}
     	catch (FileNotFoundException ex) {
             System.err.println(ex.getMessage() + "\nEl archivo no existe.");
