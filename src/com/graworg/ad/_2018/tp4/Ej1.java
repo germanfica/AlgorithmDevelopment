@@ -3,10 +3,15 @@ package com.graworg.ad._2018.tp4;
 import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
-
+/*
+ * Notas:
+ * Los códigos de colores sólo identifican un orden en el uso de colores, en una
+ * impresión determinada.
+ */
 public class Ej1 {
 	// Constantes
-    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo
+    private static final String COLORES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Colores.txt"; // Ruta del archivo Colorex.txt
+    private static final String IMPRESIONES_ARCHIVO = "src/com/graworg/ad/_2018/tp4/Impresiones.txt"; // Ruta del archivo Impresiones.txt
 	private static final int precioBase = 100; // $100.-
 	private static final int tamArrgelo = 20;
 	// Scanner
@@ -57,36 +62,41 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (3 Parte 1) Carga a un arreglo de String todos los colores de un determinado archivo.
+	 * (3.1) Carga de un determinado archivo a un arreglo de String todos los colores
+	 * con sus respectivos códigos asociados.
 	 * 
 	 * @see Ahora suponga que los colores usados son provistos en un archivo de texto.
 	 * Realice la carga de un arreglo de Strings a partir del archivo.
 	 * @return
 	 */
-	public static String[] cargaDeColores(int longitud) {
-		String[] contenido = new String[longitud];
+	public static String[] cargaColoresDesdeArchivo(int longitud) {
+		String[] arreglo = new String[longitud];
+		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
 		
-		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
+		// Converción a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
 		
-		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
+		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
 		
 		int i = 0;
 		
 		// Objetivo: almacenar los colores uno por uno
 		while(sc.hasNext()) {
-			contenido[i] = sc.next();
+			arreglo[i] = sc.next();
 			i=i+1;
 		}
 		
-		return contenido;
+		return arreglo;
 	}
 	
 	/**
-	 * (3 Parte 2)
+	 * (3.2) Mostrar todos los colores con sus respectivos códigos asociados.
 	 * 
 	 * @see Muestre el color con los códigos numéricos asociados a cada uno.
 	 */
-	public static void mostrarElContenidoDelArreglo(String[] colores) {
+	public static void mostrarColores(String[] colores) {
 		int i = 0;
 		while(i<=colores.length-1 && colores[i]!=null){
 			System.out.println("Color: " + colores[i] + "; Código: " + colores[i+1]);
@@ -120,93 +130,164 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (5) Cambia las vocales a un '*' en las impresiones de primera calidad.
+	 * (5) Cambia las vocales a un '*' en las impresiones de 2da calidad.
 	 * 
-	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las vocales. Para usarla
-	 * antes de convertir a mayúscula, hay que cambiar las vocales a un ‘*’. La información es provista
-	 * por el mismo archivo de texto del punto 3.
+	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las
+	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
+	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
-	public static String cambiarVocales(String contenido){
-		String nuevoContenido = "";
+	public static String cambioAVocales(String contenido){
+		char c;
 		
 		for(int i = 0; i<=contenido.length()-1 ;i++){
-			switch (contenido.charAt(i)) {
-			case 'A':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'E':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'I':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'O':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			case 'U':
-				contenido= contenido.substring(0,i) + '*' + contenido.substring(i+1);
-				break;
-			default:
-				break;
+			c = contenido.charAt(i);
+			
+			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+				contenido = contenido.substring(0,i) + '*' + contenido.substring(i+1);
 			}
 		}
 		
-		return nuevoContenido;
+		return contenido;
 	}
 	
+	/**
+	 * (6) Verificar si el color solicitado es usado en la impresión
+	 * 
+	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la
+	 * impresión. Para esto debe recorrer el arreglo de colores, considere que la
+	 * impresión a realizar es de 1ra calidad (no tiene cambiadas las vocales por “*”).
+	 * ¿Cómo lo resolverías para ambos casos?
+	 */
+	public static void verificarColorImpresión(String[] colores) {
+		sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese el color: ");
+		
+		if(hayColor(colores, sc.next())) {
+			System.out.println("Hay");
+		}else {
+			System.out.println("No hay");
+		}
+	}
+	
+	public static boolean hayColor(String[] colores, String color) {
+		// Declaración de variables
+		boolean respuesta = false;
+		int i;
+		
+		// Inicialización de variables
+		i = 0;
+		
+		do {
+			if(colores[i].equals(color.toUpperCase())) {
+				respuesta = true;
+			}
+			i = i + 2;
+		}while(i<=colores.length-1 && !respuesta && colores[i]!=null);
+		
+		return respuesta;
+	}
 	
 	/**
-	 * (6)
+	 * (7) 
 	 * 
-	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la impresión. Para
-	 * esto debe recorrer el arreglo de colores, considere que la impresión a realizar es de 1ra calidad
-	 * (no tiene cambiadas las vocales por “*”). ¿Cómo lo resolverías para ambos casos?
+	 * @see Se han guardado las impresiones realizadas en el mes en una matriz numérica.
+	 * Las columnas representan a los colores y las filas a las impresiones hechas en el mes.
+	 * Recorrer recursivamente la matriz de impresiones por fila y mostrar la suma (factor
+	 * de impresión de 2da calidad).
+	 * 
+	 * Esto es sólo una nota adicional: los códigos de orden no están ordenados por fila, ya
+	 * que no todas las impresiones usaron los mismo colores.
 	 */
 	
-	public static void mostrarMenú(){
+	public static int[][] cargaImpresionesDesdeArchivo(int longitudFila, int longitudColumna) {
+		int[][] matriz = new int[longitudFila][longitudColumna];
+		String contenidoDelArchivo = Archivo.leer(IMPRESIONES_ARCHIVO);
+		
+		// Converción a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
+		
+		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
+		
+		int i = 0;
+		
+		// Objetivo: almacenar los colores uno por uno
+		while(sc.hasNext()) {
+			//matriz[i] = sc.next();
+			i=i+1;
+		}
+		
+		return matriz;
+	}
+	
+	/**
+	 * Mostrar menú de opciones
+	 */
+	public static void mostrarMenú() {
+		// Declaración de las variables
+		int[][] matrizColores;
 		String[] colores;
+		boolean salir;
+		int opción;
 		
-		// (1)
-		System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
-		
-		// (2)
-		System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
-		
-		// Cambiar mínuculas
-		//Archivo.guardar(cambiarVocales(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
-		
-		// (4) Guardar los cambios
-		Archivo.guardar(pasarAMayúsculas(Archivo.leer(NOMBRE_ARCHIVO)), NOMBRE_ARCHIVO);
-		
-		String hola = Archivo.leer(NOMBRE_ARCHIVO);
-		System.out.println(hola);
+		// Inicialización de las variables
+		salir = false;
+		colores = cargaColoresDesdeArchivo(tamArrgelo);
+		matrizColores = cargaImpresionesDesdeArchivo(5, tamArrgelo);
 		
 		
-		// (3 Parte 1)
-		colores = cargaDeColores(tamArrgelo);
+		System.out.println("Bienvenido a la consola de la aplicación");
 		
-		// (3 Parte 2)
-		mostrarElContenidoDelArreglo(colores);
-		
-		// (5)
-		
+		while(!salir)
+		{
+			sc = new Scanner(System.in);
+			
+			// Mostrar el cartel de las opciones
+			System.out.print(
+					"[0] Salir (IMPLEMENTADO)\n" +
+					"[1] Mostrar precio del trabajo de segunda calidad (IMPLEMENTADO)\n" +
+					"[2] Mostrar el precio del trabajo de primera calidad (IMPLEMENTADO)\n" +
+					"[3] Obtener nuevos datos del archivo Colores.txt (IMPLEMENTADO)\n" +
+					"[4] Mostrar colores (IMPLEMENTADO)\n" +
+					"[5] Impresión de 2da calidad (IMPLEMENTADO)\n" +
+					"[6] Verificar si un color determinado es usado en la impresión (IMPLEMENTADO)\n"
+					);
+			
+			// Leer opción para el menú principal
+			opción = sc.nextInt();
+			
+			switch (opción) {
+			case 0:
+				salir = true;
+				break;
+			case 1:
+				System.out.println("El precio del trabajo de segunda calidad es: $" + segundaCalidad(4) * precioBase +".-");
+				break;
+			case 2:
+				System.out.println("El precio del trabajo de primera calidad es: $" + primeraCalidad(4) * precioBase +".-");
+				break;
+			case 3:
+				colores = cargaColoresDesdeArchivo(tamArrgelo);
+				break;
+			case 4:
+				mostrarColores(colores);
+				break;
+			case 5:
+				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO)));
+				break;
+			case 6:
+				verificarColorImpresión(colores);
+				break;
+			default:
+				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				break;
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
 		mostrarMenú();
-	}
-	
-	/**
-	 * Mostrar el contenido del archivo
-	 */
-	public static void mostrarContenidoDelArchivo() {
-		sc = new Scanner(Archivo.leer(NOMBRE_ARCHIVO));
-		
-		sc.useDelimiter("\\s*,\\s*"); // Me clasifica los colores cuando encuntra la coma
-		
-		// Objetivo: almacenar los colores uno por uno
-		while(sc.hasNext()) {
-			System.out.println("Color: " + sc.next() + "; Código: " + sc.next());
-		}
 	}
 }
