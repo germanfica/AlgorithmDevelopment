@@ -27,8 +27,6 @@ public class Ej230518_1020 {
 			}
 		}
 		
-		
-		
 		return pos;
 		
 	}
