@@ -52,33 +52,37 @@ public class Entrega {
 	 * ¿Cómo lo resolverías para ambos casos?
 	 * 
 	 * ACORDATEE GERMAAN DE CREAR, UN MODULO QUE LEA LOS DATOS Y  OTRO QUE LOS MUESTRE.
+	 * BIEN LO HABÍAS IMPLEMENTADO.
+	 * 
+	 * Lo habías charlado con Natalia, pero estaba bien jaja
 	 */
 	public static void verificarColorImpresión(String[] colores) {
 		sc = new Scanner(System.in);
 		
 		System.out.println("Ingrese el color: ");
 		
-		if(hayColor(colores, sc.next().toUpperCase(), 0)) {
+		if(hayColor(colores, sc.next().toUpperCase(), 0, false)) {
 			System.out.println("Hay");
 		}else {
 			System.out.println("No hay");
 		}
 	}
 	
-	public static boolean hayColor(String[] colores, String color, int i) {
-		// Mientras no sea nulo todo bien
-		if(colores[i]!=null) {
-			if(i>=colores.length-1) {
-				return false; // No hubieron coincidencias(:
-			}else {
-				if(colores[i].equals(color.toUpperCase())) {
-					return true; // Oh te encontré :D
-				}
-				return hayColor(colores, color, i+2);
-			}
+	public static boolean hayColor(String[] colores, String color, int i, boolean respuesta) {
+		
+		if(colores[i]==null || i==colores.length || respuesta==true) {
+			// Caso base
+			
 		}else {
-			return false;
+			if(colores[i].equals(color.toUpperCase())) {
+				respuesta = true; // Oh te encontré :D
+			}
+			
+			// Caso recursivo
+			respuesta = hayColor(colores, color, i+2, respuesta);
 		}
+		
+		return respuesta;
 	}
 	
 	/**
