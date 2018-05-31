@@ -43,7 +43,7 @@ public class Ej2 {
 	
 	
 	public static void mostrarNúmeroTexto(int n){
-		String t1;
+		//String t1;
 		if(n>0){
 			//t1 = pasarATexto(n%10);
 			//System.out.println(t1);
