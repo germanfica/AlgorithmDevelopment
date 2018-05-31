@@ -1,5 +1,8 @@
 package com.graworg.ad._2018.tp4;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
@@ -16,6 +19,8 @@ public class Ej1 {
 	private static final int tamArrgelo = 20;
 	// Scanner
 	private static Scanner sc;
+	private static Scanner scI;
+	private static Scanner scJ;
 	
 	/**
 	 * (1) Retorna la sumatoria de un número dado.
@@ -49,7 +54,7 @@ public class Ej1 {
 	 * @return
 	 */
 	public static int primeraCalidad(int n) {
-		// Declaración de variables
+		// Declaración de variablesscJ
 		int factorial;
 		
 		if (n > 1) {
@@ -206,18 +211,41 @@ public class Ej1 {
 		
 		// Converción a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
+		BufferedReader buff;
+		try {
+			buff = new BufferedReader(new FileReader(IMPRESIONES_ARCHIVO));
+			scI = new Scanner(buff); // Asignación de tarea al scanner para analizar el contenido del archivo
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // Obtener los datos que están en el archivo de texto
+		//scI.useDelimiter("\\s*,\\s*");
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		//int i = 0;
+		//int j = 0;
 		
-		sc.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
+		while(scI.hasNextLine()) {
+			System.out.println(scI.nextLine());
+			System.out.println("h");
+			
+		}
 		
-		int i = 0;
-		
+		/*
 		// Objetivo: almacenar los colores uno por uno
-		while(sc.hasNext()) {
-			//matriz[i] = sc.next();
+		while(scI.hasNextLine()) {
+			scJ = new Scanner(scI.next());
+			
+			scJ.useDelimiter("\\s*,\\s*"); // Clasifica los colores cuando encuntra una coma
+			
+			while(scJ.hasNext()){
+				matriz[i][j] = scI.nextInt();
+				System.out.println();
+				j=j+1;
+			}
 			i=i+1;
 		}
+		*/
 		
 		return matriz;
 	}
@@ -235,6 +263,7 @@ public class Ej1 {
 		// Inicialización de las variables
 		salir = false;
 		colores = cargaColoresDesdeArchivo(tamArrgelo);
+		System.out.println("Carga de la matriz");
 		matrizColores = cargaImpresionesDesdeArchivo(5, tamArrgelo);
 		
 		
