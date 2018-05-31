@@ -17,7 +17,7 @@ import com.graworg.ad.util.TecladoIn;
  *  
  * En base a estos datos muestre un cartel con el monto a pagar y el descuento aplicado.
  */
-public class Ej6 {
+public class Ej6_01 {
 	/**
 	 * Se lee y muestra por pantalla un cartel indicando el ingreso del tipo de socio
 	 * y retorna el mismo.
@@ -25,7 +25,7 @@ public class Ej6 {
 	 * @return tipo de socio
 	 */
 	public static String cargaTipoDeSocio() {
-		System.out.println("Ingrese el tipo de socio: (p/np)");
+		System.out.println("Ingrese el tipo de socio: ");
 		return TecladoIn.readLine();
 	}
 	
@@ -36,7 +36,7 @@ public class Ej6 {
 	 * @return
 	 */
 	public static boolean cargaCuotaAlDía() {
-		System.out.println("¿Tiene su cuota al día? t/f");
+		System.out.println("¿Tiene su cuota al día?");
 		return TecladoIn.readLineBoolean();
 	}
 	
@@ -51,32 +51,9 @@ public class Ej6 {
 		return TecladoIn.readInt();
 	}
 	
-	/**
-	 * Muestra por pantalla el monto a pagar y el descuento aplicado.
-	 * 
-	 * @param tipoDeSocio
-	 * @param cuotaAlDía
-	 * @param cantidadDeMesesAPagar
-	 */
 	public static void mostrarMontoAPagar(String tipoDeSocio, boolean cuotaAlDía, int cantidadDeMesesAPagar) {
-		// Si es un socio pleno entonces
-		if(tipoDeSocio.equals("p")) {
-			// Si tiene la cuota al día entonces
-			if(cuotaAlDía) {
-				int descuento = ((420*cantidadDeMesesAPagar)*15)/100;
-				System.out.println("Monto a pagar: $" + ((420*cantidadDeMesesAPagar)-descuento) + ".-");
-				System.out.println("Descuento aplicado: " + 15 +"%");
-			}else {
-				System.out.println("Monto a pagar: $" + (420*cantidadDeMesesAPagar) + ".-");
-				System.out.println("Descuento aplicado: " + 0 +"%");
-			}
-		}
-		
-		// Si es un socio no pleno entonces
-		if(tipoDeSocio.equals("np")) {
-			System.out.println("Monto a pagar: $" + (310*cantidadDeMesesAPagar) + ".-");
-			System.out.println("Descuento aplicado: " + 0 +"%");
-		}
+		System.out.println("Monto a pagar: ");
+		System.out.println("Descuento aplicado: ");
 	}
 	
 	public static void main(String[] args) {
@@ -84,6 +61,8 @@ public class Ej6 {
 		String tipoDeSocio;
 		boolean cuotaAlDía;
 		int cantidadDeMesesAPagar;
+		
+		System.out.println("Bienvenido!(:");
 		
 		// Leer datos
 		tipoDeSocio = cargaTipoDeSocio();

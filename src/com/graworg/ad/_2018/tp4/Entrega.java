@@ -17,21 +17,30 @@ public class Entrega {
 	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
 	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
 	 */
-	public static String cambioEnLasVocales(String contenido, int i){
+	public static String cambioEnLasVocales(String contenido, int i) {
 		// Declaración de variables
+		String nuevoContenido;
 		char c;
 		
 		// Inicialización de variables
+		nuevoContenido = "";
 		c = ' ';
 		
-		if(i == contenido.length()-1) {
-			return contenido;
+		if(i == contenido.length()) {
+			// Caso base
+			
 		}else {
 			c = contenido.charAt(i);
-			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') { c = '*'; }
 			
-			return c + cambioEnLasVocales(contenido, i+1);
+			if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+				c = '*';
+			}
+			
+			// Caso recursivo
+			nuevoContenido = c + cambioEnLasVocales(contenido, i+1);
 		}
+		
+		return nuevoContenido;
 	}
 	
 	/**
