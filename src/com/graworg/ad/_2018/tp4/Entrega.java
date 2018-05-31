@@ -50,6 +50,8 @@ public class Entrega {
 	 * impresión. Para esto debe recorrer el arreglo de colores, considere que la
 	 * impresión a realizar es de 1ra calidad (no tiene cambiadas las vocales por “*”).
 	 * ¿Cómo lo resolverías para ambos casos?
+	 * 
+	 * ACORDATEE GERMAAN DE CREAR, UN MODULO QUE LEA LOS DATOS Y  OTRO QUE LOS MUESTRE.
 	 */
 	public static void verificarColorImpresión(String[] colores) {
 		sc = new Scanner(System.in);
