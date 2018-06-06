@@ -11,7 +11,7 @@ public class Entrega {
 	 * 
 	 * @param arreglo
 	 */
-	public static int[] métodoDeInserción() {
+	public static int[] métodoDeInserción(int[] arreglo) {
 		// Declaración de variables
 		int i;
 		
@@ -58,15 +58,13 @@ public class Entrega {
 	 * 
 	 * @return
 	 */
-	public static int[] métodoDeSelección() {
+	public static int[] métodoDeSelección(int[] arreglo) {
 		// Declaración de las variables
-		int[] arreglo;
 		int i, posiciónDelMenor;
 		
 		// Inicialización de las variables
 		i = 0;
 		posiciónDelMenor = 0;
-		arreglo = cargaDesdeArchivo("src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo_01.txt", 10);
 		
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		for(i=0;i<=arreglo.length-1;i++) {
@@ -174,7 +172,7 @@ public class Entrega {
 		
 		// Inicialización de las variables
 		salir = false;
-	
+		arreglo = cargaDesdeArchivo("src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo_01.txt", 10);
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
@@ -197,10 +195,10 @@ public class Entrega {
 				salir = true;
 				break;
 			case 1:
-				arreglo = métodoDeInserción();
+				arreglo = métodoDeInserción(arreglo);
 				break;
 			case 2:
-				arreglo = métodoDeSelección();
+				arreglo = métodoDeSelección(arreglo);
 				mostrarElementos(arreglo);
 				break;			
 			default:
