@@ -8,6 +8,22 @@ public class Entrega {
 	private static Scanner sc;
 	
 	/**
+	 * (2) Método de selección
+	 * 
+	 * @return
+	 */
+	public static int[] métodoDeSelección() {
+		// Declaración de las variables
+		int i, posiciónDelMenor;
+		
+		// Inicialización de las variables
+		i = 0;
+		posiciónDelMenor = 0;
+		
+		// Reco
+	}
+	
+	/**
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrarMenú() {
