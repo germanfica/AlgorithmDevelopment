@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
 
+import sun.util.BuddhistCalendar;
+
 public class Entrega {
 	private static Scanner sc;
 	
@@ -24,8 +26,64 @@ public class Entrega {
 		
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		for(i=0;i<=arreglo.length-1;i++) {
+			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
+			posiciónDelMenor = búsquedaDelMenor(arreglo, posiciónDelMenor);
 			
+			/* Intercambiar de lugar al número más pequeño encontrado
+			 * por la posición del elemento ubicado en la posición i
+			 */
+			arreglo = intercambioDePosición(arreglo, posiciónDelMenor, posiciónDelMenor);
 		}
+		
+		return arreglo;
+	}
+	
+	/**
+	 * Hallar y retornar el índice del elemento más pequeño del arreglo ingresado
+	 * por parámetro
+	 * 
+	 * @param arreglo
+	 * @param i
+	 * @return
+	 */
+	public static int búsquedaDelMenor(int[] arreglo, int i) {
+		// Declaración de las variables
+		int posiciónDelMenor, j;
+		
+		// Inicialización de las variables
+		posiciónDelMenor = i;
+		
+		// Recorrer el arreglo en busca del índice del elemento del mismo
+		for(j=i;j<=arreglo.length-1;j++) {
+			// Si existe un elemento más pequeño guardar su índce
+			if(arreglo[j] < arreglo[posiciónDelMenor]) {
+				// Se encontró un elemento más pequeño aún
+				posiciónDelMenor = j;
+			}
+		}
+		
+		return posiciónDelMenor;
+	}
+	
+	/**
+	 * Intercambiar de posición al elemento menor por el elemento de la
+	 * posición i
+	 * 
+	 * @param arreglo
+	 * @param posiciónDelMenor
+	 * @param i
+	 * @return
+	 */
+	public static int[] intercambioDePosición(int[] arreglo, int posiciónDelMenor, int i) {
+		// Declaración de variables
+		int auxiliar; // Almacena el elemento de la posicón i
+		
+		// Inicialización de variables
+		auxiliar = arreglo[i];
+		
+		// Intercambiar las posiciones
+		arreglo[i] = arreglo[posiciónDelMenor];
+		arreglo[posiciónDelMenor] = auxiliar;
 		
 		return arreglo;
 	}
