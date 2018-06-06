@@ -40,6 +40,12 @@ public class Entrega {
 		return arreglo;
 	}
 	
+	public static void test(){
+		String texto;
+		
+		
+	}
+	
 	/**
 	 * (2) Método de selección
 	 * 
@@ -47,20 +53,16 @@ public class Entrega {
 	 */
 	public static int[] selección(int[] arreglo) {
 		// Declaración de las variables
-		int i, j, posiciónDelMenor, auxiliar;
-		
-		// Inicialización de las variables
-		i = 0;
-		posiciónDelMenor = 0;
-		
+		int posiciónDelMenor, auxiliar;
+	
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		// n es la longitud del arreglo
-		for(i=0;i<=arreglo.length-1;i++) {
+		for(int i=0;i<=arreglo.length-1;i++) {
 			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
 			posiciónDelMenor = i;
 			
 			// Recorrer el arreglo en busca del índice del elemento del mismo
-			for(j=i+1;j<=arreglo.length-1;j++) {
+			for(int j=i+1;j<=arreglo.length-1;j++) {
 				// Si existe un elemento más pequeño guardar su índce
 				if(arreglo[j] < arreglo[posiciónDelMenor]) {
 					// Se encontró un elemento más pequeño aún
