@@ -1,13 +1,57 @@
 package com.graworg.ad._2018.entrega.ordenamiento;
 
 import java.util.Scanner;
-
 import com.graworg.ad.util.Archivo;
-
-import sun.util.BuddhistCalendar;
 
 public class Entrega {
 	private static Scanner sc;
+	
+	/**
+	 * (1) Método de inserción
+	 * 
+	 * @param arreglo
+	 */
+	public static int[] métodoDeInserción() {
+		// Declaración de variables
+		int i;
+		
+		// Inicialización de variables
+		i = 0;
+		
+		// Recorrer el arreglo
+		for(i=1;i<=arreglo.length-1;i++) {
+			// Reubicar los elementos
+			arreglo = reubica(arreglo, i);
+		}
+		
+		return arreglo;
+	}
+	
+	/**
+	 * Reubicar la posición de los elementos
+	 * 
+	 * @param arreglo
+	 * @param últimaPosición
+	 * @return
+	 */
+	public static int[] reubica(int[] arreglo, int últimaPosición) {
+		// Declaración de variables
+		int j, auxiliar;
+		
+		// Inicialización de variables
+		auxiliar = arreglo[últimaPosición];
+		j = últimaPosición-1;
+		
+		// Recorrer el arreglo
+		while(j>0 && arreglo[j-1]>arreglo[j]) {
+			// Hacer el corrimiento
+			arreglo[j] = arreglo[j-1];
+			j--;
+		}
+		arreglo[j+1] = auxiliar;
+		
+		return arreglo;
+	}
 	
 	/**
 	 * (2) Método de selección
@@ -151,6 +195,9 @@ public class Entrega {
 			switch (opción) {
 			case 0:
 				salir = true;
+				break;
+			case 1:
+				arreglo = métodoDeInserción();
 				break;
 			case 2:
 				arreglo = métodoDeSelección();
