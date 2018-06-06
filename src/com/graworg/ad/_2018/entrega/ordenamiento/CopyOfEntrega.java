@@ -3,9 +3,9 @@ package com.graworg.ad._2018.entrega.ordenamiento;
 import java.util.Scanner;
 import com.graworg.ad.util.Archivo;
 
-public class Entrega {
+public class CopyOfEntrega {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo.txt"; // Ruta del archivo
-	private static final int tamArrgelo = 9;
+	private static final int tamArrgelo = 4;
 	private static Scanner sc;
 	
 	/**
@@ -15,27 +15,42 @@ public class Entrega {
 	 */
 	public static int[] inserción(int[] arreglo) {
 		// Declaración de variables
-		int i, j, auxiliar;
+		int i;
 		
 		// Inicialización de variables
 		i = 0;
-		j = 0;
 		
 		// Recorrer el arreglo
 		for(i=1;i<=arreglo.length-1;i++) {
 			// Reubicar los elementos
-			auxiliar = arreglo[i];
-			j = i;
-			
-			// Recorrer el arreglo
-			while(j>0 && auxiliar<arreglo[j-1]) {
-				// Hacer el corrimiento
-				arreglo[j] = arreglo[j-1];
-				j--;
-			}
-			
-			arreglo[j] = auxiliar;
+			arreglo = reubica(arreglo, i);
 		}
+		
+		return arreglo;
+	}
+	
+	/**
+	 * Reubicar la posición de los elementos
+	 * 
+	 * @param arreglo
+	 * @param últimaPosición
+	 * @return
+	 */
+	public static int[] reubica(int[] arreglo, int últimaPosición) {
+		// Declaración de variables
+		int j, auxiliar;
+		
+		// Inicialización de variables
+		auxiliar = arreglo[últimaPosición];
+		j = últimaPosición-1;
+		
+		// Recorrer el arreglo
+		while(j>0 && arreglo[j-1]>arreglo[j]) {
+			// Hacer el corrimiento
+			arreglo[j] = arreglo[j-1];
+			j--;
+		}
+		arreglo[j+1] = auxiliar;
 		
 		return arreglo;
 	}
@@ -47,7 +62,7 @@ public class Entrega {
 	 */
 	public static int[] selección(int[] arreglo) {
 		// Declaración de las variables
-		int i, j, posiciónDelMenor, auxiliar;
+		int i, posiciónDelMenor;
 		
 		// Inicialización de las variables
 		i = 0;
@@ -57,23 +72,63 @@ public class Entrega {
 		// n es la longitud del arreglo
 		for(i=0;i<=arreglo.length-1;i++) {
 			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
-			posiciónDelMenor = i;
+			posiciónDelMenor = búsquedaDelMenor(arreglo, posiciónDelMenor);
 			
-			// Recorrer el arreglo en busca del índice del elemento del mismo
-			for(j=i+1;j<=arreglo.length-1;j++) {
-				// Si existe un elemento más pequeño guardar su índce
-				if(arreglo[j] < arreglo[posiciónDelMenor]) {
-					// Se encontró un elemento más pequeño aún
-					posiciónDelMenor = j;
-				}
-			}
-	
-			// Almacenar el elemento de la posicón i
-			auxiliar = arreglo[i];
-			// Intercambiar las posiciones
-			arreglo[i] = arreglo[posiciónDelMenor];
-			arreglo[posiciónDelMenor] = auxiliar;
+			/* Intercambiar de lugar al número más pequeño encontrado
+			 * por la posición del elemento ubicado en la posición i
+			 */
+			arreglo = intercambioDePosición(arreglo, posiciónDelMenor, posiciónDelMenor);
 		}
+		
+		return arreglo;
+	}
+	
+	/**
+	 * Hallar y retornar el índice del elemento más pequeño del arreglo ingresado
+	 * por parámetro
+	 * 
+	 * @param arreglo
+	 * @param i
+	 * @return
+	 */
+	public static int búsquedaDelMenor(int[] arreglo, int i) {
+		// Declaración de las variables
+		int posiciónDelMenor, j;
+		
+		// Inicialización de las variables
+		posiciónDelMenor = i;
+		
+		// Recorrer el arreglo en busca del índice del elemento del mismo
+		for(j=i;j<=arreglo.length-1;j++) {
+			// Si existe un elemento más pequeño guardar su índce
+			if(arreglo[j] < arreglo[posiciónDelMenor]) {
+				// Se encontró un elemento más pequeño aún
+				posiciónDelMenor = j;
+			}
+		}
+		
+		return posiciónDelMenor;
+	}
+	
+	/**
+	 * Intercambiar de posición al elemento menor por el elemento de la
+	 * posición i
+	 * 
+	 * @param arreglo
+	 * @param posiciónDelMenor
+	 * @param i
+	 * @return
+	 */
+	public static int[] intercambioDePosición(int[] arreglo, int posiciónDelMenor, int i) {
+		// Declaración de variables
+		int auxiliar; // Almacena el elemento de la posicón i
+		
+		// Inicialización de variables
+		auxiliar = arreglo[i];
+		
+		// Intercambiar las posiciones
+		arreglo[i] = arreglo[posiciónDelMenor];
+		arreglo[posiciónDelMenor] = auxiliar;
 		
 		return arreglo;
 	}
