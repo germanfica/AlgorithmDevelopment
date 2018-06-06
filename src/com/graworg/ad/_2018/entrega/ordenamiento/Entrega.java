@@ -4,6 +4,7 @@ import java.util.Scanner;
 import com.graworg.ad.util.Archivo;
 
 public class Entrega {
+    private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo.txt"; // Ruta del archivo Colorex.txt
 	private static Scanner sc;
 	
 	/**
@@ -172,7 +173,7 @@ public class Entrega {
 		
 		// Inicialización de las variables
 		salir = false;
-		arreglo = cargaDesdeArchivo("src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo_01.txt", 10);
+		arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO, 10);
 		
 		System.out.println("Bienvenido a la consola de la aplicación");
 		
