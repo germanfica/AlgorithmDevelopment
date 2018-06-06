@@ -140,6 +140,7 @@ public class Entrega {
 		
 		while(i<=arreglo.length-1) {
 			System.out.println(arreglo[i]);
+			i++;
 		}
 	}
 	
@@ -197,6 +198,7 @@ public class Entrega {
 				break;
 			case 1:
 				arreglo = métodoDeInserción(arreglo);
+				mostrarElementos(arreglo);
 				break;
 			case 2:
 				arreglo = métodoDeSelección(arreglo);
