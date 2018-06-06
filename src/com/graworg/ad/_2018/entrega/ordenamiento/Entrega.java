@@ -14,13 +14,51 @@ public class Entrega {
 	 */
 	public static int[] métodoDeSelección() {
 		// Declaración de las variables
+		int[] arreglo;
 		int i, posiciónDelMenor;
 		
 		// Inicialización de las variables
 		i = 0;
 		posiciónDelMenor = 0;
+		arreglo = cargaDesdeArchivo("src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo_01.txt", 10);
 		
-		// Reco
+		// Recorrer el arreglo para ordenar los elementos uno a uno
+		for(i=0;i<=arreglo.length-1;i++) {
+			
+		}
+		
+		return arreglo;
+	}
+	
+	public static void mostrarElementos(int[] arreglo) {
+		// Declaración de variables
+		int i;
+		
+		// Inicialización de variables
+		i = 0;
+		
+		while(i<=arreglo.length-1) {
+			System.out.println(arreglo[i]);
+		}
+	}
+	
+	public static int[] cargaDesdeArchivo(String ruta, int longitud) {
+		int[] arreglo = new int[longitud];
+		String contenidoDelArchivo = Archivo.leer(ruta);
+		
+		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
+		
+		int i = 0;
+		
+		// Objetivo: almacenar los colores de a uno por uno
+		while(sc.hasNext()) {
+			arreglo[i] = sc.nextInt();
+			i=i+1;
+		}
+		
+		return arreglo;
 	}
 	
 	/**
@@ -28,7 +66,7 @@ public class Entrega {
 	 */
 	public static void mostrarMenú() {
 		// Declaración de las variables
-		int[] arreglo = {1,3,4,5};
+		int[] arreglo;
 		boolean salir;
 		int opción;
 		
@@ -56,7 +94,9 @@ public class Entrega {
 			case 0:
 				salir = true;
 				break;
-			case 1:
+			case 2:
+				arreglo = métodoDeSelección();
+				mostrarElementos(arreglo);
 				break;			
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
