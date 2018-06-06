@@ -15,14 +15,10 @@ public class Entrega {
 	 */
 	public static int[] inserción(int[] arreglo) {
 		// Declaración de variables
-		int i, j, auxiliar;
-		
-		// Inicialización de variables
-		i = 0;
-		j = 0;
+		int auxiliar, j;
 		
 		// Recorrer el arreglo
-		for(i=1;i<=arreglo.length-1;i++) {
+		for(int i=1;i<=arreglo.length-1;i++) {
 			// Reubicar los elementos
 			auxiliar = arreglo[i];
 			j = i;
@@ -134,8 +130,8 @@ public class Entrega {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Aplicar el método de inserción\n" +
-					"[2] Aplicar el método selección\n"
+					"[1] Aplicar el método de inserción (IMPLEMENTADO)\n" +
+					"[2] Aplicar el método selección (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
