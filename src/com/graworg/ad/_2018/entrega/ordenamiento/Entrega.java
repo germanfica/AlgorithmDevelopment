@@ -36,12 +36,6 @@ public class Entrega {
 		return arreglo;
 	}
 	
-	public static void test(){
-		String texto;
-		
-		
-	}
-	
 	/**
 	 * (2) Método de selección
 	 * 
