@@ -49,7 +49,7 @@ public class MetodosBusquedaOrdenacion {
         for (int i = 0; i < longitud-1; i++) {
             for (int j = 0; j < longitud-1-i; j++) {
                 if(array[j+1]<array[j]){
-                    aux=array[j];  
+                    aux=array[j];
                     array[j]=array[j+1];
                     array[j+1]=aux;
                 }
