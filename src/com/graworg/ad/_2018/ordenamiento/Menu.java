@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.graworg.ad.util.Archivo;
 
-public class Principal {
+public class Menu {
 	private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/ordenamiento/arreglo.txt"; // Ruta del archivo
 	private static Scanner sc;
 	
@@ -73,7 +73,7 @@ public class Principal {
 	/**
 	 * Mostrar menú de opciones
 	 */
-	public static void mostrarMenú() {
+	public static void mostrar() {
 		// Declaración de las variables
 		int[] arreglo;
 		boolean salir;

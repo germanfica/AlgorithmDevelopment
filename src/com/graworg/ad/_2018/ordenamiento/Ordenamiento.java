@@ -10,6 +10,6 @@ public class Ordenamiento {
 	}
 	
 	public static void main(String[] args) {
-		Principal.mostrarMenú();
+		Menu.mostrar();
 	}
 }
