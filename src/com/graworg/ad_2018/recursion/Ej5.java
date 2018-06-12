@@ -29,6 +29,33 @@ public class Ej5 {
 		return númeroMayor;
 	}
 	
+	/**
+	 * Retorna el mayor número de un vector
+	 * @param vector
+	 * @param i
+	 * @return
+	 */
+	public static int elMayorEnUnArregloDeEnteros(int[] arreglo, int i){
+		// Declaración de variables
+		int númeroMayor, longitud;
+		
+		// Inicialización de variables
+		númeroMayor = arreglo[0];
+		longitud = 2;
+		
+		if(i<longitud){
+			if(arreglo[i]>númeroMayor){
+				// Caso base
+				númeroMayor = arreglo[i];
+			}else{
+				// Caso recursivo
+				númeroMayor = esMayor(arreglo, i+1);
+			}
+		}
+		
+		return númeroMayor;
+	}
+	
 	public static void main(String[] args) {
 		// Declaración de variables
 		int[] vector = new int[2];

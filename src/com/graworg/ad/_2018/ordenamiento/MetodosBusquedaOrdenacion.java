@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.graworg.ad._2018.entrega.ordenamiento;
+package com.graworg.ad._2018.ordenamiento;
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.graworg.ad._2018.entrega.ordenamiento;
+package com.graworg.ad._2018.ordenamiento;
 
 import java.util.Scanner;
 

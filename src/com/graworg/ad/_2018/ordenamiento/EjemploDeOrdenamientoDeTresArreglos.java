@@ -1,4 +1,4 @@
-package com.graworg.ad._2018.entrega.ordenamiento;
+package com.graworg.ad._2018.ordenamiento;
 
 public class EjemploDeOrdenamientoDeTresArreglos {
 	public static void main(String[] args) {

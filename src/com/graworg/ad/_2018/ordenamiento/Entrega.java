@@ -1,11 +1,11 @@
-package com.graworg.ad._2018.entrega.ordenamiento;
+package com.graworg.ad._2018.ordenamiento;
 
 import java.util.Scanner;
 import com.graworg.ad.util.Archivo;
 
-public class CopyOfEntrega {
+public class Entrega {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo.txt"; // Ruta del archivo
-	private static final int tamArrgelo = 4;
+	private static final int tamArrgelo = 9;
 	private static Scanner sc;
 	
 	/**
@@ -15,42 +15,23 @@ public class CopyOfEntrega {
 	 */
 	public static int[] inserción(int[] arreglo) {
 		// Declaración de variables
-		int i;
-		
-		// Inicialización de variables
-		i = 0;
+		int auxiliar, j;
 		
 		// Recorrer el arreglo
-		for(i=1;i<=arreglo.length-1;i++) {
+		for(int i=1;i<=arreglo.length-1;i++) {
 			// Reubicar los elementos
-			arreglo = reubica(arreglo, i);
+			auxiliar = arreglo[i];
+			j = i;
+			
+			// Recorrer el arreglo
+			while(j>0 && auxiliar<arreglo[j-1]) {
+				// Hacer el corrimiento
+				arreglo[j] = arreglo[j-1];
+				j--;
+			}
+			
+			arreglo[j] = auxiliar;
 		}
-		
-		return arreglo;
-	}
-	
-	/**
-	 * Reubicar la posición de los elementos
-	 * 
-	 * @param arreglo
-	 * @param últimaPosición
-	 * @return
-	 */
-	public static int[] reubica(int[] arreglo, int últimaPosición) {
-		// Declaración de variables
-		int j, auxiliar;
-		
-		// Inicialización de variables
-		auxiliar = arreglo[últimaPosición];
-		j = últimaPosición-1;
-		
-		// Recorrer el arreglo
-		while(j>0 && arreglo[j-1]>arreglo[j]) {
-			// Hacer el corrimiento
-			arreglo[j] = arreglo[j-1];
-			j--;
-		}
-		arreglo[j+1] = auxiliar;
 		
 		return arreglo;
 	}
@@ -62,73 +43,29 @@ public class CopyOfEntrega {
 	 */
 	public static int[] selección(int[] arreglo) {
 		// Declaración de las variables
-		int i, posiciónDelMenor;
-		
-		// Inicialización de las variables
-		i = 0;
-		posiciónDelMenor = 0;
-		
+		int posiciónDelMenor, auxiliar;
+	
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		// n es la longitud del arreglo
-		for(i=0;i<=arreglo.length-1;i++) {
+		for(int i=0;i<=arreglo.length-1;i++) {
 			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
-			posiciónDelMenor = búsquedaDelMenor(arreglo, posiciónDelMenor);
+			posiciónDelMenor = i;
 			
-			/* Intercambiar de lugar al número más pequeño encontrado
-			 * por la posición del elemento ubicado en la posición i
-			 */
-			arreglo = intercambioDePosición(arreglo, posiciónDelMenor, posiciónDelMenor);
-		}
-		
-		return arreglo;
-	}
-	
-	/**
-	 * Hallar y retornar el índice del elemento más pequeño del arreglo ingresado
-	 * por parámetro
-	 * 
-	 * @param arreglo
-	 * @param i
-	 * @return
-	 */
-	public static int búsquedaDelMenor(int[] arreglo, int i) {
-		// Declaración de las variables
-		int posiciónDelMenor, j;
-		
-		// Inicialización de las variables
-		posiciónDelMenor = i;
-		
-		// Recorrer el arreglo en busca del índice del elemento del mismo
-		for(j=i;j<=arreglo.length-1;j++) {
-			// Si existe un elemento más pequeño guardar su índce
-			if(arreglo[j] < arreglo[posiciónDelMenor]) {
-				// Se encontró un elemento más pequeño aún
-				posiciónDelMenor = j;
+			// Recorrer el arreglo en busca del índice del elemento del mismo
+			for(int j=i+1;j<=arreglo.length-1;j++) {
+				// Si existe un elemento más pequeño guardar su índce
+				if(arreglo[j] < arreglo[posiciónDelMenor]) {
+					// Se encontró un elemento más pequeño aún
+					posiciónDelMenor = j;
+				}
 			}
-		}
-		
-		return posiciónDelMenor;
-	}
 	
-	/**
-	 * Intercambiar de posición al elemento menor por el elemento de la
-	 * posición i
-	 * 
-	 * @param arreglo
-	 * @param posiciónDelMenor
-	 * @param i
-	 * @return
-	 */
-	public static int[] intercambioDePosición(int[] arreglo, int posiciónDelMenor, int i) {
-		// Declaración de variables
-		int auxiliar; // Almacena el elemento de la posicón i
-		
-		// Inicialización de variables
-		auxiliar = arreglo[i];
-		
-		// Intercambiar las posiciones
-		arreglo[i] = arreglo[posiciónDelMenor];
-		arreglo[posiciónDelMenor] = auxiliar;
+			// Almacenar el elemento de la posicón i
+			auxiliar = arreglo[i];
+			// Intercambiar las posiciones
+			arreglo[i] = arreglo[posiciónDelMenor];
+			arreglo[posiciónDelMenor] = auxiliar;
+		}
 		
 		return arreglo;
 	}
@@ -187,8 +124,8 @@ public class CopyOfEntrega {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Aplicar el método de inserción\n" +
-					"[2] Aplicar el método selección\n"
+					"[1] Aplicar el método de inserción (IMPLEMENTADO)\n" +
+					"[2] Aplicar el método selección (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
