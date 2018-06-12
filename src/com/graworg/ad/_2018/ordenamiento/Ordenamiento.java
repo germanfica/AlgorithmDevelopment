@@ -4,6 +4,9 @@ package com.graworg.ad._2018.ordenamiento;
  * Exacto. Verificado. Cuando se manda por parámetro a un arreglo,
  * se está modificando el arreglo que está en memoria. Es decir,
  * no crea un nuevo arreglo, sino que modifica el que está en memoria. :D
+ * 
+ * Y además,
+ * los métodos de ordenamiento que estamos implementando no son recursivos.(;
  */
 public class Ordenamiento {
 	
