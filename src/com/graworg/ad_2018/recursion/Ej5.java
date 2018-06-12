@@ -2,23 +2,26 @@ package com.graworg.ad_2018.recursion;
 
 public class Ej5 {
 	
+	/**
+	 * Retorna el mayor número de un vector
+	 * @param vector
+	 * @param i
+	 * @return
+	 */
 	public static int esMayor(int[] vector, int i){
 		// Declaración de variables
-		int númeroMayor;
+		int númeroMayor, longitud;
 		
 		// Inicialización de variables
 		númeroMayor = vector[0];
+		longitud = 2;
 		
-		// Recorrer el vector por lo tanto tiene longitud 2
-		
-		// Caso base vector[i]>=númeroMayor &&
-		if(i>=2){
-			
-		}else{
-			// Caso recursivo
-			if(númeroMayor>=vector[i]){
-				númeroMayor = vector[0];
+		if(i<longitud){
+			if(vector[i]>númeroMayor){
+				// Caso base
+				númeroMayor = vector[i];
 			}else{
+				// Caso recursivo
 				númeroMayor = esMayor(vector, i+1);
 			}
 		}
