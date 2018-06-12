@@ -93,7 +93,9 @@ public class Menu {
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Método burbuja\n" +
-					"[2] Método burbuja mejorado\n"
+					"[2] Método burbuja mejorado\n" +
+					"[3] Método inserción\n" +
+					"[4] Método selección\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -104,13 +106,20 @@ public class Menu {
 				salir = true;
 				break;
 			case 1:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
 				Ordenamiento.burbuja(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
 				break;
 			case 2:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
 				Ordenamiento.burbujaMejorado(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
-				break;			
+				break;
+			case 3:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
+				Ordenamiento.insercion(arreglo, arreglo.length);
+				mostrarElementos(arreglo);
+				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
