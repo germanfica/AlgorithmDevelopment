@@ -49,6 +49,10 @@ public class Ordenamiento {
 		
 	}
 	
+	public static void seleccion(int[] arreglo, int n) {
+		
+	}
+	
 	public static void main(String[] args) {
 		Menu.mostrar();
 	}

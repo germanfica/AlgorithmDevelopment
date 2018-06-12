@@ -120,6 +120,11 @@ public class Menu {
 				Ordenamiento.insercion(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
 				break;
+			case 4:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
+				Ordenamiento.seleccion(arreglo, arreglo.length);
+				mostrarElementos(arreglo);
+				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
 				break;
