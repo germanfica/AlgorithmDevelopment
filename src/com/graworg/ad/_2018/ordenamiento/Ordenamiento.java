@@ -1,11 +1,14 @@
 package com.graworg.ad._2018.ordenamiento;
 
+/*
+ * Exacto. Verificado. Cuando se manda por parámetro a un arreglo,
+ * se está modificando el arreglo que está en memoria. Es decir,
+ * no crea un nuevo arreglo, sino que modifica el que está en memoria. :D
+ */
 public class Ordenamiento {
 	
-	public static int[] burbuja(int[] arreglo){
-		int auxiliar, n;
-		
-		n = arreglo.length;
+	public static void burbuja(int[] arreglo, int n){
+		int auxiliar;
 		
 		for(int i=0; i<= n-1;i++) {
 			for(int j=0; j<= (n-i-2);j++) {
@@ -16,15 +19,12 @@ public class Ordenamiento {
 				}
 			}
 		}
-		
-		return arreglo;
 	}
 	
-	public static void burbujaMejorado(int[] arreglo) {
-		int auxiliar, n, i;
+	public static void burbujaMejorado(int[] arreglo, int n) {
+		int auxiliar, i;
 		boolean ordenado;
 		
-		n = arreglo.length;
 		ordenado = false;
 		i = 0;
 		

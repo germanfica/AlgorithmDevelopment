@@ -104,11 +104,11 @@ public class Menu {
 				salir = true;
 				break;
 			case 1:
-				Ordenamiento.burbuja(arreglo);
+				Ordenamiento.burbuja(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
 				break;
 			case 2:
-				Ordenamiento.burbujaMejorado(arreglo);
+				Ordenamiento.burbujaMejorado(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
 				break;			
 			default:
