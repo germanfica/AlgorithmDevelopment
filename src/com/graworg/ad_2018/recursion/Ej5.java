@@ -8,51 +8,16 @@ public class Ej5 {
 	 * @param i
 	 * @return
 	 */
-	public static int esMayor(int[] vector, int i){
-		// Declaración de variables
-		int númeroMayor, longitud;
-		
-		// Inicialización de variables
-		númeroMayor = vector[0];
-		longitud = 2;
-		
-		if(i<longitud){
+	// No funciona si no envio como parámetro al númeroMayor
+	public static int esMayor(int[] vector, int i, int númeroMayor){
+		if(i<2){
 			if(vector[i]>númeroMayor){
 				// Caso base
 				númeroMayor = vector[i];
-			}else{
-				// Caso recursivo
-				númeroMayor = esMayor(vector, i+1);
 			}
+			// Caso recursivo
+			númeroMayor = esMayor(vector, i+1, númeroMayor);
 		}
-		
-		return númeroMayor;
-	}
-	
-	/**
-	 * Retorna el mayor número de un vector
-	 * @param vector
-	 * @param i
-	 * @return
-	 */
-	public static int elMayorEnUnArregloDeEnteros(int[] arreglo, int i){
-		// Declaración de variables
-		int númeroMayor, longitud;
-		
-		// Inicialización de variables
-		númeroMayor = arreglo[0];
-		longitud = 2;
-		
-		if(i<longitud){
-			if(arreglo[i]>númeroMayor){
-				// Caso base
-				númeroMayor = arreglo[i];
-			}else{
-				// Caso recursivo
-				númeroMayor = esMayor(arreglo, i+1);
-			}
-		}
-		
 		return númeroMayor;
 	}
 	
@@ -64,6 +29,6 @@ public class Ej5 {
 		vector[0] = 2;
 		vector[1] = 12;
 		
-		System.out.println("El mayor de todos es " + esMayor(vector, 0));
+		System.out.println("El mayor de todos es " + esMayor(vector, 0, vector[0]) + ".");
 	}
 }
