@@ -46,7 +46,18 @@ public class Ordenamiento {
 	}
 	
 	public static void insercion(int[] arreglo, int n) {
+		int auxiliar, j;
 		
+		for(int i=1;i<=n-1;i++) {
+			j = i;
+			auxiliar = arreglo[j];
+			
+			while(j>0 && arreglo[j-1]>auxiliar) {
+				arreglo[j] = arreglo[j-1];
+				j--;
+			}
+			arreglo[j] = auxiliar;
+		}
 	}
 	
 	public static void seleccion(int[] arreglo, int n) {
