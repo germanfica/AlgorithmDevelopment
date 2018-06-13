@@ -76,6 +76,43 @@ public class Ordenamiento {
 		}
 	}
 	
+	public static int busquedaSecuencial(int [] array,int longitud) {
+        //Retorna posicion del elemento
+        int n=7,posicion=-1,i=0;
+        boolean encontrado=false;
+        while(encontrado==false && i < longitud){
+            if(array[i]==n){
+                encontrado=true;
+                posicion=i;
+            }
+            else{
+                i++;
+            }
+        }
+        return posicion;
+    }
+	
+	public static int busquedaBinaria(int[]array) {
+        int inicio=0,fin=array.length-1,posicion=-1,medio,n=5;
+        boolean encontrado=false;
+        while(inicio<=fin && encontrado==false){
+            medio=(inicio+fin)/2;
+            if(n==array[medio]){
+                posicion=medio;
+                encontrado=true;
+            }
+            else{
+                if(n<array[medio]){
+                    fin=medio-1;
+                }
+                else{
+                    inicio=medio+1;
+                }
+            }
+        }
+        return posicion;
+    }
+	
 	public static void main(String[] args) {
 		Menu.mostrar();
 	}

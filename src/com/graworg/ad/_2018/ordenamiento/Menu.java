@@ -92,10 +92,13 @@ public class Menu {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Método burbuja\n" +
-					"[2] Método burbuja mejorado\n" +
-					"[3] Método inserción\n" +
-					"[4] Método selección\n"
+					"[1] Método burbuja (IMPLEMENTADO)\n" +
+					"[2] Método burbuja mejorado (IMPLEMENTADO)\n" +
+					"[3] Método inserción (IMPLEMENTADO)\n" +
+					"[4] Método selección (IMPLEMENTADO)\n" +
+					"_______________________\n" +
+					"[5] Búsqueda secuencial (IMPLEMENTADO)\n" +
+					"[6] Búsqueda binaria (IMPLEMENTADO)\n"
 					);
 			
 			// Leer opción para el menú principal
@@ -124,6 +127,14 @@ public class Menu {
 				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
 				Ordenamiento.seleccion(arreglo, arreglo.length);
 				mostrarElementos(arreglo);
+				break;
+			case 5:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
+				System.out.println("Está en la posición: " + Ordenamiento.busquedaSecuencial(arreglo, arreglo.length));
+				break;
+			case 6:
+				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
+				System.out.println("Está en la posición: " + Ordenamiento.busquedaBinaria(arreglo));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
