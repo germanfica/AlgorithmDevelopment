@@ -62,7 +62,7 @@ public class Ordenamiento {
 	}
 	
 	public static void seleccion(int[] arreglo, int n) {
-		int iMin, auxiliar;
+		int auxiliar, iMin;
 		
 		for(int i=0;i<=n-2;i++) {
 			iMin = i;
