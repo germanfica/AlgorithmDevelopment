@@ -4,18 +4,20 @@ public class P1 {
 	/**
 	 * Invertir un número dado recursivamente
 	 */
-	public static int numInv(int num) {
+	public static int númeroInverso(int num, int n) {
+		int aux;
 		
-		if(num<0) {
-			
+		if(num==0) {
+			aux = n;
 		}else {
-			num = numInv(num-1);
+			aux = númeroInverso(num/10, num%10 + n*10);
 		}
 		
-		return 0;
+		return aux;
 	}
 	
 	public static void main(String[] args) {
-		numInv(921); // Debería mostrar 129
+		System.out.println("Bienvenido al programa");
+		System.out.println(númeroInverso(921, 0)); // Debería mostrar 129);
 	}
 }
