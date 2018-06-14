@@ -42,6 +42,7 @@ public class Ordenamiento {
 					arreglo[j+1] = auxiliar;
 				}
 			}
+			i++;
 		}
 	}
 	
@@ -61,11 +62,11 @@ public class Ordenamiento {
 	}
 	
 	public static void seleccion(int[] arreglo, int n) {
-		int i, j, iMin, auxiliar;
+		int iMin, auxiliar;
 		
-		for(i=0;i<=n-2;i++) {
+		for(int i=0;i<=n-2;i++) {
 			iMin = i;
-			for(j=i+1;j<=n-1;j++) {
+			for(int j=i+1;j<=n-1;j++) {
 				if(arreglo[j]<arreglo[iMin]) {
 					iMin = j;
 					auxiliar = arreglo[i];
