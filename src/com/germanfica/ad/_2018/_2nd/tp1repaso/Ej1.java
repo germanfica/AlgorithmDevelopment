@@ -5,18 +5,18 @@ import java.util.Scanner;
 import com.germanfica.ad.util.Mensaje;
 
 /*
-ALGORITMO misterio() RETORNA Ø
-(* Este algoritmo ….. *)
-ENTERO x,y
-LEER(x)
-LEER(y)
-x ← x-y
-y ← x+y
-x ← y-x
-ESCRIBIR (“Los valores de x e y son”)
-ESCRIBIR (x)
-ESCRIBIR (y)
-FIN ALGORITMO misterio
+ * ALGORITMO misterio() RETORNA Ø
+ * (* Este algoritmo ... *)
+ * ENTERO x,y
+ * LEER(x)
+ * LEER(y)
+ * x ← x-y
+ * y ← x+y
+ * x ← y-x
+ * ESCRIBIR (“Los valores de x e y son”)
+ * ESCRIBIR (x)
+ * ESCRIBIR (y)
+ * FIN ALGORITMO misterio
  */
 public class Ej1 {
 	private static Scanner sc;
