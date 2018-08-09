@@ -100,6 +100,6 @@ public class Ej3 {
 		números = cargaDeNúmeros(longitud);
 		
 		// Mostrar el promedio
-		System.out.println(promedio(números));
+		System.out.println("El promedio es "+promedio(números));
 	}
 }
