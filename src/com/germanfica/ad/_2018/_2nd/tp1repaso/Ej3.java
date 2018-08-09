@@ -10,10 +10,6 @@ import com.germanfica.ad.util.Mensaje;
  */
 public class Ej3 {
 	private static Scanner sc;
-	
-	private static void promedio() {
-		
-	}
 	/*
 	 * Estoy generando como 20 mil arreglos en la memoria,
 	 * en cambio si paso por parametro el arreglo 
@@ -55,6 +51,8 @@ public class Ej3 {
 	 * Lo ideal es crear un objeto e inicializarlo al mismo tiempo, y luego usarlo con
 	 * este estado no modificable en toda la aplicación.  De esta manera
 	 * vas a escribir código escalable y seguro en Java.
+	 * 
+	 * Pasar por referencia es algo que se intenta evitar.
 	 */
 	public static int[] cargaDeNúmeros(int longitud) {
 		// Declaración e inicialización de variables
@@ -62,10 +60,22 @@ public class Ej3 {
 		// Creación del Scanner
 		sc = new Scanner(System.in);
 		// Cargar de elementos al arreglo
-		for(int i = 0;i<=longitud;i++) {
+		for(int i = 0;i<=longitud-1;i++) {
 			números[i] = sc.nextInt();
 		}
 		return números;
+	}
+	
+	public static int promedio(int[] números) {
+		// Declaración de variables
+		int sumaDeValores;
+		// Inicialización de variables
+		sumaDeValores = 0;
+		// Calcular promedio/average = sum of values/number of values
+		for(int i = 0;i<=números.length-1;i++) {
+			sumaDeValores = sumaDeValores + números[i];
+		}
+		return sumaDeValores/números.length;
 	}
 	
 	public static void main(String[] args) {
@@ -88,5 +98,8 @@ public class Ej3 {
 		
 		// Cargar el arreglo
 		números = cargaDeNúmeros(longitud);
+		
+		// Mostrar el promedio
+		System.out.println(promedio(números));
 	}
 }
