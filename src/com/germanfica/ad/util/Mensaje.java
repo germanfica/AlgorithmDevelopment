@@ -1,26 +1,26 @@
 package com.germanfica.ad.util;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mensaje {
     private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/mensaje/Mensaje.txt"; // Ruta del archivo Mensaje.txt
     private static Scanner sc;
+	private static ArrayList<String> lista;
     
-	public static String[] leer() {
-		String[] arreglo = new String[1];;
+	public static ArrayList<String> leer() {
+		lista = new ArrayList<String>();
 		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO, true);
 		
 		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
-		int i = 0;
-		// Objetivo: almacenar el contenido en un arreglo de texto
+		// Objetivo: almacenar el contenido en la lista de texto
 		while(sc.hasNext()) {
-			arreglo[i] = sc.next();
-			i=i+1;
+			lista.add(sc.next());
 		}
 		
-		return arreglo;
+		return lista;
 	}
 }

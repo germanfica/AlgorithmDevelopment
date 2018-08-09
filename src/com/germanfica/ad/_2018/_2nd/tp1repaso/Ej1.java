@@ -49,7 +49,7 @@ public class Ej1 {
 		y=0;
 		
 		// Mensaje de bienvenida
-		System.out.println(Mensaje.leer()[0]);
+		System.out.println(Mensaje.leer().get(0));
 		
 		// Creación del Scanner
 		sc = new Scanner(System.in);
