@@ -7,18 +7,30 @@ public class Ej4 {
  * Implementar en Java y realizar traza para verificar la solución.
  */
 	
-	public static int letraOcurrencia(String palabra) {
+	public static int letraOcurrencia(String palabra, char letra) {
+		// Declaración de variables
+		int cantidad;
 		
-		return texto;
+		// Inicialización de variables
+		cantidad = 0;
+		
+		for(int i=0; i<=palabra.length()-1 ;i++) {
+			if(palabra.toLowerCase().charAt(i)==letra)
+				cantidad++;
+		}
+		
+		return cantidad;
 	}
 	
 	public static void main(String[] args) {
 		// Declaración de variables
-		String letra;
+		char letra;
+		String palabra;
 		
 		// Inicialización de variables
-		letra = "Hola";
+		palabra = "Hola";
+		letra = 'c';
 		
-		System.out.println("La letra " + letra + " se repite " + letraOcurrencia(letra) + " veces.");
+		System.out.println("La letra " + letra + " se repite " + letraOcurrencia(palabra, letra) + " veces en " + palabra + ".");
 	}
 }
