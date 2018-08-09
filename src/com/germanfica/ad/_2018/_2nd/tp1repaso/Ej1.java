@@ -2,6 +2,8 @@ package com.germanfica.ad._2018._2nd.tp1repaso;
 
 import java.util.Scanner;
 
+import com.germanfica.ad.util.Mensaje;
+
 /*
 ALGORITMO misterio() RETORNA Ø
 (* Este algoritmo ….. *)
@@ -17,11 +19,29 @@ ESCRIBIR (y)
 FIN ALGORITMO misterio
  */
 public class Ej1 {
-    private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/mensaje/Mensaje.txt"; // Ruta del archivo Mensaje.txt
-
+	private static Scanner sc;
+	
+	public static int[] numInvetido(int x, int y) {
+		int[] arreglo = new int[2];
+		
+		// Operaciones
+		x = x-y;
+		y = x+y;
+		x = y-x;
+		
+		// Almacenar
+		arreglo[0] = x;
+		arreglo[1] = y;
+		
+		return arreglo;
+	}
+	
+	/**
+	 * El objetivo del algoritmo es dado dos número intercambiar las posiciones (invertir)
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// Declaración de variables
-		Scanner sc;
 		int x,y;
 		
 		// Inicialización de variables
@@ -29,7 +49,7 @@ public class Ej1 {
 		y=0;
 		
 		// Mensaje de bienvenida
-		System.out.println("");
+		System.out.println(Mensaje.leer()[0]);
 		
 		// Creación del Scanner
 		sc = new Scanner(System.in);
@@ -38,7 +58,7 @@ public class Ej1 {
 		x = sc.nextInt();
 		y = sc.nextInt();
 		
-		// Operaciones
+		// Dar vuelta los números
 		x = x-y;
 		y = x+y;
 		x = y-x;

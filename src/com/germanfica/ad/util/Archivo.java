@@ -77,4 +77,41 @@ public class Archivo {
 		
 		return contenido;
 	}
+	
+	/**
+	 * Leer el contenido de un archivo determinado.
+	 * 
+	 * @param NOMBRE_ARCHIVO ruta completa del archivo
+	 * @param conEspacio mantener los espacios del archivo
+	 * @return
+	 */
+	public static String leer(String NOMBRE_ARCHIVO, boolean conEspacio) {
+		String contenido = "";
+		
+    	try {
+    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que están en el archivo de texto
+    		sc = new Scanner(buff); // Le asigno al scanner la tarea para buscar los colores dentro del archivo de texto
+    		
+    		// Objetivo: es almacenar los colores uno por uno
+    		if(conEspacio) {
+    			while(sc.hasNext()) {
+        			contenido = contenido + sc.next() + " ";
+        		}
+    		}else {
+    			while(sc.hasNext()) {
+        			contenido = contenido + sc.next();
+        		}
+    		}
+    		buff.close();
+    		sc.close();
+    	}
+    	catch (FileNotFoundException ex) {
+            System.err.println(ex.getMessage() + "\nEl archivo no existe.");
+        }
+        catch (IOException ex) {
+            System.err.println("Error al leer o escribir en el archivo.");
+        }
+		
+		return contenido;
+	}
 }
