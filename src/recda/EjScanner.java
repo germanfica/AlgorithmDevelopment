@@ -8,7 +8,8 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import com.graworg.ad._2018.tp3.ej3.Cliente;;
+
+import com.germanfica.ad._2018.tp3.ej3.Cliente;;
 
 /**
  *

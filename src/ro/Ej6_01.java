@@ -1,6 +1,6 @@
 package ro;
 
-import com.graworg.ad.util.TecladoIn;
+import com.germanfica.ad.util.TecladoIn;
 
 /*
  * (6) Club cuota social
