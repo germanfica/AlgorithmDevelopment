@@ -27,6 +27,39 @@ public class Ej8 {
 	 * Diseñar el algoritmo principal y los módulos correspondientes.
 	 * Implementar en Java.
 	 */
+    public static EstadoCivil estadoCivil(String texto) {
+    	EstadoCivil estadoCivil = new EstadoCivil();
+		switch (texto) {
+		case "soltero":
+			estadoCivil.setSoltero(true);
+			break;
+		case "soltera":
+			estadoCivil.setSoltero(true);
+			break;
+		case "casado":
+			estadoCivil.setCasado(true);
+			break;
+		case "casada":
+			estadoCivil.setCasado(true);
+			break;
+		case "viudo":
+			estadoCivil.setViudo(true);
+			break;
+		case "viuda":
+			estadoCivil.setViudo(true);
+			break;
+		case "divorciado":
+			estadoCivil.setDivorciado(true);
+			break;
+		case "divorciada":
+			estadoCivil.setDivorciado(true);
+			break;
+		default:
+			break;
+		}
+		return estadoCivil;
+	}
+    
 	public static Encuesta[] encuestados(int longitud) {
 		Encuesta[] encuestados = new Encuesta[longitud];
 		String archivo = Archivo.leer(NOMBRE_ARCHIVO);
@@ -43,36 +76,7 @@ public class Ej8 {
 			encuesta.setApellido(sc.next());
 			encuesta.setEdad(sc.nextInt());
 			encuesta.setCantPaísesVis(sc.nextInt());
-			EstadoCivil estadoCivil = new EstadoCivil();
-			switch (sc.next()) {
-			case "soltero":
-				estadoCivil.setSoltero(true);
-				break;
-			case "soltera":
-				estadoCivil.setSoltero(true);
-				break;
-			case "casado":
-				estadoCivil.setCasado(true);
-				break;
-			case "casada":
-				estadoCivil.setCasado(true);
-				break;
-			case "viudo":
-				estadoCivil.setViudo(true);
-				break;
-			case "viuda":
-				estadoCivil.setViudo(true);
-				break;
-			case "divorciado":
-				estadoCivil.setDivorciado(true);
-				break;
-			case "divorciada":
-				estadoCivil.setDivorciado(true);
-				break;
-			default:
-				break;
-			}
-			encuesta.setEstadoCivil(estadoCivil);
+			encuesta.setEstadoCivil(estadoCivil(sc.next()));
 			encuestados[i] = encuesta;
 			i++;
 		}
