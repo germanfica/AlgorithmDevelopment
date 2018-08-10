@@ -58,6 +58,47 @@ public class Ej9 {
 		}
 	}
 	
+	public static int cantidadDeAutosDeColor(String color, Auto[] autos) {
+		// Declaración de variables
+		int cant;
+		
+		// Inicialización de variables
+		cant = 0;
+		
+		for (int i = 0; i < autos.length; i++) {
+			if(color.toLowerCase().equals(autos[i].getColor().toLowerCase())) {
+				cant++;
+			}
+		}
+		
+		return cant;
+	}
+	
+	public static int capacidadPromedioDeLosAutos(Auto[] autos) {
+		// Declaración de variables
+		int sumaCap, longitud;
+		
+		// Inicialización de variables
+		sumaCap = 0;
+		longitud = autos.length;
+		
+		for (int i = 0; i <= longitud-1; i++) {
+			sumaCap += autos[i].getCapacidad();
+		}
+		
+		return sumaCap/longitud;
+	}
+	
+	public static void marcaMásExhibida(Auto[] autos) {
+		// Marca es par, cantidad es impar
+		// concatenas todo en un String, y usar el scanner para obtener los datos
+		for (int i = 0; i <= autos.length-1; i++) {
+			//if(autos[i].getMarca()) {
+			//	
+			//}
+		}
+	}
+	
 	public static void mostrarMenú() {
 		boolean salir;
 		int opción;
@@ -92,13 +133,15 @@ public class Ej9 {
 				mostrarAutos(autos);
 				break;
 			case 2:
-				// cantidadDeAutosDeColor("rojo", autos);
+				String color;
+				color = "rojo";
+				System.out.println("Hay " + cantidadDeAutosDeColor(color, autos) + " autos de color "+ color);
 				break;
 			case 3:
-				// capacidadPromedioDeLosAutos(autos);
+				System.out.println("La capacidad promedio de los autos exhibidos: " + capacidadPromedioDeLosAutos(autos));
 				break;
 			case 4:
-				// marcaMásExhibida(autos);
+				marcaMásExhibida(autos);
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
