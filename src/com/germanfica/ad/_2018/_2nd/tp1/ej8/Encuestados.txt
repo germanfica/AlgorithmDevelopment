@@ -1,2 +1,3 @@
 Maria, Spineti, 23, 7, soltero,
-Guillermo,Shedden, 37, 3, casado
+Guillermo, Shedden, 37, 3, casado,
+Hector, Mora, 47, 9, soltero,

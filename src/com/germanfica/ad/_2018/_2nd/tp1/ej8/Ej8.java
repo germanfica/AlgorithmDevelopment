@@ -90,12 +90,54 @@ public class Ej8 {
 		}
 	}
 	
+	public static int promedioDeEdadDeLosEncuestados(Encuesta[] encuestados) {
+		int sumaDeLasEdades = 0;
+		int longitud = encuestados.length;
+		for(int i=0; i<=longitud-1 ;i++) {
+			sumaDeLasEdades += encuestados[i].getEdad();
+		}
+		return sumaDeLasEdades/longitud;
+	}
+	
+	public static String quiénVisitóMásPaíses(Encuesta[] encuestados) {
+		// Declaración de variables
+		String nombreDelQueMásVisitó, apellidoDelQueMásVisitó;
+		int cantPaísesDelQueMásVisitó, longitud;
+		
+		// Inicialización de variables
+		longitud = encuestados.length;
+		nombreDelQueMásVisitó = "";
+		apellidoDelQueMásVisitó = "";
+		cantPaísesDelQueMásVisitó = 0;
+		
+		for(int i = 0; i<= longitud-1;i++) {
+			if(encuestados[i].getCantPaísesVis()>cantPaísesDelQueMásVisitó) {
+				nombreDelQueMásVisitó = encuestados[i].getNombre();
+				apellidoDelQueMásVisitó = encuestados[i].getApellido();
+				cantPaísesDelQueMásVisitó = encuestados[i].getCantPaísesVis();
+			}
+		}
+		return nombreDelQueMásVisitó + " " + apellidoDelQueMásVisitó;
+	}
+	// Por cada persona indicar si podía o no participar del sorteo
+	public static void quiénesPuedenParticiparDelSorteo(Encuesta[] encuestados) {
+		int longitud = encuestados.length;
+		for(int i = 0;i<=longitud-1;i++) {
+			// personas solteras con edad entre 45 y 62 años
+			if(encuestados[i].getEstadoCivil().isSoltero() && encuestados[i].getEdad()>=45 && encuestados[i].getEdad()<=62) {
+				System.out.println(encuestados[i].getNombre() + " " + encuestados[i].getApellido() + " puede participar del sorteo.");
+			}else {
+				System.out.println(encuestados[i].getNombre() + " " + encuestados[i].getApellido() + " no puede participar del sorteo.");
+			}
+		}
+	}
+	
 	public static void mostrarMenú() {
 		boolean salir;
 		int opción;
 		
 		// Cargar a todos los encuestados desde el archivo
-		Encuesta[] encuestados = encuestados(2);
+		Encuesta[] encuestados = encuestados(3);
 		
 		// Inicializar variables
 		salir = false;
@@ -121,13 +163,13 @@ public class Ej8 {
 				salir = true;
 				break;
 			case 1:
-				//promedioDeEdadDeLosEncuestados();
+				System.out.println("El promedio de edad de los asistentes encuestados: " + promedioDeEdadDeLosEncuestados(encuestados));
 				break;
 			case 2:
-				//quiénVisitóMásPaíses();
+				System.out.println(quiénVisitóMásPaíses(encuestados));
 				break;
 			case 3:
-				//quiénesPuedenParticiparDelSorteo();
+				quiénesPuedenParticiparDelSorteo(encuestados);
 				break;
 			case 4:
 				// Mostrar todos los encuestados
