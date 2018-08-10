@@ -31,26 +31,18 @@ public class Ej8 {
     	EstadoCivil estadoCivil = new EstadoCivil();
 		switch (texto) {
 		case "soltero":
-			estadoCivil.setSoltero(true);
-			break;
 		case "soltera":
 			estadoCivil.setSoltero(true);
 			break;
 		case "casado":
-			estadoCivil.setCasado(true);
-			break;
 		case "casada":
 			estadoCivil.setCasado(true);
 			break;
 		case "viudo":
-			estadoCivil.setViudo(true);
-			break;
 		case "viuda":
 			estadoCivil.setViudo(true);
 			break;
 		case "divorciado":
-			estadoCivil.setDivorciado(true);
-			break;
 		case "divorciada":
 			estadoCivil.setDivorciado(true);
 			break;
@@ -91,6 +83,9 @@ public class Ej8 {
 			System.out.println(encuestados[i].getEdad());
 			System.out.println(encuestados[i].getCantPaísesVis());
 			System.out.println("¿Está soltero/a? "+encuestados[i].getEstadoCivil().isSoltero());
+			System.out.println("¿Está casado/a? "+encuestados[i].getEstadoCivil().isCasado());
+			System.out.println("¿Está viudo/a? "+encuestados[i].getEstadoCivil().isViudo());
+			System.out.println("¿Está divorciado/a? "+encuestados[i].getEstadoCivil().isDivorciado());
 			System.out.println("---------------------------------");
 		}
 	}
