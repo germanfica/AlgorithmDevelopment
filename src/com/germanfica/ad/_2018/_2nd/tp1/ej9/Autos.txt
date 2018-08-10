@@ -1,0 +1,3 @@
+ABC777, Ford, 1995, Rojo, 5,
+ACC755, Ford, 1999, Rojo, 3,
+ZCZ755, Ford, 2001, Verde, 3
