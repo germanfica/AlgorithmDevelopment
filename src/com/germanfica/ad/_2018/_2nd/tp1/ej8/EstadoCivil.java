@@ -33,6 +33,15 @@ public class EstadoCivil {
 	private boolean soltero;
 	private boolean casado;
 	private boolean viudo;
+	private boolean divorciado;
+	
+	EstadoCivil() {
+		this.soltero = false;
+		this.casado = false;
+		this.viudo = false;
+		this.divorciado = false;
+	}
+	
 	public boolean isSoltero() {
 		return soltero;
 	}
@@ -57,5 +66,4 @@ public class EstadoCivil {
 	public void setDivorciado(boolean divorciado) {
 		this.divorciado = divorciado;
 	}
-	private boolean divorciado;
 }

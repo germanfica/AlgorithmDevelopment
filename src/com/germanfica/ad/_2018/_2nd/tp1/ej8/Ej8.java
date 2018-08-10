@@ -1,17 +1,25 @@
 package com.germanfica.ad._2018._2nd.tp1.ej8;
 
+import java.util.Scanner;
+
 import com.germanfica.ad.util.Archivo;
 import com.germanfica.ad.util.Mensaje;
 
 public class Ej8 {
-	/*
+    private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/_2018/_2nd/tp1/ej8/Encuestados.txt"; // Ruta del archivo Mensaje.txt
+    private static Scanner sc;
+    /*
 	 * 8) En un evento realizado por la empresa de turismo Argentar se
-	 * hizo una encuesta a algunas de las
-	 * personas que asistieron, se les preguntó: nombre y apellido,
-	 * edad, cantidad de países visitados y estado civil. Las personas
-	 * solteras con edad entre 45 y 62 años podían participar del sorteo
-	 * de un viaje a las Cataratas. En base a la información relevada
-	 * se desea mostrar:
+	 * hizo una encuesta a algunas de las personas que asistieron,
+	 * se les preguntó:
+	 * - Nombre y apellido.
+	 * - Edad.
+	 * - Cantidad de países visitados.
+	 * - Estado civil.
+	 * 
+	 * Las personas solteras con edad entre 45 y 62 años podían participar del sorteo
+	 * de un viaje a las Cataratas. En base a la información relevada se desea mostrar:
+	 * 
 	 * a) El promedio de edad de los asistentes encuestados
 	 * b) El nombre y apellido de la persona que más países visitó
 	 * c) Por cada persona indicar si podía o no participar del sorteo
@@ -19,10 +27,72 @@ public class Ej8 {
 	 * Diseñar el algoritmo principal y los módulos correspondientes.
 	 * Implementar en Java.
 	 */
+	public static Encuesta[] encuestados(int longitud) {
+		Encuesta[] encuestados = new Encuesta[longitud];
+		String archivo = Archivo.leer(NOMBRE_ARCHIVO);
+		
+		sc = new Scanner(archivo); // Asignación de tarea al scanner para analizar el archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica cuando se encuntra una coma
+		
+		// Agregar elementos al arreglo
+		int i = 0;
+		while(sc.hasNext()) {
+			Encuesta encuesta = new Encuesta();
+			encuesta.setNombre(sc.next());
+			encuesta.setApellido(sc.next());
+			encuesta.setEdad(sc.nextInt());
+			encuesta.setCantPaísesVis(sc.nextInt());
+			EstadoCivil estadoCivil = new EstadoCivil();
+			switch (sc.next()) {
+			case "soltero":
+				estadoCivil.setSoltero(true);
+				break;
+			case "soltera":
+				estadoCivil.setSoltero(true);
+				break;
+			case "casado":
+				estadoCivil.setCasado(true);
+				break;
+			case "casada":
+				estadoCivil.setCasado(true);
+				break;
+			case "viudo":
+				estadoCivil.setViudo(true);
+				break;
+			case "viuda":
+				estadoCivil.setViudo(true);
+				break;
+			case "divorciado":
+				estadoCivil.setDivorciado(true);
+				break;
+			case "divorciada":
+				estadoCivil.setDivorciado(true);
+				break;
+			default:
+				break;
+			}
+			encuesta.setEstadoCivil(estadoCivil);
+			encuestados[i] = encuesta;
+			i++;
+		}
+		
+		return encuestados;
+	}
+	
+	public static void mostrarEncuestados(Encuesta[] encuestados) {
+		for(int i = 0; i<=encuestados.length-1 ;i++) {
+			System.out.println(encuestados[i].getNombre());
+			System.out.println(encuestados[i].getApellido());
+			System.out.println(encuestados[i].getEdad());
+			System.out.println(encuestados[i].getCantPaísesVis());
+			System.out.println("¿Está soltero/a? "+encuestados[i].getEstadoCivil().isSoltero());
+		}
+	}
+	
 	public static void main(String[] args) {
-		Encuesta[] encuestados;
-		String archivo = Archivo.leer("src/com/germanfica/ad/_2018/_2nd/tp1/ej8/Encuestados.txt");
 		System.out.println(Mensaje.leer().get(0));
-		System.out.println(archivo);
+		Encuesta[] encuestados = encuestados(2);
+		mostrarEncuestados(encuestados);
 	}
 }

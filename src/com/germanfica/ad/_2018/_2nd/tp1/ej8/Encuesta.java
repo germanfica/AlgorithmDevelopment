@@ -6,6 +6,7 @@ public class Encuesta {
 	private int edad;
 	private int cantPaísesVis;
 	private EstadoCivil estadoCivil;
+	
 	public String getNombre() {
 		return nombre;
 	}

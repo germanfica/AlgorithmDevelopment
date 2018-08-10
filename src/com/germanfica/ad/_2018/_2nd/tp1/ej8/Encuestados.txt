@@ -1,2 +1,2 @@
 Maria, Spineti, 23, 7, soltero,
-Guillermo, Shedden, 37, casado,
+Guillermo,Shedden, 37, 3, casado
