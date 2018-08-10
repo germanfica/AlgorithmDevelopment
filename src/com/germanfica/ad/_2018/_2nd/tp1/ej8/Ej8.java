@@ -1,4 +1,7 @@
-package com.germanfica.ad._2018._2nd.tp1repaso;
+package com.germanfica.ad._2018._2nd.tp1.ej8;
+
+import com.germanfica.ad.util.Archivo;
+import com.germanfica.ad.util.Mensaje;
 
 public class Ej8 {
 	/*
@@ -16,4 +19,10 @@ public class Ej8 {
 	 * Diseñar el algoritmo principal y los módulos correspondientes.
 	 * Implementar en Java.
 	 */
+	public static void main(String[] args) {
+		Encuesta[] encuestados;
+		String archivo = Archivo.leer("src/com/germanfica/ad/_2018/_2nd/tp1/ej8/Encuestados.txt");
+		System.out.println(Mensaje.leer().get(0));
+		System.out.println(archivo);
+	}
 }
