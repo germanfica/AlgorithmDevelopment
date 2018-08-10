@@ -1,32 +1,32 @@
 package com.germanfica.ad._2018._2nd.tp1.ej8;
 
 import java.util.Scanner;
-
 import com.germanfica.ad.util.Archivo;
 import com.germanfica.ad.util.Mensaje;
 
+/*
+ * 8) En un evento realizado por la empresa de turismo Argentar se
+ * hizo una encuesta a algunas de las personas que asistieron,
+ * se les preguntó:
+ * - Nombre y apellido.
+ * - Edad.
+ * - Cantidad de países visitados.
+ * - Estado civil.
+ * 
+ * Las personas solteras con edad entre 45 y 62 años podían participar del sorteo
+ * de un viaje a las Cataratas. En base a la información relevada se desea mostrar:
+ * 
+ * a) El promedio de edad de los asistentes encuestados
+ * b) El nombre y apellido de la persona que más países visitó
+ * c) Por cada persona indicar si podía o no participar del sorteo
+ * 
+ * Diseñar el algoritmo principal y los módulos correspondientes.
+ * Implementar en Java.
+ */
 public class Ej8 {
     private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/_2018/_2nd/tp1/ej8/Encuestados.txt"; // Ruta del archivo Mensaje.txt
     private static Scanner sc;
-    /*
-	 * 8) En un evento realizado por la empresa de turismo Argentar se
-	 * hizo una encuesta a algunas de las personas que asistieron,
-	 * se les preguntó:
-	 * - Nombre y apellido.
-	 * - Edad.
-	 * - Cantidad de países visitados.
-	 * - Estado civil.
-	 * 
-	 * Las personas solteras con edad entre 45 y 62 años podían participar del sorteo
-	 * de un viaje a las Cataratas. En base a la información relevada se desea mostrar:
-	 * 
-	 * a) El promedio de edad de los asistentes encuestados
-	 * b) El nombre y apellido de la persona que más países visitó
-	 * c) Por cada persona indicar si podía o no participar del sorteo
-	 * 
-	 * Diseñar el algoritmo principal y los módulos correspondientes.
-	 * Implementar en Java.
-	 */
+    
     public static EstadoCivil estadoCivil(String texto) {
     	EstadoCivil estadoCivil = new EstadoCivil();
 		switch (texto) {
@@ -91,12 +91,55 @@ public class Ej8 {
 			System.out.println(encuestados[i].getEdad());
 			System.out.println(encuestados[i].getCantPaísesVis());
 			System.out.println("¿Está soltero/a? "+encuestados[i].getEstadoCivil().isSoltero());
+			System.out.println("---------------------------------");
+		}
+	}
+	
+	public static void mostrarMenú() {
+		boolean salir;
+		int opción;
+		
+		// Cargar a todos los encuestados desde el archivo
+		Encuesta[] encuestados = encuestados(2);
+		
+		// Inicializar variables
+		salir = false;
+		
+		System.out.println(Mensaje.leer().get(0));		
+		while(!salir) {
+			sc = new Scanner(System.in);
+			
+			// Mostrar cartel de opciones
+			System.out.print(
+					"[0] Salir (IMPLEMENTADO)\n" +
+					"[1] El promedio de edad de los asistentes encuestados\n" +
+					"[2] El nombre y apellido de la persona que más países visitó\n" +
+					"[3] Por cada persona indicar si podía o no participar del sorteo\n" +
+					"[4] Mostrar la lista de todos los encuestados\n"
+					);
+			
+			// Leer opción del menú principal
+			opción = sc.nextInt();
+			
+			switch (opción) {
+			case 0:
+				salir = true;
+				break;
+			case 1:
+				
+				break;
+			case 4:
+				// Mostrar todos los encuestados
+				mostrarEncuestados(encuestados);
+				break;
+			default:
+				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				break;
+			}
 		}
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(Mensaje.leer().get(0));
-		Encuesta[] encuestados = encuestados(2);
-		mostrarEncuestados(encuestados);
+		mostrarMenú();
 	}
 }
