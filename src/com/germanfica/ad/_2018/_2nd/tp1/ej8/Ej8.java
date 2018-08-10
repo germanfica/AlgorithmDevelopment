@@ -121,11 +121,13 @@ public class Ej8 {
 				salir = true;
 				break;
 			case 1:
-				
+				//promedioDeEdadDeLosEncuestados();
 				break;
 			case 2:
+				//quiénVisitóMásPaíses();
 				break;
 			case 3:
+				//quiénesPuedenParticiparDelSorteo();
 				break;
 			case 4:
 				// Mostrar todos los encuestados
