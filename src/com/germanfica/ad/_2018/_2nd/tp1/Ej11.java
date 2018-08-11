@@ -49,6 +49,10 @@ public class Ej11 {
 		return n;
 	}
 	
+	public static boolean esPar(int num) {
+		return num%2==0;
+	}
+	
 	/*
 	 * d) N=5
 	 * 5 4 3 2 1
@@ -70,7 +74,15 @@ public class Ej11 {
 	 *     1
 	 */
 	public static void mostrarTriánguloC(int n) {
-		
+		for (int i = 0; i <= n-1; i++) {
+			for (int j = n-1; j >= i; j--) {
+				System.out.print("1");
+				if(j>i) {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
 	}
 	
 	/*
