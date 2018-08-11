@@ -96,7 +96,7 @@ public class Ej9 {
 	 * link 1: http://javabasicosise.blogspot.com/2012/12/ordenamiento-de-string-burbuja.html
 	 * link 2: https://www.javatpoint.com/java-string-compareto
 	 */
-	public static void burbujaMejorado(Auto[] autos, int n) {
+	public static Auto[] burbujaMejorado(Auto[] autos, int n) {
 		Auto auxiliar;
 		int i;
 		boolean ordenado;
@@ -117,14 +117,22 @@ public class Ej9 {
 			}
 			i++;
 		}
-		mostrarAutos(autos);
+		return autos;
 	}
 	
-	public static void marcaMásExhibida(Auto[] autos) {
-		// Marca es par, cantidad es impar
-		// concatenas todo en un String, y usar el scanner para obtener los datos
-		// debe estar todo ordenado (método de ordenamiento, que ordene los colores,
-		// segun la correspondencia en el abecdario
+	/*
+	 * Regla: la marca es pary la cantidad es impar.
+	 * Hay que concatenar la marca y la cantidad en un arreglo
+	 * de Strings, y usar el scanner para obtener los datos.
+	 * 
+	 * El arreglo a ser analizado debe estar todo ordenado (usar
+	 * método de ordenamiento, que ordene todos los colores,
+	 * segun la correspondencia en el abecdario)
+	 */
+	public static String[] marcaMásExhibida(Auto[] autos) {
+		// Declaración de variables
+		// Ordenar el arreglo
+		autos = burbujaMejorado(autos,autos.length);
 		for (int i = 0; i <= autos.length-1; i++) {
 			//if(autos[i].getMarca()) {
 			//	
@@ -180,7 +188,7 @@ public class Ej9 {
 				marcaMásExhibida(autos);
 				break;
 			case 5:
-				burbujaMejorado(autos,autos.length);
+				mostrarAutos(burbujaMejorado(autos,autos.length));
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
