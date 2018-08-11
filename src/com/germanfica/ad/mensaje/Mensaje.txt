@@ -1,1 +1,2 @@
-Bienvenido a la consola de la aplicación
+Bienvenido a la consola de la aplicación,
+Esta opción no está definida. Seleccione una de las siguientes opciones:

@@ -70,79 +70,86 @@ public class Ej10 {
 		return 0;
 	}
 	
-	/*
-	 * Mostrar menú
+	interface Formula {
+		double calcularPerimetroCuadrado(double lado);
+		double calcularAreaCuadrado(double lado);
+	}
+	
+	public static void mostrarCartelDeOpciones() {
+		System.out.print(
+				"[0] Salir (IMPLEMENTADO)\n" +
+				"[1] Perímetro y área de un cuadrado\n" +
+				"[2] Perímetro y área de un rectángulo\n" +
+				"[3] Perímetro y área de un triángulo\n" +
+				"[4] Perímetro y área de un círculo\n"
+				);
+	}
+	
+	public static void mostrarCaso1() {
+		lado = leerReal();
+		perímetro = calcularPerimetroCuadrado(lado);
+		área = calcularAreaCuadrado(lado);
+		System.out.print(
+				"El perímetro del cuadrado es de: " + perímetro + ".\n" +
+				"El área del cuadrado es de: " + área + ".\n"
+				);
+	}
+	
+	public static void mostrarCaso2() {
+		lado1 = leerReal();
+		lado2 = leerReal();
+		perímetro = calcularPerimetroRectangulo(lado1, lado2);
+		área = calcularAreaRectangulo(lado1, lado2);
+		System.out.print(
+				"El perímetro del rectángulo es de: " + perímetro + ".\n" +
+				"El área del rectángulo es de: " + área + ".\n"
+				);
+	}
+	
+	public static void mostrarCaso3() {
+		lado = leerReal();
+		perímetro = calcularPerimetroTriangulo(lado);
+		área = calcularAreaTriangulo(lado);
+		System.out.print(
+				"El perímetro del triángulo es de: " + perímetro + ".\n" +
+				"El área del triángulo es de: " + área + ".\n"
+				);
+	}
+	
+	public static void mostrarCaso4() {
+		radio = leerReal();
+		perímetro = calcularPerimetroCirculo(radio);
+		área = calcularAreaCirculo(radio);
+		System.out.print(
+				"El perímetro del círculo es de: " + perímetro + ".\n" +
+				"El área del círculo es de: " + área + ".\n"
+				);
+	}
+	
+	/**
+	 * Mostrar menú de la aplicación
 	 */
 	public static void mostrarMenú() {
-		double perímetro, área, lado, lado1, lado2, radio;
-		boolean salir;
+		boolean salir = false;
 		int opción;
 		
-		// Inicializar variables
-		perímetro = 0;
-		área = 0;
-		salir = false;
+		// Mostrar cartel de opciones
+		mostrarCartelDeOpciones();
 		
-		System.out.println(Mensaje.leer().get(0));		
+		System.out.println(Mensaje.leer().get(0));
 		while(!salir) {
 			sc = new Scanner(System.in);
-			
-			// Mostrar cartel de opciones
-			System.out.print(
-					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Perímetro y área de un cuadrado\n" +
-					"[2] Perímetro y área de un rectángulo\n" +
-					"[3] Perímetro y área de un triángulo\n" +
-					"[4] Perímetro y área de un círculo\n"
-					);
 			
 			// Leer opción del menú principal
 			opción = sc.nextInt();
 			
 			switch (opción) {
-			case 0:
-				salir = true;
-				break;
-			case 1:
-				lado = leerReal();
-				perímetro = calcularPerimetroCuadrado(lado);
-				área = calcularAreaCuadrado(lado);
-				System.out.print(
-						"El perímetro del cuadrado es de: " + perímetro + ".\n" +
-						"El área del cuadrado es de: " + área + ".\n"
-						);
-				break;
-			case 2:
-				lado1 = leerReal();
-				lado2 = leerReal();
-				perímetro = calcularPerimetroRectangulo(lado1, lado2);
-				área = calcularAreaRectangulo(lado1, lado2);
-				System.out.print(
-						"El perímetro del rectángulo es de: " + perímetro + ".\n" +
-						"El área del rectángulo es de: " + área + ".\n"
-						);
-				break;
-			case 3:
-				lado = leerReal();
-				perímetro = calcularPerimetroTriangulo(lado);
-				área = calcularAreaTriangulo(lado);
-				System.out.print(
-						"El perímetro del triángulo es de: " + perímetro + ".\n" +
-						"El área del triángulo es de: " + área + ".\n"
-						);
-				break;
-			case 4:
-				radio = leerReal();
-				perímetro = calcularPerimetroCirculo(radio);
-				área = calcularAreaCirculo(radio);
-				System.out.print(
-						"El perímetro del círculo es de: " + perímetro + ".\n" +
-						"El área del círculo es de: " + área + ".\n"
-						);
-				break;
-			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
-				break;
+			case 0: salir = true; break;
+			case 1: mostrarCaso1(); break;
+			case 2:	mostrarCaso2(); break;
+			case 3:	mostrarCaso3();	break;
+			case 4:	mostrarCaso4();	break;
+			default: System.err.println(Mensaje.leer().get(1)); break;
 			}
 		}
 	}
