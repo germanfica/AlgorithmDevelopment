@@ -62,16 +62,21 @@ public class Ej11 {
 	 *     1
 	 */
 	public static void mostrarTriánguloD(int n) {
+		int num = n, aux = 0;
 		for (int i = 0; i <= n-1; i++) {
 			for (int j2 = 0; j2 < i; j2++) {
 				System.out.print(" ");
 			}
 			for (int j = n-1; j >= i; j--) {
-				System.out.print("1");
+				System.out.print(num);
 				if(j>i) {
 					System.out.print(" ");
 				}
+				aux++;
+				num--;
 			}
+			num = aux-1;
+			aux = 0;
 			System.out.println();
 		}
 	}
