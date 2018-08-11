@@ -53,6 +53,18 @@ public class Ej11 {
 		
 	}
 	
+	public static void mostrarTriánguloB(int n) {
+		
+	}
+	
+	public static void mostrarTriánguloC(int n) {
+		
+	}
+	
+	public static void mostrarTriánguloD(int n) {
+		
+	}
+	
 	public static void mostrarMenú() {
 		boolean salir;
 		int opción;
@@ -84,10 +96,13 @@ public class Ej11 {
 				mostrarTriánguloA(leer());
 				break;
 			case 2:
+				mostrarTriánguloB(leer());
 				break;
 			case 3:
+				mostrarTriánguloC(leer());
 				break;
 			case 4:
+				mostrarTriánguloD(leer());
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
