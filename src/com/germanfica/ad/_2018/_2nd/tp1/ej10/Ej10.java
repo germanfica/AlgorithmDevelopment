@@ -1,7 +1,6 @@
 package com.germanfica.ad._2018._2nd.tp1.ej10;
 
 import java.util.Scanner;
-
 import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Circulo;
 import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Cuadrado;
 import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Rectangulo;
