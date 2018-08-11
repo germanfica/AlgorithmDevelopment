@@ -108,7 +108,7 @@ public class Ej9 {
 			ordenado = true;
 			
 			for(int j=0;j<=(n-i-2);j++) {
-				if(autos[j].getColor().compareTo(autos[j+1].getColor())>0) {
+				if(autos[j].getColor().toLowerCase().compareTo(autos[j+1].getColor().toLowerCase())>0) {
 					ordenado = false;
 					auxiliar = autos[j];
 					autos[j] = autos[j+1];
