@@ -1,7 +1,5 @@
 ZCZ755, Ford, 2001, Verde, 3,
 MCC227, Renault, 1996, Blanco, 3,
-CCC255, Renault, 1996, Amarillo, 3,
 ABC777, Ford, 1995, Rojo, 5,
 CCC255, Renault, 1996, Negro, 3,
-ACC755, Ford, 1999, Rojo, 3,
-ACC755, Renault, 1998, Amarillo, 3
+ACC755, Ford, 1999, Rojo, 3

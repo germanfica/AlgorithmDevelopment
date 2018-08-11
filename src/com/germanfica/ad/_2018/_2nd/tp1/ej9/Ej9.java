@@ -18,6 +18,8 @@ import com.germanfica.ad.util.Mensaje;
  * c) La marca de vehículos que más autos exhibe en la exposición.
  * 
  * Diseñar el algoritmo principal y los módulos correspondientes. Implementar en Java.
+ * 
+ * Ya lo tenías hecho, pero hay que revisarlo: com/germanfica/ad/_2017/tp1/Excercise7.java
  */
 public class Ej9 {
 	private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/_2018/_2nd/tp1/ej9/Autos.txt"; // Ruta del archivo Autos.txt
@@ -108,7 +110,7 @@ public class Ej9 {
 			ordenado = true;
 			
 			for(int j=0;j<=(n-i-2);j++) {
-				if(autos[j].getColor().toLowerCase().compareTo(autos[j+1].getColor().toLowerCase())>0) {
+				if(autos[j].getMarca().toLowerCase().compareTo(autos[j+1].getMarca().toLowerCase())>0) {
 					ordenado = false;
 					auxiliar = autos[j];
 					autos[j] = autos[j+1];
@@ -135,20 +137,37 @@ public class Ej9 {
 	 */
 	public static String nombreDeLamarcaMásExhibida(Auto[] autos) {
 		// Declaración de variables
-		String nombreMarcaMásExhibida;
-		int cantAutosMarcaMásExhibida;
+		String nombreMarcaMásExhibida, nombreMarca;
+		int cantAutosMarcaMásExhibida, cantAutosMarca;
 		
 		// Inicialización de variables
 		nombreMarcaMásExhibida = "";
 		cantAutosMarcaMásExhibida = 0;
+		nombreMarca = autos[0].getMarca();
+		cantAutosMarca = 1;
 		
 		// Ordenar el arreglo
 		autos = burbujaMejorado(autos,autos.length);
 		
 		for (int i = 0; i <= autos.length-1; i++) {
-			//if(autos[i].getMarca()) {
-			//	
-			//}
+			// Si se encontró una nueva marca para contar entonces nombreMarca = autos[i].getMarca()
+			if(!autos[i].getMarca().toLowerCase().equals(nombreMarca.toLowerCase())) {
+				nombreMarca = autos[i].getMarca();
+				cantAutosMarca = 1;
+			}
+			// Sino si la cantidad de autos de la marca actual es mayor a la marca más exhibida,
+			// bueno, entonces tenemos una marca que exhibió más.
+			else if(cantAutosMarca>cantAutosMarcaMásExhibida) {
+				nombreMarcaMásExhibida = nombreMarca;
+				cantAutosMarcaMásExhibida = cantAutosMarca;
+			}
+
+			//System.out.println("Nombre de la marca: " + nombreMarca + " ; " + autos[i].getMarca());
+			//System.out.println("Cantidad de autos exhibidos: " + cantAutosMarca);
+			//System.out.println("Nombre de la marca más exhibida: " + nombreMarcaMásExhibida);
+			//System.out.println("Cantidad de autos de la marca más exhibida: " + cantAutosMarcaMásExhibida);
+			
+			cantAutosMarca++;
 		}
 		
 		return nombreMarcaMásExhibida;
@@ -161,7 +180,7 @@ public class Ej9 {
 		int opción;
 		
 		// Cargar a todos los autos desde el archivo
-		Auto[] autos = autos(4);
+		Auto[] autos = autos(7);
 		
 		// Inicializar variables
 		salir = false;
