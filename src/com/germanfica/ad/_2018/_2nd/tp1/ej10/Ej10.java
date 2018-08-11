@@ -86,9 +86,9 @@ public class Ej10 {
 	}
 	
 	public static void mostrarCaso1() {
-		lado = leerReal();
-		perímetro = calcularPerimetroCuadrado(lado);
-		área = calcularAreaCuadrado(lado);
+		double lado = leerReal();
+		double perímetro = calcularPerimetroCuadrado(lado);
+		double área = calcularAreaCuadrado(lado);
 		System.out.print(
 				"El perímetro del cuadrado es de: " + perímetro + ".\n" +
 				"El área del cuadrado es de: " + área + ".\n"
@@ -96,10 +96,10 @@ public class Ej10 {
 	}
 	
 	public static void mostrarCaso2() {
-		lado1 = leerReal();
-		lado2 = leerReal();
-		perímetro = calcularPerimetroRectangulo(lado1, lado2);
-		área = calcularAreaRectangulo(lado1, lado2);
+		double lado1 = leerReal();
+		double lado2 = leerReal();
+		double perímetro = calcularPerimetroRectangulo(lado1, lado2);
+		double área = calcularAreaRectangulo(lado1, lado2);
 		System.out.print(
 				"El perímetro del rectángulo es de: " + perímetro + ".\n" +
 				"El área del rectángulo es de: " + área + ".\n"
@@ -107,9 +107,9 @@ public class Ej10 {
 	}
 	
 	public static void mostrarCaso3() {
-		lado = leerReal();
-		perímetro = calcularPerimetroTriangulo(lado);
-		área = calcularAreaTriangulo(lado);
+		double lado = leerReal();
+		double perímetro = calcularPerimetroTriangulo(lado);
+		double área = calcularAreaTriangulo(lado);
 		System.out.print(
 				"El perímetro del triángulo es de: " + perímetro + ".\n" +
 				"El área del triángulo es de: " + área + ".\n"
@@ -117,9 +117,9 @@ public class Ej10 {
 	}
 	
 	public static void mostrarCaso4() {
-		radio = leerReal();
-		perímetro = calcularPerimetroCirculo(radio);
-		área = calcularAreaCirculo(radio);
+		double radio = leerReal();
+		double perímetro = calcularPerimetroCirculo(radio);
+		double área = calcularAreaCirculo(radio);
 		System.out.print(
 				"El perímetro del círculo es de: " + perímetro + ".\n" +
 				"El área del círculo es de: " + área + ".\n"
@@ -133,10 +133,12 @@ public class Ej10 {
 		boolean salir = false;
 		int opción;
 		
+		// Mensaje de bienvenida
+		System.out.println(Mensaje.leer().get(0));
+		
 		// Mostrar cartel de opciones
 		mostrarCartelDeOpciones();
 		
-		System.out.println(Mensaje.leer().get(0));
 		while(!salir) {
 			sc = new Scanner(System.in);
 			
