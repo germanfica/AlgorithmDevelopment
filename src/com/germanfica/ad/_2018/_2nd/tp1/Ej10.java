@@ -18,15 +18,50 @@ import com.germanfica.ad.util.Mensaje;
  * 
  * - ALGORITMO calcularPerimetroCuadrado(REAL lado) RETORNA REAL
  * - ALGORITMO calcularAreaRectangulo( REAL lado) RETORNA REAL
+ * 
  * - ALGORITMO calcularPerimetroRectangulo( REAL lado1, REAL lado2) RETORNA REAL
  * - ALGORITMO calcularAreaRectangulo( REAL lado1, REAL lado2) RETORNA REAL
+ * 
  * - ALGORITMO calcularPerimetroTriangulo( REAL lado) RETORNA REAL
  * - ALGORITMO calcularAreaTriangulo( REAL lado) RETORNA REAL
+ * 
  * - ALGORITMO calcularAreaCirculo( REAL radio) RETORNA REAL
  * - ALGORITMO calcularPerimetroCirculo( REAL radio) RETORNA REAL
  */
 public class Ej10 {
 	private static Scanner sc;
+	
+	public static double calcularPerimetroCuadrado(double lado) {
+		return 0;
+	}
+	
+	public static double calcularAreaRectangulo(double lado) {
+		return 0;
+	}
+	
+	public static double calcularPerimetroRectangulo(double lado1, double lado2) {
+		return 0;
+	}
+	
+	public static double calcularAreaRectangulo(double lado1, double lado2) {
+		return 0;
+	}
+	
+	public static double calcularPerimetroTriangulo(double lado) {
+		return 0;
+	}
+	
+	public static double calcularAreaTriangulo(double lado) {
+		return 0;
+	}
+	
+	public static double calcularAreaCirculo(double radio) {
+		return 0;
+	}
+	
+	public static double calcularPerimetroCirculo(double radio) {
+		return 0;
+	}
 	
 	public static void mostrarMenú() {
 		boolean salir;
