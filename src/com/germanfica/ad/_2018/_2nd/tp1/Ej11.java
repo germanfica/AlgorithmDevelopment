@@ -49,11 +49,7 @@ public class Ej11 {
 		return n;
 	}
 	
-	public static void mostrarTriánguloA(int n) {
-		
-	}
-	
-	public static void mostrarTriánguloB(int n) {
+	public static void mostrarTriánguloD(int n) {
 		
 	}
 	
@@ -61,8 +57,44 @@ public class Ej11 {
 		
 	}
 	
-	public static void mostrarTriánguloD(int n) {
-		
+	/*
+	 * b) N=4
+	 *    A
+	 *   AB
+	 *  ABC
+	 * ABCD
+	 */
+	public static void mostrarTriánguloB(int n) {
+		int caracter = 65;
+		String letra;
+		for (int i = 0; i <= n-1; i++) {
+			caracter = 65;
+			for (int j2 = 0; j2 < n-i-1; j2++) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j <= i; j++) {
+				letra = Character.toString((char)caracter);
+				System.out.print(letra);
+				caracter++;
+			}
+			System.out.println();
+		}
+	}
+	
+	/*
+	 * a) N = 4
+	 * 1
+	 * 22
+	 * 333
+	 * 4444
+	 */
+	public static void mostrarTriánguloA(int n) {
+		for (int i = 0; i <= n-1; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print(i+1);
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void mostrarMenú() {
