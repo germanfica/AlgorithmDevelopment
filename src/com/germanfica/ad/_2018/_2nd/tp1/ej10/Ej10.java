@@ -1,6 +1,11 @@
 package com.germanfica.ad._2018._2nd.tp1.ej10;
 
 import java.util.Scanner;
+
+import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Circulo;
+import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Cuadrado;
+import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Rectangulo;
+import com.germanfica.ad._2018._2nd.tp1.ej10.Formula.Triangulo;
 import com.germanfica.ad.util.Mensaje;
 
 /*
@@ -30,7 +35,6 @@ import com.germanfica.ad.util.Mensaje;
  */
 public class Ej10 {
 	private static Scanner sc;
-	//private int asd = () -> 3+1;
 	
 	public static double leerReal() {
 		sc = new Scanner(System.in);
@@ -38,41 +42,48 @@ public class Ej10 {
 		return sc.nextDouble();
 	}
 	
-	// Caso 1
-	public static double calcularPerimetroCuadrado(double lado) {
-		return 4*lado;
-	}
-	public static double calcularAreaCuadrado(double lado) {
-		return lado*lado;
-	}
-	
-	// Caso 2
-	public static double calcularPerimetroRectangulo(double lado1, double lado2) {
-		return 0;
-	}
-	public static double calcularAreaRectangulo(double lado1, double lado2) {
-		return 0;
+	public static void mostrarCaso1() {
+		Cuadrado perimetro = (lado) -> 4*lado;
+		Cuadrado area = (lado) -> lado*lado;
+		double lado = leerReal(); // Leer lado
+		System.out.print(
+				"El perímetro del cuadrado es de: " + perimetro.calcular(lado) + ".\n" +
+				"El área del cuadrado es de: " + area.calcular(lado) + ".\n"
+				);
 	}
 	
-	// Caso 3
-	public static double calcularPerimetroTriangulo(double lado) {
-		return 0;
-	}
-	public static double calcularAreaTriangulo(double lado) {
-		return 0;
-	}
-	
-	// Caso 4
-	public static double calcularPerimetroCirculo(double radio) {
-		return 0;
-	}
-	public static double calcularAreaCirculo(double radio) {
-		return 0;
+	public static void mostrarCaso2() {
+		Rectangulo perimetro = (lado1, lado2) -> lado1*lado1+lado2*lado2;
+		Rectangulo area = (lado1, lado2) -> lado1*lado2;
+		
+		double lado1 = leerReal(); // Leer lado 1
+		double lado2 = leerReal(); // Leer lado 2
+		System.out.print(
+				"El perímetro del rectángulo es de: " + perimetro.calcular(lado1, lado2) + ".\n" +
+				"El área del rectángulo es de: " + area.calcular(lado1, lado2) + ".\n"
+				);
 	}
 	
-	interface Formula {
-		double calcularPerimetroCuadrado(double lado);
-		double calcularAreaCuadrado(double lado);
+	public static void mostrarCaso3() {
+		Triangulo perimetro = (lado) -> lado+lado+lado;
+		Triangulo area = (lado) -> lado*lado/2;
+		
+		double lado = leerReal(); // Leer lado
+		System.out.print(
+				"El perímetro del triángulo es de: " + perimetro.calcular(lado) + ".\n" +
+				"El área del triángulo es de: " + area.calcular(lado) + ".\n"
+				);
+	}
+	
+	public static void mostrarCaso4() {
+		Circulo perimetro = (radio) -> 2*3.14*radio;
+		Circulo area = (radio) -> 3.14*radio*radio;
+		
+		double radio = leerReal(); // Leer radio
+		System.out.print(
+				"El perímetro del círculo es de: " + perimetro.calcular(radio) + ".\n" +
+				"El área del círculo es de: " + area.calcular(radio) + ".\n"
+				);
 	}
 	
 	public static void mostrarCartelDeOpciones() {
@@ -85,49 +96,9 @@ public class Ej10 {
 				);
 	}
 	
-	public static void mostrarCaso1() {
-		double lado = leerReal();
-		double perímetro = calcularPerimetroCuadrado(lado);
-		double área = calcularAreaCuadrado(lado);
-		System.out.print(
-				"El perímetro del cuadrado es de: " + perímetro + ".\n" +
-				"El área del cuadrado es de: " + área + ".\n"
-				);
-	}
-	
-	public static void mostrarCaso2() {
-		double lado1 = leerReal();
-		double lado2 = leerReal();
-		double perímetro = calcularPerimetroRectangulo(lado1, lado2);
-		double área = calcularAreaRectangulo(lado1, lado2);
-		System.out.print(
-				"El perímetro del rectángulo es de: " + perímetro + ".\n" +
-				"El área del rectángulo es de: " + área + ".\n"
-				);
-	}
-	
-	public static void mostrarCaso3() {
-		double lado = leerReal();
-		double perímetro = calcularPerimetroTriangulo(lado);
-		double área = calcularAreaTriangulo(lado);
-		System.out.print(
-				"El perímetro del triángulo es de: " + perímetro + ".\n" +
-				"El área del triángulo es de: " + área + ".\n"
-				);
-	}
-	
-	public static void mostrarCaso4() {
-		double radio = leerReal();
-		double perímetro = calcularPerimetroCirculo(radio);
-		double área = calcularAreaCirculo(radio);
-		System.out.print(
-				"El perímetro del círculo es de: " + perímetro + ".\n" +
-				"El área del círculo es de: " + área + ".\n"
-				);
-	}
-	
 	/**
 	 * Mostrar menú de la aplicación
+	 * Los módulos no deben ocupar más de una pantalla
 	 */
 	public static void mostrarMenú() {
 		boolean salir = false;
@@ -141,6 +112,7 @@ public class Ej10 {
 		
 		while(!salir) {
 			sc = new Scanner(System.in);
+			mostrarCartelDeOpciones();
 			
 			// Leer opción del menú principal
 			opción = sc.nextInt();
