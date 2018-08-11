@@ -89,9 +89,42 @@ public class Ej9 {
 		return sumaCap/longitud;
 	}
 	
+	/*
+	 * arreglo el arreglo y
+	 * n la longitud del arreglo (arreglo.length)
+	 * 
+	 * link 1: http://javabasicosise.blogspot.com/2012/12/ordenamiento-de-string-burbuja.html
+	 * link 2: https://www.javatpoint.com/java-string-compareto
+	 */
+	public static void burbujaMejorado(Auto[] autos, int n) {
+		Auto auxiliar;
+		int i;
+		boolean ordenado;
+		
+		ordenado = false;
+		i = 0;
+		
+		while(i<=n-1 && ordenado==false) {
+			ordenado = true;
+			
+			for(int j=0;j<=(n-i-2);j++) {
+				if(autos[j].getColor().compareTo(autos[j+1].getColor())>0) {
+					ordenado = false;
+					auxiliar = autos[j];
+					autos[j] = autos[j+1];
+					autos[j+1] = auxiliar;
+				}
+			}
+			i++;
+		}
+		mostrarAutos(autos);
+	}
+	
 	public static void marcaMásExhibida(Auto[] autos) {
 		// Marca es par, cantidad es impar
 		// concatenas todo en un String, y usar el scanner para obtener los datos
+		// debe estar todo ordenado (método de ordenamiento, que ordene los colores,
+		// segun la correspondencia en el abecdario
 		for (int i = 0; i <= autos.length-1; i++) {
 			//if(autos[i].getMarca()) {
 			//	
@@ -99,12 +132,14 @@ public class Ej9 {
 		}
 	}
 	
+	// agregarAutos(Auto autos); // podria incrementar la longitud actual + 1 o preguntar cuantos autos quiere agregar
+	
 	public static void mostrarMenú() {
 		boolean salir;
 		int opción;
 		
 		// Cargar a todos los autos desde el archivo
-		Auto[] autos = autos(3);
+		Auto[] autos = autos(4);
 		
 		// Inicializar variables
 		salir = false;
@@ -119,7 +154,8 @@ public class Ej9 {
 					"[1] Mostrar todos los autos\n" +
 					"[2] La cantidad de vehículos rojos\n" +
 					"[3] La capacidad promedio de los autos exhibidos\n" +
-					"[4] La marca de vehículos que más autos exhibe en la exposición\n"
+					"[4] La marca de vehículos que más autos exhibe en la exposición\n" +
+					"[5] Burbuja Mejorado\n"
 					);
 			
 			// Leer opción del menú principal
@@ -142,6 +178,9 @@ public class Ej9 {
 				break;
 			case 4:
 				marcaMásExhibida(autos);
+				break;
+			case 5:
+				burbujaMejorado(autos,autos.length);
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");

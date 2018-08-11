@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.germanfica.ad.util.Archivo;
 
 public class Menu {
-	private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/ordenamiento/arreglo.txt"; // Ruta del archivo
+	private static final String NOMBRE_ARCHIVO = "src/com/germanfica/ad/_2018/_1st/ordenamiento/arreglo.txt"; // Ruta del archivo
 	private static Scanner sc;
 	
 	public static int longitud(String contenidoDelArchivo) {
