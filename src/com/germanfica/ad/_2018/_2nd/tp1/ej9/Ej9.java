@@ -120,6 +120,10 @@ public class Ej9 {
 		return autos;
 	}
 	
+	public static void obtenerTodasLasMarcas() {
+		
+	}
+	
 	/*
 	 * Regla: la marca es pary la cantidad es impar.
 	 * Hay que concatenar la marca y la cantidad en un arreglo
@@ -129,15 +133,25 @@ public class Ej9 {
 	 * método de ordenamiento, que ordene todos los colores,
 	 * segun la correspondencia en el abecdario)
 	 */
-	public static String[] marcaMásExhibida(Auto[] autos) {
+	public static String nombreDeLamarcaMásExhibida(Auto[] autos) {
 		// Declaración de variables
+		String nombreMarcaMásExhibida;
+		int cantAutosMarcaMásExhibida;
+		
+		// Inicialización de variables
+		nombreMarcaMásExhibida = "";
+		cantAutosMarcaMásExhibida = 0;
+		
 		// Ordenar el arreglo
 		autos = burbujaMejorado(autos,autos.length);
+		
 		for (int i = 0; i <= autos.length-1; i++) {
 			//if(autos[i].getMarca()) {
 			//	
 			//}
 		}
+		
+		return nombreMarcaMásExhibida;
 	}
 	
 	// agregarAutos(Auto autos); // podria incrementar la longitud actual + 1 o preguntar cuantos autos quiere agregar
@@ -185,7 +199,7 @@ public class Ej9 {
 				System.out.println("La capacidad promedio de los autos exhibidos: " + capacidadPromedioDeLosAutos(autos));
 				break;
 			case 4:
-				marcaMásExhibida(autos);
+				System.out.println("La marca más exhibida fue: " + nombreDeLamarcaMásExhibida(autos));
 				break;
 			case 5:
 				mostrarAutos(burbujaMejorado(autos,autos.length));
