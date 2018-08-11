@@ -1,4 +1,4 @@
-package com.germanfica.ad._2018._2nd.tp1;
+package com.germanfica.ad._2018._2nd.tp1.ej10;
 
 import java.util.Scanner;
 import com.germanfica.ad.util.Mensaje;
@@ -30,6 +30,7 @@ import com.germanfica.ad.util.Mensaje;
  */
 public class Ej10 {
 	private static Scanner sc;
+	//private int asd = () -> 3+1;
 	
 	public static double leerReal() {
 		sc = new Scanner(System.in);
