@@ -49,10 +49,26 @@ public class Ej11 {
 		return n;
 	}
 	
+	/*
+	 * d) N=5
+	 * 5 4 3 2 1
+	 *  4 3 2 1
+	 *   3 2 1
+	 *    2 1
+	 *     1
+	 */
 	public static void mostrarTriánguloD(int n) {
 		
 	}
 	
+	/*
+	 * c) N = 5
+	 * 1 3 5 7 9
+	 *  1 3 5 7
+	 *   1 3 5
+	 *    1 3
+	 *     1
+	 */
 	public static void mostrarTriánguloC(int n) {
 		
 	}
