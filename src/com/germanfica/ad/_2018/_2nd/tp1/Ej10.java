@@ -31,6 +31,12 @@ import com.germanfica.ad.util.Mensaje;
 public class Ej10 {
 	private static Scanner sc;
 	
+	public static double leerReal() {
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese el valor: ");
+		return sc.nextDouble();
+	}
+	
 	public static double calcularPerimetroCuadrado(double lado) {
 		return 0;
 	}
@@ -64,10 +70,14 @@ public class Ej10 {
 	}
 	
 	public static void mostrarMenú() {
+		double num, perímetro, área;
 		boolean salir;
 		int opción;
 		
 		// Inicializar variables
+		num = 0;
+		perímetro = 0;
+		área = 0;
 		salir = false;
 		
 		System.out.println(Mensaje.leer().get(0));		
@@ -91,6 +101,13 @@ public class Ej10 {
 				salir = true;
 				break;
 			case 1:
+				num = leerReal();
+				perímetro = calcularPerimetroCuadrado(num);
+				área = calcularAreaRectangulo(num);
+				System.out.print(
+						"El perímetro del cuadrado es de: " + perímetro + ".\n" +
+						"El área del cuadrado es de: " + área + ".\n"
+						);
 				break;
 			case 2:
 				break;

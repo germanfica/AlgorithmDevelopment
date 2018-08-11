@@ -37,7 +37,7 @@ import com.germanfica.ad.util.Mensaje;
 public class Ej11 {
 	private static Scanner sc;
 	
-	public static int leer() {
+	public static int leerEntero() {
 		int n = 0;
 		sc = new Scanner(System.in);
 		System.out.println("Escriba un número debe ser del 1 al 9:");
@@ -93,16 +93,16 @@ public class Ej11 {
 				salir = true;
 				break;
 			case 1:
-				mostrarTriánguloA(leer());
+				mostrarTriánguloA(leerEntero());
 				break;
 			case 2:
-				mostrarTriánguloB(leer());
+				mostrarTriánguloB(leerEntero());
 				break;
 			case 3:
-				mostrarTriánguloC(leer());
+				mostrarTriánguloC(leerEntero());
 				break;
 			case 4:
-				mostrarTriánguloD(leer());
+				mostrarTriánguloD(leerEntero());
 				break;
 			default:
 				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
