@@ -62,7 +62,18 @@ public class Ej11 {
 	 *     1
 	 */
 	public static void mostrarTriánguloD(int n) {
-		
+		for (int i = 0; i <= n-1; i++) {
+			for (int j2 = 0; j2 < i; j2++) {
+				System.out.print(" ");
+			}
+			for (int j = n-1; j >= i; j--) {
+				System.out.print("1");
+				if(j>i) {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
 	}
 	
 	/*
@@ -74,12 +85,21 @@ public class Ej11 {
 	 *     1
 	 */
 	public static void mostrarTriánguloC(int n) {
+		int num = 0;
 		for (int i = 0; i <= n-1; i++) {
+			num = 0;
+			for (int j2 = 0; j2 < i; j2++) {
+				System.out.print(" ");
+			}
 			for (int j = n-1; j >= i; j--) {
-				System.out.print("1");
+				if(esPar(num)) {
+					num++;
+				}
+				System.out.print(num);
 				if(j>i) {
 					System.out.print(" ");
 				}
+				num++;
 			}
 			System.out.println();
 		}
