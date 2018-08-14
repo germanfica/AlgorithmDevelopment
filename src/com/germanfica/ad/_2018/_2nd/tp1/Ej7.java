@@ -16,7 +16,7 @@ public class Ej7 {
 		x1 = 0;
 		x2 = 0;
 		
-		// Operación
+		// Operación - Discriminante
 		// -b +- al cuadrado(b al cuadrado-4ac)/2a
 		loDeAdentroDeLaRaíz = (b*b)-(4*a*c);
 		
