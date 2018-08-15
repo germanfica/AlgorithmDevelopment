@@ -1,6 +1,6 @@
-Asumo que el atributo nombre (por ejemplo) es ùnico, que es una clave, es univoco.
+Asumo que el atributo nombre (por ejemplo) es único, que es una clave, es univoco.
 
-El ejemplo màs claro es el de un auto. Para identificar la clave principal,
+El ejemplo más claro es el de un auto. Para identificar la clave principal,
 del auto simplemente, se sabe que es la patente. Por lo tanto,
 para comparar si dos autos son iguales, el método equals solo necesita
 como párametro la patente
