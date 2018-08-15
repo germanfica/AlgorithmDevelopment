@@ -93,11 +93,6 @@ Composición y descomposicón. Voy a descomponer 1123  y sé el el último díji
 
 Si n = 1123. El 3 sería n mod 10. Lo que queda sería n/10.
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
 | n | n mod 10 | n/10 |
 | - | -------- | ---- |
 | n = 1123 | n mod 10 = 3 | n/10 = 112 |
@@ -117,6 +112,8 @@ FIN MÓDULO mostrarNúmeroTexto
 ```
 
 ### Arreglos recursivos
+
+| - | - | - | - | - | - | - | - | - | - |
 | 5 | 0 | 3 | 1 | 0 | 5 | 3 | 2 | 1 | 3 |
 
 contarCeros(STRING[] v, int pos)
