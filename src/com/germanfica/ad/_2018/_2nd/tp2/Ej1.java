@@ -1,7 +1,5 @@
 package com.germanfica.ad._2018._2nd.tp2;
 
-import java.util.Scanner;
-
 import com.germanfica.ad.util.TecladoIn;
 
 /*
@@ -65,9 +63,7 @@ public class Ej1 {
 	 * Mostrar menú de la aplicación
 	 * Los módulos no deben ocupar más de una pantalla
 	 */
-	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 	public static void mostrarMenú() {
-		int longitud;
 		char[] caracteres;
 		boolean salir = false;
 		int opción;
@@ -77,18 +73,14 @@ public class Ej1 {
 		
 		// Leer y generar un arreglo de caracteres
 		System.out.println("Ingrese la longitud de su arreglo:");
-		sc = new Scanner(System.in); // Creación del Scanner
-		longitud = sc.nextInt(); // Longitud del arreglo de caracteres
-		caracteres = caracteres(longitud); // Areglo de caracteres
+		caracteres = caracteres(TecladoIn.readInt()); // Areglo de caracteres
 		
 		while(!salir) {
-			sc = new Scanner(System.in);
-			
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
 			// Leer opción del menú principal
-			opción = sc.nextInt();
+			opción = TecladoIn.readInt();
 			
 			switch (opción) {
 			case 0: salir = true; break;
