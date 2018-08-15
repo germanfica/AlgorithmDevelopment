@@ -92,8 +92,14 @@ FIN SEGÚN
 Composición y descomposicón. Voy a descomponer 1123  y sé el el último díjito va del 0 al 9.
 
 Si n = 1123. El 3 sería n mod 10. Lo que queda sería n/10.
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 | n | n mod 10 | n/10 |
-| ------ | ------ | ------ |
+| - | -------- | ---- |
 | n = 1123 | n mod 10 = 3 | n/10 = 112 |
 | n = 112 | n mod 10 = 2 | n/10 = 11 |
 | n = 11 | n mod 10 = 1 | n/10 = 1 |
