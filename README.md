@@ -113,6 +113,7 @@ FIN MÓDULO mostrarNúmeroTexto
 
 ### Arreglos recursivos
 
+|   |   |   |   |   |   |   |   |   |   |
 | - | - | - | - | - | - | - | - | - | - |
 | 5 | 0 | 3 | 1 | 0 | 5 | 3 | 2 | 1 | 3 |
 
