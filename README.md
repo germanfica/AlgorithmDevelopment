@@ -113,10 +113,8 @@ FIN MÓDULO mostrarNúmeroTexto
 
 ### Arreglos recursivos
 
-|   |   |   |   |   |   |   |   |   |   |
-| - | - | - | - | - | - | - | - | - | - |
 | 5 | 0 | 3 | 1 | 0 | 5 | 3 | 2 | 1 | 3 |
-
+| - | - | - | - | - | - | - | - | - | - |
 contarCeros(STRING[] v, int pos)
 
 caso base 0 si pos -1
