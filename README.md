@@ -69,10 +69,10 @@ y desapilar lleva tiempo. Pero aveces la recursión es más intuitivo.
 ### Algoritmo de Reina o algoritmo vuelta atrás
 Mínimo se necesitan 4.
 
-1x1 (1 reina)
-2x2 (1 reina)
-3x3 (2 reinas)
-4x4 (cuatro reinas)
+- 1x1 (1 reina)
+- 2x2 (1 reina)
+- 3x3 (2 reinas)
+- 4x4 (cuatro reinas)
 
 ### Ejemplo de un método recursivo que no retorna valores
 
@@ -84,7 +84,7 @@ pasarATexto(entero d)
 TEXTO nombreDelNúmero
 SEGÚN d HACER
 	CASO '0' nombreDelNúmero ← “cero”
-	CASO '1': nombreDelNúmero← “uno”
+	CASO '1': nombreDelNúmero ← “uno”
 	…
 FIN SEGÚN
 ```
