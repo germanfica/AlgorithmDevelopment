@@ -1,2 +1,3 @@
 Bienvenido a la consola de la aplicación,
-Esta opción no está definida. Seleccione una de las siguientes opciones:
+Esta opción no está definida. Seleccione una de las siguientes opciones:,
+[Error] Ingrese una letra
