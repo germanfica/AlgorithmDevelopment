@@ -1,6 +1,6 @@
 package ro;
 
-import com.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.ad.util.TecladoIn;
 
 /*
  * (6) Club cuota social
