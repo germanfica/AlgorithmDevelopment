@@ -33,7 +33,6 @@ public class Ej1 {
 	
 	/**
 	 * Mostrar el menú de la aplicación
-	 * 
 	 * Nota: los módulos no deben ocupar más de una pantalla
 	 */
 	public static void mostrarMenú(char[] letras) {
@@ -57,7 +56,7 @@ public class Ej1 {
 			case 2:	ArregloCaracter.mostrarOrdInvertido(letras);break; // Opción 2
 			case 3:	System.out.println("Ingrese el caracter:");System.out.println(ArregloCaracter.esteCaracterSeRepite(letras, sc.next().charAt(0)));break; // Opción 3
 			case 4: ArregloCaracter.mostrar(letras);break; // Opción 4
-			default: System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones:"); break;
+			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
 	}
