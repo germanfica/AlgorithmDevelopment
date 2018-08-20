@@ -22,14 +22,14 @@ import java.util.Scanner;
  *   - Si un cliente se excede esa cantidad, el usuario está obligado a canjear por
  *   algún premio. (IMPLEMENTADO)
  *  
- *  a) Para incluir esto en el modelo UML e implementación en java, cómo lo harías? Modificá
+ *  a) Para incluir esto en el modelo UML e implementacion en java, como lo harías? Modificá
  *  tu TDA original y escribí en los comentarios las mejoras realizadas para esta nueva
- *  versión.
+ *  version.
  *  
- *  3. Considerá diseñar algún mecanismo para guardar la información de
+ *  3. Considerá diseñar algún mecanismo para guardar la informacion de
  *  todos los clientes con un máximo de 200 clientes. (IMPLEMENTADO)
  *  
- *  Como un detalle de implementación te pedimos que utilices un menú de opciones para:
+ *  Como un detalle de implementacion te pedimos que utilices un menú de opciones para:
  *  a) Cargar los clientes a partir de un archivo dado por el dueño de la heladería.
  *  (podés usar el archivo que publicamos en este link:
  *  http://pedco.uncoma.edu.ar/mod/resource/view.php?id=203583) (IMPLEMENTADO)
@@ -141,18 +141,18 @@ public class TestPuntosHeladeria {
 	/**
 	 * Modificar la cantidad máxima de puntos logrables
 	 */
-	public static void modificarLaCantidadMáximaDePuntosLogrables() {
-		int cantidadMáximaDePuntosLogrables;
+	public static void modificarLaCantidadMaximaDePuntosLogrables() {
+		int cantidadMaximaDePuntosLogrables;
 		
 		sc = new Scanner(System.in);
 		
 		System.out.println("Ingrese la nueva cantidad máxima de puntos logrables: ");
 		
-		cantidadMáximaDePuntosLogrables = sc.nextInt();
+		cantidadMaximaDePuntosLogrables = sc.nextInt();
 		
-		Cliente.cantidadMáximaDePuntosLogrables = cantidadMáximaDePuntosLogrables;
+		Cliente.cantidadMaximaDePuntosLogrables = cantidadMaximaDePuntosLogrables;
 		
-		System.out.println("Operación ejecutada con éxito\nAhora la nueva cantidad máxima de puntos logrables es de: " + Cliente.cantidadMáximaDePuntosLogrables + " puntos.");
+		System.out.println("Operacion ejecutada con éxito\nAhora la nueva cantidad máxima de puntos logrables es de: " + Cliente.cantidadMaximaDePuntosLogrables + " puntos.");
 	}
 	
 	/*
@@ -212,7 +212,7 @@ public class TestPuntosHeladeria {
 	/*
 	 * [7] Mostrar si dos clientes son iguales
 	 * Nota: hay muchos casos prácticos para usar el método equals del objeto Cliente,
-	 * este es sólo una de las aplicaciones posibles.
+	 * este es solo una de las aplicaciones posibles.
 	 */
 	/**
 	 * Mostrar si un cliente es igual a otro cliente del arreglo clientes
@@ -304,7 +304,7 @@ public class TestPuntosHeladeria {
 		System.out.println("Ingrese la cantidad de puntos que le quiere dar al cliente " + clientes[ID].getNombre() + " de id "+ ID +": ");
 		mas = sc.nextInt();
 		
-		if(clientes[ID].getPuntos()+mas>Cliente.cantidadMáximaDePuntosLogrables) {
+		if(clientes[ID].getPuntos()+mas>Cliente.cantidadMaximaDePuntosLogrables) {
 			System.out.println("El cliente ha excedido la cantidad máxima de puntos logrables.\nDebe primero canjear sus puntos por algún premio.");
 		}else {
 			clientes[ID].sumarPuntos(mas);
@@ -329,9 +329,9 @@ public class TestPuntosHeladeria {
 		canje = sc.nextInt();
 		
 		if(clientes[ID].canjearPuntos(canje)) {
-			System.out.println("Se pudo efectuar la operación.");
+			System.out.println("Se pudo efectuar la operacion.");
 		}else {
-			System.out.println("No fue posible efectuar la operación.");
+			System.out.println("No fue posible efectuar la operacion.");
 		}
 	}
 	
@@ -343,14 +343,14 @@ public class TestPuntosHeladeria {
 	 * @param clientes
 	 */
 	public static void mostrarElClienteDeMayorPuntajeLogrado(Cliente[] clientes) {
-		int elÍndiceDelClienteConMayorPuntajeLogrado = 0;
+		int elIndiceDelClienteConMayorPuntajeLogrado = 0;
 		int puntajeDelClienteAnterior = clientes[1].getPuntos();
 		int i = 0;
 		
 		while(i<= clientes.length-1 && clientes[i]!=null) {
 			if(clientes[i].getPuntos()>puntajeDelClienteAnterior) {
 				puntajeDelClienteAnterior = clientes[i].getPuntos();
-				elÍndiceDelClienteConMayorPuntajeLogrado = i;
+				elIndiceDelClienteConMayorPuntajeLogrado = i;
 			}
 			i = i + 1;
 		}
@@ -360,13 +360,13 @@ public class TestPuntosHeladeria {
 			if(clientes[i]!=null) {
 				if(clientes[i].getPuntos()>puntajeDelClienteAnterior) {
 					puntajeDelClienteAnterior = clientes[i].getPuntos();
-					elÍndiceDelClienteConMayorPuntajeLogrado = i;
+					elIndiceDelClienteConMayorPuntajeLogrado = i;
 				}
 			}
 		}
 		*/
 		
-		System.out.println("El cliente con el mayor puntaje logrado es: " + clientes[elÍndiceDelClienteConMayorPuntajeLogrado].getNombre() + " con " + clientes[elÍndiceDelClienteConMayorPuntajeLogrado].getPuntos() + " puntos.");
+		System.out.println("El cliente con el mayor puntaje logrado es: " + clientes[elIndiceDelClienteConMayorPuntajeLogrado].getNombre() + " con " + clientes[elIndiceDelClienteConMayorPuntajeLogrado].getPuntos() + " puntos.");
 	}
 	
 	/*
@@ -399,7 +399,7 @@ public class TestPuntosHeladeria {
 	public static void mostrarMenú() {
 		Cliente[] clientes;
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Inicializar variables
 		salir = false;
@@ -407,7 +407,7 @@ public class TestPuntosHeladeria {
 		// Crear y cargar el repositorio de clientes desde un archivo
 		clientes = clientesDesdeArchivo(CANTIDAD_MAX_CLIENTES); // Máximo 200 clientes
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -434,16 +434,16 @@ public class TestPuntosHeladeria {
 					"[13] Mostrar si hay clientes que no tienen puntos actualmente (IMPLEMENTADO)\n" // Boolean
 					);
 			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
+			// Leer opcion del menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				System.err.println("¿Quiere guardar todos los cambios hechos en el archivo clientes.txt? SI/NO");
 				String respuesta = "";
 				sc = new Scanner(System.in);
 				respuesta = sc.next();
-				if(respuesta.toLowerCase().equals("SI") || respuesta.toLowerCase().equals("SÍ")) {
+				if(respuesta.toLowerCase().equals("SI")) {
 					guardarALosClientesEnUnArchivo(clientes);
 				}
 				salir = true;
@@ -455,7 +455,7 @@ public class TestPuntosHeladeria {
 				guardarALosClientesEnUnArchivo(clientes);
 				break;
 			case 3:
-				modificarLaCantidadMáximaDePuntosLogrables();
+				modificarLaCantidadMaximaDePuntosLogrables();
 				break;
 			case 4:
 				mostrarNombreDelCliente(clientes);
@@ -477,7 +477,7 @@ public class TestPuntosHeladeria {
 				break;
 			case 10:
 				sumarPuntosAlCliente(clientes);
-				// Si un cliente se excede cantidadMáximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
+				// Si un cliente se excede cantidadMaximaDePuntosLogrables, el usuario está obligado a canjear por algún premio.
 				break;
 			case 11:
 				canjeDePuntosAlCliente(clientes);
@@ -489,7 +489,7 @@ public class TestPuntosHeladeria {
 				mostrarSiHayClientesQueNoTienenPuntosActualmente(clientes);
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no está definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

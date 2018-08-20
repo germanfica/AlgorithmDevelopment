@@ -6,14 +6,14 @@ import xyz.germanfica.ad.util.Mensaje;
 
 /*
  *  Diseñar un algoritmo que permita leer N números enteros y muestre el promedio de los mismos.
- *  Implementar en Java y comprobar la solución mediante una traza.
+ *  Implementar en Java y comprobar la solucion mediante una traza.
  */
 public class Ej3 {
 	private static Scanner sc;
 	/*
 	 * Estoy generando como 20 mil arreglos en la memoria,
 	 * en cambio si paso por parametro el arreglo 
-	 * estoy usando el mismo arreglo que está en memoria,
+	 * estoy usando el mismo arreglo que esta en memoria,
 	 * sin necesidad de crear uno nuevo.
 	 * Respuesta tiene todo el sentido del mundo:
 	 * 
@@ -47,17 +47,17 @@ public class Ej3 {
 	 * Link: https://stackoverflow.com/questions/14820115/is-it-a-bad-practice-to-use-arrays-as-parameters-to-return-multiple-values
 	 * 
 	 * Por lo tanto, pasar "por referencia" realmente no te ayuda mucho en Java,
-	 * ya que hace que el código sea mucho más difícil de depurar y entender.
+	 * ya que hace que el codigo sea mucho mas difícil de depurar y entender.
 	 * Lo ideal es crear un objeto e inicializarlo al mismo tiempo, y luego usarlo con
-	 * este estado no modificable en toda la aplicación.  De esta manera
-	 * vas a escribir código escalable y seguro en Java.
+	 * este estado no modificable en toda la aplicacion.  De esta manera
+	 * vas a escribir codigo escalable y seguro en Java.
 	 * 
 	 * Pasar por referencia es algo que se intenta evitar.
 	 */
 	public static int[] cargaDeNúmeros(int longitud) {
-		// Declaración e inicialización de variables
+		// Declaracion e inicializacion de variables
 		int[] números = new int[longitud];
-		// Creación del Scanner
+		// Creacion del Scanner
 		sc = new Scanner(System.in);
 		// Cargar de elementos al arreglo
 		for(int i = 0;i<=longitud-1;i++) {
@@ -67,9 +67,9 @@ public class Ej3 {
 	}
 	
 	public static int promedio(int[] números) {
-		// Declaración de variables
+		// Declaracion de variables
 		int sumaDeValores;
-		// Inicialización de variables
+		// Inicializacion de variables
 		sumaDeValores = 0;
 		// Calcular promedio/average = sum of values/number of values
 		for(int i = 0;i<=números.length-1;i++) {
@@ -79,14 +79,14 @@ public class Ej3 {
 	}
 	
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		int[] números;
 		int longitud;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		longitud = 0;
 		
-		// Creación del Scanner
+		// Creacion del Scanner
 		sc = new Scanner(System.in);
 		
 		// Mostrar mensaje de bienvenida

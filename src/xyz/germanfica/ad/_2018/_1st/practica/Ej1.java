@@ -2,122 +2,122 @@ package xyz.germanfica.ad._2018._1st.practica;
 
 public class Ej1 {
 	/*
-	 * // La recursón podría recotarse cuando n/10=0 ó n=0
-MÓDULO mostrarNúmeroTexto(Entero n)
+	 * // La recurson podria recotarse cuando n/10=0 o n=0
+MÓDULO mostrarNumeroTexto(Entero n)
 	SI (n>0)
-		t1← pasarATexto(n mod 10)
+		t1<- pasarATexto(n mod 10)
 		ESCRIBIR(t1)
-		mostrarNúmeroTexto(n/10)
+		mostrarNumeroTexto(n/10)
 	FIN SI
-FIN MÓDULO mostrarNúmeroTexto
+FIN MÓDULO mostrarNumeroTexto
 	 */
 	
 	/**
-	 * Debería retornar esto una cadena(?)
+	 * Deberia retornar esto una cadena(?)
 	 * @param n
 	 * @return
 	 */
 	private static String t1 = "";
-	public static String paseANúmeroTexto(int n){
+	public static String paseANumeroTexto(int n){
 		
 		if(n>0){
 			t1 = pasarATexto(n%10);
-			t1 = t1 + paseANúmeroTexto(n/10);
+			t1 = t1 + paseANumeroTexto(n/10);
 		}
 		
 		return t1;
 	}
 	
-	public static void mostrarNúmeroTexto(int n){
+	public static void mostrarNumeroTexto(int n){
 		String t1;
 		if(n>0){
 			t1 = pasarATexto(n%10);
 			System.out.println(t1);
-			mostrarNúmeroTexto(n/10);
+			mostrarNumeroTexto(n/10);
 		}
 	}
 	
 	/*
 	 * pasarATexto(entero d)
-// d es un dígito del 0 al 9
-TEXTO nombreDelNúmero
+// d es un digito del 0 al 9
+TEXTO nombreDelNumero
 SEGÚN d HACER
-	CASO '0' nombreDelNúmero ← “cero”
-	CASO '1': nombreDelNúmero← “uno”
+	CASO '0' nombreDelNumero <- "cero"
+	CASO '1': nombreDelNumero<- "uno"
 	…
 FIN SEGÚN
 	 */
 	public static String pasarATexto(int d){
-		String nombreDelNúmero;
+		String nombreDelNumero;
 		
 		switch(d){
 			case 0:
-				nombreDelNúmero = "cero";
+				nombreDelNumero = "cero";
 				break;
 			case 1:
-				nombreDelNúmero = "uno";
+				nombreDelNumero = "uno";
 				break;
 			case 2:
-				nombreDelNúmero = "dos";
+				nombreDelNumero = "dos";
 				break;
 			case 3:
-				nombreDelNúmero = "tres";
+				nombreDelNumero = "tres";
 				break;
 			case 4:
-				nombreDelNúmero = "cuatro";
+				nombreDelNumero = "cuatro";
 				break;
 			case 5:
-				nombreDelNúmero = "cinco";
+				nombreDelNumero = "cinco";
 			case 6:
-				nombreDelNúmero = "seis";
+				nombreDelNumero = "seis";
 				break;
 			case 7:
-				nombreDelNúmero = "siete";
+				nombreDelNumero = "siete";
 				break;
 			case 8:
-				nombreDelNúmero = "ocho";
+				nombreDelNumero = "ocho";
 				break;
 			case 9:
-				nombreDelNúmero = "nueve";
+				nombreDelNumero = "nueve";
 			default:
-				nombreDelNúmero = "";
+				nombreDelNumero = "";
 				break;
 		}
 		
-		return nombreDelNúmero;
+		return nombreDelNumero;
 	}
 	
 	/*
 	 * El mismo que el anterior
 	 */
-	public static void mostrarAlRevesNúmeroTexto(int n){
+	public static void mostrarAlRevesNumeroTexto(int n){
 		String t1;
 		if(n>0){
 			t1 = pasarATexto(n%10);
-			mostrarNúmeroTexto(n/10);
-			System.out.println(t1); // GENIAAAAAAAAAL, muestra la desapilación
+			mostrarNumeroTexto(n/10);
+			System.out.println(t1); // GENIAAAAAAAAAL, muestra la desapilacion
 		}
 	}
 	/*
 	 * EL mismo que el anterior pero 
 	 */
 	
-	public static String paseAlRevesNúmeroTexto(int n){
-		String t2 = ""; // No hay problema en ponerla acá
+	public static String paseAlRevesNumeroTexto(int n){
+		String t2 = ""; // No hay problema en ponerla aca
 		if(n>0){
 			t2 = pasarATexto(n%10);
-			//mostrarNúmeroTexto(n/10);
-			//t2 = t2 + ' ' + paseAlRevesNúmeroTexto(n/10);
-			t2 = paseAlRevesNúmeroTexto(n/10) + t2 + ' ';
+			//mostrarNumeroTexto(n/10);
+			//t2 = t2 + ' ' + paseAlRevesNumeroTexto(n/10);
+			t2 = paseAlRevesNumeroTexto(n/10) + t2 + ' ';
 		}
 		return t2;
 	}
 	
 	public static void main(String[] args) {
 		System.out.println("Bienvenido");
-		//mostrarNúmeroTexto(112);
-		System.out.println(paseANúmeroTexto(112));
-		//mostrarAlRevesNúmeroTexto(112);
-		System.out.println(paseAlRevesNúmeroTexto(112));
+		//mostrarNumeroTexto(112);
+		System.out.println(paseANumeroTexto(112));
+		//mostrarAlRevesNumeroTexto(112);
+		System.out.println(paseAlRevesNumeroTexto(112));
 	}
 }

@@ -2,11 +2,11 @@ package xyz.germanfica.ad._2018._2nd.tp2;
 
 public class Example {
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		char[] caracteres; // Arreglo
 		char a, b, c;
 		
-		// Incialización de variables
+		// Incializacion de variables
 		a = 'a';
 		b = 'b';
 		c = 'c';

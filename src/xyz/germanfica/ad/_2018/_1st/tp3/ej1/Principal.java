@@ -9,17 +9,17 @@ public class Principal {
 	
 	/**
 	 * Crea un nuevo producto
-	 * @param código
-	 * @param descripción
+	 * @param codigo
+	 * @param descripcion
 	 * @param precioUnitario
 	 * @param cantidadDeStock
 	 * @return
 	 */
-	public static Producto crearProducto(int código, String descripción, float precioUnitario, int cantidadDeStock)
+	public static Producto crearProducto(int codigo, String descripcion, float precioUnitario, int cantidadDeStock)
 	{
 		Producto producto = new Producto();
-		producto.setCódigo(código);
-		producto.setDescripción(descripción);
+		producto.setCodigo(codigo);
+		producto.setDescripcion(descripcion);
 		producto.setPrecioUnitario(precioUnitario);
 		producto.setCantidadDeStock(cantidadDeStock);
 		
@@ -58,23 +58,23 @@ public class Principal {
 	}
 	
 	/**
-	 * Solicitación de los datos para cargar al arreglo productos
+	 * Solicitacion de los datos para cargar al arreglo productos
 	 * @param productos
 	 * @return
 	 */
 	public static Producto[] cargaDeProductos(Producto[] productos){
-		int código, cantidadDeStock;
+		int codigo, cantidadDeStock;
 		float precioUnitario;
-		String descripción;
+		String descripcion;
 		
 		for(int i = 0;i<=productos.length-1;i++){
 			System.out.println("Ingrese producto:");
-			System.out.print(" Código: "); código = sc.nextInt();
-			System.out.print(" Descripción: "); descripción = TecladoIn.readLine();
+			System.out.print(" codigo: "); codigo = sc.nextInt();
+			System.out.print(" descripcion: "); descripcion = TecladoIn.readLine();
 			System.out.print(" Precio unitario: "); precioUnitario = sc.nextFloat();
 			System.out.print(" Cantidad de Stock: "); cantidadDeStock = sc.nextInt();
 			
-			productos[i] = crearProducto(código, descripción, precioUnitario, cantidadDeStock);
+			productos[i] = crearProducto(codigo, descripcion, precioUnitario, cantidadDeStock);
 			System.out.println("Producto cargado con éxito.");
 			System.out.println(""); // Salto de línea
 		}
@@ -84,18 +84,18 @@ public class Principal {
 
 	/**
 	 * Mostrar listado de todos los productos. Además,
-	 * por cada producto mostrar su código, descripción,
+	 * por cada producto mostrar su codigo, descripcion,
 	 * precio unitario y cantidad de stock.
 	 */
-	public static void opción2(Producto[] productos) {
+	public static void opcion2(Producto[] productos) {
 		int índice, índiceFinal;
 		
 		índiceFinal = productos.length -1;
 	
 		for(índice = 0;índice <= índiceFinal;índice++){
 			System.out.println("-------------------------");
-			System.out.println("Código: " + productos[índice].getCódigo());
-			System.out.println("Descripción: " + productos[índice].getDescripción());
+			System.out.println("codigo: " + productos[índice].getCodigo());
+			System.out.println("descripcion: " + productos[índice].getDescripcion());
 			System.out.println("Precio unitario: " + "$" + productos[índice].getPrecioUnitario());
 			System.out.println("Cantidad de Stock: " + productos[índice].getCantidadDeStock());
 			System.out.println("-------------------------");
@@ -106,7 +106,7 @@ public class Principal {
 	 * Contar la cantidad de productos que tienen 0 en 
 	 * cantidad de stock.
 	 */
-	public static void opción3(Producto[] productos) {
+	public static void opcion3(Producto[] productos) {
 		int índice, índiceFinal, contador;
 		
 		índiceFinal = productos.length -1;
@@ -124,7 +124,7 @@ public class Principal {
 	/**
 	 * Mostrar la cantidad de productos con un precio unitario menor a un valor dado.
 	 */
-	public static void opción4(Producto[] productos)
+	public static void opcion4(Producto[] productos)
 	{
 		float precio;
 		System.out.print("Valor: "); precio = sc.nextFloat();
@@ -135,7 +135,7 @@ public class Principal {
 	/**
 	 * Mostrar todos los productos con precio unitario con un cierto porcentaje.
 	 */
-	public static void opción5(Producto[] productos)
+	public static void opcion5(Producto[] productos)
 	{
 		float porcentaje;
 		System.out.print("Porcentaje a aumentar: "); porcentaje = sc.nextFloat();
@@ -145,13 +145,13 @@ public class Principal {
 	public static void mostrarMenú() {
 		Producto[] productos;
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Inicializar variables
 		productos = new Producto[3]; // Crear y dar tamaño de arreglo de productos
 		salir = false;
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -166,9 +166,9 @@ public class Principal {
 						"porcentaje de aumento al precio unitario.\n"
 					);
 			
-			opción = sc.nextInt();
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
@@ -176,19 +176,19 @@ public class Principal {
 				productos = cargaDeProductos(productos);
 				break;
 			case 2:
-				if(productos[0]!=null) { opción2(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos[0]!=null) { opcion2(productos); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 3:
-				if(productos[0]!=null) { opción3(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos[0]!=null) { opcion3(productos); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 4:
-				if(productos[0]!=null) { opción4(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos[0]!=null) { opcion4(productos); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			case 5:
-				if(productos[0]!=null) { opción5(productos); } else {System.err.println("Debe cargar al menos un producto."); }
+				if(productos[0]!=null) { opcion5(productos); } else {System.err.println("Debe cargar al menos un producto."); }
 				break;
 			default:
-				System.err.println("Esta opción no existe. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no existe. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}
@@ -196,6 +196,6 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		mostrarMenú();
-		System.err.println("La aplicación se ha cerrado");
+		System.err.println("La aplicacion se ha cerrado");
 	}
 }

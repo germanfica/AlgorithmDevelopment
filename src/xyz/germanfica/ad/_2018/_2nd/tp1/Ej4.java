@@ -4,14 +4,14 @@ public class Ej4 {
 /*
  * 4) Diseñar un algoritmo que lea una palabra y cuente la
  * cantidad de veces que aparece una letra dada en la palabra.
- * Implementar en Java y realizar traza para verificar la solución.
+ * Implementar en Java y realizar traza para verificar la solucion.
  */
 	
 	public static int letraOcurrencia(String palabra, char letra) {
-		// Declaración de variables
+		// Declaracion de variables
 		int cantidad;
 
-		// Inicialización de variables
+		// Inicializacion de variables
 		cantidad = 0;
 		
 		for(int i=0; i<=palabra.length()-1 ;i++) {
@@ -27,14 +27,14 @@ public class Ej4 {
 	 * cantidad
 	 * de veces que aparece una letra dada
 en la palabra. Implementar en Java y realizar traza para
-verificar la solución.
+verificar la solucion.
 	 */
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		char letra;
 		String palabra;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		palabra = "Holo";
 		letra = 'o';
 		

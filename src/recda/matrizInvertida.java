@@ -36,15 +36,15 @@ public class matrizInvertida {
 	}
 	
 	public static void mostrarMenú() {
-		// Declaración de variables
-		int opción;
+		// Declaracion de variables
+		int opcion;
 		boolean salir;
 		
-		// Inicialización de variables
-		opción = 1;
+		// Inicializacion de variables
+		opcion = 1;
 		salir = false;
 		
-		switch (opción) {
+		switch (opcion) {
 		case 0:
 			salir = true;
 			break;

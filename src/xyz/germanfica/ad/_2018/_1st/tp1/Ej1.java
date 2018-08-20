@@ -66,7 +66,7 @@ public class Ej1 {
 		return resultado;
 	}
 	
-	/** Condición A: Cargar los códigos de los productos en las posiciones pares.
+	/** Condicion A: Cargar los codigos de los productos en las posiciones pares.
 	 * @param pieza Arreglo principal
 	 */
 	public static int[] cargarDatos(int[] pieza)
@@ -79,7 +79,7 @@ public class Ej1 {
 		for(índice = 0; índice< pieza.length;índice++)
 		{
 			if(esPar(índice)) {
-				pieza[índice] = sc.nextInt(); // Código de la pieza
+				pieza[índice] = sc.nextInt(); // Codigo de la pieza
 			}else {
 				pieza[índice] = sc.nextInt(); // Cantidad usada de esa pieza
 			}
@@ -136,7 +136,7 @@ public class Ej1 {
 			
 			respuesta = true; // Es primo
 			
-			// Determinar si no es primo (nueva implementación)
+			// Determinar si no es primo (nueva implementacion)
 			índice = 0;
 			while(índice < p.length) {
 				if(n%p[índice]==0 && n!=p[índice]) {
@@ -172,13 +172,13 @@ public class Ej1 {
 	 * . 2 (cant. piezas)
 	 * . 1 (cod. pieza)
 	 * . 25 (cant. pieza)
-	 * Deberia retornar que está ordenado de manera creciente.
+	 * Deberia retornar que esta ordenado de manera creciente.
 	 * 
 	 * . 1 (cod. pieza)
 	 * . 25 (cant. pieza)
 	 * . 3 (cod. pieza)
 	 * . 2 (cant. pieza)
-	 * Deberia retornar que no está ordenado de forma creciente.
+	 * Deberia retornar que no esta ordenado de forma creciente.
 	 * 
 	 * @param pieza arreglo de enteros.
 	 * 
@@ -271,25 +271,25 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Recorrer el arreglo de piezas y devolver la más usada.
+	 * Recorrer el arreglo de piezas y devolver la mas usada.
 	 * @param pieza
 	 * @return
 	 */
-	public static int piezaMásUsada(int[] pieza) {
-		int piezaMásUsada = pieza[1], índice;
+	public static int piezaMasUsada(int[] pieza) {
+		int piezaMasUsada = pieza[1], índice;
 		
 		for(índice = 0;índice <= pieza.length-1;índice++) {
-			if(pieza[índice] >= piezaMásUsada && !esPar(índice)) {
-				piezaMásUsada = pieza[índice-1];
+			if(pieza[índice] >= piezaMasUsada && !esPar(índice)) {
+				piezaMasUsada = pieza[índice-1];
 			}
 		}
 		
-		return piezaMásUsada;
+		return piezaMasUsada;
 	}
 	
 	public static void mostrarMenú(int[] pieza)
 	{
-		int opción;
+		int opcion;
 		boolean terminarPrograma;
 		// Menú principal
 		terminarPrograma = false;
@@ -300,12 +300,12 @@ public class Ej1 {
 			System.out.println("1- Cargar datos.");
 			System.out.println("2- Verificar regla de la compañía.");
 			System.out.println("3- Promedio de la cantidad de piezas.");
-			System.out.println("4- Verificar si las cantidades de piezas están ordenadas en forma creciente.");
-			System.out.println("5- La pieza más usada.");
+			System.out.println("4- Verificar si las cantidades de piezas estan ordenadas en forma creciente.");
+			System.out.println("5- La pieza mas usada.");
 			System.out.println("6- La pieza menos usada.");
-			opción = sc.nextInt(); // Leer opción
+			opcion = sc.nextInt(); // Leer opcion
 			
-			switch(opción)
+			switch(opcion)
 			{
 				case 0:
 					terminarPrograma = true;
@@ -325,17 +325,17 @@ public class Ej1 {
 					break;
 				case 4:
 					if(esCreciente(pieza)) {
-						System.out.println("Las cantidades de las piezas están ordenadas de manera creciente.");
+						System.out.println("Las cantidades de las piezas estan ordenadas de manera creciente.");
 					}else {
-						System.out.println("No está ordenando de forma creciente.");
+						System.out.println("No esta ordenando de forma creciente.");
 					}
 					break;
 				case 5:
-					// Cuál es la pieza más usada?
-					System.out.println("La pieza más usada es: " + piezaMásUsada(pieza));
+					// Cual es la pieza mas usada?
+					System.out.println("La pieza mas usada es: " + piezaMasUsada(pieza));
 					break;
 				case 6:
-					// Cuál es la pieza menos usada?
+					// Cual es la pieza menos usada?
 					System.out.println("La pieza menos usada es: " + piezaMenosUsada(pieza));
 					break;
 				case -1:
@@ -358,7 +358,7 @@ public class Ej1 {
 					System.out.println("Segundos: " + res / 1000);
 					break;
 				default:
-					System.out.println("Solo están disponibles las opciones del menú.");
+					System.out.println("Solo estan disponibles las opciones del menú.");
 					break;
 			}
 		}
@@ -374,7 +374,7 @@ public class Ej1 {
 		sc = new Scanner(System.in); // Crear scanner
 		
 		System.out.println("Bienvenido! Porfavor cargue la cantidad incial de piezas para"
-				+ "esta sesión."); // Mostrar cartel de bienvenida
+				+ "esta sesion."); // Mostrar cartel de bienvenida
 		
 		cn = sc.nextInt(); // Leer cantidad de piezas		
 		longitud = cn *2; // Calcular la longitud del arreglo
@@ -385,7 +385,7 @@ public class Ej1 {
 			mostrarMenú(pieza);
 		}else
 		{
-			System.out.println("Ingrese como mínimo 2 piezas. Hasta la próxima.");
+			System.out.println("Ingrese como mínimo 2 piezas. Hasta la proxima.");
 		}
 		
 	}

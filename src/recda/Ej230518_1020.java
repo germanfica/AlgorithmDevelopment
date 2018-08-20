@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ej230518_1020 {
 	
-	// Recursión y algo más
+	// Recursión y algo mas
 	public static int busquedaBinaria(int[] arreglo, int pos, int posInicial, int posFinal) {
 		// Declaración de variables
 		int aux, medio;
@@ -36,21 +36,21 @@ public class Ej230518_1020 {
 			ENTERO aux, inicial, final, medio
 			LÓGICO encontrado
 			
-			inicial ← 0
-			final ← vec.longitud-1
-			aux ← -1 // No encontró nada
+			inicial <- 0
+			final <- vec.longitud-1
+			aux <- -1 // No encontró nada
 			
 			MIENTRAS (NOT encontrado AND inicial<=final) HACER
-				Medio ← (inicial + final)/2
+				Medio <- (inicial + final)/2
 		
 				SI (vec[medio] = pos) ENTONCES
-					aux ← medio
-					encontrado ← true
+					aux <- medio
+					encontrado <- true
 			    SINO
 					SI (vec[medio]>pos)
-						final ← medio -1
+						final <- medio -1
 					SINO
-						inicial ← medio +1
+						inicial <- medio +1
 					FIN SI
 			    FIN SI
 			FIN MIENTRAS

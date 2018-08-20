@@ -10,8 +10,8 @@ import java.util.Scanner;
  * LEER(y)
  * LEER(a)
  * LEER(b)
- * z ← x*x+y*y
- * c ← a*a+b*b
+ * z <- x*x+y*y
+ * c <- a*a+b*b
  * ESCRIBIR ("El valor de z es")
  * ESCRIBIR (z)
  * ESCRIBIR ("El valor de c es")
@@ -21,13 +21,13 @@ import java.util.Scanner;
 public class Ej2 {
 	private static Scanner sc;
 	/*
-	 * Se me ocurre generar un módulo que se llame sumaDePotenciaDeSiMisma
-	 * para evitar repetir la operación x*x+y*y
+	 * Se me ocurre generar un modulo que se llame sumaDePotenciaDeSiMisma
+	 * para evitar repetir la operacion x*x+y*y
 	 */
 	public static void main(String[] args) {
 		int x,y,z,a,b,c;
 		
-		// Creación del Scanner
+		// Creacion del Scanner
 		sc = new Scanner(System.in);
 		
 		x = sc.nextInt();

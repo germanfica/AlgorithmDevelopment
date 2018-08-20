@@ -5,12 +5,12 @@ public class Test_Principal_inefficient {
 		// Es la clase test de Principal_inefficient
 		/*
 		Producto producto = new Producto();
-		producto.setDescripción("asd");
+		producto.setDescripcion("asd");
 		producto.asd();
 		System.out.println(producto.toString());
-		System.out.println(producto.getDescripción().toString());
+		System.out.println(producto.getDescripcion().toString());
 		producto.setFeg();
-		System.out.println(producto.getDescripción());
+		System.out.println(producto.getDescripcion());
 		*/
 	}
 }

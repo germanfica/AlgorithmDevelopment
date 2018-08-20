@@ -5,14 +5,14 @@ package xyz.germanfica.ad._2018._1st.tp3.ej3;
  *  - Nombre de la clase "Puntos" a "Cliente", por lo que ahora tiene más sentido
  *    que el cliente tenga puntos y no al revés.
  *  - Nombres más descriptivos a los parámetros.
- *  - Se agregaron comentarios, a excepción del constructor para reforzar el
+ *  - Se agregaron comentarios, a excepcion del constructor para reforzar el
  *  entendimiento de los mismos.
  */
 // Nota: los métodos de objetivo mostrar cartel no deben ir en el objecto/clase.
 public class Cliente {
 	private String nombre;
 	private int puntos;
-	public static int cantidadMáximaDePuntosLogrables = 5000;
+	public static int cantidadMaximaDePuntosLogrables = 5000;
 	
 	// Constructores
 	
@@ -62,7 +62,7 @@ public class Cliente {
 	 * @param nombre
 	 */
 	/*
-	 * Actualización del día 21 de Abril del 2018 a las 12:31:
+	 * Actualizacion del día 21 de Abril del 2018 a las 12:31:
 	 *  - Nombre del parámetro "n" por "nombre"
 	 */
 	public void setNombre(String nombre) {
@@ -74,14 +74,14 @@ public class Cliente {
 	 * @param puntos
 	 */
 	/*
-	 * Actualización del día 21 de Abril del 2018 a las 12:35:
+	 * Actualizacion del día 21 de Abril del 2018 a las 12:35:
 	 *  - Nombre del parámetro "d" por "puntos"
 	 */
 	public void setPuntos(int puntos) {
-		if(puntos<cantidadMáximaDePuntosLogrables) {
+		if(puntos<cantidadMaximaDePuntosLogrables) {
 			this.puntos = puntos;
 		}else {
-			this.puntos = cantidadMáximaDePuntosLogrables;
+			this.puntos = cantidadMaximaDePuntosLogrables;
 		}
 	}
 	
@@ -92,16 +92,16 @@ public class Cliente {
 	 * @param mas
 	 */
 	public void sumarPuntos(int mas) {
-		if(mas<cantidadMáximaDePuntosLogrables) {
+		if(mas<cantidadMaximaDePuntosLogrables) {
 			puntos = puntos + mas;
 		}else {
-			puntos = cantidadMáximaDePuntosLogrables;
+			puntos = cantidadMaximaDePuntosLogrables;
 		}
 	}
 	
 	/**
 	 * Canjear los puntos del cliente. Resta el valor del parámetro al atributo puntos,
-	 * devuelve true si se pudo efectuar la operación.
+	 * devuelve true si se pudo efectuar la operacion.
 	 * @param canje
 	 * @return
 	 */

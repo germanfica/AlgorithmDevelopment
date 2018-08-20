@@ -34,27 +34,27 @@ public class Ej3 {
 		return resultado;
 	}
 	
-	public static String MostrarPalabra(String cadena, int posición){
+	public static String MostrarPalabra(String cadena, int posicion){
 		String resultado="";
 		String[] arreglo;
 		arreglo = new String[30];
 		arreglo = AlmacenarPalabrasEnElArreglo(cadena);
-		resultado= arreglo[posición];
+		resultado= arreglo[posicion];
 		return resultado;
 	}
 	
 	public static void main(String[] args) {
 		String cadena;
-		int opción = 0;
-		System.out.println("Ingrese cadena de carácteres: ");
+		int opcion = 0;
+		System.out.println("Ingrese cadena de caracteres: ");
 		cadena = TecladoIn.readLine();
-		while(opción!=999){
-			if(opción<29){
-				opción = TecladoIn.readInt();
-				System.out.println(MostrarPalabra(cadena, opción));
+		while(opcion!=999){
+			if(opcion<29){
+				opcion = TecladoIn.readInt();
+				System.out.println(MostrarPalabra(cadena, opcion));
 			}else{
 				System.out.println("Te exediste.");
-				opción=0;
+				opcion=0;
 			}
 		}
 	}

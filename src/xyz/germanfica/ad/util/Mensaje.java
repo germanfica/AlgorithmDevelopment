@@ -12,7 +12,7 @@ public class Mensaje {
 		lista = new ArrayList<String>();
 		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO, true);
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		

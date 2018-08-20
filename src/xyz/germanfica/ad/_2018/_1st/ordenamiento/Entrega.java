@@ -10,12 +10,12 @@ public class Entrega {
 	private static Scanner sc;
 	
 	/**
-	 * (1) Método de inserción
+	 * (1) Metodo de insercion
 	 * 
 	 * @param arreglo
 	 */
-	public static int[] inserción(int[] arreglo) {
-		// Declaración de variables
+	public static int[] insercion(int[] arreglo) {
+		// Declaracion de variables
 		int auxiliar, j;
 		
 		// Recorrer el arreglo
@@ -38,44 +38,44 @@ public class Entrega {
 	}
 	
 	/**
-	 * (2) Método de selección
+	 * (2) Metodo de seleccion
 	 * 
 	 * @return
 	 */
-	public static int[] selección(int[] arreglo) {
-		// Declaración de las variables
-		int posiciónDelMenor, auxiliar;
+	public static int[] seleccion(int[] arreglo) {
+		// Declaracion de las variables
+		int posicionDelMenor, auxiliar;
 	
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		// n es la longitud del arreglo
 		for(int i=0;i<=arreglo.length-1;i++) {
-			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
-			posiciónDelMenor = i;
+			// Buscar el número mas pequeño  desde i hasta la longitud del arreglo y guardar su índice
+			posicionDelMenor = i;
 			
 			// Recorrer el arreglo en busca del índice del elemento del mismo
 			for(int j=i+1;j<=arreglo.length-1;j++) {
-				// Si existe un elemento más pequeño guardar su índce
-				if(arreglo[j] < arreglo[posiciónDelMenor]) {
-					// Se encontró un elemento más pequeño aún
-					posiciónDelMenor = j;
+				// Si existe un elemento mas pequeño guardar su índce
+				if(arreglo[j] < arreglo[posicionDelMenor]) {
+					// Se encontro un elemento mas pequeño aún
+					posicionDelMenor = j;
 				}
 			}
 	
-			// Almacenar el elemento de la posicón i
+			// Almacenar el elemento de la posicon i
 			auxiliar = arreglo[i];
 			// Intercambiar las posiciones
-			arreglo[i] = arreglo[posiciónDelMenor];
-			arreglo[posiciónDelMenor] = auxiliar;
+			arreglo[i] = arreglo[posicionDelMenor];
+			arreglo[posicionDelMenor] = auxiliar;
 		}
 		
 		return arreglo;
 	}
 	
 	public static void mostrarElementos(int[] arreglo) {
-		// Declaración de variables
+		// Declaracion de variables
 		int i;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		i = 0;
 		
 		while(i<=arreglo.length-1) {
@@ -88,7 +88,7 @@ public class Entrega {
 		int[] arreglo = new int[longitud];
 		String contenidoDelArchivo = Archivo.leer(ruta);
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
@@ -107,16 +107,16 @@ public class Entrega {
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrarMenú() {
-		// Declaración de las variables
+		// Declaracion de las variables
 		int[] arreglo;
 		boolean salir;
-		int opción;
+		int opcion;
 		
-		// Inicialización de las variables
+		// Inicializacion de las variables
 		salir = false;
 		arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO, tamArrgelo);
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -125,27 +125,27 @@ public class Entrega {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Aplicar el método de inserción (IMPLEMENTADO)\n" +
-					"[2] Aplicar el método selección (IMPLEMENTADO)\n"
+					"[1] Aplicar el método de insercion (IMPLEMENTADO)\n" +
+					"[2] Aplicar el método seleccion (IMPLEMENTADO)\n"
 					);
 			
-			// Leer opción para el menú principal
-			opción = sc.nextInt();
+			// Leer opcion para el menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
 			case 1:
-				arreglo = inserción(arreglo);
+				arreglo = insercion(arreglo);
 				mostrarElementos(arreglo);
 				break;
 			case 2:
-				arreglo = selección(arreglo);
+				arreglo = seleccion(arreglo);
 				mostrarElementos(arreglo);
 				break;			
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

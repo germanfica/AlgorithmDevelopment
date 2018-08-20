@@ -18,7 +18,7 @@ public class Archivo {
 	
 	/**
 	 * Guarda una cadena de caracteres a un archivo de texto. El contenido
-	 * del archivo debe ser un string (cadena de carácteres). Es decir,
+	 * del archivo debe ser un string (cadena de caracteres). Es decir,
 	 * es necesario que el contenido sea un texto plano para poder
 	 * pasarlo a un archivo.
 	 * 
@@ -58,7 +58,7 @@ public class Archivo {
 		String contenido = "";
 		
     	try {
-    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que están en el archivo de texto
+    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que estan en el archivo de texto
     		sc = new Scanner(buff); // Le asigno al scanner la tarea para buscar los colores dentro del archivo de texto
     		
     		// Objetivo: es almacenar los colores uno por uno
@@ -89,7 +89,7 @@ public class Archivo {
 		String contenido = "";
 		
     	try {
-    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que están en el archivo de texto
+    		BufferedReader buff = new BufferedReader(new FileReader(NOMBRE_ARCHIVO)); // Obtener los datos que estan en el archivo de texto
     		sc = new Scanner(buff); // Le asigno al scanner la tarea para buscar los colores dentro del archivo de texto
     		
     		// Objetivo: es almacenar los colores uno por uno

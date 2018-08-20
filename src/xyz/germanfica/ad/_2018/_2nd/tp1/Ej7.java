@@ -8,15 +8,15 @@ public class Ej7 {
 	 * Si son raices reales entonces el algoritmo funciona
 	 */
 	public static String bhaskara(int a, int b, int c) {
-		// Declaración de variables
+		// Declaracion de variables
 		String raices;
 		double x1, x2, loDeAdentroDeLaRaíz;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		x1 = 0;
 		x2 = 0;
 		
-		// Operación - Discriminante
+		// Operacion - Discriminante
 		// -b +- al cuadrado(b al cuadrado-4ac)/2a
 		loDeAdentroDeLaRaíz = (b*b)-(4*a*c);
 		

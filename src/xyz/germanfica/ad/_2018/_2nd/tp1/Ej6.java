@@ -15,10 +15,10 @@ public class Ej6 {
 	private static Scanner sc;
 	
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		int num;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		num = 0;
 		
 		// Crear Scanner
@@ -49,7 +49,7 @@ public class Ej6 {
 						System.out.println("5- viernes");
 						break;
 					case 6:
-						System.out.println("6- sábado");
+						System.out.println("6- sabado");
 						break;
 					case 7:
 						System.out.println("7- domingo");

@@ -7,16 +7,16 @@ import xyz.germanfica.arreglos.ArregloLetra;
 
 /*
  * 1. Diseñar un algoritmo que lea un arreglo de caracteres solicitando al
- * usuario que ingrese letras. El algoritmo deberá verificar que los
+ * usuario que ingrese letras. El algoritmo debera verificar que los
  * caracteres ingresados son letras.
- * Luego diseñar módulos que realicen las siguientes tareas a las cuales se
+ * Luego diseñar modulos que realicen las siguientes tareas a las cuales se
  * pueda acceder mediante un menú de opciones:
  * 
  * a) Mostrar por pantalla los caracteres de las posiciones pares del arreglo
  * de caracteres.
  * b) Mostrar por pantalla los caracteres almacenados en el arreglo en orden
  * inverso.
- * c) Contar cuantas veces aparece un carácter dado. 
+ * c) Contar cuantas veces aparece un caracter dado. 
  */
 public class Ej1 {
 	private static Scanner sc;
@@ -26,14 +26,14 @@ public class Ej1 {
 				"[0] Salir (IMPLEMENTADO)\n" +
 				"[1] Mostrar por pantalla los caracteres de las posiciones pares del arreglo de caracteres (IMPLEMENTADO)\n" +
 				"[2] Mostrar por pantalla los caracteres almacenados en el arreglo en orden inverso (IMPLEMENTADO)\n" +
-				"[3] Contar cuantas veces aparece un carácter dado (IMPLEMENTADO)\n" +
+				"[3] Contar cuantas veces aparece un caracter dado (IMPLEMENTADO)\n" +
 				"[4] Mostrar todos los caracteres del arreglo (IMPLEMENTADO)\n"
 				);
 	}
 	
 	/**
-	 * Mostrar el menú de la aplicación
-	 * Nota: los módulos no deben ocupar más de una pantalla
+	 * Mostrar el menú de la aplicacion
+	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
 	public static void mostrarMenú(char[] letras) {
 		boolean salir = false;
@@ -46,16 +46,16 @@ public class Ej1 {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
-			// Leer opción del menú principal
+			// Leer opcion del menú principal
 			sc = new Scanner(System.in);
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			case 1: ArregloCaracter.mostrarPosPar(letras);break; // Opción 1
-			case 2:	ArregloCaracter.mostrarOrdInvertido(letras);break; // Opción 2
-			case 3:	System.out.println("Ingrese el caracter:");System.out.println(ArregloCaracter.esteCaracterSeRepite(letras, sc.next().charAt(0)));break; // Opción 3
-			case 4: ArregloCaracter.mostrar(letras);break; // Opción 4
+			case 1: ArregloCaracter.mostrarPosPar(letras);break; // Opcion 1
+			case 2:	ArregloCaracter.mostrarOrdInvertido(letras);break; // Opcion 2
+			case 3:	System.out.println("Ingrese el caracter:");System.out.println(ArregloCaracter.esteCaracterSeRepite(letras, sc.next().charAt(0)));break; // Opcion 3
+			case 4: ArregloCaracter.mostrar(letras);break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}

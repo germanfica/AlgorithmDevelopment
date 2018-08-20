@@ -10,15 +10,15 @@ public class CopyOfEntrega {
 	private static Scanner sc;
 	
 	/**
-	 * (1) Método de inserción
+	 * (1) Método de insercion
 	 * 
 	 * @param arreglo
 	 */
-	public static int[] inserción(int[] arreglo) {
-		// Declaración de variables
+	public static int[] insercion(int[] arreglo) {
+		// Declaracion de variables
 		int i;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		i = 0;
 		
 		// Recorrer el arreglo
@@ -31,19 +31,19 @@ public class CopyOfEntrega {
 	}
 	
 	/**
-	 * Reubicar la posición de los elementos
+	 * Reubicar la posicion de los elementos
 	 * 
 	 * @param arreglo
-	 * @param últimaPosición
+	 * @param ultimaPosicion
 	 * @return
 	 */
-	public static int[] reubica(int[] arreglo, int últimaPosición) {
-		// Declaración de variables
+	public static int[] reubica(int[] arreglo, int ultimaPosicion) {
+		// Declaracion de variables
 		int j, auxiliar;
 		
-		// Inicialización de variables
-		auxiliar = arreglo[últimaPosición];
-		j = últimaPosición-1;
+		// Inicializacion de variables
+		auxiliar = arreglo[ultimaPosicion];
+		j = ultimaPosicion-1;
 		
 		// Recorrer el arreglo
 		while(j>0 && arreglo[j-1]>arreglo[j]) {
@@ -57,88 +57,88 @@ public class CopyOfEntrega {
 	}
 	
 	/**
-	 * (2) Método de selección
+	 * (2) Método de seleccion
 	 * 
 	 * @return
 	 */
-	public static int[] selección(int[] arreglo) {
-		// Declaración de las variables
-		int i, posiciónDelMenor;
+	public static int[] seleccion(int[] arreglo) {
+		// Declaracion de las variables
+		int i, posicionDelMenor;
 		
-		// Inicialización de las variables
+		// Inicializacion de las variables
 		i = 0;
-		posiciónDelMenor = 0;
+		posicionDelMenor = 0;
 		
 		// Recorrer el arreglo para ordenar los elementos uno a uno
 		// n es la longitud del arreglo
 		for(i=0;i<=arreglo.length-1;i++) {
-			// Buscar el número más pequeño  desde i hasta la longitud del arreglo y guardar su índice
-			posiciónDelMenor = búsquedaDelMenor(arreglo, posiciónDelMenor);
+			// Buscar el número mas pequeño  desde i hasta la longitud del arreglo y guardar su índice
+			posicionDelMenor = búsquedaDelMenor(arreglo, posicionDelMenor);
 			
-			/* Intercambiar de lugar al número más pequeño encontrado
-			 * por la posición del elemento ubicado en la posición i
+			/* Intercambiar de lugar al número mas pequeño encontrado
+			 * por la posicion del elemento ubicado en la posicion i
 			 */
-			arreglo = intercambioDePosición(arreglo, posiciónDelMenor, posiciónDelMenor);
+			arreglo = intercambioDePosicion(arreglo, posicionDelMenor, posicionDelMenor);
 		}
 		
 		return arreglo;
 	}
 	
 	/**
-	 * Hallar y retornar el índice del elemento más pequeño del arreglo ingresado
-	 * por parámetro
+	 * Hallar y retornar el índice del elemento mas pequeño del arreglo ingresado
+	 * por parametro
 	 * 
 	 * @param arreglo
 	 * @param i
 	 * @return
 	 */
 	public static int búsquedaDelMenor(int[] arreglo, int i) {
-		// Declaración de las variables
-		int posiciónDelMenor, j;
+		// Declaracion de las variables
+		int posicionDelMenor, j;
 		
-		// Inicialización de las variables
-		posiciónDelMenor = i;
+		// Inicializacion de las variables
+		posicionDelMenor = i;
 		
 		// Recorrer el arreglo en busca del índice del elemento del mismo
 		for(j=i;j<=arreglo.length-1;j++) {
-			// Si existe un elemento más pequeño guardar su índce
-			if(arreglo[j] < arreglo[posiciónDelMenor]) {
-				// Se encontró un elemento más pequeño aún
-				posiciónDelMenor = j;
+			// Si existe un elemento mas pequeño guardar su índce
+			if(arreglo[j] < arreglo[posicionDelMenor]) {
+				// Se encontro un elemento mas pequeño aún
+				posicionDelMenor = j;
 			}
 		}
 		
-		return posiciónDelMenor;
+		return posicionDelMenor;
 	}
 	
 	/**
-	 * Intercambiar de posición al elemento menor por el elemento de la
-	 * posición i
+	 * Intercambiar de posicion al elemento menor por el elemento de la
+	 * posicion i
 	 * 
 	 * @param arreglo
-	 * @param posiciónDelMenor
+	 * @param posicionDelMenor
 	 * @param i
 	 * @return
 	 */
-	public static int[] intercambioDePosición(int[] arreglo, int posiciónDelMenor, int i) {
-		// Declaración de variables
-		int auxiliar; // Almacena el elemento de la posicón i
+	public static int[] intercambioDePosicion(int[] arreglo, int posicionDelMenor, int i) {
+		// Declaracion de variables
+		int auxiliar; // Almacena el elemento de la posicon i
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		auxiliar = arreglo[i];
 		
 		// Intercambiar las posiciones
-		arreglo[i] = arreglo[posiciónDelMenor];
-		arreglo[posiciónDelMenor] = auxiliar;
+		arreglo[i] = arreglo[posicionDelMenor];
+		arreglo[posicionDelMenor] = auxiliar;
 		
 		return arreglo;
 	}
 	
 	public static void mostrarElementos(int[] arreglo) {
-		// Declaración de variables
+		// Declaracion de variables
 		int i;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		i = 0;
 		
 		while(i<=arreglo.length-1) {
@@ -151,7 +151,7 @@ public class CopyOfEntrega {
 		int[] arreglo = new int[longitud];
 		String contenidoDelArchivo = Archivo.leer(ruta);
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
@@ -170,16 +170,16 @@ public class CopyOfEntrega {
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrarMenú() {
-		// Declaración de las variables
+		// Declaracion de las variables
 		int[] arreglo;
 		boolean salir;
-		int opción;
+		int opcion;
 		
-		// Inicialización de las variables
+		// Inicializacion de las variables
 		salir = false;
 		arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO, tamArrgelo);
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -188,27 +188,27 @@ public class CopyOfEntrega {
 			// Mostrar el cartel de las opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Aplicar el método de inserción\n" +
-					"[2] Aplicar el método selección\n"
+					"[1] Aplicar el método de insercion\n" +
+					"[2] Aplicar el método seleccion\n"
 					);
 			
-			// Leer opción para el menú principal
-			opción = sc.nextInt();
+			// Leer opcion para el menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
 			case 1:
-				arreglo = inserción(arreglo);
+				arreglo = insercion(arreglo);
 				mostrarElementos(arreglo);
 				break;
 			case 2:
-				arreglo = selección(arreglo);
+				arreglo = seleccion(arreglo);
 				mostrarElementos(arreglo);
 				break;			
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

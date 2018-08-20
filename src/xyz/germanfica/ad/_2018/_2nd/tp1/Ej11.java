@@ -5,7 +5,7 @@ import java.util.Scanner;
 import xyz.germanfica.ad.util.Mensaje;
 
 /*
- * 11) Diseñe un algoritmo que dado un número N entre 1 y 9, permita generar triángulos
+ * 11) Diseñe un algoritmo que dado un número N entre 1 y 9, permita generar triangulos
  * como los indicados en cada inciso.
  * 
  * a) N = 4
@@ -61,7 +61,7 @@ public class Ej11 {
 	 *    2 1
 	 *     1
 	 */
-	public static void mostrarTriánguloD(int n) {
+	public static void mostrarTrianguloD(int n) {
 		int num = n, aux = 0;
 		for (int i = 0; i <= n-1; i++) {
 			for (int j2 = 0; j2 < i; j2++) {
@@ -89,7 +89,7 @@ public class Ej11 {
 	 *    1 3
 	 *     1
 	 */
-	public static void mostrarTriánguloC(int n) {
+	public static void mostrarTrianguloC(int n) {
 		int num = 0;
 		for (int i = 0; i <= n-1; i++) {
 			num = 0;
@@ -117,7 +117,7 @@ public class Ej11 {
 	 *  ABC
 	 * ABCD
 	 */
-	public static void mostrarTriánguloB(int n) {
+	public static void mostrarTrianguloB(int n) {
 		int caracter = 65;
 		String letra;
 		for (int i = 0; i <= n-1; i++) {
@@ -141,7 +141,7 @@ public class Ej11 {
 	 * 333
 	 * 4444
 	 */
-	public static void mostrarTriánguloA(int n) {
+	public static void mostrarTrianguloA(int n) {
 		for (int i = 0; i <= n-1; i++) {
 			for (int j = 0; j <= i; j++) {
 				System.out.print(i+1);
@@ -152,7 +152,7 @@ public class Ej11 {
 	
 	public static void mostrarMenú() {
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Inicializar variables
 		salir = false;
@@ -164,33 +164,33 @@ public class Ej11 {
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
-					"[1] Generar el triángulo A\n" +
-					"[2] Generar el triángulo B\n" +
-					"[3] Generar el triángulo C\n" +
-					"[4] Generar el triángulo D\n"
+					"[1] Generar el triangulo A\n" +
+					"[2] Generar el triangulo B\n" +
+					"[3] Generar el triangulo C\n" +
+					"[4] Generar el triangulo D\n"
 					);
 			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
+			// Leer opcion del menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
 			case 1:
-				mostrarTriánguloA(leerEntero());
+				mostrarTrianguloA(leerEntero());
 				break;
 			case 2:
-				mostrarTriánguloB(leerEntero());
+				mostrarTrianguloB(leerEntero());
 				break;
 			case 3:
-				mostrarTriánguloC(leerEntero());
+				mostrarTrianguloC(leerEntero());
 				break;
 			case 4:
-				mostrarTriánguloD(leerEntero());
+				mostrarTrianguloD(leerEntero());
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

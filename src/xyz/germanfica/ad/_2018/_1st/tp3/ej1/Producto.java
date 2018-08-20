@@ -3,21 +3,21 @@ package xyz.germanfica.ad._2018._1st.tp3.ej1;
 //import java.util.Scanner;
 
 public class Producto {
-	private int código;
-	private String descripción;
+	private int codigo;
+	private String descripcion;
 	private float precioUnitario;
 	private int cantidadDeStock;
 	
-	public int getCódigo(){return código;}
-	public String getDescripción(){return descripción;}
+	public int getCodigo(){return codigo;}
+	public String getDescripcion(){return descripcion;}
 	public float getPrecioUnitario(){return precioUnitario;}
 	public int getCantidadDeStock(){return cantidadDeStock;}
 	
-	public void setCódigo(int código) {
-		this.código = código;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
-	public void setDescripción(String descripciónInicial) {
-		descripción = descripciónInicial;
+	public void setDescripcion(String descripcionInicial) {
+		descripcion = descripcionInicial;
 	}
 	public void setPrecioUnitario(float precioUnitarioInicial) {
 		precioUnitario = precioUnitarioInicial;
@@ -34,7 +34,7 @@ public class Producto {
 	/*
 	public void asd()
 	{
-		System.out.println(descripción);
+		System.out.println(descripcion);
 	}
 	*/
 	
@@ -42,7 +42,7 @@ public class Producto {
 	/*
 	public void setFeg() {
 		Scanner sc = new Scanner(System.in);
-		descripción = sc.next();
+		descripcion = sc.next();
 	}
 	*/
 }

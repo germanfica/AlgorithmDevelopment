@@ -7,9 +7,9 @@ public class Ej230518 {
 	
 	SI(pos<longitud(arr)
 		SI arr[pos]<0
-			aux ← contarNeg(arr, pos+1)+1
+			aux <- contarNeg(arr, pos+1)+1
 		SINO
-			aux ← contarNeg(arr, pos+1)+0
+			aux <- contarNeg(arr, pos+1)+0
 		FIN SI
 	FIN SI
 	

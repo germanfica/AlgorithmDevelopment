@@ -10,16 +10,16 @@ import xyz.germanfica.ad.util.Mensaje;
 
 /*
  * 10) Diseñar en Java un algoritmo para calcular el
- * ------- perímetro y el área -------------
+ * ------- perímetro y el area -------------
  * de diferentes figuras geométricas que cuente con un menú de opciones para
  * las siguientes figuras:
  * - Cuadrado.
- * - Rectángulo.
- * - Triángulo (suponer equilátero).
+ * - Rectangulo.
+ * - Triangulo (suponer equilatero).
  * - Círculo.
  * 
  * Desarrollar también los métodos que debe reutilizar el algoritmo y cuyas signaturas
- * se detallan a continuación:
+ * se detallan a continuacion:
  * 
  * - ALGORITMO calcularPerimetroCuadrado(REAL lado) RETORNA REAL
  * - ALGORITMO calcularAreaCuadrado( REAL lado) RETORNA REAL
@@ -48,7 +48,7 @@ public class Ej10 {
 		double lado = leerReal(); // Leer lado
 		System.out.print(
 				"El perímetro del cuadrado es de: " + perimetro.calcular(lado) + ".\n" +
-				"El área del cuadrado es de: " + area.calcular(lado) + ".\n"
+				"El area del cuadrado es de: " + area.calcular(lado) + ".\n"
 				);
 	}
 	
@@ -59,8 +59,8 @@ public class Ej10 {
 		double lado1 = leerReal(); // Leer lado 1
 		double lado2 = leerReal(); // Leer lado 2
 		System.out.print(
-				"El perímetro del rectángulo es de: " + perimetro.calcular(lado1, lado2) + ".\n" +
-				"El área del rectángulo es de: " + area.calcular(lado1, lado2) + ".\n"
+				"El perímetro del rectangulo es de: " + perimetro.calcular(lado1, lado2) + ".\n" +
+				"El area del rectangulo es de: " + area.calcular(lado1, lado2) + ".\n"
 				);
 	}
 	
@@ -70,8 +70,8 @@ public class Ej10 {
 		
 		double lado = leerReal(); // Leer lado
 		System.out.print(
-				"El perímetro del triángulo es de: " + perimetro.calcular(lado) + ".\n" +
-				"El área del triángulo es de: " + area.calcular(lado) + ".\n"
+				"El perímetro del triangulo es de: " + perimetro.calcular(lado) + ".\n" +
+				"El area del triangulo es de: " + area.calcular(lado) + ".\n"
 				);
 	}
 	
@@ -82,23 +82,23 @@ public class Ej10 {
 		double radio = leerReal(); // Leer radio
 		System.out.print(
 				"El perímetro del círculo es de: " + perimetro.calcular(radio) + ".\n" +
-				"El área del círculo es de: " + area.calcular(radio) + ".\n"
+				"El area del círculo es de: " + area.calcular(radio) + ".\n"
 				);
 	}
 	
 	public static void mostrarCartelDeOpciones() {
 		System.out.print(
 				"[0] Salir (IMPLEMENTADO)\n" +
-				"[1] Perímetro y área de un cuadrado\n" +
-				"[2] Perímetro y área de un rectángulo\n" +
-				"[3] Perímetro y área de un triángulo\n" +
-				"[4] Perímetro y área de un círculo\n"
+				"[1] Perímetro y area de un cuadrado\n" +
+				"[2] Perímetro y area de un rectangulo\n" +
+				"[3] Perímetro y area de un triangulo\n" +
+				"[4] Perímetro y area de un círculo\n"
 				);
 	}
 	
 	/**
-	 * Mostrar menú de la aplicación
-	 * Los módulos no deben ocupar más de una pantalla
+	 * Mostrar menú de la aplicacion
+	 * Los modulos no deben ocupar mas de una pantalla
 	 */
 	public static void mostrarMenú() {
 		boolean salir = false;
@@ -114,7 +114,7 @@ public class Ej10 {
 			sc = new Scanner(System.in);
 			mostrarCartelDeOpciones();
 			
-			// Leer opción del menú principal
+			// Leer opcion del menú principal
 			opcion = sc.nextInt();
 			
 			switch (opcion) {

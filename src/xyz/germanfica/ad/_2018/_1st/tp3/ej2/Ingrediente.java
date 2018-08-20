@@ -3,13 +3,13 @@ package xyz.germanfica.ad._2018._1st.tp3.ej2;
  * Actualizaciones:
  *  - Se ha quitado el método muestraIngrediente ya que no es buena práctica mostrar por
  *  pantalla carteles en objectos/clases.
- *  - En lugar del método muestraIngrediente se agregó otro método observador llamado toString,
+ *  - En lugar del método muestraIngrediente se agrego otro método observador llamado toString,
  *  con el objetivo de retornar todos los atributos del objeto ingrediente en
  *  texto plano.
  *  - Nombres más descriptivos a los parámetros.
- *  - Se agregaron comentarios, a excepción del constructor para reforzar el
+ *  - Se agregaron comentarios, a excepcion del constructor para reforzar el
  *  entendimiento de los mismos.
- *  - Se modificó el atributo "ingrediente" por "nombre", haciendo referencia al
+ *  - Se modifico el atributo "ingrediente" por "nombre", haciendo referencia al
  *  nombre del ingrediente ya que el objeto/clase es Ingrediente. Por lo tanto,
  *  tiene más sentido que "nombre" sea el atributo correcto para el objeto Ingrediente.
  *  - Consecutivamente, se modificaron los métodos observador y modificador de lo anterior.

@@ -14,15 +14,15 @@ public class EntregaEntregadaNoTocar {
 	/**
 	 * (5) Cambia las vocales a un '*' en las impresiones de 2da calidad.
 	 * 
-	 * @see La máquina de impresión de 2da calidad tiene una falla: No entiende las
+	 * @see La maquina de impresion de 2da calidad tiene una falla: No entiende las
 	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
-	 * a un ‘*’. La información es provista por el mismo archivo de texto del punto 3.
+	 * a un ‘*’. La informacion es provista por el mismo archivo de texto del punto 3.
 	 */
 	public static String cambioEnLasVocales(String contenido, int i){
-		// Declaración de variables
+		// Declaracion de variables
 		char c;
 
-		// Inicialización de variables
+		// Inicializacion de variables
 		c = ' ';
 
 		if(i == contenido.length()-1) {
@@ -37,14 +37,14 @@ public class EntregaEntregadaNoTocar {
 	}
 	
 	/**
-	 * (6) Verificar si el color solicitado es usado en la impresión
+	 * (6) Verificar si el color solicitado es usado en la impresion
 	 * 
 	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la
-	 * impresión. Para esto debe recorrer el arreglo de colores, considere que la
-	 * impresión a realizar es de 1ra calidad (no tiene cambiadas las vocales por “*”).
-	 * ¿Cómo lo resolverías para ambos casos?
+	 * impresion. Para esto debe recorrer el arreglo de colores, considere que la
+	 * impresion a realizar es de 1ra calidad (no tiene cambiadas las vocales por "*").
+	 * ¿Como lo resolverias para ambos casos?
 	 */
-	public static void verificarColorImpresión(String[] colores) {
+	public static void verificarColorImpresion(String[] colores) {
 		sc = new Scanner(System.in);
 		
 		System.out.println("Ingrese el color: ");
@@ -75,13 +75,13 @@ public class EntregaEntregadaNoTocar {
 	/**
 	 * (8)
 	 * 
-	 * @see 8. Modificar la solución del ejercicio 2 (dos):
-	 *  - Mostrar la formula de cálculo del factor de forma inversa por pantalla
+	 * @see 8. Modificar la solucion del ejercicio 2 (dos):
+	 *  - Mostrar la formula de calculo del factor de forma inversa por pantalla
 	 *  - Mostrar el resultado del factorial al final.
 	 * Esto es: 6 * 5 * 4 * 3 * 2 * 1 = 72
 	 */
 	public static int primeraCalidad(int n) {
-		// Declaración de variables
+		// Declaracion de variables
 		int factorial;
 	
 		if (n > 1) {
@@ -98,40 +98,40 @@ public class EntregaEntregadaNoTocar {
 	/**
 	 * (9)
 	 * 
-	 * @see Hay colores que son muy difíciles de lograr en la imprenta y que están en
-	 * promoción.
+	 * @see Hay colores que son muy dificiles de lograr en la imprenta y que estan en
+	 * promocion.
 	 * 
 	 * La forma de identificarlos es darles un nombre especial (creado por la imprenta)
-	 * que es palíndromo.
+	 * que es palindromo.
 	 * 
-	 * A partir del punto 4 agregue la funcionalidad para identificar qué colores son palíndromos.
+	 * A partir del punto 4 agregue la funcionalidad para identificar qué colores son palindromos.
 	 * 
-	 * Def. palíndromo: palabra o expresión que es igual si se lee de izquierda a derecha que
-	 * de derecha a izquierda. Es decir, Un palíndromo es una palabra, un número u otra
-	 * secuencia de caracteres que se lee de la misma manera hacia atrás y hacia adelante,
+	 * Def. palindromo: palabra o expresion que es igual si se lee de izquierda a derecha que
+	 * de derecha a izquierda. Es decir, Un palindromo es una palabra, un número u otra
+	 * secuencia de caracteres que se lee de la misma manera hacia atras y hacia adelante,
 	 * como "madam" o "racecar".
 	 */
-	public static boolean esPalíndromo(String oración, String nuevaOración, int i) {
+	public static boolean esPalindromo(String oracion, String nuevaOracion, int i) {
 		/*
 		 * To do:
-		 * - Guardar la oración que se lee de derecha a izquierda (original).
-		 * - Reconstruir la oración de izquierda a derecha y luego compararla con la
-		 * original (sería la de derecha a izquierda).
+		 * - Guardar la oracion que se lee de derecha a izquierda (original).
+		 * - Reconstruir la oracion de izquierda a derecha y luego compararla con la
+		 * original (seria la de derecha a izquierda).
 		 */
 		char c = ' ';
 		
-		if(oración.length()-1<i) {
+		if(oracion.length()-1<i) {
 			// Nota: trim() no funciona.
-			if(nuevaOración.replaceAll("\\s","").equals(oración.replaceAll("\\s",""))) {
+			if(nuevaOracion.replaceAll("\\s","").equals(oracion.replaceAll("\\s",""))) {
 				return true;
 			}else {
 				return false;
 			}
 		}else {
-			c = oración.charAt(i);
-			nuevaOración = c + nuevaOración;
+			c = oracion.charAt(i);
+			nuevaOracion = c + nuevaOracion;
 			
-			return esPalíndromo(oración, nuevaOración, i+1);
+			return esPalindromo(oracion, nuevaOracion, i+1);
 		}
 	}
 	
@@ -139,16 +139,16 @@ public class EntregaEntregadaNoTocar {
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrarMenú() {
-		// Declaración de las variables
+		// Declaracion de las variables
 		String[] colores;
 		boolean salir;
-		int opción;
+		int opcion;
 		
-		// Inicialización de las variables
+		// Inicializacion de las variables
 		salir = false;
 		colores = cargaColoresDesdeArchivo(tamArrgelo);
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -158,15 +158,15 @@ public class EntregaEntregadaNoTocar {
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[5] Cambiar las vocales a un '*' en las impresiones de 2da calidad. (IMPLEMENTADO)\n" +
-					"[6] Verificar si el color solicitado es usado en la impresión (IMPLEMENTADO)\n" +
+					"[6] Verificar si el color solicitado es usado en la impresion (IMPLEMENTADO)\n" +
 					"[8] Mostrar factor (IMPLEMENTADO)\n" +
 					"[9] Determinar palindromidad (IMPLEMENTADO)\n"
 					);
 			
-			// Leer opción para el menú principal
-			opción = sc.nextInt();
+			// Leer opcion para el menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
@@ -174,7 +174,7 @@ public class EntregaEntregadaNoTocar {
 				System.out.println(cambioEnLasVocales(Archivo.leer(COLORES_ARCHIVO), 0));
 				break;
 			case 6:
-				verificarColorImpresión(colores);
+				verificarColorImpresion(colores);
 				break;
 			case 8:
 				sc = new Scanner(System.in);
@@ -185,12 +185,12 @@ public class EntregaEntregadaNoTocar {
 				break;
 			case 9:
 				sc = new Scanner(System.in);
-				System.out.println("Ingrese la oración a analizar: ");
-				String oración = sc.nextLine();
-				System.out.println(esPalíndromo(oración, "", 0));
+				System.out.println("Ingrese la oracion a analizar: ");
+				String oracion = sc.nextLine();
+				System.out.println(esPalindromo(oracion, "", 0));
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}
@@ -200,10 +200,10 @@ public class EntregaEntregadaNoTocar {
 		String[] arreglo = new String[longitud];
 		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
 		
-		// Converción a mayúsculas antes de realizar la carga al arreglo
+		// Convercion a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		

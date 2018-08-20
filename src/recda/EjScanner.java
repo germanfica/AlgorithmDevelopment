@@ -19,7 +19,7 @@ public class EjScanner {
 
     
 /**
- * Podemos usar una instancia de la clase Scanner para poder leer datos de forma más comoda 
+ * Podemos usar una instancia de la clase Scanner para poder leer datos de forma mas comoda 
  * Recordamos que un reader solo nos provee operaciones para leer o un byte o
  * una linea completa (hasta el siguiente \n o \r ). 
  * 

@@ -4,30 +4,30 @@ import java.util.Scanner;
 
 public class Ej1 {
 	/*
-	 * 1- Dada una matriz de n filas y 2 columnas correspondientes a apellido, nombre del estudiante, y dirección de email.
+	 * 1- Dada una matriz de n filas y 2 columnas correspondientes a apellido, nombre del estudiante, y direccion de email.
 	 * 
 	 * Implementar en java un método que retorne un arreglo de n strings formados con el apellido
-	 * (la/s palabra/s antes de la “,” de la primer columna de cada fila ) seguida de un espacio,
-	 * seguida de la dirección de email, (sólo para los estudiantes que tiene dirección en la fi.,
-	 * que la última parte se “@fi.uncoma.edu.ar”, caso contrario, que no tenga dirección.
+	 * (la/s palabra/s antes de la "," de la primer columna de cada fila ) seguida de un espacio,
+	 * seguida de la direccion de email, (solo para los estudiantes que tiene direccion en la fi.,
+	 * que la última parte se "@fi.uncoma.edu.ar", caso contrario, que no tenga direccion.
 	 * 
 	 * Consejo para el parcial: para el parcial al usar arreglos solo utilizarlo con los tipos
 	 * primitivos de java, ya que lleva tiempo y solo se evalua arreglos.
 	 * 
 	 * Nota: Solamente puede utilizar los siguientes métodos en Java:
-	 *  - charAt(pos) ← devuelve la letra correspondiente a la posición.
-	 *  - substring(pos) ← devuelve un String formado desde la posición pos hasta el final
-	 *  - indexOf(otroString) ← Retorna la posición de la primer ocurrencia de otroString dentro del String llamador
-	 *  - compareTo(otroString) ← Compara el string llamador con otroString Si el objeto llamador es menor que
+	 *  - charAt(pos) <- devuelve la letra correspondiente a la posicion.
+	 *  - substring(pos) <- devuelve un String formado desde la posicion pos hasta el final
+	 *  - indexOf(otroString) <- Retorna la posicion de la primer ocurrencia de otroString dentro del String llamador
+	 *  - compareTo(otroString) <- Compara el string llamador con otroString Si el objeto llamador es menor que
 	 *  - otroString devuelve un valor negativo, si son iguales devuelve 0 y si no devuelve un número positivo.
 	 */
 	static Scanner sc;
 	
 	/**
-	 * Retorna un arreglo de n strings formados con el apellido (la/s palabra/s antes de la “,”
-	 * de la primer columna de cada fila ) seguida de un espacio, seguida de la dirección de
-	 * email, (sólo para los estudiantes que tiene dirección en la fi., que la última parte se
-	 * “@fi.uncoma.edu.ar”, caso contrario, que no tenga dirección.
+	 * Retorna un arreglo de n strings formados con el apellido (la/s palabra/s antes de la ","
+	 * de la primer columna de cada fila ) seguida de un espacio, seguida de la direccion de
+	 * email, (solo para los estudiantes que tiene direccion en la fi., que la última parte se
+	 * "@fi.uncoma.edu.ar", caso contrario, que no tenga direccion.
 	 * @param matriz
 	 * @return
 	 */
@@ -104,11 +104,11 @@ public class Ej1 {
 	}
 	
 	/*
-	 * Para no crear el módulo mostrarMenú en el parcial:
+	 * Para no crear el modulo mostrarMenú en el parcial:
 	 * 
 	 * Aclarar con un comentario:
-	 *  - No hice el módulo mostrarMenú ni un algoritmo principal ya que
-	 *  se supone que los parámetros recibidos por cada módulo que resuelven la 
+	 *  - No hice el modulo mostrarMenú ni un algoritmo principal ya que
+	 *  se supone que los parametros recibidos por cada modulo que resuelven la 
 	 *  el algoritmo son evíados desde el algoritmo principal.
 	 */
 	
@@ -120,7 +120,7 @@ public class Ej1 {
 	public static void mostrarMenú(int cantidadDeFilas) {
 		String[][] matriz;
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Inicializar variables
 		salir = false;
@@ -128,7 +128,7 @@ public class Ej1 {
 		// Crear y cargar la matriz
 		matriz = cargaDeElementos(cantidadDeFilas);
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -140,19 +140,19 @@ public class Ej1 {
 					"[1] Ejecutar la regla\n"
 					);
 			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
+			// Leer opcion del menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
-				System.err.println("Aplicación cerrada.");
+				System.err.println("Aplicacion cerrada.");
 				break;
 			case 1:
 				mostrarLosElementosDelArreglo(regla(matriz));
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

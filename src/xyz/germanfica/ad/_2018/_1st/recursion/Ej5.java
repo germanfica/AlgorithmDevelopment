@@ -8,7 +8,7 @@ public class Ej5 {
 	 * @param i
 	 * @return
 	 */
-	// No funciona si no envio como parámetro al númeroMayor
+	// No funciona si no envio como parametro al númeroMayor
 	public static int esMayor(int[] vector, int i, int númeroMayor){
 		if(i<2){
 			if(vector[i]>númeroMayor){
@@ -22,10 +22,10 @@ public class Ej5 {
 	}
 	
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		int[] vector = new int[2];
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		vector[0] = 2;
 		vector[1] = 12;
 		

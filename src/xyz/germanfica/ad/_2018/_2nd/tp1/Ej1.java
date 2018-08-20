@@ -10,10 +10,10 @@ import xyz.germanfica.ad.util.Mensaje;
  * ENTERO x,y
  * LEER(x)
  * LEER(y)
- * x ← x-y
- * y ← x+y
- * x ← y-x
- * ESCRIBIR (“Los valores de x e y son”)
+ * x <- x-y
+ * y <- x+y
+ * x <- y-x
+ * ESCRIBIR ("Los valores de x e y son")
  * ESCRIBIR (x)
  * ESCRIBIR (y)
  * FIN ALGORITMO misterio
@@ -41,17 +41,17 @@ public class Ej1 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Declaración de variables
+		// Declaracion de variables
 		int x,y;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		x=0;
 		y=0;
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
 		
-		// Creación del Scanner
+		// Creacion del Scanner
 		sc = new Scanner(System.in);
 		
 		// Leer

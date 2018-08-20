@@ -6,12 +6,12 @@ public class Ej2 {
 	 * 
 	 * Ejemplo: 2030 tiene 2 ceros
 	 * 
-	 * Si n tiene dos o más digitos
+	 * Si n tiene dos o mas digitos
 	 *  . la cantida de ceros es la cantidad de ceros en n son el último dígito removido (planteo recursivo)
-	 *  . más un 1 adicional si el último dígito es cero
+	 *  . mas un 1 adicional si el último dígito es cero
 	 *  
 	 *  Ejemplo:
-	 *   . cantidad de ceros en 20030 es -> cantidad de ceros en 2003 más 1
+	 *   . cantidad de ceros en 20030 es -> cantidad de ceros en 2003 mas 1
 	 *   . cantidad de ceros en 20035 es -> cantidad de ceros en 2003
 	 */
 	
@@ -35,7 +35,7 @@ public class Ej2 {
 			cantidadDigitos(n/10); // Corre la coma un lugar hacia la izquierda del número
 			System.out.println(n); // Compone
 			
-			//System.out.println(n%10); // Muestra el módulo de izquierda a derecha
+			//System.out.println(n%10); // Muestra el modulo de izquierda a derecha
 		}
 		
 		return cant;

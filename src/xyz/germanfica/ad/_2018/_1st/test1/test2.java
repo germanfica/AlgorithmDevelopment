@@ -3,7 +3,7 @@ package xyz.germanfica.ad._2018._1st.test1;
 public class test2 {
 	public static int[] cargarPrimos(int n) 
 	{
-		int divisores, primosEncontrados, índice, subÍndice;
+		int divisores, primosEncontrados, indice, subIndice;
 		int[] primo, posiblePrimo;
 		
 		primosEncontrados = 0; // Inicializar entero
@@ -11,13 +11,13 @@ public class test2 {
 		posiblePrimo = new int[n]; // Inicializar arreglo
 		
 		// Buscar posible primo
-		for(índice = 2; índice<=posiblePrimo.length;índice++)
+		for(indice = 2; indice<=posiblePrimo.length;indice++)
 		{
 			divisores = 0; // Inicializar entero
 			
-			for(subÍndice = índice; subÍndice>1;subÍndice--)
+			for(subIndice = indice; subIndice>1;subIndice--)
 			{
-				if(índice%subÍndice==0)
+				if(indice%subIndice==0)
 				{
 					//System.out.println(j + " divide a " + i);
 					divisores = divisores + 1;
@@ -28,14 +28,14 @@ public class test2 {
 			{
 				//System.out.println(i + " es primo.");
 				primosEncontrados = primosEncontrados + 1;
-				posiblePrimo[primosEncontrados-1] = índice;
+				posiblePrimo[primosEncontrados-1] = indice;
 			}else
 			{
 				//System.out.println(i + " no es primo.");
 			}
 		}
 		
-		// Crear nuevo arreglo con la cantidad correcta de número primos.
+		// Crear nuevo arreglo con la cantidad correcta de numero primos.
 		primo = new int[primosEncontrados];
 		for(int i = 0; i < primo.length; i++)
 		{

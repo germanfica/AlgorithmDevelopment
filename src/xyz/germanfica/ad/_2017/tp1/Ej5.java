@@ -41,7 +41,7 @@ public class Ej5 {
 			raiz = (float) Math.sqrt(contenidoRaiz);
 		}
 		
-		// Optimización
+		// Optimizacion
 		
 		x1 = (float) (b*(-1) + raiz)/(2*a);
 		x2 = (float) (b*(-1) - raiz)/(2*a);

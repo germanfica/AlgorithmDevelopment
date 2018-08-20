@@ -6,19 +6,19 @@ import xyz.germanfica.ad.util.Archivo;
 import xyz.germanfica.ad.util.Mensaje;
 
 /*
- * 9) En una exposición de vehículos se administra la información de los autos que
- * están exhibidos.
+ * 9) En una exposicion de vehículos se administra la informacion de los autos que
+ * estan exhibidos.
  * 
  * mostrarAutos();
- * Para cada auto se desea conocer: patente, marca, año de
- * fabricación, color y capacidad (cantidad de personas sentadas y cinturón de
- * seguridad disponible). En base a la información relevada se desea mostrar:
+ * Para cada auto se desea conocer: patente, marca, aioo de
+ * fabricacion, color y capacidad (cantidad de personas sentadas y cinturon de
+ * seguridad disponible). En base a la informacion relevada se desea mostrar:
  * 
  * a) La cantidad de vehículos rojos.
  * b) La capacidad promedio de los autos exhibidos.
- * c) La marca de vehículos que más autos exhibe en la exposición.
+ * c) La marca de vehículos que mas autos exhibe en la exposicion.
  * 
- * Diseñar el algoritmo principal y los módulos correspondientes. Implementar en Java.
+ * Diseioar el algoritmo principal y los modulos correspondientes. Implementar en Java.
  * 
  * Ya lo tenías hecho, pero hay que revisarlo: com/germanfica/ad/_2017/tp1/Excercise7.java
  */
@@ -30,7 +30,7 @@ public class Ej9 {
 		Auto[] autos = new Auto[longitud];
 		String archivo = Archivo.leer(NOMBRE_ARCHIVO);
 		
-		sc = new Scanner(archivo); // Asignación de tarea al scanner para analizar el archivo
+		sc = new Scanner(archivo); // Asignacion de tarea al scanner para analizar el archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica cuando se encuntra una coma
 		
@@ -40,7 +40,7 @@ public class Ej9 {
 			Auto auto = new Auto();
 			auto.setPatente(sc.next());
 			auto.setMarca(sc.next());
-			auto.setAñoDeFabricación(sc.nextInt());
+			auto.setAiooDeFabricacion(sc.nextInt());
 			auto.setColor(sc.next());
 			auto.setCapacidad(sc.nextInt());
 			autos[i] = auto;
@@ -54,7 +54,7 @@ public class Ej9 {
 		for(int i = 0; i<=autos.length-1 ;i++) {
 			System.out.println(autos[i].getPatente());
 			System.out.println(autos[i].getMarca());
-			System.out.println(autos[i].getAñoDeFabricación());
+			System.out.println(autos[i].getAiooDeFabricacion());
 			System.out.println(autos[i].getColor());
 			System.out.println(autos[i].getCapacidad());
 			System.out.println("---------------------------------");
@@ -62,10 +62,10 @@ public class Ej9 {
 	}
 	
 	public static int cantidadDeAutosDeColor(String color, Auto[] autos) {
-		// Declaración de variables
+		// Declaracion de variables
 		int cant;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		cant = 0;
 		
 		for (int i = 0; i < autos.length; i++) {
@@ -78,10 +78,10 @@ public class Ej9 {
 	}
 	
 	public static int capacidadPromedioDeLosAutos(Auto[] autos) {
-		// Declaración de variables
+		// Declaracion de variables
 		int sumaCap, longitud;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		sumaCap = 0;
 		longitud = autos.length;
 		
@@ -136,14 +136,14 @@ public class Ej9 {
 	 * método de ordenamiento, que ordene todos los colores,
 	 * segun la correspondencia en el abecdario)
 	 */
-	public static String nombreDeLamarcaMásExhibida(Auto[] autos) {
-		// Declaración de variables
-		String nombreMarcaMásExhibida, nombreMarca;
-		int cantAutosMarcaMásExhibida, cantAutosMarca;
+	public static String nombreDeLamarcaMasExhibida(Auto[] autos) {
+		// Declaracion de variables
+		String nombreMarcaMasExhibida, nombreMarca;
+		int cantAutosMarcaMasExhibida, cantAutosMarca;
 		
-		// Inicialización de variables
-		nombreMarcaMásExhibida = "";
-		cantAutosMarcaMásExhibida = 0;
+		// Inicializacion de variables
+		nombreMarcaMasExhibida = "";
+		cantAutosMarcaMasExhibida = 0;
 		nombreMarca = autos[0].getMarca();
 		cantAutosMarca = 1;
 		
@@ -151,34 +151,34 @@ public class Ej9 {
 		autos = burbujaMejorado(autos,autos.length);
 		
 		for (int i = 0; i <= autos.length-1; i++) {
-			// Si se encontró una nueva marca para contar entonces nombreMarca = autos[i].getMarca()
+			// Si se encontro una nueva marca para contar entonces nombreMarca = autos[i].getMarca()
 			if(!autos[i].getMarca().toLowerCase().equals(nombreMarca.toLowerCase())) {
 				nombreMarca = autos[i].getMarca();
 				cantAutosMarca = 1;
 			}
-			// Sino si la cantidad de autos de la marca actual es mayor a la marca más exhibida,
-			// bueno, entonces tenemos una marca que exhibió más.
-			else if(cantAutosMarca>cantAutosMarcaMásExhibida) {
-				nombreMarcaMásExhibida = nombreMarca;
-				cantAutosMarcaMásExhibida = cantAutosMarca;
+			// Sino si la cantidad de autos de la marca actual es mayor a la marca mas exhibida,
+			// bueno, entonces tenemos una marca que exhibio mas.
+			else if(cantAutosMarca>cantAutosMarcaMasExhibida) {
+				nombreMarcaMasExhibida = nombreMarca;
+				cantAutosMarcaMasExhibida = cantAutosMarca;
 			}
 
 			//System.out.println("Nombre de la marca: " + nombreMarca + " ; " + autos[i].getMarca());
 			//System.out.println("Cantidad de autos exhibidos: " + cantAutosMarca);
-			//System.out.println("Nombre de la marca más exhibida: " + nombreMarcaMásExhibida);
-			//System.out.println("Cantidad de autos de la marca más exhibida: " + cantAutosMarcaMásExhibida);
+			//System.out.println("Nombre de la marca mas exhibida: " + nombreMarcaMasExhibida);
+			//System.out.println("Cantidad de autos de la marca mas exhibida: " + cantAutosMarcaMasExhibida);
 			
 			cantAutosMarca++;
 		}
 		
-		return nombreMarcaMásExhibida;
+		return nombreMarcaMasExhibida;
 	}
 	
 	// agregarAutos(Auto autos); // podria incrementar la longitud actual + 1 o preguntar cuantos autos quiere agregar
 	
 	public static void mostrarMenú() {
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Cargar a todos los autos desde el archivo
 		Auto[] autos = autos(7);
@@ -196,14 +196,14 @@ public class Ej9 {
 					"[1] Mostrar todos los autos\n" +
 					"[2] La cantidad de vehículos rojos\n" +
 					"[3] La capacidad promedio de los autos exhibidos\n" +
-					"[4] La marca de vehículos que más autos exhibe en la exposición\n" +
+					"[4] La marca de vehículos que mas autos exhibe en la exposicion\n" +
 					"[5] Burbuja Mejorado\n"
 					);
 			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
+			// Leer opcion del menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
@@ -219,13 +219,13 @@ public class Ej9 {
 				System.out.println("La capacidad promedio de los autos exhibidos: " + capacidadPromedioDeLosAutos(autos));
 				break;
 			case 4:
-				System.out.println("La marca más exhibida fue: " + nombreDeLamarcaMásExhibida(autos));
+				System.out.println("La marca mas exhibida fue: " + nombreDeLamarcaMasExhibida(autos));
 				break;
 			case 5:
 				mostrarAutos(burbujaMejorado(autos,autos.length));
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

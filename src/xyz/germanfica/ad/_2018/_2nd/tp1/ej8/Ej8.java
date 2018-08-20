@@ -8,20 +8,20 @@ import xyz.germanfica.ad.util.Mensaje;
 /*
  * 8) En un evento realizado por la empresa de turismo Argentar se
  * hizo una encuesta a algunas de las personas que asistieron,
- * se les preguntó:
+ * se les pregunto:
  * - Nombre y apellido.
  * - Edad.
  * - Cantidad de países visitados.
  * - Estado civil.
  * 
  * Las personas solteras con edad entre 45 y 62 años podían participar del sorteo
- * de un viaje a las Cataratas. En base a la información relevada se desea mostrar:
+ * de un viaje a las Cataratas. En base a la informacion relevada se desea mostrar:
  * 
  * a) El promedio de edad de los asistentes encuestados
- * b) El nombre y apellido de la persona que más países visitó
+ * b) El nombre y apellido de la persona que mas países visito
  * c) Por cada persona indicar si podía o no participar del sorteo
  * 
- * Diseñar el algoritmo principal y los módulos correspondientes.
+ * Diseñar el algoritmo principal y los modulos correspondientes.
  * Implementar en Java.
  */
 public class Ej8 {
@@ -57,7 +57,7 @@ public class Ej8 {
 		Encuesta[] encuestados = new Encuesta[longitud];
 		String archivo = Archivo.leer(NOMBRE_ARCHIVO);
 		
-		sc = new Scanner(archivo); // Asignación de tarea al scanner para analizar el archivo
+		sc = new Scanner(archivo); // Asignacion de tarea al scanner para analizar el archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica cuando se encuntra una coma
 		
@@ -83,10 +83,10 @@ public class Ej8 {
 			System.out.println(encuestados[i].getApellido());
 			System.out.println(encuestados[i].getEdad());
 			System.out.println(encuestados[i].getCantPaísesVis());
-			System.out.println("¿Está soltero/a? "+encuestados[i].getEstadoCivil().isSoltero());
-			System.out.println("¿Está casado/a? "+encuestados[i].getEstadoCivil().isCasado());
-			System.out.println("¿Está viudo/a? "+encuestados[i].getEstadoCivil().isViudo());
-			System.out.println("¿Está divorciado/a? "+encuestados[i].getEstadoCivil().isDivorciado());
+			System.out.println("¿Esta soltero/a? "+encuestados[i].getEstadoCivil().isSoltero());
+			System.out.println("¿Esta casado/a? "+encuestados[i].getEstadoCivil().isCasado());
+			System.out.println("¿Esta viudo/a? "+encuestados[i].getEstadoCivil().isViudo());
+			System.out.println("¿Esta divorciado/a? "+encuestados[i].getEstadoCivil().isDivorciado());
 			System.out.println("---------------------------------");
 		}
 	}
@@ -100,28 +100,28 @@ public class Ej8 {
 		return sumaDeLasEdades/longitud;
 	}
 	
-	public static String quiénVisitóMásPaíses(Encuesta[] encuestados) {
-		// Declaración de variables
-		String nombreDelQueMásVisitó, apellidoDelQueMásVisitó;
-		int cantPaísesDelQueMásVisitó, longitud;
+	public static String quienVisitoMasPaíses(Encuesta[] encuestados) {
+		// Declaracion de variables
+		String nombreDelQueMasVisito, apellidoDelQueMasVisito;
+		int cantPaísesDelQueMasVisito, longitud;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		longitud = encuestados.length;
-		nombreDelQueMásVisitó = "";
-		apellidoDelQueMásVisitó = "";
-		cantPaísesDelQueMásVisitó = 0;
+		nombreDelQueMasVisito = "";
+		apellidoDelQueMasVisito = "";
+		cantPaísesDelQueMasVisito = 0;
 		
 		for(int i = 0; i<= longitud-1;i++) {
-			if(encuestados[i].getCantPaísesVis()>cantPaísesDelQueMásVisitó) {
-				nombreDelQueMásVisitó = encuestados[i].getNombre();
-				apellidoDelQueMásVisitó = encuestados[i].getApellido();
-				cantPaísesDelQueMásVisitó = encuestados[i].getCantPaísesVis();
+			if(encuestados[i].getCantPaísesVis()>cantPaísesDelQueMasVisito) {
+				nombreDelQueMasVisito = encuestados[i].getNombre();
+				apellidoDelQueMasVisito = encuestados[i].getApellido();
+				cantPaísesDelQueMasVisito = encuestados[i].getCantPaísesVis();
 			}
 		}
-		return nombreDelQueMásVisitó + " " + apellidoDelQueMásVisitó;
+		return nombreDelQueMasVisito + " " + apellidoDelQueMasVisito;
 	}
 	// Por cada persona indicar si podía o no participar del sorteo
-	public static void quiénesPuedenParticiparDelSorteo(Encuesta[] encuestados) {
+	public static void quienesPuedenParticiparDelSorteo(Encuesta[] encuestados) {
 		int longitud = encuestados.length;
 		for(int i = 0;i<=longitud-1;i++) {
 			// personas solteras con edad entre 45 y 62 años
@@ -135,7 +135,7 @@ public class Ej8 {
 	
 	public static void mostrarMenú() {
 		boolean salir;
-		int opción;
+		int opcion;
 		
 		// Cargar a todos los encuestados desde el archivo
 		Encuesta[] encuestados = encuestados(3);
@@ -151,15 +151,15 @@ public class Ej8 {
 			System.out.print(
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] El promedio de edad de los asistentes encuestados\n" +
-					"[2] El nombre y apellido de la persona que más países visitó\n" +
+					"[2] El nombre y apellido de la persona que mas países visito\n" +
 					"[3] Por cada persona indicar si podía o no participar del sorteo\n" +
 					"[4] Mostrar la lista de todos los encuestados\n"
 					);
 			
-			// Leer opción del menú principal
-			opción = sc.nextInt();
+			// Leer opcion del menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
@@ -167,17 +167,17 @@ public class Ej8 {
 				System.out.println("El promedio de edad de los asistentes encuestados: " + promedioDeEdadDeLosEncuestados(encuestados));
 				break;
 			case 2:
-				System.out.println(quiénVisitóMásPaíses(encuestados));
+				System.out.println(quienVisitoMasPaíses(encuestados));
 				break;
 			case 3:
-				quiénesPuedenParticiparDelSorteo(encuestados);
+				quienesPuedenParticiparDelSorteo(encuestados);
 				break;
 			case 4:
 				// Mostrar todos los encuestados
 				mostrarEncuestados(encuestados);
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

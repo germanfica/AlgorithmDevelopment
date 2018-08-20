@@ -11,7 +11,7 @@ public class Menu {
 	public static int longitud(String contenidoDelArchivo) {
 		int resultado;
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
@@ -38,7 +38,7 @@ public class Menu {
 		String contenidoDelArchivo = Archivo.leer(ruta);
 		int[] arreglo = new int[longitud(contenidoDelArchivo)];
 		
-		sc = new Scanner(contenidoDelArchivo); // Asignación de tarea al scanner para analizar el contenido del archivo
+		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
 		sc.useDelimiter("\\s*,\\s*"); // Esto clasifica los colores cuando se encuntra una coma
 		
@@ -58,10 +58,10 @@ public class Menu {
 	 * @param arreglo
 	 */
 	public static void mostrarElementos(int[] arreglo) {
-		// Declaración de variables
+		// Declaracion de variables
 		int i;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		i = 0;
 		
 		while(i<=arreglo.length-1) {
@@ -74,16 +74,16 @@ public class Menu {
 	 * Mostrar menú de opciones
 	 */
 	public static void mostrar() {
-		// Declaración de las variables
+		// Declaracion de las variables
 		int[] arreglo;
 		boolean salir;
-		int opción;
+		int opcion;
 		
-		// Inicialización de las variables
+		// Inicializacion de las variables
 		salir = false;
 		arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO);
 		
-		System.out.println("Bienvenido a la consola de la aplicación");
+		System.out.println("Bienvenido a la consola de la aplicacion");
 		
 		while(!salir)
 		{
@@ -94,17 +94,17 @@ public class Menu {
 					"[0] Salir (IMPLEMENTADO)\n" +
 					"[1] Método burbuja (IMPLEMENTADO)\n" +
 					"[2] Método burbuja mejorado (IMPLEMENTADO)\n" +
-					"[3] Método inserción (IMPLEMENTADO)\n" +
-					"[4] Método selección (IMPLEMENTADO)\n" +
+					"[3] Método insercion (IMPLEMENTADO)\n" +
+					"[4] Método seleccion (IMPLEMENTADO)\n" +
 					"_______________________\n" +
 					"[5] Búsqueda secuencial (IMPLEMENTADO)\n" +
 					"[6] Búsqueda binaria (IMPLEMENTADO)\n"
 					);
 			
-			// Leer opción para el menú principal
-			opción = sc.nextInt();
+			// Leer opcion para el menú principal
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
 				break;
@@ -130,14 +130,14 @@ public class Menu {
 				break;
 			case 5:
 				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
-				System.out.println("Está en la posición: " + Ordenamiento.busquedaSecuencial(arreglo, arreglo.length));
+				System.out.println("Esta en la posicion: " + Ordenamiento.busquedaSecuencial(arreglo, arreglo.length));
 				break;
 			case 6:
 				arreglo = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Arreglo por defecto
-				System.out.println("Está en la posición: " + Ordenamiento.busquedaBinaria(arreglo));
+				System.out.println("Esta en la posicion: " + Ordenamiento.busquedaBinaria(arreglo));
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

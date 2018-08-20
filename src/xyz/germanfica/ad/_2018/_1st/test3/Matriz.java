@@ -3,10 +3,10 @@ package xyz.germanfica.ad._2018._1st.test3;
 import java.util.Scanner;
 
 /**
- * Implementar un módulo en JAVA que dada una martiz de caracteres, de NxN,
+ * Implementar un modulo en JAVA que dada una martiz de caracteres, de NxN,
  * verifique si todos los caracteres en las celdas ubicados en la diagonal
  * secundaria son iguales.
- * Ejemplo: para la siguiente matriz, el método deberá devolver verdadero.
+ * Ejemplo: para la siguiente matriz, el método debera devolver verdadero.
  * 
  * Tengo que generar dos matrices, probablemente.
  * Es decir, comparar dos matrices.
@@ -19,17 +19,17 @@ public class Matriz {
 	
 	public static char[][] cargaDeElementos(int cantidadDeFilas, int cantidadDeColumnas) {
 		char[][] matriz = new char[cantidadDeFilas][cantidadDeColumnas];
-		char carácter;
+		char caracter;
 		
-		System.out.println("Ingrese los elementos de la matriz a continuación: ");
+		System.out.println("Ingrese los elementos de la matriz a continuacion: ");
 		
 		for(int i = 0;i<=matriz.length-1;i++) {
 			for(int j = 0;j<=matriz[0].length-1;j++) {
 				System.out.println("Elemento ubicado en " + "(" + i + ", " + j + "):");
 				sc = new Scanner(System.in);
 				// Leer valores
-				carácter = sc.next().charAt(0);
-				matriz[i][j] = carácter;
+				caracter = sc.next().charAt(0);
+				matriz[i][j] = caracter;
 			}
 		}
 		
@@ -73,7 +73,7 @@ public class Matriz {
 	
 	public static void mostrarMenú() {
 		char[][] matriz;
-		int opción;
+		int opcion;
 		boolean salir;
 		
 		// Inicializar variables
@@ -91,22 +91,22 @@ public class Matriz {
 			// Mostrar cartel de opciones
 			System.out.print(
 					"[0] Salir\n" +
-					"[1] Mostrar todos los elementos de la matriz de carácteres.\n"
+					"[1] Mostrar todos los elementos de la matriz de caracteres.\n"
 					);
 			
-			// Leer opción
-			opción = sc.nextInt();
+			// Leer opcion
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0:
 				salir = true;
-				System.err.println("Aplicación cerrada.");
+				System.err.println("Aplicacion cerrada.");
 				break;
 			case 1:
 				mostrarElementosDeLaMatrizDeCaracteres(matriz);
 				break;
 			default:
-				System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no esta definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}

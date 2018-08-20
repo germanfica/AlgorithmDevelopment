@@ -3,7 +3,7 @@ package xyz.germanfica.ad._2018._2nd.tp1.ej9;
 public class Auto {
 	private String patente;
 	private String marca;
-	private int añoDeFabricación;
+	private int aiooDeFabricacion;
 	private String color;
 	private int capacidad;
 	
@@ -19,11 +19,11 @@ public class Auto {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public int getAñoDeFabricación() {
-		return añoDeFabricación;
+	public int getAiooDeFabricacion() {
+		return aiooDeFabricacion;
 	}
-	public void setAñoDeFabricación(int añoDeFabricación) {
-		this.añoDeFabricación = añoDeFabricación;
+	public void setAiooDeFabricacion(int aiooDeFabricacion) {
+		this.aiooDeFabricacion = aiooDeFabricacion;
 	}
 	public String getColor() {
 		return color;
