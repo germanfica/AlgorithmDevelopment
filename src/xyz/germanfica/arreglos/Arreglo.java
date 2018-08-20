@@ -1,9 +1,10 @@
 package xyz.germanfica.arreglos;
 
+import java.util.Scanner;
 import xyz.germanfica.ad.util.Mensaje;
-import xyz.germanfica.ad.util.TecladoIn;
 
 public class Arreglo {
+	private static Scanner sc;
 	/**
 	 * Este módulo solicita el ingreso de caracteres y retorna un arreglo
 	 * de caracteres con los elementos ingresados.
@@ -24,7 +25,8 @@ public class Arreglo {
 		// Agregar elementos al arreglo
 		while(i <= arregloLetras.length-1) {
 			System.out.println(mensaje);
-			ch = TecladoIn.readNonwhiteChar(); // En este caso usamos TecladoIn ya que en Scanner no está defino para leer caracteres. Pd: usar readNonwhiteChar()
+			sc = new Scanner(System.in);
+			ch = sc.next().charAt(0); // En este caso usamos TecladoIn ya que en Scanner no está defino para leer caracteres. Pd: usar readNonwhiteChar()
 			if(Character.isLetter(ch)) {
 				arregloLetras[i] = ch;
 				i++;
@@ -42,5 +44,14 @@ public class Arreglo {
 	 */
 	public static char[] cargaLetras(int longitud) {
 		return cargaLetras(longitud, "");
+	}
+	/**
+	 * En este módulo voy a mostrar los caracteres del arreglo de caracteres
+	 * @param caracteres
+	 */
+	public static void mostrarCaracteres(char[] caracteres) {
+		for (int i = 0; i < caracteres.length; i++) {
+			System.out.println(caracteres[i]);
+		}
 	}
 }

@@ -1,6 +1,5 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
-import xyz.germanfica.ad.util.Mensaje;
 import xyz.germanfica.ad.util.TecladoIn;
 import xyz.germanfica.arreglos.Arreglo;
 
@@ -19,16 +18,6 @@ public class Ej1 {
 	// void es vacío
 	public static char esLetra() {
 		return '0';
-	}
-	
-	/**
-	 * En este módulo voy a mostrar los caracteres del arreglo de caracteres
-	 * @param caracteres
-	 */
-	public static void mostrarCaracteres(char[] caracteres) {
-		for (int i = 0; i < caracteres.length; i++) {
-			System.out.println(caracteres[i]);
-		}
 	}
 	
 	public static boolean esPar(int pos) {
@@ -81,7 +70,7 @@ public class Ej1 {
 	 */
 	public static void mostrarCaracteresOrdInv(char[] caracteres) {
 		caracteres = caracteresOrdInv(caracteres);
-		mostrarCaracteres(caracteres);
+		Arreglo.mostrarCaracteres(caracteres);
 	}
 	
 	/**
@@ -121,7 +110,7 @@ public class Ej1 {
 		
 		// Leer y generar un arreglo de caracteres
 		System.out.println("Ingrese la longitud de su arreglo:");
-		letras = Arreglo.cargaLetras(TecladoIn.readInt(), "Ingrese su caracter:"); // Areglo de caracteres
+		letras = Arreglo.cargaLetras(TecladoIn.readInt(), "Ingrese su letra:"); // Areglo de caracteres
 		while(!salir) {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
@@ -134,7 +123,7 @@ public class Ej1 {
 			case 1: mostrarCaracteresPosPar(letras);break; // Opción 1
 			case 2:	mostrarCaracteresOrdInv(letras);break; // Opción 2
 			case 3:	System.out.println("Ingrese el caracter:");System.out.println(esteCaracterAparece(letras, TecladoIn.readChar()));;break; // Opción 3
-			case 4: mostrarCaracteres(letras);break; // Opción 4
+			case 4: Arreglo.mostrarCaracteres(letras);break; // Opción 4
 			default: System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones:"); break;
 			}
 		}
