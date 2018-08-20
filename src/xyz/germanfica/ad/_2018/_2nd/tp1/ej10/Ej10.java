@@ -105,7 +105,7 @@ public class Ej10 {
 		int opción;
 		
 		// Mensaje de bienvenida
-		System.out.println(Mensaje.leer().get(0));
+		System.out.println(Mensaje.leer(0));
 		
 		// Mostrar cartel de opciones
 		mostrarCartelDeOpciones();
@@ -123,7 +123,7 @@ public class Ej10 {
 			case 2:	mostrarCaso2(); break;
 			case 3:	mostrarCaso3();	break;
 			case 4:	mostrarCaso4();	break;
-			default: System.err.println(Mensaje.leer().get(1)); break;
+			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
 	}

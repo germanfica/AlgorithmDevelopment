@@ -38,4 +38,32 @@ public class ArregloCaracter {
 			System.out.println(caracteres[i]);
 		}
 	}
+	/**
+	 * Genera un nuevo arreglo con el orden de los elementos invertidos
+	 * al del arreglo por parametro
+	 * @param caracteres
+	 * @return Arreglo de caracteres pero ahora con el orden
+	 * de los elementos invertidos
+	 */
+	public static char[] ordInvertido(char[] caracteres) {
+		char[] nuevoArreglo;
+		int longitud, aux;
+		
+		longitud = caracteres.length;
+		nuevoArreglo = new char[longitud];
+		aux = longitud-1;
+		
+		for (int i = 0; i < longitud; i++) {
+			nuevoArreglo[i] = caracteres[aux];
+			aux--;
+		}
+		
+		return nuevoArreglo;
+	}
+	/**
+	 * Mostrar por pantalla los caracteres almacenados en el arreglo en orden inverso
+	 */
+	public static void mostrarOrdInvertido(char[] caracteres) {
+		ArregloCaracter.mostrar(ArregloCaracter.ordInvertido(caracteres));
+	}
 }

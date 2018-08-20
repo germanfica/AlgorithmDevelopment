@@ -8,7 +8,7 @@ public class Mensaje {
     private static Scanner sc;
 	private static ArrayList<String> lista;
     
-	public static ArrayList<String> leer() {
+	private static ArrayList<String> lista() {
 		lista = new ArrayList<String>();
 		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO, true);
 		
@@ -22,5 +22,9 @@ public class Mensaje {
 		}
 		
 		return lista;
+	}
+	
+	public static String leer(int index) {
+		return lista().get(index);
 	}
 }

@@ -186,7 +186,7 @@ public class Ej9 {
 		// Inicializar variables
 		salir = false;
 		
-		System.out.println(Mensaje.leer().get(0));		
+		System.out.println(Mensaje.leer(0));		
 		while(!salir) {
 			sc = new Scanner(System.in);
 			

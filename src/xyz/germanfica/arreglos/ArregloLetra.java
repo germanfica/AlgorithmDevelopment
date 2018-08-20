@@ -31,7 +31,7 @@ public class ArregloLetra {
 				arregloLetras[i] = ch;
 				i++;
 			}else {
-				System.err.println(Mensaje.leer().get(2));
+				System.err.println(Mensaje.leer(2));
 			}
 		}
 		return arregloLetras;

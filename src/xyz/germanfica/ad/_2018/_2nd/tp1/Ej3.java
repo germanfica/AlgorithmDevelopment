@@ -90,7 +90,7 @@ public class Ej3 {
 		sc = new Scanner(System.in);
 		
 		// Mostrar mensaje de bienvenida
-		System.out.println(Mensaje.leer().get(0));
+		System.out.println(Mensaje.leer(0));
 		
 		// Leer la cantidad de números a ingresar
 		System.out.println("Ingrese la cantidad de números: ");

@@ -1,3 +1,4 @@
 Bienvenido a la consola de la aplicación,
 Esta opción no está definida. Seleccione una de las siguientes opciones:,
-[Error] Debe ingresar una letra
+[Error] Debe ingresar una letra,
+Ingrese la longitud de su arreglo:

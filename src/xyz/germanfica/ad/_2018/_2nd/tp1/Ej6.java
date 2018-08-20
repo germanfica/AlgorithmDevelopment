@@ -25,7 +25,7 @@ public class Ej6 {
 		sc = new Scanner(System.in);
 		
 		// Mostrar mensaje de bienvenida
-		System.out.println(Mensaje.leer().get(0));
+		System.out.println(Mensaje.leer(0));
 		
 		System.out.println("Eliga un número del 1 al 7: ");
 		num = sc.nextInt();
