@@ -6,31 +6,6 @@ import xyz.germanfica.ad.util.Mensaje;
 import xyz.germanfica.ad.util.TecladoIn;
 
 public class Ej2 {
-	public static int[] cargaEnteros(int longitud) {
-		// Declaración de variables
-		int[] nuevoArreglo;
-		char ch; // Caracter
-		int i;
-		
-		// Inicialización de variables
-		nuevoArreglo = new int[longitud];
-		i = 0;
-		
-		// Agregar elementos al arreglo
-		while(i <= nuevoArreglo.length-1) {
-			System.out.println(mensaje);
-			ch = TecladoIn.readNonwhiteChar(); // En este caso usamos TecladoIn ya que en Scanner no está defino para leer caracteres. Pd: usar readNonwhiteChar()
-			if(Character.isLetter(ch)) {
-				nuevoArreglo[i] = ch;
-				i++;
-			}else {
-				System.err.println(Mensaje.leer().get(2));
-			}
-		}
-		return nuevoArreglo;
-		return asd;
-	}
-	
 	public static void mostrarCartelDeOpciones() {
 		System.out.print(
 				"[0] Salir (IMPLEMENTADO)\n" +

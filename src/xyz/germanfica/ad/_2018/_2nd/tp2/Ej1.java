@@ -2,6 +2,7 @@ package xyz.germanfica.ad._2018._2nd.tp2;
 
 import xyz.germanfica.ad.util.Mensaje;
 import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.arreglos.Arreglo;
 
 /*
  * 1. Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que
@@ -14,34 +15,7 @@ import xyz.germanfica.ad.util.TecladoIn;
  * c) Contar cuantas veces aparece un carácter dado. 
  */
 public class Ej1 {
-	/**
-	 * Este módulo me retorna el arreglo de caracteres con todos sus elementos.
-	 * Por lo tanto, es módulo solicita que ingrese caracteres para cargar al arreglo.
-	 * @return
-	 */
-	public static char[] caracteres(int longitud, String mensaje) {
-		// Declaración de variables
-		char[] nuevoArreglo;
-		char ch; // Caracter
-		int i;
-		
-		// Inicialización de variables
-		nuevoArreglo = new char[longitud];
-		i = 0;
-		
-		// Agregar elementos al arreglo
-		while(i <= nuevoArreglo.length-1) {
-			System.out.println(mensaje);
-			ch = TecladoIn.readNonwhiteChar(); // En este caso usamos TecladoIn ya que en Scanner no está defino para leer caracteres. Pd: usar readNonwhiteChar()
-			if(Character.isLetter(ch)) {
-				nuevoArreglo[i] = ch;
-				i++;
-			}else {
-				System.err.println(Mensaje.leer().get(2));
-			}
-		}
-		return nuevoArreglo;
-	}
+	
 	// void es vacío
 	public static char esLetra() {
 		return '0';
@@ -138,7 +112,7 @@ public class Ej1 {
 	 * Los módulos no deben ocupar más de una pantalla
 	 */
 	public static void mostrarMenú() {
-		char[] caracteres;
+		char[] letras;
 		boolean salir = false;
 		int opción;
 		
@@ -147,7 +121,7 @@ public class Ej1 {
 		
 		// Leer y generar un arreglo de caracteres
 		System.out.println("Ingrese la longitud de su arreglo:");
-		caracteres = caracteres(TecladoIn.readInt(), "Ingrese su caracter:"); // Areglo de caracteres
+		letras = Arreglo.cargaLetras(TecladoIn.readInt(), "Ingrese su caracter:"); // Areglo de caracteres
 		while(!salir) {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
@@ -157,10 +131,10 @@ public class Ej1 {
 			
 			switch (opción) {
 			case 0: salir = true; break;
-			case 1: mostrarCaracteresPosPar(caracteres);break; // Opción 1
-			case 2:	mostrarCaracteresOrdInv(caracteres);break; // Opción 2
-			case 3:	System.out.println("Ingrese el caracter:");System.out.println(esteCaracterAparece(caracteres, TecladoIn.readChar()));;break; // Opción 3
-			case 4: mostrarCaracteres(caracteres);break; // Opción 4
+			case 1: mostrarCaracteresPosPar(letras);break; // Opción 1
+			case 2:	mostrarCaracteresOrdInv(letras);break; // Opción 2
+			case 3:	System.out.println("Ingrese el caracter:");System.out.println(esteCaracterAparece(letras, TecladoIn.readChar()));;break; // Opción 3
+			case 4: mostrarCaracteres(letras);break; // Opción 4
 			default: System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones:"); break;
 			}
 		}
