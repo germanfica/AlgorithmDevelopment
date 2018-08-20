@@ -36,23 +36,19 @@ public class Ej1 {
 	 * 
 	 * Nota: los módulos no deben ocupar más de una pantalla
 	 */
-	public static void mostrarMenú() {
-		char[] letras;
+	public static void mostrarMenú(char[] letras) {
 		boolean salir = false;
 		int opción;
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
 		
-		// Leer y generar un arreglo de caracteres
-		System.out.println(Mensaje.leer(3));
-		sc = new Scanner(System.in);
-		letras = ArregloLetra.carga(sc.nextInt(), "Ingrese su letra:"); // Arreglo de caracteres
 		while(!salir) {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
 			// Leer opción del menú principal
+			sc = new Scanner(System.in);
 			opción = sc.nextInt();
 			
 			switch (opción) {
@@ -67,7 +63,10 @@ public class Ej1 {
 	}
 	
 	public static void main(String[] args) {
-		// Mostrar el menú
-		mostrarMenú();
+		// Preparo al Scanner para que me lea las entradas del sistema
+		sc = new Scanner(System.in);
+		// Mostrar menú, leer y generar un arreglo de letras
+		System.out.println(Mensaje.leer(3));
+		mostrarMenú(ArregloLetra.carga(sc.nextInt(), "Ingrese su letra:"));
 	}
 }
