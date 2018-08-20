@@ -11,23 +11,28 @@ import xyz.germanfica.ad.util.TecladoIn;
 public class Exercise7 {
 	
 	/*
-	 *  En una exposici�n de veh�culos se administra la informaci�n de los autos que est�n exhibidos. Para
-	 *  cada auto se desea conocer: patente, marca, a�o de fabricaci�n, color y capacidad (cantidad de
-	 *  personas sentadas y cintur�n de seguridad disponible).
+	 *  En una exposicion de vehiculos se administra la informacion de los autos
+	 *  que eston exhibidos. Para cada auto se desea conocer: patente,
+	 *  marca, año de fabricacion, color y capacidad (cantidad de
+	 *  personas sentadas y cinturon de seguridad disponible).
 	 *  
-	 *  En base a la informaci�n relevada se desea mostrar:
+	 *  En base a la informacion relevada se desea mostrar:
 	 *  
 	 *  a) La cantidad de veh�culos rojos.
 	 *  b) La capacidad promedio de los autos exhibidos.
-	 *  c) La marca de veh�culos que m�s autos exhibe en la exposici�n.
+	 *  c) La marca de veh�culos que m�s autos exhibe en la exposicion.
 	 *  
-	 *  Dise�ar el algoritmo principal y los m�dulos correspondientes. Implementar en Java.
+	 *  Dise�ar el algoritmo principal y los m�dulos correspondientes. Implementar
+	 *  en Java.
 	 *  
-	 *  Aclaraci�n de Germ�n: en el enunciado se menciona que:  ya se cuenta con informaci�n de los autos
-	 *  exhibidos. Por lo tanto, como hay poca descripci�n acerca de c�mo cargar esos datos,
+	 *  Aclaracion de German: en el enunciado se menciona que:  ya se cuenta con
+	 *  informacion de los autos
+	 *  exhibidos. Por lo tanto, como hay poca descripcion acerca de como cargar
+	 *  esos datos,
 	 *  se presupone que los datos ya estan en el sistema.
-	 *  Otra aclaraci�n: el enunciado no indica que hay que realizar un programa que permita
-	 *  agregar veh�culos a la exposici�n.
+	 *  Otra aclaracion: el enunciado no indica que hay que realizar un programa
+	 *  que permita
+	 *  agregar vehiculos a la exposicion.
 	 */
 	
 	/**
@@ -80,7 +85,7 @@ public class Exercise7 {
 							vehicleBrandMostUsed = brand;
 							vehicleBrandMostUsedNumber = number;
 						}else {
-							// Pero qu� pasa si es igual?
+							// Pero que pasa si es igual?
 							if(number>vehicleBrandMostUsedNumber) {
 								vehicleBrandMostUsed = brand;
 								vehicleBrandMostUsedNumber = number;
@@ -165,20 +170,20 @@ public class Exercise7 {
 			System.out.println("Marca:");
 			break;
 		case 2:
-			System.out.println("A�o de fabricaci�n:");
+			System.out.println("Anio de fabricacion:");
 			break;
 		case 3:
 			System.out.println("Color:");
 			break;
 		case 4:
-			System.out.println("Capacidad del veh�culo:");
+			System.out.println("Capacidad del vehiculo:");
 			break;
 		case 5:
-			System.out.print("||Bievenido a expo gesti�n de veh�culos||"+"\n"+
+			System.out.print("||Bievenido a expo gestion de vehiculos||"+"\n"+
 							 "0- Para finalizar el programa."+"\n" +
-							 "1- Agregar veh�culo a la exposici�n."+"\n" +
-							 "2- Limpiar lista de veh�culos."+"\n" +
-							 "3- Mostrar lista de veh�culos."+"\n" +
+							 "1- Agregar veh�culo a la exposicion."+"\n" +
+							 "2- Limpiar lista de vehiculos."+"\n" +
+							 "3- Mostrar lista de vehiculos."+"\n" +
 							 "4- Mostrar la cantidad de veh�culos rojos."+"\n" +
 							 "5- Mostrar la capacidad promedio de los autos exhibidos. (NO DISPONIBLE)"+"\n" +
 							 "6- Mostrar la marca de veh�culos m�s usada en la exposici�n."
@@ -186,7 +191,7 @@ public class Exercise7 {
 							 );
 			break;
 		case 6:
-			System.out.println("||Agregar veh�culo a la exposici�n||");
+			System.out.println("||Agregar vehiculo a la exposici�n||");
 			break;
 		case 7:
 			break;
@@ -360,13 +365,13 @@ public class Exercise7 {
 			case 3:
 				showVehicleListFromDisk();
 			case 4:
-				System.out.print("N�mero de veh�culos rojos: "+getRedVehiclesNumberFromDisk()+"\n");
+				System.out.print("Numero de vehiculos rojos: "+getRedVehiclesNumberFromDisk()+"\n");
 				break;
 			case 5:
 				showAverageVehicles();
 				break;
 			case 6:
-				System.out.println("La marca m�s usada es: "+getVehicleBrandMostUsed());
+				System.out.println("La marca mas usada es: "+getVehicleBrandMostUsed());
 				break;
 			default:
 				break;

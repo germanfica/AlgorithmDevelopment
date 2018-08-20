@@ -8,10 +8,10 @@ ALGORITMO misterio() RETORNA Ø
 	ENTERO x,y
 	LEER(x)
 	LEER(y)
-	x ← x-y
-	y ← x+y
-	x ← y-x
-	ESCRIBIR (“Los valores de x e y son”)
+	x <- x-y
+	y <- x+y
+	x <- y-x
+	ESCRIBIR ("Los valores de x e y son")
 	ESCRIBIR (x)
 	ESCRIBIR (y)
 FIN ALGORITMO misterio

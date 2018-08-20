@@ -2,11 +2,12 @@ package xyz.germanfica.matematicas;
 
 public class Paridad {
 	/**
-	 * Determian si un número es par
-	 * @param num
-	 * @return Retorna verdadero si es par
+	 * Determian si un numero es par
+	 * 
+	 * @param num es un numero cualquiera de tipo entero
+	 * @return Retorna verdadero si num es par
 	 */
 	public static boolean esPar(int num) {
-		return num%2==0;
+		return num % 2 == 0;
 	}
 }

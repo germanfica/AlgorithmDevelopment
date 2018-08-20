@@ -37,7 +37,7 @@ public class Ej1 {
 	 */
 	public static void mostrarMenú(char[] letras) {
 		boolean salir = false;
-		int opción;
+		int opcion;
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
@@ -48,9 +48,9 @@ public class Ej1 {
 			
 			// Leer opción del menú principal
 			sc = new Scanner(System.in);
-			opción = sc.nextInt();
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0: salir = true; break;
 			case 1: ArregloCaracter.mostrarPosPar(letras);break; // Opción 1
 			case 2:	ArregloCaracter.mostrarOrdInvertido(letras);break; // Opción 2

@@ -5,41 +5,45 @@ import xyz.germanfica.ad.util.Mensaje;
 
 public class ArregloLetra {
 	private static Scanner sc;
+
 	/**
-	 * Este módulo solicita el ingreso de caracteres y retorna un arreglo
-	 * de caracteres con los elementos ingresados.
-	 * @param longitud es la cantidad de elementos que tendrá el arreglo
+	 * Este modulo solicita el ingreso de caracteres y retorna un arreglo de
+	 * caracteres con los elementos ingresados.
+	 * 
+	 * @param longitud es la cantidad de elementos que tendra el arreglo
 	 * @param mensaje por ejemplo, "ingrese su caracter:"
 	 * @return Arreglo de caracteres con los elementos previamente cargados
 	 */
 	public static char[] carga(int longitud, String mensaje) {
-		// Declaración de variables
+		// Declaracion de variables
 		char[] arregloLetras;
 		char ch; // Caracter
 		int i;
-		
-		// Inicialización de variables
+
+		// Inicializacion de variables
 		arregloLetras = new char[longitud];
 		i = 0;
-		
+
 		// Agregar elementos al arreglo
-		while(i <= arregloLetras.length-1) {
+		while (i <= arregloLetras.length - 1) {
 			System.out.println(mensaje);
 			sc = new Scanner(System.in);
-			ch = sc.next().charAt(0); // En este caso usamos TecladoIn ya que en Scanner no está defino para leer caracteres. Pd: usar readNonwhiteChar()
-			if(Character.isLetter(ch)) {
+			ch = sc.next().charAt(0);
+			if (Character.isLetter(ch)) {
 				arregloLetras[i] = ch;
 				i++;
-			}else {
+			} else {
 				System.err.println(Mensaje.leer(2));
 			}
 		}
 		return arregloLetras;
 	}
+
 	/**
-	 * Este módulo solicita el ingreso de caracteres y retorna un arreglo
-	 * de caracteres con los elementos ingresados.
-	 * @param longitud
+	 * Este modulo solicita el ingreso de caracteres y retorna un arreglo de
+	 * caracteres con los elementos ingresados.
+	 * 
+	 * @param longitud es la longitud para el nuevo arreglo
 	 * @return Arreglo de caracteres con los elementos previamente cargados
 	 */
 	public static char[] cargaLetras(int longitud) {

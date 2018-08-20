@@ -102,7 +102,7 @@ public class Ej10 {
 	 */
 	public static void mostrarMenú() {
 		boolean salir = false;
-		int opción;
+		int opcion;
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
@@ -115,9 +115,9 @@ public class Ej10 {
 			mostrarCartelDeOpciones();
 			
 			// Leer opción del menú principal
-			opción = sc.nextInt();
+			opcion = sc.nextInt();
 			
-			switch (opción) {
+			switch (opcion) {
 			case 0: salir = true; break;
 			case 1: mostrarCaso1(); break;
 			case 2:	mostrarCaso2(); break;
