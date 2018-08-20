@@ -3,7 +3,7 @@ package xyz.germanfica.arreglos;
 import java.util.Scanner;
 import xyz.germanfica.ad.util.Mensaje;
 
-public class Arreglo {
+public class ArregloLetra {
 	private static Scanner sc;
 	/**
 	 * Este módulo solicita el ingreso de caracteres y retorna un arreglo
@@ -12,7 +12,7 @@ public class Arreglo {
 	 * @param mensaje por ejemplo, "ingrese su caracter:"
 	 * @return Arreglo de caracteres con los elementos previamente cargados
 	 */
-	public static char[] cargaLetras(int longitud, String mensaje) {
+	public static char[] carga(int longitud, String mensaje) {
 		// Declaración de variables
 		char[] arregloLetras;
 		char ch; // Caracter
@@ -43,15 +43,6 @@ public class Arreglo {
 	 * @return Arreglo de caracteres con los elementos previamente cargados
 	 */
 	public static char[] cargaLetras(int longitud) {
-		return cargaLetras(longitud, "");
-	}
-	/**
-	 * En este módulo voy a mostrar los caracteres del arreglo de caracteres
-	 * @param caracteres
-	 */
-	public static void mostrarCaracteres(char[] caracteres) {
-		for (int i = 0; i < caracteres.length; i++) {
-			System.out.println(caracteres[i]);
-		}
+		return carga(longitud, "");
 	}
 }

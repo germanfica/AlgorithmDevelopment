@@ -1,7 +1,8 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
-import xyz.germanfica.ad.util.TecladoIn;
-import xyz.germanfica.arreglos.Arreglo;
+import java.util.Scanner;
+import xyz.germanfica.arreglos.ArregloCaracter;
+import xyz.germanfica.arreglos.ArregloLetra;
 
 /*
  * 1. Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que
@@ -14,15 +15,7 @@ import xyz.germanfica.arreglos.Arreglo;
  * c) Contar cuantas veces aparece un carácter dado. 
  */
 public class Ej1 {
-	
-	// void es vacío
-	public static char esLetra() {
-		return '0';
-	}
-	
-	public static boolean esPar(int pos) {
-		return pos%2==0;
-	}
+	private static Scanner sc;
 	 
 	public static char[] ordenInverso(char[] arreglo) {
 		// Declaración de variables
@@ -51,39 +44,13 @@ public class Ej1 {
 	}
 	
 	/**
-	 * 
-	 */
-	public static int esteCaracterAparece(char[] caracteres, char c) {
-		int contador;
-		contador = 0;
-		for (int i = 0; i < caracteres.length; i++) {
-			if(caracteres[i]==c)
-				contador++;
-		}
-		return contador;
-	}
-	
-	/**
 	 * (2)
 	 * 
 	 * Mostrar por pantalla los caracteres almacenados en el arreglo en orden inverso.
 	 */
 	public static void mostrarCaracteresOrdInv(char[] caracteres) {
 		caracteres = caracteresOrdInv(caracteres);
-		Arreglo.mostrarCaracteres(caracteres);
-	}
-	
-	/**
-	 * (1)
-	 * 
-	 * Mostrar por pantalla los caracteres de las posiciones pares del arreglo de caracteres
-	 */
-	public static void mostrarCaracteresPosPar(char[] caracteres) {
-		for (int i = 0; i < caracteres.length; i++) {
-			if(esPar(i)) {
-				System.out.println(caracteres[i]);
-			}
-		}
+		ArregloCaracter.mostrar(caracteres);
 	}
 	
 	public static void mostrarCartelDeOpciones() {
@@ -97,8 +64,9 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Mostrar menú de la aplicación
-	 * Los módulos no deben ocupar más de una pantalla
+	 * Mostrar el menú de la aplicación
+	 * 
+	 * Nota: los módulos no deben ocupar más de una pantalla
 	 */
 	public static void mostrarMenú() {
 		char[] letras;
@@ -110,20 +78,21 @@ public class Ej1 {
 		
 		// Leer y generar un arreglo de caracteres
 		System.out.println("Ingrese la longitud de su arreglo:");
-		letras = Arreglo.cargaLetras(TecladoIn.readInt(), "Ingrese su letra:"); // Areglo de caracteres
+		sc = new Scanner(System.in);
+		letras = ArregloLetra.carga(sc.nextInt(), "Ingrese su letra:"); // Arreglo de caracteres
 		while(!salir) {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
 			// Leer opción del menú principal
-			opción = TecladoIn.readInt();
+			opción = sc.nextInt();
 			
 			switch (opción) {
 			case 0: salir = true; break;
-			case 1: mostrarCaracteresPosPar(letras);break; // Opción 1
+			case 1: ArregloCaracter.mostrarPosPar(letras);break; // Opción 1
 			case 2:	mostrarCaracteresOrdInv(letras);break; // Opción 2
-			case 3:	System.out.println("Ingrese el caracter:");System.out.println(esteCaracterAparece(letras, TecladoIn.readChar()));;break; // Opción 3
-			case 4: Arreglo.mostrarCaracteres(letras);break; // Opción 4
+			case 3:	System.out.println("Ingrese el caracter:");System.out.println(ArregloCaracter.esteCaracterSeRepite(letras, sc.next().charAt(0)));break; // Opción 3
+			case 4: ArregloCaracter.mostrar(letras);break; // Opción 4
 			default: System.err.println("Esta opción no está definida. Seleccione una de las siguientes opciones:"); break;
 			}
 		}
