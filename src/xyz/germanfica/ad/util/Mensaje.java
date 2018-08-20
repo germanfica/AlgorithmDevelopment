@@ -24,6 +24,12 @@ public class Mensaje {
 		return lista;
 	}
 	
+	/**
+	 * Retorna un mensaje desde el archivo Mensaje.txt
+	 * 
+	 * @param index indice del mensaje solicitado
+	 * @return Mensaje solicitado
+	 */
 	public static String leer(int index) {
 		return lista().get(index);
 	}
