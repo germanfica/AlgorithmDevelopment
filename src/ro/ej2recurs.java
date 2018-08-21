@@ -1,13 +1,18 @@
 package ro;
 
 /**
- * Calcular la potencia de forma recursiva
- * sin usar el operador *
- * muy buen ejercicio para evaluar recursividad
+ * Calcular la potencia de un numero m de forma recursiva
+ * sin usar el operador "*"
  * @author germa
  *
  */
-public class ej2 {
+public class ej2recurs {
+	/**
+	 * 
+	 * @param m es un num cualquiera
+	 * @param n es un num cualquiera
+	 * @return devuelve el producto entre m y n
+	 */
 	public static int producto(int m, int n) {
 		int op = 0, i;
 		for(i=0;i<n;i++) {
@@ -21,7 +26,7 @@ public class ej2 {
 		int op, aux;
 		
 		// Inicialización de variables
-		op=9;
+		op=m;
 		aux=m;
 		
 		// Sea m=9 entonces
@@ -35,7 +40,7 @@ public class ej2 {
 			op=producto(m,aux);
 			aux=op;
 		}
-		
+	
 		return op;
 	}
 	
