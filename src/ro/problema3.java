@@ -1,8 +1,6 @@
 package ro;
 
-import java.util.Scanner;
-
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 import xyz.germanfica.matematicas.Paridad;
 
 public class problema3 {

@@ -1,4 +1,4 @@
-package com.graworg.ad._2018.parcial;
+package xyz.germanfica.ad._2018.parcial;
 
 public class Ej1 {
 	/**

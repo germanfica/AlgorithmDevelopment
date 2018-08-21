@@ -1,4 +1,4 @@
-package com.graworg.ad._2018.tp4bis;
+package xyz.germanfica.ad._2018.tp4bis;
 
 /*
  * 1. Determinar a través de trazas cual es el cálculo realizado por siguiente función:  
