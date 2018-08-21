@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._1st.tp3.ej1;
 
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 public class Principal {
 	private static Scanner sc = new Scanner(System.in);

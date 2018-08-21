@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._1st.tp4;
 
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.Archivo;
+import xyz.germanfica.util.Archivo;
 
 public class Test {
 	// Constantes

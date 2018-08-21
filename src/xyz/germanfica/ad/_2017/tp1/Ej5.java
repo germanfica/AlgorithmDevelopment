@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 /*
 	Implementar un algoritmo para obtener las raices de ecuaciones

@@ -20,6 +20,10 @@ public class ArregloCaracter {
 		}
 		return cant;
 	}
+	
+	public static void mostrarEsteCaracterSeRepite(char[] caracteres, char c) {
+		System.out.println(esteCaracterSeRepite(caracteres, c));
+	}
 
 	/**
 	 * Mostrar los caracteres de posición par del arreglo

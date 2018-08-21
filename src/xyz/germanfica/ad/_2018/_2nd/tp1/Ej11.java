@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._2nd.tp1;
 
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.Mensaje;
+import xyz.germanfica.util.Mensaje;
 
 /*
  * 11) Diseñe un algoritmo que dado un número N entre 1 y 9, permita generar triangulos

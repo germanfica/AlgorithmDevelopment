@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 public class Exercise7 {
 	

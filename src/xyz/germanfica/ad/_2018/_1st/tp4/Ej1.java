@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.Archivo;
+import xyz.germanfica.util.Archivo;
 /*
  * Notas:
  * Los codigos de colores solo identifican un orden en el uso de colores, en una

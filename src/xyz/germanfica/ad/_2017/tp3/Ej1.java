@@ -1,7 +1,7 @@
 package xyz.germanfica.ad._2017.tp3;
 
-import xyz.germanfica.ad.util.Cartel;
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.Cartel;
+import xyz.germanfica.util.TecladoIn;
 
 /*
 Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que ingrese letras. El

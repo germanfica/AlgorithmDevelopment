@@ -1,4 +1,4 @@
-package xyz.germanfica.ad.util;
+package xyz.germanfica.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

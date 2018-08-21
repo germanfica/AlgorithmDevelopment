@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp3;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 public class Ej3 {
 	

@@ -3,7 +3,7 @@ package xyz.germanfica.ad._2018._1st.tp3.ej1;
 //import java.util.List;
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 public class Principal_inefficient {
 	private static Scanner sc = new Scanner(System.in);

@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._2nd.tp1;
 
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.Mensaje;
+import xyz.germanfica.util.Mensaje;
 
 /*
  * ALGORITMO misterio() RETORNA Ø

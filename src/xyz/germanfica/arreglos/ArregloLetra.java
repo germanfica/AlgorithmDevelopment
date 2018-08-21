@@ -1,7 +1,8 @@
 package xyz.germanfica.arreglos;
 
 import java.util.Scanner;
-import xyz.germanfica.ad.util.Mensaje;
+
+import xyz.germanfica.util.Mensaje;
 
 public class ArregloLetra {
 	private static Scanner sc;

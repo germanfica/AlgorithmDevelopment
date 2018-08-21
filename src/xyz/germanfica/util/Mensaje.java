@@ -1,4 +1,4 @@
-package xyz.germanfica.ad.util;
+package xyz.germanfica.util;
 
 import java.util.ArrayList;
 import java.util.Scanner;

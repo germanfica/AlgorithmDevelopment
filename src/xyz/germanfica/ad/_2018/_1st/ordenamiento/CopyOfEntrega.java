@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._1st.ordenamiento;
 
 import java.util.Scanner;
 
-import xyz.germanfica.ad.util.Archivo;
+import xyz.germanfica.util.Archivo;
 
 public class CopyOfEntrega {
     private static final String NOMBRE_ARCHIVO = "src/com/graworg/ad/_2018/entrega/ordenamiento/arreglo.txt"; // Ruta del archivo

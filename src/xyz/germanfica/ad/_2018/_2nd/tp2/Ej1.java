@@ -1,9 +1,10 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
-import xyz.germanfica.ad.util.Mensaje;
+
 import xyz.germanfica.arreglos.ArregloCaracter;
 import xyz.germanfica.arreglos.ArregloLetra;
+import xyz.germanfica.util.Mensaje;
 
 /*
  * 1. Diseñar un algoritmo que lea un arreglo de caracteres solicitando al
@@ -54,7 +55,7 @@ public class Ej1 {
 			case 0: salir = true; break;
 			case 1: ArregloCaracter.mostrarPosPar(letras);break; // Opcion 1
 			case 2:	ArregloCaracter.mostrarOrdInvertido(letras);break; // Opcion 2
-			case 3:	System.out.println("Ingrese el caracter:");System.out.println(ArregloCaracter.esteCaracterSeRepite(letras, sc.next().charAt(0)));break; // Opcion 3
+			case 3:	System.out.println("Ingrese el caracter:");ArregloCaracter.mostrarEsteCaracterSeRepite(letras, sc.next().charAt(0));break; // Opcion 3
 			case 4: ArregloCaracter.mostrar(letras);break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;
 			}

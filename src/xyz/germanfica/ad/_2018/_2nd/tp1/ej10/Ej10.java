@@ -6,7 +6,7 @@ import xyz.germanfica.ad._2018._2nd.tp1.ej10.Formula.Circulo;
 import xyz.germanfica.ad._2018._2nd.tp1.ej10.Formula.Cuadrado;
 import xyz.germanfica.ad._2018._2nd.tp1.ej10.Formula.Rectangulo;
 import xyz.germanfica.ad._2018._2nd.tp1.ej10.Formula.Triangulo;
-import xyz.germanfica.ad.util.Mensaje;
+import xyz.germanfica.util.Mensaje;
 
 /*
  * 10) Diseñar en Java un algoritmo para calcular el

@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.ad.util.TecladoIn;
+import xyz.germanfica.util.TecladoIn;
 
 /*
  * Dise�ar un algoritmo que permita leer N n�meros enteros y muestre el
