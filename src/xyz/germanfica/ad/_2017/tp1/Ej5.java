@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 /*
 	Implementar un algoritmo para obtener las raices de ecuaciones
@@ -8,13 +8,15 @@ import xyz.germanfica.util.TecladoIn;
  */
 
 public class Ej5 {
+	private static Scanner sc;
+
 	public static void main(String[] args) {
 		float a, b, c; // Variables de la ecuacion
-		
+		sc = new Scanner(System.in);
 		// Mostrar catel
-		a = TecladoIn.readLineInt();
-		b = TecladoIn.readLineInt();
-		c = TecladoIn.readLineInt();
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
 		
 		Bhaskara(a,b,c);
 		

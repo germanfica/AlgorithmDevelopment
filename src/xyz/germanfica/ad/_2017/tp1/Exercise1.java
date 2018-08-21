@@ -1,8 +1,9 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 public class Exercise1 {
+	private static Scanner sc;
 
 	public static void main(String[] args) {
 		/* Este algoritmo muestra por pantalla
@@ -12,9 +13,10 @@ public class Exercise1 {
 		int numero1;
 		int numero2;
 
+		sc = new Scanner(System.in);
 		System.out.println();
-		numero1 = TecladoIn.readLineInt(); // Enter firt value
-		numero2 = TecladoIn.readLineInt(); // Enter second value
+		numero1 = sc.nextInt(); // Enter firt value
+		numero2 = sc.nextInt(); // Enter second value
 
 		numero1 = numero1 - numero2; // Restar el primer numero al segundo
 

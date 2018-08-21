@@ -2,8 +2,6 @@ package xyz.germanfica.ad._2018._1st.tp3.ej1;
 
 import java.util.Scanner;
 
-import xyz.germanfica.util.TecladoIn;
-
 public class Principal {
 	private static Scanner sc = new Scanner(System.in);
 	
@@ -70,7 +68,7 @@ public class Principal {
 		for(int i = 0;i<=productos.length-1;i++){
 			System.out.println("Ingrese producto:");
 			System.out.print(" codigo: "); codigo = sc.nextInt();
-			System.out.print(" descripcion: "); descripcion = TecladoIn.readLine();
+			System.out.print(" descripcion: "); descripcion = sc.next();
 			System.out.print(" Precio unitario: "); precioUnitario = sc.nextFloat();
 			System.out.print(" Cantidad de Stock: "); cantidadDeStock = sc.nextInt();
 			

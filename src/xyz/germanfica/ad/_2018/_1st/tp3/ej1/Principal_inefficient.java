@@ -3,8 +3,6 @@ package xyz.germanfica.ad._2018._1st.tp3.ej1;
 //import java.util.List;
 import java.util.Scanner;
 
-import xyz.germanfica.util.TecladoIn;
-
 public class Principal_inefficient {
 	private static Scanner sc = new Scanner(System.in);
 	private static Producto[] productos = new Producto[0];
@@ -72,7 +70,7 @@ public class Principal_inefficient {
 		String descripcion;
 		
 		System.out.print("Codigo: "); codigo = sc.nextInt();
-		System.out.print("Descripcion: "); descripcion = TecladoIn.readLine();
+		System.out.print("Descripcion: "); descripcion = sc.next();
 		System.out.print("Precio unitario: "); precioUnitario = sc.nextFloat();
 		System.out.print("Cantidad de Stock: "); cantidadDeStock = sc.nextInt();
 		

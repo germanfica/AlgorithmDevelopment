@@ -1,9 +1,9 @@
 package xyz.germanfica.ad._2017.tp3;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 public class Ej3 {
-	
+	private static Scanner sc;
 	// 1- Consultar la cantidad de espacios en blano que hay en la cadena ingresada (INEFICIENTE, porque se recorre dos veces)
 	public static int ObtenerCantidadDeEspaciosEnBlanco(String cadena){
 		int resultado = 0;
@@ -46,11 +46,12 @@ public class Ej3 {
 	public static void main(String[] args) {
 		String cadena;
 		int opcion = 0;
+		sc = new Scanner(System.in);
 		System.out.println("Ingrese cadena de caracteres: ");
-		cadena = TecladoIn.readLine();
+		cadena = sc.next();
 		while(opcion!=999){
 			if(opcion<29){
-				opcion = TecladoIn.readInt();
+				opcion = sc.nextInt();
 				System.out.println(MostrarPalabra(cadena, opcion));
 			}else{
 				System.out.println("Te exediste.");

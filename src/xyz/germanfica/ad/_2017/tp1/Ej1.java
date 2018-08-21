@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 /*
 ALGORITMO misterio() RETORNA Ø
@@ -18,6 +18,7 @@ FIN ALGORITMO misterio
  */
 
 public class Ej1 {
+	private static Scanner sc;
 
 	public static void main(String[] args) {
 		int numero1;
@@ -25,9 +26,9 @@ public class Ej1 {
 
 		System.out.println();
 		// Enter firt value
-		numero1 = TecladoIn.readLineInt();
+		numero1 = sc.nextInt();
 		// Enter second value
-		numero2 = TecladoIn.readLineInt();
+		numero2 = sc.nextInt();
 
 		// Restar el primer numero al segundo
 		numero1 = numero1 - numero2;

@@ -5,10 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
-import xyz.germanfica.util.TecladoIn;
 
 public class Exercise7 {
+	private static Scanner sc;
+
 	
 	/*
 	 *  En una exposicion de vehiculos se administra la informacion de los autos
@@ -295,15 +297,15 @@ public class Exercise7 {
 		
 		outputMessage(6); // Welcome message
 		outputMessage(0); // Patent field message
-		patent = TecladoIn.readLine();
+		patent = sc.next();
 		outputMessage(1); // Brand field message
-		brand = TecladoIn.readLine();
+		brand = sc.next();
 		outputMessage(2); // Manufacture year field message
-		manufactureYear = TecladoIn.readInt();
+		manufactureYear = sc.nextInt();
 		outputMessage(3); // Color field message
-		color = TecladoIn.readLine();
+		color = sc.next();
 		outputMessage(4); // Vechicle capacity field message
-		vechicleCapacity = TecladoIn.readInt();
+		vechicleCapacity = sc.nextInt();
 		
 		data = data+"patent:"+patent+","+"brand:"+brand+","+"manufactureYear:"+manufactureYear+","+"color:"+color+","+"vechicleCapacity:"+vechicleCapacity+";";
 	
@@ -351,7 +353,7 @@ public class Exercise7 {
 			//Welcome message
 			outputMessage(5);
 			
-			answer = TecladoIn.readInt();
+			answer = sc.nextInt();
 			
 			switch (answer) {
 			case 1:
@@ -380,6 +382,7 @@ public class Exercise7 {
 	}
 	
 	public static void main(String[] args) {
+		sc = new Scanner(System.in);
 		showMainMenu();
 	}
 }

@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 /*
  * Dise�ar un algoritmo que permita leer N n�meros enteros y muestre el
@@ -10,12 +10,12 @@ import xyz.germanfica.util.TecladoIn;
  */
 
 public class Exercise3 {
-	
+	private static Scanner sc;
 	public static void main(String[] args) {
 		int cantidad; // Cantidad de numeros
-		
+		sc = new Scanner(System.in);
 		System.out.println();
-		cantidad = TecladoIn.readLineInt();
+		cantidad = sc.nextInt();
 		System.out.println(Promedio(cantidad));
 	}
 	
@@ -24,7 +24,7 @@ public class Exercise3 {
 		int numero;
 		
 		for(int i=1; i<=cantidad; i++){
-			numero = TecladoIn.readLineInt();
+			numero = sc.nextInt();
 			promedio = promedio + numero;
 		}
 		

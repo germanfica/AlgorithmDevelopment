@@ -1,6 +1,6 @@
 package xyz.germanfica.ad._2017.tp1;
 
-import xyz.germanfica.util.TecladoIn;
+import java.util.Scanner;
 
 /*
  * Implement an algorithm to obtain roots of second-degree equations, like:
@@ -8,13 +8,16 @@ import xyz.germanfica.util.TecladoIn;
  */
 
 public class Exercise5 {
+	private static Scanner sc;
+
 	public static void main(String[] args) {
 		float a, b, c; // Equation variables
+		sc = new Scanner(System.in);
 		
 		// Show message
-		a = TecladoIn.readLineInt();
-		b = TecladoIn.readLineInt();
-		c = TecladoIn.readLineInt();
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
 		
 		Bhaskara(a,b,c);
 		

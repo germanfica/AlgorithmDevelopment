@@ -1,7 +1,8 @@
 package xyz.germanfica.ad._2017.tp3;
 
+import java.util.Scanner;
+
 import xyz.germanfica.util.Cartel;
-import xyz.germanfica.util.TecladoIn;
 
 /*
 Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que ingrese letras. El
@@ -17,7 +18,7 @@ algoritmo debera verificar que los caracteres ingresados son letras. Luego:
  * */
 
 public class Ej1 {
-	
+	private static Scanner sc;
 	public static void mostrarPosicion(){
 		
 	}
@@ -39,8 +40,9 @@ public class Ej1 {
 		
 		mostrarMenu();
 		while(i<limite){
+			sc = new Scanner(System.in);
 			System.out.println("Ingrese caracter:");
-			letra[i] = TecladoIn.readNonwhiteChar();
+			letra[i] = sc.next().charAt(0);
 			
 			if(i==i-1)
 				Cartel.mostrarAdvertencia(0);
