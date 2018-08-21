@@ -1,15 +1,16 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
+
 import xyz.germanfica.arreglos.ArregloPalabra;
 import xyz.germanfica.util.Mensaje;
 
-public class Ej3 {
+public class Ej4 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Mostrar palabra de la posición deseada\n"
+				+ "[1] Mostrar la posición de la palabra deseada\n"
 				+ "[2] Mostrar todas las palabras del arreglo (IMPLEMENTADO)\n"
 				);
 	}
