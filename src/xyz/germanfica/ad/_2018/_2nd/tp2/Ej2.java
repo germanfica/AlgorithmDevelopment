@@ -12,7 +12,8 @@ public class Ej2 {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n" + "[1] Contar cuantos de los números almacenados son pares\n"
 				+ "[2] Realizar la sumatoria de los valores del arreglo\n"
 				+ "[3] Verificar si un número dado se encuentra en él\n"
-				+ "[4] Indicar la posicion del menor valor almacenado\n" + "[5] Indicar el mayor valor almacenado.\n"
+				+ "[4] Indicar la posicion del menor valor almacenado\n"
+				+ "[5] Indicar el mayor valor almacenado.\n"
 				+ "[6] Calcular el promedio de los valores del arreglo\n"
 				+ "[7] Mostrar cual de las dos mitades del arreglo tiene mayor promedio\n");
 	}

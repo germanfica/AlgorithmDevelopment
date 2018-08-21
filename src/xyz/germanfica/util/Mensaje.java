@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mensaje {
-    private static final String NOMBRE_ARCHIVO = "src/xyz/germanfica/ad/mensaje/Mensaje.txt"; // Ruta del archivo Mensaje.txt
+    private static final String NOMBRE_ARCHIVO = "src/xyz/germanfica/mensaje/Mensaje.txt"; // Ruta del archivo Mensaje.txt
     private static Scanner sc;
 	private static ArrayList<String> lista;
     
