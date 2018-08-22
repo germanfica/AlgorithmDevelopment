@@ -9,7 +9,8 @@ public class Ej2 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 
 	public static void mostrarCartelDeOpciones() {
-		System.out.print("[0] Salir (IMPLEMENTADO)\n" + "[1] Contar cuantos de los números almacenados son pares\n"
+		System.out.print("[0] Salir (IMPLEMENTADO)\n"
+				+ "[1] Contar cuantos de los números almacenados son pares\n"
 				+ "[2] Realizar la sumatoria de los valores del arreglo\n"
 				+ "[3] Verificar si un número dado se encuentra en él\n"
 				+ "[4] Indicar la posicion del menor valor almacenado\n"
@@ -39,8 +40,8 @@ public class Ej2 {
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			case 1: ;break; // Opcion 1
-			case 2:	;break; // Opcion 2
+			case 1: ArregloEntero.mostrarCantNumPares(enteros);break; // Opcion 1
+			case 2:	ArregloEntero.mostrarSumatoria(enteros);break; // Opcion 2
 			case 3:	;break; // Opcion 3
 			case 4: ;break; // Opcion 4
 			case 5: ;break; // Opcion 5

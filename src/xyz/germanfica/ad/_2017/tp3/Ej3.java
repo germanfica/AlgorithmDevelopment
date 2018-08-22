@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Ej3 {
 	private static Scanner sc;
-	// 1- Consultar la cantidad de espacios en blano que hay en la cadena ingresada (INEFICIENTE, porque se recorre dos veces)
+	/*
+	 * 1- Consultar la cantidad de espacios en blano que hay en la
+	 * cadena ingresada (INEFICIENTE, porque se recorre dos veces).
+	 */
 	public static int ObtenerCantidadDeEspaciosEnBlanco(String cadena){
 		int resultado = 0;
 			for (int i = 0; i < cadena.length(); i++) {
