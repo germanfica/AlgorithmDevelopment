@@ -12,6 +12,7 @@ local.properties
 
 # Documentation
 docs/
+doc/
 
 # External tool builders
 .externalToolBuilders/
