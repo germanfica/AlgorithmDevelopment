@@ -51,11 +51,85 @@ public class ArregloEntero {
 	public static void mostrarSumatoria(int[] enteros) {
 		System.out.println(sumatoria(enteros));
 	}
-	
+	/**
+	 * Verifica si existe el num solicitado en el arreglo
+	 * enviado por parametro
+	 * @param num
+	 * @param enteros
+	 * @return
+	 */
 	public static boolean existeElNum(int num, int[] enteros) {
-		return false;
+		boolean existeElNum;
+		existeElNum=false;
+		for (int i = 0; i <= enteros.length-1; i++) {
+			if(enteros[i]==num) {
+				existeElNum=true;
+			}
+		}
+		return existeElNum;
 	}
 	public static void mostrarExisteElNum(int num, int[] enteros) {
 		System.out.println(existeElNum(num, enteros));
+	}
+	/**
+	 * Me devuelve el menor numero del arreglo
+	 * @param enteros
+	 * @return
+	 */
+	public static int posDelMenorNumAlmacenado(int[] enteros) {
+		int menorNum = enteros[0];
+		for (int i = 1; i <= enteros.length-1; i++) {
+			if(enteros[i]<menorNum) {
+				menorNum = enteros[i];
+			}
+		}
+		return menorNum;
+	}
+	public static void mostrarPosDelMenorNumAlmacenado(int[] enteros) {
+		System.out.println(posDelMenorNumAlmacenado(enteros));
+	}
+	public static int mayorNumAlmacenado(int[] enteros) {
+		int mayorNum = enteros[0];
+		for (int i = 1; i <= enteros.length-1; i++) {
+			if(enteros[i]>mayorNum) {
+				mayorNum = enteros[i];
+			}
+		}
+		return mayorNum;
+	}
+	
+	public static void mostrarMayorNumAlmacenado(int[] enteros) {
+		System.out.println(mayorNumAlmacenado(enteros));
+	}
+	
+	public static double promedio(int[] enteros) {
+		return sumatoria(enteros)/(double)enteros.length;
+	}
+	public static void mostrarPromedio(int[] enteros) {
+		System.out.println(promedio(enteros));		
+	}
+	public static void mostrarMayorPromDeLasMitades() {
+		
+	}
+	public static double mayorPromDeLasMitades(int[] enteros) {
+		// Declaración de variables
+		int longitud = enteros.length;
+		double promPrimeraMitad, promSegundaMitad, mayorProm;
+		
+		// Inicialización de variables
+		promPrimeraMitad=longitud/2;
+		promSegundaMitad=longitud-promPrimeraMitad;
+		
+		for (int i = 0; i <= longitud-1; i++) {
+			System.out.println(longitud/2);
+		}
+		
+		if(promPrimeraMitad>promSegundaMitad) {
+			mayorProm=promPrimeraMitad;
+		}else {
+			mayorProm=promSegundaMitad;
+		}
+		
+		return mayorProm;
 	}
 }

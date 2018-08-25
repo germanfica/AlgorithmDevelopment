@@ -10,20 +10,20 @@ public class Ej2 {
 
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Contar cuantos de los números almacenados son pares\n"
-				+ "[2] Realizar la sumatoria de los valores del arreglo\n"
-				+ "[3] Verificar si un número dado se encuentra en él\n"
-				+ "[4] Indicar la posicion del menor valor almacenado\n"
-				+ "[5] Indicar el mayor valor almacenado.\n"
+				+ "[1] Contar cuantos de los nÃºmeros almacenados son pares (IMPLEMENTADO)\n"
+				+ "[2] Realizar la sumatoria de los valores del arreglo (IMPLEMENTADO)\n"
+				+ "[3] Verificar si un numero dado se encuentra en el (IMPLEMENTADO)\n"
+				+ "[4] Indicar la posicion del menor valor almacenado \n"
+				+ "[5] Indicar el mayor valor almacenado\n"
 				+ "[6] Calcular el promedio de los valores del arreglo\n"
 				+ "[7] Mostrar cual de las dos mitades del arreglo tiene mayor promedio\n");
 	}
 
 	/*
-	 * Mostrar el menú de la aplicacion
+	 * Mostrar el menÃº de la aplicacion
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
-	public static void mostrarMenú(int[] enteros) {
+	public static void mostrarMenu(int[] enteros) {
 		boolean salir = false;
 		int opcion;
 		
@@ -34,18 +34,25 @@ public class Ej2 {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
-			// Leer opcion del menú principal
+			// Leer opcion del menÃº principal
 			sc = new Scanner(System.in);
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
 			case 0: salir = true; break;
+			//1
 			case 1: ArregloEntero.mostrarCantNumPares(enteros);break; // Opcion 1
+			//2
 			case 2:	ArregloEntero.mostrarSumatoria(enteros);break; // Opcion 2
-			case 3:	;break; // Opcion 3
-			case 4: ;break; // Opcion 4
-			case 5: ;break; // Opcion 5
-			case 6: ;break; // Opcion 6
+			//3
+			case 3:	System.out.println("Ingrese numero:");ArregloEntero.mostrarExisteElNum(sc.nextInt(), enteros);break; // Opcion 3
+			//4 Indicar la posicion del menor valor almacenado
+			case 4: ArregloEntero.mostrarPosDelMenorNumAlmacenado(enteros);break; // Opcion 4
+			//5 Indicar el mayor valor almacenado
+			case 5: ArregloEntero.mostrarMayorNumAlmacenado(enteros);break; // Opcion 5
+			// 6 Calcular el promedio de los valores del arreglo
+			case 6: ArregloEntero.mostrarPromedio(enteros);break; // Opcion 6
+			// 7 Mostrar cual de las dos mitades del arreglo tiene mayor promedio
 			case 7: ;break; // Opcion 7
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
@@ -55,8 +62,8 @@ public class Ej2 {
 	public static void main(String[] args) {
 		// Preparo al Scanner para que me lea las entradas del sistema
 		sc = new Scanner(System.in);
-		// Mostrar menú, leer y generar un arreglo de enteros
+		// Mostrar menÃº, leer y generar un arreglo de enteros
 		System.out.println(Mensaje.leer(3));
-		mostrarMenú(ArregloEntero.carga(sc.nextInt(), "Ingrese su número:"));
+		mostrarMenu(ArregloEntero.carga(sc.nextInt(), "Ingrese su numero:"));
 	}
 }
