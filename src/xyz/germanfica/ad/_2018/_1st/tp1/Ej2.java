@@ -1,8 +1,8 @@
-package xyz.germanfica.ad._2018._1st.ejrepaso1.ej1;
+package xyz.germanfica.ad._2018._1st.tp1;
 
 import java.util.Scanner;
 
-public class Ej1 {
+public class Ej2 {
 	/*
 	 * 1- Dada una matriz de n filas y 2 columnas correspondientes a apellido, nombre del estudiante, y direccion de email.
 	 * 
