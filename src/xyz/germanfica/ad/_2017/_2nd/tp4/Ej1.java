@@ -1,4 +1,4 @@
-package xyz.germanfica.ad._2017.tp4;
+package xyz.germanfica.ad._2017._2nd.tp4;
 
 public class Ej1 {
 	/*

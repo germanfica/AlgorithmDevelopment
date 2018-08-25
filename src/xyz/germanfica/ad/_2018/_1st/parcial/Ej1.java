@@ -1,4 +1,4 @@
-package xyz.germanfica.ad._2018.parcial;
+package xyz.germanfica.ad._2018._1st.parcial;
 
 public class Ej1 {
 	/**

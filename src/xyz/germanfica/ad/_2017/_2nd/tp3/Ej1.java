@@ -1,4 +1,4 @@
-package xyz.germanfica.ad._2017.tp3;
+package xyz.germanfica.ad._2017._2nd.tp3;
 
 import java.util.Scanner;
 
