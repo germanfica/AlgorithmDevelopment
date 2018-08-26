@@ -53,7 +53,7 @@ public class Ej2 {
 			// 6 Calcular el promedio de los valores del arreglo
 			case 6: ArregloEntero.mostrarPromedio(enteros);break; // Opcion 6
 			// 7 Mostrar cual de las dos mitades del arreglo tiene mayor promedio
-			case 7: ;break; // Opcion 7
+			case 7: ArregloEntero.mostrarMayorPromDeLasMitades(enteros);break; // Opcion 7
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}

@@ -1,4 +1,4 @@
-package xyz.germanfica.matematicas;
+package xyz.germanfica.numeros;
 
 import java.util.Scanner;
 

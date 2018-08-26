@@ -1,4 +1,4 @@
-package xyz.germanfica.matematicas;
+package xyz.germanfica.numeros;
 
 public class Paridad {
 	/**
@@ -10,4 +10,6 @@ public class Paridad {
 	public static boolean esPar(int num) {
 		return num % 2 == 0;
 	}
+	
+	
 }
