@@ -1,4 +1,4 @@
-package xyz.germanfica.ordenamiento;
+package xyz.germanfica.sorting;
 
 import java.util.Scanner;
 
