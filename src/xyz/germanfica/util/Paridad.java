@@ -1,4 +1,4 @@
-package xyz.germanfica.numeros;
+package xyz.germanfica.util;
 
 public class Paridad {
 	/**

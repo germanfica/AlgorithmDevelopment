@@ -1,6 +1,4 @@
-package xyz.germanfica.arreglos;
-
-import xyz.germanfica.numeros.Paridad;
+package xyz.germanfica.util;
 
 public class ArregloCaracter {
 	/**

@@ -1,4 +1,4 @@
-package xyz.germanfica.arreglos;
+package xyz.germanfica.util;
 
 import java.util.Scanner;
 

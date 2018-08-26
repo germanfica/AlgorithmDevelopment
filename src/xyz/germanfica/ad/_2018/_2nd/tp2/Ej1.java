@@ -2,8 +2,8 @@ package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
 
-import xyz.germanfica.arreglos.ArregloCaracter;
-import xyz.germanfica.arreglos.ArregloLetra;
+import xyz.germanfica.util.ArregloCaracter;
+import xyz.germanfica.util.ArregloLetra;
 import xyz.germanfica.util.Mensaje;
 
 /*

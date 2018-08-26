@@ -1,9 +1,6 @@
-package xyz.germanfica.arreglos;
+package xyz.germanfica.util;
 
 import java.util.Scanner;
-
-import xyz.germanfica.numeros.NumeroReal;
-import xyz.germanfica.numeros.Paridad;
 
 /*
  * Nota: todos los que retornan un valor deben ser valores inmutables.
