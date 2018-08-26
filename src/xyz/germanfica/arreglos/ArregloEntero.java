@@ -5,6 +5,11 @@ import java.util.Scanner;
 import xyz.germanfica.numeros.NumeroReal;
 import xyz.germanfica.numeros.Paridad;
 
+/*
+ * Nota: todos los que retornan un valor deben ser valores inmutables.
+ * Los modulos que comienzan con mostrar pueden modificar el valor que
+ * se muestra, pero no el valor de retorno.
+ */
 public class ArregloEntero {
 	private static Scanner sc;
 	
@@ -50,10 +55,6 @@ public class ArregloEntero {
 		return cantNumPares;
 	}
 	
-	public static void mostrarCantNumPares(int[] enteros) {
-		System.out.println(cantNumPares(enteros));
-	}
-	
 	/**
 	 * Suma todos los elementos del arreglo
 	 * @param enteros
@@ -83,10 +84,6 @@ public class ArregloEntero {
 		return sumatoria;
 	}
 	
-	public static void mostrarSumatoria(int[] enteros) {
-		System.out.println(sumatoria(enteros));
-	}
-	
 	/**
 	 * Verifica si existe el num solicitado en el arreglo
 	 * enviado por parametro
@@ -105,10 +102,6 @@ public class ArregloEntero {
 		return existeElNum;
 	}
 	
-	public static void mostrarExisteElNum(int num, int[] enteros) {
-		System.out.println(existeElNum(num, enteros));
-	}
-	
 	/**
 	 * Me devuelve el menor numero del arreglo
 	 * @param enteros
@@ -124,10 +117,6 @@ public class ArregloEntero {
 		return menorNum;
 	}
 	
-	public static void mostrarPosDelMenorNumAlmacenado(int[] enteros) {
-		System.out.println(posDelMenorNumAlmacenado(enteros));
-	}
-	
 	public static int mayorNumAlmacenado(int[] enteros) {
 		int mayorNum = enteros[0];
 		for (int i = 1; i <= enteros.length-1; i++) {
@@ -138,20 +127,8 @@ public class ArregloEntero {
 		return mayorNum;
 	}
 	
-	public static void mostrarMayorNumAlmacenado(int[] enteros) {
-		System.out.println(mayorNumAlmacenado(enteros));
-	}
-	
 	public static double promedio(int[] enteros) {
 		return sumatoria(enteros)/(double)enteros.length;
-	}
-	
-	public static void mostrarPromedio(int[] enteros) {
-		System.out.println(promedio(enteros));		
-	}
-	
-	public static void mostrarMayorPromDeLasMitades(int[] enteros) {
-		System.out.println(mayorPromDeLasMitades(enteros));
 	}
 	
 	/**

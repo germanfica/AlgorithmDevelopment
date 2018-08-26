@@ -1,0 +1,8 @@
+Las buenas prácticas
+
+Nota: los modulos no deben ocupar mas de una pantalla
+
+Nota: todos los que retornan un valor deben ser valores
+inmutables. Los modulos que comienzan con mostrar pueden
+modificar el valor que se muestra, pero no el valor de
+retorno.
