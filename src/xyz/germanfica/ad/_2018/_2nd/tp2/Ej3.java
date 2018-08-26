@@ -1,16 +1,26 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
-
 import xyz.germanfica.util.ArregloPalabra;
 import xyz.germanfica.util.Mensaje;
 
+/*
+ * 3. DiseÒar un algoritmo que lea un arreglo de palabras y un valor
+ * numÈrico que represente una posicion en el arreglo. El algoritmo debe
+ * mostrar el contenido del arreglo en esa posiciÛn, verificando
+ * previamente que la misma sea v·lida.
+ * 
+ * Por ejemplo, si el arreglo contiene ["que","lindo","dia"] y la posicion
+ * leida es 2, el algoritmo debera mostrar la palabra "dÌa". Para el mismo
+ * arreglo, si la posiciÛn leÌda es 4, se debe mostrar un mensaje de
+ * "posicion inv·lida".
+ */
 public class Ej3 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Mostrar palabra de la posici√≥n deseada\n"
+				+ "[1] Mostrar palabra de la posicion deseada\n"
 				+ "[2] Mostrar todas las palabras del arreglo (IMPLEMENTADO)\n"
 				);
 	}
@@ -20,14 +30,14 @@ public class Ej3 {
 		sc = new Scanner(System.in);
 		System.out.println("Ingrese el numero: ");
 		pos = sc.nextInt();
-		System.out.println("La palabra de la pos " + pos + " es: " + palabras[pos]);
+		System.out.println("La palabra de la pos " + "\"" + pos + "\"" + " es: " + palabras[pos]);
 	}
 
 	/*
-	 * Mostrar el men√∫ de la aplicacion
+	 * Mostrar el menu de la aplicacion
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
-	public static void mostrarMen√∫(String[] palabras) {
+	public static void mostrarMenu(String[] palabras) {
 		boolean salir = false;
 		int opcion;
 		
@@ -38,13 +48,13 @@ public class Ej3 {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
-			// Leer opcion del men√∫ principal
+			// Leer opcion del menu principal
 			sc = new Scanner(System.in);
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			// [1] Mostrar palabra de la posici√≥n deseada
+			// [1] Mostrar palabra de la posicion deseada
 			case 1: mostrarPalabraDeLaPos(palabras);break; // Opcion 1
 			case 2: ArregloPalabra.mostrar(palabras); break; // Opcion 2
 			default: System.err.println(Mensaje.leer(1)); break;
@@ -55,8 +65,8 @@ public class Ej3 {
 	public static void main(String[] args) {
 		// Preparo al Scanner para que me lea las entradas del sistema
 		sc = new Scanner(System.in);
-		// Mostrar men√∫, leer y generar un arreglo de enteros
+		// Mostrar menu, leer y generar un arreglo de enteros
 		System.out.println(Mensaje.leer(3));
-		mostrarMen√∫(ArregloPalabra.carga(sc.nextInt(), "Ingrese su palabra:"));
+		mostrarMenu(ArregloPalabra.carga(sc.nextInt(), "Ingrese su palabra:"));
 	}
 }

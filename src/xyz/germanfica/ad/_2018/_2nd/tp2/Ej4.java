@@ -5,6 +5,16 @@ import java.util.Scanner;
 import xyz.germanfica.util.ArregloPalabra;
 import xyz.germanfica.util.Mensaje;
 
+/*
+ * 4. DiseÒar un algoritmo que lea un arreglo de palabras y una cadena de
+ * caracteres. El algoritmo debe mostrar la posicion del arreglo en la
+ * cual se encuentra esa palabra, verificando que la misma exista en
+ * el arreglo.
+ * 
+ * Por ejemplo, si el arreglo contiene [queÄù,lindoÄù,diaÄù] y la palabra
+ * leida es adios, el algoritmo deberia mostrar el valor 2. Para el mismo
+ * arreglo, si la palabra leida es "fue"Äù, se debe mostrar el valor -1.
+ */
 public class Ej4 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 
@@ -17,24 +27,24 @@ public class Ej4 {
 		
 		posDeLaPalabra = ArregloPalabra.posDeLaPalabra(palabras, palabra);
 		if(posDeLaPalabra==-1) {
-			System.out.println("No se ha encontrado la letra.");
+			System.out.println("No se ha encontrado la palabra.");
 		}else {
-			System.out.println("La posici√≥n de la letra " + palabra + "se ha encontrado la letra.");
+			System.out.println("La posicion de la palabra " + "\"" + palabra + "\"" + " es: " + posDeLaPalabra);
 		}
 	}
 	
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Mostrar la posici√≥n de la palabra deseada\n"
+				+ "[1] Mostrar la posicion de la palabra deseada\n"
 				+ "[2] Mostrar todas las palabras del arreglo (IMPLEMENTADO)\n"
 				);
 	}
 
 	/*
-	 * Mostrar el men√∫ de la aplicacion
+	 * Mostrar el menu de la aplicacion
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
-	public static void mostrarMen√∫(String[] palabras) {
+	public static void mostrarMenu(String[] palabras) {
 		boolean salir = false;
 		int opcion;
 		
@@ -45,7 +55,7 @@ public class Ej4 {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
-			// Leer opcion del men√∫ principal
+			// Leer opcion del menu principal
 			sc = new Scanner(System.in);
 			opcion = sc.nextInt();
 			
@@ -61,8 +71,8 @@ public class Ej4 {
 	public static void main(String[] args) {
 		// Preparo al Scanner para que me lea las entradas del sistema
 		sc = new Scanner(System.in);
-		// Mostrar men√∫, leer y generar un arreglo de enteros
+		// Mostrar menu, leer y generar un arreglo de enteros
 		System.out.println(Mensaje.leer(3));
-		mostrarMen√∫(ArregloPalabra.carga(sc.nextInt(), "Ingrese su palabra:"));
+		mostrarMenu(ArregloPalabra.carga(sc.nextInt(), "Ingrese su palabra:"));
 	}
 }
