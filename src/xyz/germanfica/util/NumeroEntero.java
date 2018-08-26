@@ -1,10 +1,6 @@
 package xyz.germanfica.util;
 
-import java.util.Scanner;
-
 public class NumeroEntero {
-	private static Scanner sc;
-	
 	public static int[] intercambio(int x, int y) {
 		int[] vector = new int[2];
 		// Restar el primer numero al segundo

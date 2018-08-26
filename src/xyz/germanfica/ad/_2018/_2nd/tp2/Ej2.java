@@ -1,7 +1,6 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
-
 import xyz.germanfica.util.ArregloEntero;
 import xyz.germanfica.util.Mensaje;
 
