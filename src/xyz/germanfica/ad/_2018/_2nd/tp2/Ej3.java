@@ -14,6 +14,14 @@ public class Ej3 {
 				+ "[2] Mostrar todas las palabras del arreglo (IMPLEMENTADO)\n"
 				);
 	}
+	
+	public static void mostrarPalabraDeLaPos(String[] palabras) {
+		int pos;
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese el numero: ");
+		pos = sc.nextInt();
+		System.out.println("La palabra de la pos " + pos + " es: " + palabras[pos]);
+	}
 
 	/*
 	 * Mostrar el menú de la aplicacion
@@ -36,7 +44,8 @@ public class Ej3 {
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			case 1: ;break; // Opcion 1
+			// [1] Mostrar palabra de la posición deseada
+			case 1: mostrarPalabraDeLaPos(palabras);break; // Opcion 1
 			case 2: ArregloPalabra.mostrar(palabras); break; // Opcion 2
 			default: System.err.println(Mensaje.leer(1)); break;
 			}

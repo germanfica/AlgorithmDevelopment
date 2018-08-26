@@ -8,6 +8,21 @@ import xyz.germanfica.util.Mensaje;
 public class Ej4 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase
 
+	public static void mostrarPosDeLaPalabra(String[] palabras) {
+		String palabra;
+		int posDeLaPalabra;
+		
+		sc = new Scanner(System.in);
+		palabra = sc.nextLine();
+		
+		posDeLaPalabra = ArregloPalabra.posDeLaPalabra(palabras, palabra);
+		if(posDeLaPalabra==-1) {
+			System.out.println("No se ha encontrado la letra.");
+		}else {
+			System.out.println("La posición de la letra " + palabra + "se ha encontrado la letra.");
+		}
+	}
+	
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Mostrar la posición de la palabra deseada\n"
@@ -36,7 +51,7 @@ public class Ej4 {
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			case 1: ;break; // Opcion 1
+			case 1: mostrarPosDeLaPalabra(palabras);break; // Opcion 1
 			case 2: ArregloPalabra.mostrar(palabras); break; // Opcion 2
 			default: System.err.println(Mensaje.leer(1)); break;
 			}

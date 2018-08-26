@@ -28,6 +28,11 @@ public class Ej2 {
 		System.out.println(ArregloEntero.existeElNum(num, enteros));
 	}
 	
+	/**
+	 * Muestra por pantalla la cantidad de numeros pares
+	 * 
+	 * @param enteros arreglo de enteros
+	 */
 	public static void mostrarCantNumPares(int[] enteros) {
 		System.out.println(ArregloEntero.cantNumPares(enteros));
 	}
