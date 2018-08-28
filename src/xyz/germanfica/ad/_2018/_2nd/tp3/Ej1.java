@@ -1,6 +1,8 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
+
+import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.Mensaje;
 
 /*
@@ -18,6 +20,7 @@ import xyz.germanfica.util.Mensaje;
  */
 public class Ej1 {
 	public static Scanner sc;
+	
 	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
@@ -37,6 +40,11 @@ public class Ej1 {
 	public static void mostrarMenu(String[] palabras) {
 		boolean salir = false;
 		int opcion;
+		int[] dimensiones;
+		int[][] matrizEnteros;
+		
+		// Leer las dimensiones
+		dimensiones = MatrizEntero.dimensiones("Cantidad de filas", "Cantidad de columnas");
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
