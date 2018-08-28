@@ -47,6 +47,28 @@ public class Ej1 {
 	}
 	
 	/*
+	 * [2] Cargar la matriz completa haciendo uso del módulo anterior
+	 */
+	public static int[][] cargaCompleta(int[] dimensiones) {
+		return MatrizEntero.cargaCompleta(dimensiones, "Ingrese un numero:");
+	}
+	
+	/*
+	 * [3] Mostrar la columna i-ésima de la matriz
+	 */
+	public static void mostrarColumna(int[][] matrizEnteros, int columna) {
+		// Declaracion de variables
+		int cantFilas;
+		
+		// Incializacion de variables
+		cantFilas = matrizEnteros.length;
+		
+		for (int i = 0; i <= cantFilas-1; i++) {
+			System.out.println(matrizEnteros[i][columna]);
+		}
+	}
+	
+	/*
 	 * [4] Mostrar la matriz entera
 	 */
 	public static void mostrarElmMatrizEnteros(int[][] matrizEnteros) {
@@ -63,8 +85,8 @@ public class Ej1 {
 	 */
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Cargar la fila i-esima de la matriz\n"
-				+ "[2] Cargar la matriz completa haciendo uso del módulo anterior\n"
+				+ "[1] Cargar la fila i-esima de la matriz (IMPLEMENTADO)\n"
+				+ "[2] Cargar la matriz completa haciendo uso del módulo anterior (IMPLEMENTADO)\n"
 				+ "[3] Mostrar la columna i-ésima de la matriz\n"
 				+ "[4] Mostrar la matriz entera haciendo uso del módulo anterior\n"
 				);
@@ -109,9 +131,9 @@ public class Ej1 {
 			// [1] Cargar la fila i-esima de la matriz
 			case 1: matrizEnteros = cargaFila(dimensiones);break; // Opcion 1
 			// [2] Cargar la matriz completa haciendo uso del módulo anterior
-			case 2: matrizEnteros = MatrizEntero.cargaCompleta(dimensiones, "Ingrese un numero:"); break; // Opcion 2
+			case 2: matrizEnteros = cargaCompleta(dimensiones); break; // Opcion 2
 			// [3] Mostrar la columna i-ésima de la matriz
-			case 3: ; break; // Opcion 3
+			case 3: System.out.println("Que columna quiere mostrar?");mostrarColumna(matrizEnteros, sc.nextInt()); break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
 			case 4: mostrarElmMatrizEnteros(matrizEnteros); break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;

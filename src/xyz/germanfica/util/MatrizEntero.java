@@ -53,8 +53,8 @@ public class MatrizEntero {
 		
 		// Carga de elementos
 		for (int i = 0; i <= cantFilas-1; i++) {
-			System.out.print("Fila " + i + ". ");
-			matrizEnteros[i] = cargaFila(dimensiones, i, mensaje)[i]; // Me almacena el arreglo de la posicion i
+			//System.out.print("Fila " + i + ". "); // Estaba depurando
+			matrizEnteros[i] = cargaFila(dimensiones, i, mensaje)[i]; // Carga la fila i de elementos
 		}
 		
 		return matrizEnteros;
