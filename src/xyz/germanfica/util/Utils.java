@@ -29,4 +29,22 @@ public class Utils {
 	           }
 	        }).start();
 	}
+	
+	public static void tiempoRestante(int tiempoEstimado) {
+		String texto;
+		texto = "\r";
+		try
+        {
+            System.out.print("Counting down ...");
+            for (int i = tiempoEstimado; 1 <= i; i--) {
+            	System.out.print(texto + i);
+                Thread.currentThread().sleep(500);
+                texto = texto + " ";
+			}
+            System.out.println("\rDone!");
+        }
+        catch (Exception ex)
+        {
+        }
+	}
 }
