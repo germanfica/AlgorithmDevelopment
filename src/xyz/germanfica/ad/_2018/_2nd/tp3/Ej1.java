@@ -21,6 +21,18 @@ public class Ej1 {
 	public static Scanner sc;
 	
 	/*
+	 * como deberia ser el 4
+	 */
+	public static void mostrarElmMatrizEnteros(int[][] matrizEnteros) {
+		for (int i = 0; i <= matrizEnteros.length-1; i++) {
+			for (int j = 0; j <= matrizEnteros.length-1; j++) {
+				System.out.print(matrizEnteros[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
+	/*
 	 * [1] Cargar la fila i-esima de la matriz
 	 */
 	public static int[][] cargaFila(int[] dimensiones) {
@@ -69,14 +81,18 @@ public class Ej1 {
 	}
 	
 	/*
-	 * [4] Mostrar la matriz entera
+	 * [4] Mostrar la matriz entera haciendo uso del módulo anterior
 	 */
-	public static void mostrarElmMatrizEnteros(int[][] matrizEnteros) {
-		for (int i = 0; i <= matrizEnteros.length-1; i++) {
-			for (int j = 0; j <= matrizEnteros.length-1; j++) {
-				System.out.print(matrizEnteros[i][j]);
-			}
-			System.out.println();
+	public static void mostrarMatrizCompleta(int[][] matrizEnteros) {
+		// Declaracion de variables
+		int cantColumnas;
+		
+		// Inicializacion de variables
+		cantColumnas = matrizEnteros[0].length;
+		
+		for (int i = 0; i <= cantColumnas-1; i++) {
+			System.out.println("Columna " + i + ":");
+			mostrarColumna(matrizEnteros, i);
 		}
 	}
 	
@@ -87,8 +103,8 @@ public class Ej1 {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar la fila i-esima de la matriz (IMPLEMENTADO)\n"
 				+ "[2] Cargar la matriz completa haciendo uso del módulo anterior (IMPLEMENTADO)\n"
-				+ "[3] Mostrar la columna i-ésima de la matriz\n"
-				+ "[4] Mostrar la matriz entera haciendo uso del módulo anterior\n"
+				+ "[3] Mostrar la columna i-ésima de la matriz (IMPLEMENTADO)\n"
+				+ "[4] Mostrar la matriz entera haciendo uso del módulo anterior (IMPLEMENTADO)\n"
 				);
 	}
 	
@@ -135,7 +151,7 @@ public class Ej1 {
 			// [3] Mostrar la columna i-ésima de la matriz
 			case 3: System.out.println("Que columna quiere mostrar?");mostrarColumna(matrizEnteros, sc.nextInt()); break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
-			case 4: mostrarElmMatrizEnteros(matrizEnteros); break; // Opcion 4
+			case 4: mostrarMatrizCompleta(matrizEnteros); break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
