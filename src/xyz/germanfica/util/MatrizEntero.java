@@ -29,29 +29,39 @@ public class MatrizEntero {
 		dimensiones[1] = sc.nextInt(); // Lee la cantidad de columnas
 		return dimensiones;
 	}
+	
+	/**
+	 * Lee la cantidad de filas y cantidad de columnas para una
+	 * matriz. La posicion 0 es la cantidad de filas y la
+	 * posicion 1 es la cantidad de columnas.
+	 * 
+	 * @return retorna la cantidad de filas y cantidad de columnas
+	 */
 	public static int[] dimensiones() {
 		return dimensiones("", "");
 	}
 	
 	/**
-	 * Carga de de n elementos a una matriz de enteros
+	 * Carga de de n elementos la fila i-esima a una matriz
+	 * de enteros
 	 * 
 	 * @param dimensiones representa la cantidad de filas y cantidad de
 	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la
 	 * posicion 1 es la cantidad de columnas
+	 * @param fila es la fila i-esima a la que se le aplica la carga de elementos
 	 * @param mensaje es el mensaje que se muestra cada vez que se le
 	 * pide al usuario agregar un nuevo elemento a la matriz
-	 * @return
+	 * @return matriz de enteros cargada de n enteros en la fila i-esima
 	 */
 	// cargaCompleta();
-	public static int[][] cargaFila(int[] dimensiones, String mensaje) {
+	public static int[][] cargaFila(int[] dimensiones, int fila, String mensaje) {
 		// Declaracion de variables
 		int[][] matrizEnteros;
 		int num;
 		int i;
 
 		// Inicializacion de variables
-		matrizEnteros = new int[dimensiones[0]][];
+		matrizEnteros = new int[dimensiones[0]][dimensiones[1]];
 		i = 0;
 
 		// Agregar elementos al arreglo
@@ -59,12 +69,20 @@ public class MatrizEntero {
 			System.out.println(mensaje);
 			sc = new Scanner(System.in);
 			num = sc.nextInt();
-			matrizEnteros[i] = num;
+			matrizEnteros[0][i] = num;
 			i++;
 		}
 		return matrizEnteros;
 	}
-	public static int[][] cargaFila(int longitud) {
-		return cargaFila(longitud,"");
+	/**
+	 * Carga de de n elementos a una matriz de enteros
+	 * 
+	 * @param dimensiones representa la cantidad de filas y cantidad de
+	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la
+	 * posicion 1 es la cantidad de columnas
+	 * @return
+	 */
+	public static int[][] cargaFila(int[] dimensiones, int fila) {
+		return cargaFila(dimensiones,fila,"");
 	}
 }

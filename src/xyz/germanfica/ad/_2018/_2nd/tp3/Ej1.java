@@ -45,6 +45,7 @@ public class Ej1 {
 		
 		// Leer las dimensiones
 		dimensiones = MatrizEntero.dimensiones("Cantidad de filas", "Cantidad de columnas");
+		matrizEnteros = MatrizEntero.cargaFila(dimensiones, "Ingrese un numero:");
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
