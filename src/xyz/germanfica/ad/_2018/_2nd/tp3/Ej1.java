@@ -20,6 +20,35 @@ import xyz.germanfica.util.Mensaje;
 public class Ej1 {
 	public static Scanner sc;
 	
+	/*
+	 * [1] Cargar la fila i-esima de la matriz
+	 */
+	public static int[][] cargaFila(int[] dimensiones) {
+		// Declaracion de variables
+		int fila, min, max;
+		boolean error;
+		
+		// Inicializacion de variables
+		fila = -1; // No se ha elegido todavia ninguna fila
+		error = false;
+		min = 0;
+		max = dimensiones[0]-1;
+		
+		// Leer
+		while(fila>max || fila<min) {
+			if(error) {
+				System.err.println("Porfavor ingrese una fila valida.");
+			}
+			System.out.println("Que fila quiere cargar?");
+			fila = sc.nextInt();
+			error=true;
+		}
+		return MatrizEntero.cargaFila(dimensiones, fila, "Ingrese un numero:");
+	}
+	
+	/*
+	 * [4] Mostrar la matriz entera
+	 */
 	public static void mostrarElmMatrizEnteros(int[][] matrizEnteros) {
 		for (int i = 0; i <= matrizEnteros.length-1; i++) {
 			for (int j = 0; j <= matrizEnteros.length-1; j++) {
@@ -45,7 +74,7 @@ public class Ej1 {
 	 * Mostrar el menu de la aplicacion
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
-	public static void mostrarMenu(String[] palabras) {
+	public static void mostrarMenu() {
 		// Declaracion de variables
 		boolean salir = false;
 		int opcion;
@@ -78,16 +107,19 @@ public class Ej1 {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Cargar la fila i-esima de la matriz
-			case 1: matrizEnteros = MatrizEntero.cargaFila(dimensiones, 0, "Ingrese un numero:");break; // Opcion 1
+			case 1: matrizEnteros = cargaFila(dimensiones);break; // Opcion 1
 			// [2] Cargar la matriz completa haciendo uso del módulo anterior
 			case 2: ; break; // Opcion 2
 			// [3] Mostrar la columna i-ésima de la matriz
 			case 3: ; break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
-			case 4: ; break; // Opcion 4
-			case 5: mostrarElmMatrizEnteros(matrizEnteros);break;
+			case 4: mostrarElmMatrizEnteros(matrizEnteros); break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		mostrarMenu();
 	}
 }

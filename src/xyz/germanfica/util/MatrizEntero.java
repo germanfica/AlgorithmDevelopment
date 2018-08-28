@@ -67,7 +67,7 @@ public class MatrizEntero {
 			System.out.println(mensaje);
 			sc = new Scanner(System.in);
 			num = sc.nextInt();
-			matrizEnteros[0][i] = num;
+			matrizEnteros[fila][i] = num;
 		}
 		return matrizEnteros;
 	}
