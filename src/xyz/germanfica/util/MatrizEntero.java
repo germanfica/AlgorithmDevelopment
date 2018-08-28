@@ -41,6 +41,25 @@ public class MatrizEntero {
 		return dimensiones("", "");
 	}
 	
+	public static int[][] cargaCompleta(int[] dimensiones, String mensaje) {
+		// Declaracion de variables
+		int[][] matrizEnteros;
+		int cantFilas, cantColumnas;
+		
+		// Inicializacion de variables
+		cantFilas = dimensiones[0]; // Cantidad de filas
+		cantColumnas = dimensiones[1]; // Cantidad de columnas
+		matrizEnteros = new int[cantFilas][cantColumnas];
+		
+		// Carga de elementos
+		for (int i = 0; i <= cantFilas-1; i++) {
+			System.out.print("Fila " + i + ". ");
+			matrizEnteros[i] = cargaFila(dimensiones, i, mensaje)[i]; // Me almacena el arreglo de la posicion i
+		}
+		
+		return matrizEnteros;
+	}
+	
 	/**
 	 * Carga de de n elementos la fila i-esima a una matriz
 	 * de enteros
@@ -53,17 +72,18 @@ public class MatrizEntero {
 	 * pide al usuario agregar un nuevo elemento a la matriz
 	 * @return matriz de enteros cargada de n enteros en la fila i-esima
 	 */
-	// cargaCompleta();
 	public static int[][] cargaFila(int[] dimensiones, int fila, String mensaje) {
 		// Declaracion de variables
 		int[][] matrizEnteros;
-		int num;
+		int num, cantFilas, cantColumnas;
 
 		// Inicializacion de variables
-		matrizEnteros = new int[dimensiones[0]][dimensiones[1]];
+		cantFilas = dimensiones[0];
+		cantColumnas = dimensiones[1];
+		matrizEnteros = new int[cantFilas][cantColumnas];
 
 		// Agrega elementos a la matriz
-		for (int i = 0; i <= matrizEnteros.length - 1; i++) {
+		for (int i = 0; i <= cantColumnas - 1; i++) {
 			System.out.println(mensaje);
 			sc = new Scanner(System.in);
 			num = sc.nextInt();

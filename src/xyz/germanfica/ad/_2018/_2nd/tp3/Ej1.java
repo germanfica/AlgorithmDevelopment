@@ -109,7 +109,7 @@ public class Ej1 {
 			// [1] Cargar la fila i-esima de la matriz
 			case 1: matrizEnteros = cargaFila(dimensiones);break; // Opcion 1
 			// [2] Cargar la matriz completa haciendo uso del módulo anterior
-			case 2: ; break; // Opcion 2
+			case 2: matrizEnteros = MatrizEntero.cargaCompleta(dimensiones, "Ingrese un numero:"); break; // Opcion 2
 			// [3] Mostrar la columna i-ésima de la matriz
 			case 3: ; break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
