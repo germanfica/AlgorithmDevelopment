@@ -16,10 +16,10 @@ public class MatrizEntero {
 	 * @return retorna la cantidad de filas y cantidad de columnas
 	 */
 	public static int[] dimensiones(String primerMensaje, String segundoMensaje) {
-		// Declaración de variables
+		// Declaracion de variables
 		int[] dimensiones;
 		
-		// Inicialización de variables
+		// Inicializacion de variables
 		dimensiones = new int[2]; // Creacion de la matriz
 		
 		sc = new Scanner(System.in);
@@ -58,24 +58,23 @@ public class MatrizEntero {
 		// Declaracion de variables
 		int[][] matrizEnteros;
 		int num;
-		int i;
 
 		// Inicializacion de variables
 		matrizEnteros = new int[dimensiones[0]][dimensiones[1]];
-		i = 0;
 
-		// Agregar elementos al arreglo
-		while (i <= matrizEnteros.length - 1) {
+		// Agrega elementos a la matriz
+		for (int i = 0; i <= matrizEnteros.length - 1; i++) {
 			System.out.println(mensaje);
 			sc = new Scanner(System.in);
 			num = sc.nextInt();
 			matrizEnteros[0][i] = num;
-			i++;
 		}
 		return matrizEnteros;
 	}
+	
 	/**
-	 * Carga de de n elementos a una matriz de enteros
+	 * Carga de de n elementos la fila i-esima a una matriz
+	 * de enteros
 	 * 
 	 * @param dimensiones representa la cantidad de filas y cantidad de
 	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la

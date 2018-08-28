@@ -1,7 +1,6 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
-
 import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.Mensaje;
 
@@ -21,6 +20,15 @@ import xyz.germanfica.util.Mensaje;
 public class Ej1 {
 	public static Scanner sc;
 	
+	public static void mostrarElmMatrizEnteros(int[][] matrizEnteros) {
+		for (int i = 0; i <= matrizEnteros.length-1; i++) {
+			for (int j = 0; j <= matrizEnteros.length-1; j++) {
+				System.out.print(matrizEnteros[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
 	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
@@ -38,14 +46,23 @@ public class Ej1 {
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
 	public static void mostrarMenu(String[] palabras) {
+		// Declaracion de variables
 		boolean salir = false;
 		int opcion;
 		int[] dimensiones;
+		int cantFilas;
+		int cantColumnas;
 		int[][] matrizEnteros;
 		
 		// Leer las dimensiones
 		dimensiones = MatrizEntero.dimensiones("Cantidad de filas", "Cantidad de columnas");
-		matrizEnteros = MatrizEntero.cargaFila(dimensiones, "Ingrese un numero:");
+		
+		// Inicializacion de variables
+		cantFilas = dimensiones[0]; // Cantidad de filas
+		cantColumnas = dimensiones[0]; // Cantidad de columnas
+		
+		// Creacion e inicializacion de la matriz
+		matrizEnteros = new int[cantFilas][cantColumnas];
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
@@ -61,13 +78,14 @@ public class Ej1 {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Cargar la fila i-esima de la matriz
-			case 1: ;break; // Opcion 1
+			case 1: matrizEnteros = MatrizEntero.cargaFila(dimensiones, 0, "Ingrese un numero:");break; // Opcion 1
 			// [2] Cargar la matriz completa haciendo uso del módulo anterior
 			case 2: ; break; // Opcion 2
 			// [3] Mostrar la columna i-ésima de la matriz
 			case 3: ; break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
 			case 4: ; break; // Opcion 4
+			case 5: mostrarElmMatrizEnteros(matrizEnteros);break;
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
