@@ -33,15 +33,15 @@ public class Ej1 {
 	}
 	
 	/*
-	 * [1] Cargar la fila i-esima de la matriz
+	 * [1] Cargar la fila i-ésima de la matriz
 	 */
 	public static int[][] cargaFila(int[] dimensiones) {
-		// Declaracion de variables
+		// Declaración de variables
 		int fila, min, max;
 		boolean error;
 		
-		// Inicializacion de variables
-		fila = -1; // No se ha elegido todavia ninguna fila
+		// Inicialización de variables
+		fila = -1; // No se ha elegido todavía ninguna fila
 		error = false;
 		min = 0;
 		max = dimensiones[0]-1;
@@ -49,9 +49,9 @@ public class Ej1 {
 		// Leer
 		while(fila>max || fila<min) {
 			if(error) {
-				System.err.println("Porfavor ingrese una fila valida.");
+				System.err.println("Porfavor ingrese una fila válida.");
 			}
-			System.out.println("Que fila quiere cargar?");
+			System.out.println("Qué fila quiere cargar?");
 			fila = sc.nextInt();
 			error=true;
 		}
@@ -69,10 +69,10 @@ public class Ej1 {
 	 * [3] Mostrar la columna i-ésima de la matriz
 	 */
 	public static void mostrarColumna(int[][] matrizEnteros, int columna) {
-		// Declaracion de variables
+		// Declaración de variables
 		int cantFilas;
 		
-		// Incializacion de variables
+		// Incialización de variables
 		cantFilas = matrizEnteros.length;
 		
 		for (int i = 0; i <= cantFilas-1; i++) {
@@ -84,10 +84,10 @@ public class Ej1 {
 	 * [4] Mostrar la matriz entera haciendo uso del módulo anterior
 	 */
 	public static void mostrarMatrizCompleta(int[][] matrizEnteros) {
-		// Declaracion de variables
+		// Declaración de variables
 		int cantColumnas;
 		
-		// Inicializacion de variables
+		// Inicialización de variables
 		cantColumnas = matrizEnteros[0].length;
 		
 		for (int i = 0; i <= cantColumnas-1; i++) {
@@ -108,9 +108,9 @@ public class Ej1 {
 				);
 	}
 	
-	/*
-	 * Mostrar el menu de la aplicacion
-	 * Nota: los modulos no deben ocupar mas de una pantalla
+	/**
+	 * Mostrar el menú de la aplicación
+	 * Nota: los módulos no deben ocupar más de una pantalla
 	 */
 	public static void mostrarMenu() {
 		// Declaracion de variables
@@ -124,11 +124,11 @@ public class Ej1 {
 		// Leer las dimensiones
 		dimensiones = MatrizEntero.dimensiones("Cantidad de filas", "Cantidad de columnas");
 		
-		// Inicializacion de variables
+		// Inicialización de variables
 		cantFilas = dimensiones[0]; // Cantidad de filas
 		cantColumnas = dimensiones[0]; // Cantidad de columnas
 		
-		// Creacion e inicializacion de la matriz
+		// Creación e inicialización de la matriz
 		matrizEnteros = new int[cantFilas][cantColumnas];
 		
 		// Mensaje de bienvenida
@@ -138,18 +138,18 @@ public class Ej1 {
 			// Mostrar cartel con las opciones
 			mostrarCartelDeOpciones();
 			
-			// Leer opcion del menu principal
+			// Leer opción del menú principal
 			sc = new Scanner(System.in);
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
 			case 0: salir = true; break;
-			// [1] Cargar la fila i-esima de la matriz
+			// [1] Cargar la fila i-ésima de la matriz
 			case 1: matrizEnteros = cargaFila(dimensiones);break; // Opcion 1
 			// [2] Cargar la matriz completa haciendo uso del módulo anterior
 			case 2: matrizEnteros = cargaCompleta(dimensiones); break; // Opcion 2
 			// [3] Mostrar la columna i-ésima de la matriz
-			case 3: System.out.println("Que columna quiere mostrar?");mostrarColumna(matrizEnteros, sc.nextInt()); break; // Opcion 3
+			case 3: System.out.println("Qué columna quiere mostrar?");mostrarColumna(matrizEnteros, sc.nextInt()); break; // Opcion 3
 			// [4] Mostrar la matriz entera haciendo uso del módulo anterior
 			case 4: mostrarMatrizCompleta(matrizEnteros); break; // Opcion 4
 			default: System.err.println(Mensaje.leer(1)); break;

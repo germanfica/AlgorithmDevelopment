@@ -1,4 +1,4 @@
-Bienvenido a la consola de la aplicación,
-Esta opción no está definida. Seleccione una de las siguientes opciones:,
+Bienvenido a la consola de la aplicacion,
+Esta opcion no esta definida. Seleccione una de las siguientes opciones:,
 [Error] Debe ingresar una letra,
 Ingrese la longitud de su arreglo:
