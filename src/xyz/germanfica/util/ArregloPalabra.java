@@ -81,11 +81,11 @@ public class ArregloPalabra {
 	
 	/**
 	 * Encontrar en un arreglo de palabras la coincidencia de una
-	 * palabra dada sin importar las mayúsculas o minúsculas
+	 * palabra dada sin importar las mayúsculas o minúsculas.
 	 * 
-	 * @param palabras el arreglo que se quiere analizar
-	 * @param palabra la coincidencia que se quiere encontrar
-	 * @return devuelve la palabra de la posición solicitada
+	 * @param palabras el arreglo que se quiere analizar.
+	 * @param palabra la coincidencia que se quiere encontrar.
+	 * @return devuelve la palabra de la posición solicitada.
 	 */
 	public static int posDeLaPalabra(String[] palabras, String palabra) {
 		int pos = -1; 

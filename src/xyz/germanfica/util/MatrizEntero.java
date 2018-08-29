@@ -37,6 +37,58 @@ public class MatrizEntero {
 	private static Scanner scCargaDesdeArchivo;
 	
 	/**
+	 * Trasponer la matriz
+	 * 
+	 * @return Devuelve la matriz traspuesta.
+	 */
+	public static int[][] trasponer(int[][] matriz) {
+		// Declaración de variables
+		int[][] nuevaMatriz;
+		int cantFilas, cantColumnas;
+		
+		// Inicialización de variables
+		cantFilas = matriz[0].length; // Cantidad de filas de la matriz traspuesta
+		cantColumnas = matriz.length; // Cantidad de columnas de la matriz transpuesta
+		nuevaMatriz = new int[cantFilas][cantColumnas];
+		
+		// Trasponer
+		for (int i = 0; i <=cantFilas-1; i++) {
+			for (int j = 0; j <=cantColumnas-1; j++) {
+				nuevaMatriz[i][j] = matriz[j][i];
+			}
+		}
+		return nuevaMatriz;
+	}
+	
+	/**
+	 * Determina el producto por un escalar de una matriz.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @param escalar es el escalar.
+	 * @return Devuelve la matriz completa.
+	 */
+	public static int[][] productoPorUnEscalar(int[][] matriz, int escalar) {
+		// Declaración de variables
+		int[][] nuevaMatriz;
+		int cantFilas, cantColumnas;
+		
+		// Inicialización de variables
+		cantFilas = matriz.length;
+		cantColumnas = matriz[0].length;
+		nuevaMatriz = new int[cantFilas][cantColumnas];
+		
+		// Resolver el producto por un escalar
+		for (int i = 0; i <= cantFilas-1; i++) {
+			for (int j = 0; j <= cantColumnas-1; j++) {
+				nuevaMatriz[i][j] = matriz[i][j]*escalar;
+				System.out.println(nuevaMatriz[i][j]);
+			}
+		}
+		
+		return nuevaMatriz;
+	}
+	
+	/**
 	 * Determina si una matriz de enteros es diagonal.
 	 * 
 	 * @param matriz es la matriz de enteros.

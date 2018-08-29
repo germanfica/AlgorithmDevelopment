@@ -75,6 +75,37 @@ public class Ej2 {
 	}
 	
 	/*
+	 * [5] Producto por un escalar
+	 */
+	public static void mostrarProductoPorUnEscalar(int[][] matriz) {
+		// Declaración de variables
+		int[][] nuevaMatriz;
+		int escalar;
+		
+		// Inicialización de variables
+		escalar = 1;
+		
+		// Pedir el escalar
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese un escalar: ");
+		escalar = sc.nextInt();
+		
+		// Hacer el producto por un escalar
+		nuevaMatriz = MatrizEntero.productoPorUnEscalar(matriz, escalar);
+		
+		System.out.println("La matriz es: ");
+		MatrizEntero.mostrar(nuevaMatriz);
+	}
+	
+	/*
+	 * [6] Transponer la matriz
+	 */
+	public static void mostrarMatrizTraspuesta(int[][] matriz) {
+		//MatrizEntero.mostrar(matriz);
+		MatrizEntero.mostrar(MatrizEntero.trasponer(matriz));
+	}
+	
+	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelDeOpciones() {
@@ -83,8 +114,8 @@ public class Ej2 {
 				+ "[2] Verificar si la matriz es cuadrada (IMPLEMENTADO)\n"
 				+ "[3] Verificar si la matriz es Triangular Superior (IMPLEMENTADO)\n"
 				+ "[4] Verificar si la matriz es Matriz Diagonal (IMPLEMENTADO)\n"
-				+ "[5] Producto por un escalar\n"
-				+ "[6] Transponer la matriz\n"
+				+ "[5] Producto por un escalar (IMPLEMENTADO)\n"
+				+ "[6] Transponer la matriz (IMPLEMENTADO)\n"
 				+ "[7] Sumar los elementos de una fila determinada\n"
 				+ "[8] Sumar los elementos de una columna\n"
 				);
@@ -120,9 +151,9 @@ public class Ej2 {
 			// [4] Verificar si la matriz es Matriz Diagonal
 			case 4: mostrarEsDiagonal(enteros); break; // Opcion 4
 			// [5] Producto por un escalar
-			case 5: ; break; // Opcion 5
+			case 5: mostrarProductoPorUnEscalar(enteros);; break; // Opcion 5
 			// [6] Transponer la matriz
-			case 6: ; break; // Opcion 6
+			case 6: mostrarMatrizTraspuesta(enteros); break; // Opcion 6
 			// [7] Sumar los elementos de una fila determinada
 			case 7: ; break; // Opcion 7
 			// [8] Sumar los elementos de una columna
