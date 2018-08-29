@@ -1,8 +1,6 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
-
-import xyz.germanfica.util.Archivo;
 import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.Mensaje;
 
@@ -94,6 +92,7 @@ public class Ej2 {
 		int[][] enteros;
 		
 		// Inicialización de variables
+		System.out.println("Hola");
 		enteros = MatrizEntero.cargaDesdeArchivo(ARCHIVO);
 		mostrarMenu(enteros);
 	}
