@@ -45,7 +45,7 @@ public class ArregloEntero {
 	public static int cantNumPares(int[] enteros) {
 		int cantNumPares=0;
 		for (int i = 0; i <= enteros.length-1; i++) {
-			if(Paridad.esPar(enteros[i])) {
+			if(NumeroEntero.esPar(enteros[i])) {
 				cantNumPares++;
 			}
 		}
@@ -54,8 +54,10 @@ public class ArregloEntero {
 	
 	/**
 	 * Suma todos los elementos del arreglo
-	 * @param enteros
-	 * @return
+	 * 
+	 * @param enteros es el arreglo de enteros que se quiere analizar
+	 * @return devuelve la sumatoria de todos los elementos de
+	 * un arreglo de enteros
 	 */
 	public static int sumatoria(int[] enteros) {
 		int sumatoria=0;
@@ -66,12 +68,16 @@ public class ArregloEntero {
 	}
 	
 	/**
-	 * Suma los elementos desde una posiciÃ³n inicial dada
-	 * hasta la posiciÃ³n final solicitada
-	 * @param enteros
-	 * @param desde
-	 * @param hasta
-	 * @return
+	 * Suma los elementos desde una posición inicial dada
+	 * hasta la posición final solicitada de un arreglo de
+	 * enteros
+	 * 
+	 * @param enteros es el arreglo de enteros que se quiere analizar
+	 * @param desde es la posición inicial donde comienza la sumatoria
+	 * @param hasta es la posición final donde termina la sumatoria
+	 * @return devuelve la sumatoria de los elementos de un arreglo de
+	 * enteros desde la posición inicial hasta la posición final dada
+	 * por parámetro
 	 */
 	public static int sumatoria(int[] enteros, int desde, int hasta) {
 		int sumatoria=0;
@@ -82,11 +88,13 @@ public class ArregloEntero {
 	}
 	
 	/**
-	 * Verifica si existe el num solicitado en el arreglo
+	 * Verifica si el num solicitado existe en el arreglo
 	 * enviado por parametro
-	 * @param num
-	 * @param enteros
-	 * @return
+	 * 
+	 * @param num es el número al que se le quiere encontrar
+	 * coincidencia en el arreglo de enteros
+	 * @param enteros es el arreglo de enteros que se quiere analizar
+	 * @return devuelve lógico de la existencia del num solicitado
 	 */
 	public static boolean existeElNum(int num, int[] enteros) {
 		boolean existeElNum;
@@ -100,9 +108,11 @@ public class ArregloEntero {
 	}
 	
 	/**
-	 * Me devuelve el menor numero del arreglo
-	 * @param enteros
-	 * @return
+	 * Determina cuál es el menor numero de un arreglo
+	 * de enteros
+	 * 
+	 * @param enteros es el arreglo de enteros que se quiere analizar
+	 * @return devuelve el menor numero del arreglo
 	 */
 	public static int posDelMenorNumAlmacenado(int[] enteros) {
 		int menorNum = enteros[0];
@@ -131,7 +141,7 @@ public class ArregloEntero {
 	/**
 	 * Determina cual es el mayor promedio de las mitades
 	 * 
-	 * @param enteros arreglo de enteros que se quiere analizar
+	 * @param enteros es el arreglo de enteros que se quiere analizar
 	 * @return devuelve el mayor promedio de las mitades
 	 */
 	public static double mayorPromDeLasMitades(int[] enteros) {

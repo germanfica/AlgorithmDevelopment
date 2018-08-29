@@ -30,7 +30,7 @@ public class ArregloCaracter {
 	 */
 	public static void mostrarPosPar(char[] caracteres) {
 		for (int i = 0; i < caracteres.length; i++) {
-			if (Paridad.esPar(i)) {
+			if (NumeroEntero.esPar(i)) {
 				System.out.println(caracteres[i]);
 			}
 		}

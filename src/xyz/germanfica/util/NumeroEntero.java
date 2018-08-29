@@ -2,6 +2,16 @@ package xyz.germanfica.util;
 
 public class NumeroEntero {
 	
+	/**
+	 * Determian si un numero es par
+	 * 
+	 * @param num es un numero cualquiera de tipo entero
+	 * @return Retorna verdadero si num es par
+	 */
+	public static boolean esPar(int num) {
+		return num % 2 == 0;
+	}
+	
 	public static int[] intercambio(int x, int y) {
 		int[] vector = new int[2];
 		// Restar el primer numero al segundo
