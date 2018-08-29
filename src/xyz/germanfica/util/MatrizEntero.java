@@ -8,9 +8,11 @@ import java.util.Scanner;
  *
  */
 public class MatrizEntero {
-	private static Scanner sc;
-	private static Scanner scFila; // Como el Scanner se encarga de una tarea muy específica se ha optado a que resuelva solo la tarea de analizar las filas del contenido del archivo
-	private static Scanner scColumna; // Lo mismo para scColumna
+	private static Scanner sc; // Este Scanner solo se va a encargar de manejar las entradas del sistema.
+	private static Scanner scCargaFilaDesdeArchivo;
+	private static Scanner scCantFilas; // Como el Scanner se encarga de una tarea muy específica, y se estaba siendo forzado a hacer dos a la vez, para evitar que se pisen las tareas se ha optado a que resuelva solo la tarea de analizar las filas del contenido del archivo
+	private static Scanner scDimensiones; // Lo mismo para scColumna
+	private static Scanner scCargaDesdeArchivo;
 	
 	/*
 	 * Muestra todos los elementos de una matriz de enteros
@@ -33,22 +35,22 @@ public class MatrizEntero {
 	/*
 	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
 	 */
-	private static int cantFilas(String contenidoFila) {
+	private static int cantColumnas(String contenidoFila) {
 		// Declaración de variables
 		int cantFilas;
 		
 		// Inicialización de variables
 		cantFilas = 0;
 		
-		scFila = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
+		scCantFilas = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
 		
-		scFila.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
+		scCantFilas.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
 		
 		int i = 0;
 		
 		// Almacenar los elementos uno por uno
-		while(scFila.hasNext()) {
-			scFila.next(); // Importante, se debe llamar para verificar si hay un nuevo elemento en el contenido de la fila
+		while(scCantFilas.hasNext()) {
+			scCantFilas.next(); // Importante, se debe llamar para verificar si hay un nuevo elemento en el contenido de la fila
 			cantFilas++;
 			i=i+1;
 		}
@@ -65,31 +67,58 @@ public class MatrizEntero {
 	private static int[] dimensiones(String contenidoDelArchivo) {
 		// Declaración de variables
 		int[] dimensiones;
-		int cantFilas, cantColumnas, mayorCantFilas;
+		int cantFilas, cantColumnas, mayorCantColumnas;
 		String contenidoFila;
 		
 		// Inicialización de variables
 		dimensiones = new int[2];
 		cantFilas = 0;
 		cantColumnas = 0;
-		mayorCantFilas = 0;
+		mayorCantColumnas = 0;
 		
-		scColumna = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
-		scColumna.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
+		scDimensiones = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
+		scDimensiones.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
 		
 		// Almacenar los elementos uno por uno
-		while(scColumna.hasNext()) {
-			contenidoFila = scColumna.next();
-			cantFilas = cantFilas(contenidoFila);
-			if(cantFilas>mayorCantFilas) {
-				mayorCantFilas=cantFilas;
+		while(scDimensiones.hasNext()) {
+			contenidoFila = scDimensiones.next();
+			cantColumnas = cantColumnas(contenidoFila);
+			if(cantColumnas>mayorCantColumnas) {
+				mayorCantColumnas=cantColumnas;
 			}
-			cantFilas = 0;
-			cantColumnas++;
+			cantColumnas = 0;
+			cantFilas++;
 		}
-		dimensiones[0] = mayorCantFilas;
-		dimensiones[1] = cantColumnas;
+		dimensiones[0] = cantFilas;
+		dimensiones[1] = mayorCantColumnas;
 		return dimensiones;
+	}
+	
+	public static int[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
+		// Declaración de variables
+		int[] arreglo;
+		int j;
+		
+		// Inicialización de variables
+		arreglo = new int[cantColumnas];
+		j=0;
+		
+		// Carga de elementos
+		scCargaFilaDesdeArchivo = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
+		scCargaFilaDesdeArchivo.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
+		
+		while(scCargaFilaDesdeArchivo.hasNext()) {
+			try {
+				arreglo[j] = scCargaFilaDesdeArchivo.nextInt();
+				j++;
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.err.println("Porfavor borre los caracteres que son letras. Sólo se permiten números.");
+				System.exit(0); // Forzar a salir del programa
+			}
+			
+		}
+		return arreglo;
 	}
 	
 	/**
@@ -116,9 +145,8 @@ public class MatrizEntero {
 		// Declaración de variables
 		int[][] enteros;
 		int[] dimensiones;
-		int cantFilas;
-		int cantColumnas;
-		String contenidoDelArchivo;
+		int cantFilas, cantColumnas, i;
+		String contenidoDelArchivo, contenidoFila;
 		
 		// Inicialización de variables
 		contenidoDelArchivo = Archivo.leer(ARCHIVO);
@@ -126,8 +154,22 @@ public class MatrizEntero {
 		cantFilas = dimensiones[0];
 		cantColumnas = dimensiones[1];
 		enteros = new int[cantFilas][cantColumnas];
-		System.out.println("Cantidad de filas: " + cantFilas);
-		System.out.println("Cantidad de columnas: " + cantColumnas);
+		i = 0;
+		
+		// Carga de elementos
+		
+		scCargaDesdeArchivo = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
+		scCargaDesdeArchivo.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
+		
+		while(scCargaDesdeArchivo.hasNext()) {
+			contenidoFila = scCargaDesdeArchivo.next();
+			//System.out.println(contenidoFila);
+			enteros[i] = cargaFilaDesdeArchivo(contenidoFila, cantColumnas);
+			i++;
+		}
+		
+		//System.out.println("Cantidad de filas: " + enteros.length);
+		//System.out.println("Cantidad de columnas: " + enteros[0].length);
 		return enteros;
 	}
 	

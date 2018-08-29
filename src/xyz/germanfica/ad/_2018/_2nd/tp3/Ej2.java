@@ -92,7 +92,6 @@ public class Ej2 {
 		int[][] enteros;
 		
 		// Inicialización de variables
-		System.out.println("Hola");
 		enteros = MatrizEntero.cargaDesdeArchivo(ARCHIVO);
 		mostrarMenu(enteros);
 	}
