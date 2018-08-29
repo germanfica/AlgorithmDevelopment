@@ -31,6 +31,9 @@ public class MatrizEntero {
 		}
 	}
 	
+	/*
+	 * Se requiere para el módulo 'cargaDesdeArchivo(ARCHIVO)'.
+	 */
 	private static int[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
 		// Declaración de variables
 		int[] arreglo;
@@ -70,9 +73,10 @@ public class MatrizEntero {
 	 * Fila 1: 0,2,3,4,5,8;
 	 * Fila 2: 1,2,2,3,2,8;
 	 * 
-	 * Por defecto, si existe una fila con mayor cantidad de elementos que
+	 * Si existe una fila con mayor cantidad de elementos que
 	 * las demas, la dimension de las filas será de dicha dimensión,
-	 * es decir la de mayor cantidad de elementos.
+	 * es decir la de mayor cantidad de elementos. El valor de los
+	 * elementos no asignados es por defecto 0.
 	 * 
 	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
 	 * Para obtener el contenido del archivo sólo basta con llamar al módulo
