@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class MatrizEntero {
 	private static Scanner sc;
+	private static Scanner scFila;
+	private static Scanner scColumna;
 	
 	/*
 	 * Muestra todos los elementos de una matriz de enteros
@@ -38,44 +40,20 @@ public class MatrizEntero {
 		// Inicialización de variables
 		cantFilas = 0;
 		
-		sc = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
+		scFila = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
 		
-		sc.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
+		scFila.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
 		
 		int i = 0;
 		
 		// Almacenar los elementos uno por uno
-		while(sc.hasNext()) {
+		while(scFila.hasNext()) {
+			scFila.next(); // Importante, se debe llamar para verificar si hay un nuevo elemento en el contenido de la fila
 			cantFilas++;
 			i=i+1;
 		}
 		
 		return cantFilas;
-	}
-	
-	/*
-	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
-	 */
-	private static int cantColumnas(String contenidoColumna) {
-		// Declaración de variables
-		int cantColumnas;
-		
-		// Inicialización de variables
-		cantColumnas = 0;
-		
-		sc = new Scanner(contenidoColumna); // Le digo al scanner que me analice el contenido del archivo
-		
-		sc.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra una coma
-		
-		int i = 0;
-		
-		// Almacenar los elementos uno por uno
-		while(sc.hasNext()) {
-			cantColumnas++;
-			i=i+1;
-		}
-		
-		return cantColumnas;
 	}
 	
 	/*
@@ -96,33 +74,27 @@ public class MatrizEntero {
 		cantColumnas = 0;
 		mayorCantFilas = 0;
 		
-		sc = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
-		
-		sc.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra una coma
-		
-		int i = 0;
+		scColumna = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
+		scColumna.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
 		
 		// Almacenar los elementos uno por uno
-		while(sc.hasNext()) {
-			contenidoFila = sc.next();
-			//cantFilas = cantFilas(contenidoFila);
+		while(scColumna.hasNext()) {
+			contenidoFila = scColumna.next();
+			cantFilas = cantFilas(contenidoFila);
 			if(cantFilas>mayorCantFilas) {
 				mayorCantFilas=cantFilas;
 			}
 			cantFilas = 0;
 			cantColumnas++;
-			System.out.println(contenidoFila);
-			System.out.println(cantFilas);
-			i=i+1;
 		}
-		
 		dimensiones[0] = mayorCantFilas;
 		dimensiones[1] = cantColumnas;
-		
 		return dimensiones;
 	}
 	
 	/**
+	 * 
+	 * 
 	 * Este módulo solo funciona con el siguiente formato:
 	 *  . Los elementos de cada fila deben ir separados con una ','.
 	 *  . Al final de cada columna debe terminar con un ';'.
@@ -131,6 +103,10 @@ public class MatrizEntero {
 	 * Fila 0: 0,2,3,4,5,8;
 	 * Fila 1: 0,2,3,4,5,8;
 	 * Fila 2: 1,2,2,3,2,8;
+	 * 
+	 * Por defecto, si existe una fila con mayor cantidad de elementos que
+	 * las demas, la dimension de las filas será de dicha dimensión,
+	 * es decir la de mayor cantidad de elementos.
 	 * 
 	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
 	 * @return devuelve una matriz de enteros cargada con los elementos
