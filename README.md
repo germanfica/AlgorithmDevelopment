@@ -1,7 +1,7 @@
 # Java
-Este repositorio tiene como objetivo brindar utilidades b·sicas para el desarrollo con Java.
+Este repositorio tiene como objetivo brindar utilidades b√°sicas para el desarrollo con Java.
 
-## CrÈditos
+## Cr√©ditos
 - [German Fica](https://www.instagram.com/germanfica/)
 
 ## Licencia
