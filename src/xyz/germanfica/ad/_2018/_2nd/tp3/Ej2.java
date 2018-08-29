@@ -94,7 +94,7 @@ public class Ej2 {
 		int[][] enteros;
 		
 		// Inicialización de variables
-		enteros = cargaDesdeArchivo(ARCHIVO);
+		enteros = MatrizEntero.cargaDesdeArchivo(ARCHIVO);
 		mostrarMenu(enteros);
 	}
 }

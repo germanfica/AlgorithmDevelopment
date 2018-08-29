@@ -67,7 +67,7 @@ public class MatrizEntero {
 		return cantColumnas;
 	}
 	
-	public static int[] dimensiones(String contenidoDelArchivo) {
+	private static int[] dimensiones(String contenidoDelArchivo) {
 		// Declaración de variables
 		int[] dimensiones;
 		int cantFilas, cantColumnas;
@@ -85,6 +85,7 @@ public class MatrizEntero {
 		
 		// Almacenar los elementos uno por uno
 		while(sc.hasNext()) {
+			//cantFilas = cantFilas()
 			System.out.println(sc.next());
 			i=i+1;
 		}
@@ -115,12 +116,11 @@ public class MatrizEntero {
 		int cantColumnas;
 		
 		// Inicialización de variables
-		dimensiones = dimensiones();// Determinar la cantidad de filas y columnas
+		dimensiones = dimensiones(Archivo.leer(ARCHIVO));// Determinar la cantidad de filas y columnas
 		cantFilas = dimensiones[0];
 		cantColumnas = dimensiones[1];
 		
 		enteros = new int[2][2];
-		System.out.println(Archivo.leer(ARCHIVO));
 		
 		return enteros;
 	}
