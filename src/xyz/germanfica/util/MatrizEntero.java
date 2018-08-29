@@ -3,9 +3,10 @@ package xyz.germanfica.util;
 import java.util.Scanner;
 
 /**
+ * Esta clase contiene los módulos relacionados con las matrices
+ * de enteros
  * 
  * @author German Fica
- *
  */
 public class MatrizEntero {
 	private static Scanner sc; // Este Scanner solo se va a encargar de manejar las entradas del sistema.
