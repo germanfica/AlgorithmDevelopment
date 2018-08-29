@@ -81,7 +81,7 @@ public class ArregloPalabra {
 	
 	/**
 	 * Encontrar en un arreglo de palabras la coincidencia de una
-	 * palabra dada
+	 * palabra dada sin importar las mayúsculas o minúsculas
 	 * 
 	 * @param palabras el arreglo que se quiere analizar
 	 * @param palabra la coincidencia que se quiere encontrar
@@ -90,7 +90,7 @@ public class ArregloPalabra {
 	public static int posDeLaPalabra(String[] palabras, String palabra) {
 		int pos = -1; 
 		for (int i = 0; i < palabras.length; i++) {
-			if(palabras[i].equals(palabra)) {
+			if(palabras[i].equalsIgnoreCase(palabra)) {
 				pos = i;
 			}
 		}
