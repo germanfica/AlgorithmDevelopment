@@ -37,8 +37,9 @@ public class MatrizEntero {
 	private static Scanner scCargaDesdeArchivo;
 	
 	/**
-	 * Trasponer la matriz
+	 * Trasponer la matriz.
 	 * 
+	 * @param matriz es la matriz de enteros.
 	 * @return Devuelve la matriz traspuesta.
 	 */
 	public static int[][] trasponer(int[][] matriz) {
