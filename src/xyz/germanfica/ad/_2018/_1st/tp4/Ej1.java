@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
-
 import xyz.germanfica.util.Archivo;
+
 /*
  * Notas:
  * Los codigos de colores solo identifican un orden en el uso de colores, en una
@@ -23,7 +23,7 @@ public class Ej1 {
 	private static Scanner scJ;
 	
 	/**
-	 * (1) Retorna la sumatoria de un nÃºmero dado.
+	 * (1) Retorna la sumatoria de un número dado.
 	 * 
 	 * @see Dada la cantidad de colores usados, determina el factor resultante de sumar
 	 * los codigos de orden. Este trabajo de impresion se define como de 2da calidad.
@@ -40,11 +40,11 @@ public class Ej1 {
 			sumatoria = 1; // Caso base
 		}
 			 
-		return sumatoria ; // Retorna la sumatoria de un nÃºmero dado
+		return sumatoria ; // Retorna la sumatoria de un número dado
 	}
 	
 	/**
-	 * (2) Retorna el factorial de un nÃºmero dado.
+	 * (2) Retorna el factorial de un número dado.
 	 * 
 	 * @see Para ciertos trabajos que requieren una calidad de impresion muy superior, se
 	 * utiliza un factor distinto, resultante de calcular el factorial de la cantidad
@@ -63,7 +63,7 @@ public class Ej1 {
 			factorial = 1; // Caso base
 		}
 			 
-		return factorial ; // Retorna el factorial de un nÃºmero dado
+		return factorial ; // Retorna el factorial de un número dado
 	}
 	
 	/**
@@ -78,8 +78,8 @@ public class Ej1 {
 		String[] arreglo = new String[longitud];
 		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
 		
-		// Convercion a mayÃºsculas antes de realizar la carga al arreglo
-		contenidoDelArchivo = pasarAMayÃºsculas(contenidoDelArchivo);
+		// Convercion a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
 		
 		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
@@ -99,7 +99,7 @@ public class Ej1 {
 	/**
 	 * (3.2) Mostrar todos los colores con sus respectivos codigos asociados.
 	 * 
-	 * @see Muestre el color con los codigos numÃ©ricos asociados a cada uno.
+	 * @see Muestre el color con los codigos numéricos asociados a cada uno.
 	 */
 	public static void mostrarColores(String[] colores) {
 		int i = 0;
@@ -110,15 +110,15 @@ public class Ej1 {
 	}
 	
 	/**
-	 * (4) Convierte a mayÃºsculas todos los colores que estÃ¡n en minÃºscula.
+	 * (4) Convierte a mayúsculas todos los colores que están en minúscula.
 	 * 
-	 * @see Todos los colores usados y recuperados del archivo de texto estÃ¡n en
-	 * minÃºscula. Lo mejor es guardarlos en mayÃºscula, entonces antes de cargar el
-	 * arreglo deben ser convertidos. Realizar un algoritmo que convierta en mayÃºscula
-	 * el color dado en minÃºscula. Probarlo en el algoritmo hecho en 3.
+	 * @see Todos los colores usados y recuperados del archivo de texto están en
+	 * minúscula. Lo mejor es guardarlos en mayúscula, entonces antes de cargar el
+	 * arreglo deben ser convertidos. Realizar un algoritmo que convierta en mayúscula
+	 * el color dado en minúscula. Probarlo en el algoritmo hecho en 3.
 	 * @param args
 	 */
-	public static String pasarAMayÃºsculas(String contenido) {
+	public static String pasarAMayúsculas(String contenido) {
 		String nuevoContenido = "";
 		
 		sc = new Scanner(contenido);
@@ -137,9 +137,9 @@ public class Ej1 {
 	/**
 	 * (5) Cambia las vocales a un '*' en las impresiones de 2da calidad.
 	 * 
-	 * @see La mÃ¡quina de impresion de 2da calidad tiene una falla: No entiende las
-	 * vocales. Para usarla antes de convertir a mayÃºscula, hay que cambiar las vocales
-	 * a un â€˜*â€™. La informacion es provista por el mismo archivo de texto del punto 3.
+	 * @see La máquina de impresion de 2da calidad tiene una falla: No entiende las
+	 * vocales. Para usarla antes de convertir a mayúscula, hay que cambiar las vocales
+	 * a un '*'. La informacion es provista por el mismo archivo de texto del punto 3.
 	 */
 	public static String cambioAVocales(String contenido){
 		char c;
@@ -161,7 +161,7 @@ public class Ej1 {
 	 * @see  Realizar un algoritmo que permita decir si un color determinado es usado en la
 	 * impresion. Para esto debe recorrer el arreglo de colores, considere que la
 	 * impresion a realizar es de 1ra calidad (no tiene cambiadas las vocales por "*").
-	 * Â¿Como lo resolverÃ­as para ambos casos?
+	 * ¿Como lo resolverías para ambos casos?
 	 */
 	public static void verificarColorImpresion(String[] colores) {
 		sc = new Scanner(System.in);
@@ -196,12 +196,12 @@ public class Ej1 {
 	/**
 	 * (7) 
 	 * 
-	 * @see Se han guardado las impresiones realizadas en el mes en una matriz numÃ©rica.
+	 * @see Se han guardado las impresiones realizadas en el mes en una matriz numérica.
 	 * Las columnas representan a los colores y las filas a las impresiones hechas en el mes.
 	 * Recorrer recursivamente la matriz de impresiones por fila y mostrar la suma (factor
 	 * de impresion de 2da calidad).
 	 * 
-	 * Esto es solo una nota adicional: los codigos de orden no estÃ¡n ordenados por fila, ya
+	 * Esto es solo una nota adicional: los codigos de orden no están ordenados por fila, ya
 	 * que no todas las impresiones usaron los mismo colores.
 	 */
 	
@@ -209,8 +209,8 @@ public class Ej1 {
 		int[][] matriz = new int[longitudFila][longitudColumna];
 		String contenidoDelArchivo = Archivo.leer(IMPRESIONES_ARCHIVO);
 		
-		// Convercion a mayÃºsculas antes de realizar la carga al arreglo
-		contenidoDelArchivo = pasarAMayÃºsculas(contenidoDelArchivo);
+		// Convercion a mayúsculas antes de realizar la carga al arreglo
+		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
 		BufferedReader buff;
 		try {
 			buff = new BufferedReader(new FileReader(IMPRESIONES_ARCHIVO));
@@ -219,7 +219,7 @@ public class Ej1 {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // Obtener los datos que estÃ¡n en el archivo de texto
+		} // Obtener los datos que están en el archivo de texto
 		//scI.useDelimiter("\\s*,\\s*");
 		
 		//int i = 0;
@@ -251,9 +251,9 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Mostrar menÃº de opciones
+	 * Mostrar menú de opciones
 	 */
-	public static void mostrarMenÃº() {
+	public static void mostrarMenú() {
 		// Declaracion de las variables
 		int[][] matrizColores;
 		String[] colores;
@@ -284,7 +284,7 @@ public class Ej1 {
 					"[6] Verificar si un color determinado es usado en la impresion (IMPLEMENTADO)\n"
 					);
 			
-			// Leer opcion para el menÃº principal
+			// Leer opcion para el menú principal
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
@@ -310,13 +310,13 @@ public class Ej1 {
 				verificarColorImpresion(colores);
 				break;
 			default:
-				System.err.println("Esta opcion no estÃ¡ definida. Seleccione una de las siguientes opciones: ");
+				System.err.println("Esta opcion no está definida. Seleccione una de las siguientes opciones: ");
 				break;
 			}
 		}
 	}
 	
 	public static void main(String[] args) {
-		mostrarMenÃº();
+		mostrarMenú();
 	}
 }

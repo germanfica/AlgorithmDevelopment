@@ -39,7 +39,7 @@ public class Ej2 {
 	 * Mostrar el menu de la aplicacion
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
-	public static void mostrarMenu(String[] palabras) {
+	public static void mostrarMenu(int[][] enteros) {
 		boolean salir = false;
 		int opcion;
 		
@@ -75,5 +75,14 @@ public class Ej2 {
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		// Declaración de variables
+		int[][] enteros;
+		
+		// Inicialización de variables
+		enteros = new int[2][2];
+		mostrarMenu(enteros);
 	}
 }

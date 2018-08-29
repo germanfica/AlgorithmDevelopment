@@ -6,27 +6,27 @@ public class Ej2 {
 	/*
 	 * 1- Dada una matriz de n filas y 2 columnas correspondientes a apellido, nombre del estudiante, y direccion de email.
 	 * 
-	 * Implementar en java un mÃ©todo que retorne un arreglo de n strings formados con el apellido
+	 * Implementar en java un método que retorne un arreglo de n strings formados con el apellido
 	 * (la/s palabra/s antes de la "," de la primer columna de cada fila ) seguida de un espacio,
 	 * seguida de la direccion de email, (solo para los estudiantes que tiene direccion en la fi.,
-	 * que la Ãºltima parte se "@fi.uncoma.edu.ar", caso contrario, que no tenga direccion.
+	 * que la última parte se "@fi.uncoma.edu.ar", caso contrario, que no tenga direccion.
 	 * 
 	 * Consejo para el parcial: para el parcial al usar arreglos solo utilizarlo con los tipos
 	 * primitivos de java, ya que lleva tiempo y solo se evalua arreglos.
 	 * 
-	 * Nota: Solamente puede utilizar los siguientes mÃ©todos en Java:
+	 * Nota: Solamente puede utilizar los siguientes métodos en Java:
 	 *  - charAt(pos) <- devuelve la letra correspondiente a la posicion.
 	 *  - substring(pos) <- devuelve un String formado desde la posicion pos hasta el final
 	 *  - indexOf(otroString) <- Retorna la posicion de la primer ocurrencia de otroString dentro del String llamador
 	 *  - compareTo(otroString) <- Compara el string llamador con otroString Si el objeto llamador es menor que
-	 *  - otroString devuelve un valor negativo, si son iguales devuelve 0 y si no devuelve un nÃºmero positivo.
+	 *  - otroString devuelve un valor negativo, si son iguales devuelve 0 y si no devuelve un número positivo.
 	 */
 	static Scanner sc;
 	
 	/**
 	 * Retorna un arreglo de n strings formados con el apellido (la/s palabra/s antes de la ","
 	 * de la primer columna de cada fila ) seguida de un espacio, seguida de la direccion de
-	 * email, (solo para los estudiantes que tiene direccion en la fi., que la Ãºltima parte se
+	 * email, (solo para los estudiantes que tiene direccion en la fi., que la última parte se
 	 * "@fi.uncoma.edu.ar", caso contrario, que no tenga direccion.
 	 * @param matriz
 	 * @return
@@ -78,7 +78,8 @@ public class Ej2 {
 	}
 	
 	/**
-	 * Cargar de elementos a una matriz de String
+	 * Carga de elementos a una matriz de String
+	 * 
 	 * @param cantidadDeFilas
 	 * @return
 	 */
@@ -104,20 +105,20 @@ public class Ej2 {
 	}
 	
 	/*
-	 * Para no crear el modulo mostrarMenÃº en el parcial:
+	 * Para no crear el modulo mostrarMenú en el parcial:
 	 * 
 	 * Aclarar con un comentario:
-	 *  - No hice el modulo mostrarMenÃº ni un algoritmo principal ya que
+	 *  - No hice el modulo mostrarMenú ni un algoritmo principal ya que
 	 *  se supone que los parametros recibidos por cada modulo que resuelven la 
-	 *  el algoritmo son evÃ­ados desde el algoritmo principal.
+	 *  el algoritmo son evíados desde el algoritmo principal.
 	 */
 	
 	
 	/**
-	 * Mostrar menÃº de opciones
+	 * Mostrar menú de opciones
 	 * @param cantidadDeFilas
 	 */
-	public static void mostrarMenÃº(int cantidadDeFilas) {
+	public static void mostrarMenú(int cantidadDeFilas) {
 		String[][] matriz;
 		boolean salir;
 		int opcion;
@@ -140,7 +141,7 @@ public class Ej2 {
 					"[1] Ejecutar la regla\n"
 					);
 			
-			// Leer opcion del menÃº principal
+			// Leer opcion del menú principal
 			opcion = sc.nextInt();
 			
 			switch (opcion) {
@@ -166,7 +167,7 @@ public class Ej2 {
 		sc = new Scanner(System.in);
 		cantidadDeFilas = sc.nextInt();
 		
-		mostrarMenÃº(cantidadDeFilas);
+		mostrarMenú(cantidadDeFilas);
 		
 	}
 }

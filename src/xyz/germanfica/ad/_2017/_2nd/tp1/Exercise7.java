@@ -15,16 +15,16 @@ public class Exercise7 {
 	/*
 	 *  En una exposicion de vehiculos se administra la informacion de los autos
 	 *  que eston exhibidos. Para cada auto se desea conocer: patente,
-	 *  marca, aÃ±o de fabricacion, color y capacidad (cantidad de
+	 *  marca, año de fabricacion, color y capacidad (cantidad de
 	 *  personas sentadas y cinturon de seguridad disponible).
 	 *  
 	 *  En base a la informacion relevada se desea mostrar:
 	 *  
-	 *  a) La cantidad de vehï¿½culos rojos.
+	 *  a) La cantidad de vehículos rojos.
 	 *  b) La capacidad promedio de los autos exhibidos.
-	 *  c) La marca de vehï¿½culos que mï¿½s autos exhibe en la exposicion.
+	 *  c) La marca de vehículos que más autos exhibe en la exposicion.
 	 *  
-	 *  Diseï¿½ar el algoritmo principal y los mï¿½dulos correspondientes. Implementar
+	 *  Diseñar el algoritmo principal y los módulos correspondientes. Implementar
 	 *  en Java.
 	 *  
 	 *  Aclaracion de German: en el enunciado se menciona que:  ya se cuenta con
@@ -183,17 +183,17 @@ public class Exercise7 {
 		case 5:
 			System.out.print("||Bievenido a expo gestion de vehiculos||"+"\n"+
 							 "0- Para finalizar el programa."+"\n" +
-							 "1- Agregar vehï¿½culo a la exposicion."+"\n" +
+							 "1- Agregar vehículo a la exposicion."+"\n" +
 							 "2- Limpiar lista de vehiculos."+"\n" +
 							 "3- Mostrar lista de vehiculos."+"\n" +
-							 "4- Mostrar la cantidad de vehï¿½culos rojos."+"\n" +
+							 "4- Mostrar la cantidad de vehículos rojos."+"\n" +
 							 "5- Mostrar la capacidad promedio de los autos exhibidos. (NO DISPONIBLE)"+"\n" +
-							 "6- Mostrar la marca de vehï¿½culos mï¿½s usada en la exposiciï¿½n."
+							 "6- Mostrar la marca de vehículos más usada en la exposición."
 							 +"\n"
 							 );
 			break;
 		case 6:
-			System.out.println("||Agregar vehiculo a la exposiciï¿½n||");
+			System.out.println("||Agregar vehiculo a la exposición||");
 			break;
 		case 7:
 			break;
@@ -283,7 +283,7 @@ public class Exercise7 {
 			// Close the file.
 			save.close(); // This also closes saveFile.
 			
-			System.out.println("Vehï¿½culo agregado exitosamente.");
+			System.out.println("Vehículo agregado exitosamente.");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -336,7 +336,7 @@ public class Exercise7 {
 		int initialPoint=0;
 		// Restore data from disk
 		String diskData = loadVehicleDataFromDisk();
-		System.out.print("Lista de vehï¿½culos: "+"\n");
+		System.out.print("Lista de vehículos: "+"\n");
 		for(int endPoint=0;endPoint<diskData.length();endPoint++) {
 			if(diskData.charAt(endPoint)==';') {
 				System.out.println(diskData.substring(initialPoint, endPoint));

@@ -6,29 +6,29 @@ public class Ej1 {
 	private static Scanner sc;
 	
 	/**
-	 * Determina si un nÃºmero entero es par.
+	 * Determina si un número entero es par.
 	 */
-	public static boolean esPar(int nÃºmero)
+	public static boolean esPar(int número)
 	{
 		boolean esPar = false;
-		if(nÃºmero%2==0)
+		if(número%2==0)
 			esPar = true;
 		
 		return esPar;
 	}
 	
 	/**
-	 * Determinar la cantidad de divisores enteros de un nÃºmero entero.
+	 * Determinar la cantidad de divisores enteros de un número entero.
 	 */
-	public static int divisoresEnteros(int nÃºmero)
+	public static int divisoresEnteros(int número)
 	{
-		int Ã­ndice, resultado;
+		int índice, resultado;
 		
 		resultado = 0; // Inicializar entero
 				
 		// Determinar divisores
-		for(Ã­ndice = nÃºmero; Ã­ndice>1;Ã­ndice--) {
-			if(nÃºmero%Ã­ndice==0) {
+		for(índice = número; índice>1;índice--) {
+			if(número%índice==0) {
 				resultado = resultado + 1;
 			}
 		}
@@ -37,30 +37,30 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Cargar elementos posibles primos de un nÃºmero a un arreglo.
+	 * Carga elementos posibles primos de un número a un arreglo.
 	 * @param n
 	 * @return
 	 */
 	public static int[] cargarPrimos(int n) 
 	{
-		int Ã­ndice, primosEncontrados;
+		int índice, primosEncontrados;
 		int[] primo, resultado;
 		
 		primosEncontrados = 0; // Inicializar entero
 		primo = new int[n]; // Inicializar arreglo
 		
 		// Buscar posible primo
-		for(Ã­ndice = 2; Ã­ndice<=primo.length;Ã­ndice++) {	
-			if(divisoresEnteros(Ã­ndice) == 1) {
+		for(índice = 2; índice<=primo.length;índice++) {	
+			if(divisoresEnteros(índice) == 1) {
 				primosEncontrados = primosEncontrados + 1;
-				primo[primosEncontrados-1] = Ã­ndice;
+				primo[primosEncontrados-1] = índice;
 			}
 		}
 		
-		// Crear nuevo arreglo con la cantidad correcta de nÃºmero primos.
+		// Crear nuevo arreglo con la cantidad correcta de número primos.
 		resultado = new int[primosEncontrados];
-		for(Ã­ndice = 0; Ã­ndice < resultado.length; Ã­ndice++) {
-			resultado[Ã­ndice] = primo[Ã­ndice];
+		for(índice = 0; índice < resultado.length; índice++) {
+			resultado[índice] = primo[índice];
 		}
 		
 		return resultado;
@@ -71,17 +71,17 @@ public class Ej1 {
 	 */
 	public static int[] cargarDatos(int[] pieza)
 	{
-		int Ã­ndice;
+		int índice;
 		
 		// Crear scanner
 		sc = new Scanner(System.in);
 		
-		for(Ã­ndice = 0; Ã­ndice< pieza.length;Ã­ndice++)
+		for(índice = 0; índice< pieza.length;índice++)
 		{
-			if(esPar(Ã­ndice)) {
-				pieza[Ã­ndice] = sc.nextInt(); // Codigo de la pieza
+			if(esPar(índice)) {
+				pieza[índice] = sc.nextInt(); // Codigo de la pieza
 			}else {
-				pieza[Ã­ndice] = sc.nextInt(); // Cantidad usada de esa pieza
+				pieza[índice] = sc.nextInt(); // Cantidad usada de esa pieza
 			}
 		}
 		
@@ -100,16 +100,16 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Determinar la parte entera de la raÃ­z cuadrada de cualquier
-	 * nÃºmero entero.
+	 * Determinar la parte entera de la raíz cuadrada de cualquier
+	 * número entero.
 	 */
-	public static int raÃ­zCuadradaEntera(int nÃºmero) {
+	public static int raízCuadradaEntera(int número) {
 		int parteEntera, base, exponente;
 		parteEntera = 0; // Indicar parte entera
 		base = parteEntera;
 		exponente = parteEntera;
 		
-		while(potencia(base, exponente)<=nÃºmero)
+		while(potencia(base, exponente)<=número)
 		{
 			parteEntera = parteEntera + 1;
 			base = parteEntera;
@@ -120,38 +120,38 @@ public class Ej1 {
 	}
 	
 	/**
-	 * Determina si un nÃºmero entero es primo o no.
+	 * Determina si un número entero es primo o no.
 	 */
 	public static boolean esPrimo(int n) {
 		boolean respuesta;
-		int Ã­ndice;
+		int índice;
 		respuesta = false;
-		// Teorema fundamental de la aritmÃ©tica
+		// Teorema fundamental de la aritmética
 		if(n!=1 && n!=-1 && n!=0)
 		{
 			//Como n > 1, si n no es primo entonces existe un primo p
 			// tal que p|n y p<=raizCuadradaEntera(n)
 			int [] p;
-			p = cargarPrimos(raÃ­zCuadradaEntera(n));
+			p = cargarPrimos(raízCuadradaEntera(n));
 			
 			respuesta = true; // Es primo
 			
 			// Determinar si no es primo (nueva implementacion)
-			Ã­ndice = 0;
-			while(Ã­ndice < p.length) {
-				if(n%p[Ã­ndice]==0 && n!=p[Ã­ndice]) {
+			índice = 0;
+			while(índice < p.length) {
+				if(n%p[índice]==0 && n!=p[índice]) {
 					respuesta = false;
-					Ã­ndice = p.length;
+					índice = p.length;
 				}
-				Ã­ndice++;
+				índice++;
 			}
 			
 			// Determinar si no es primo (no me convence)
 			/*
-			for(Ã­ndice = 0;Ã­ndice < p.length;Ã­ndice++)
+			for(índice = 0;índice < p.length;índice++)
 			{
-				//System.out.println("n: " + n + " Ã­ndice: " + Ã­ndice);
-				if(n%p[Ã­ndice]==0 && n!=p[Ã­ndice])
+				//System.out.println("n: " + n + " índice: " + índice);
+				if(n%p[índice]==0 && n!=p[índice])
 				{
 					respuesta = 0;
 					//System.out.println(n);
@@ -187,24 +187,24 @@ public class Ej1 {
 	 */
 	public static boolean esCreciente(int[] pieza) {
 		boolean respuesta;
-		int Ã­ndice = pieza[3];
+		int índice = pieza[3];
 		respuesta = true;
 		
 		// Optimizado
-		while(Ã­ndice <= pieza.length-1 && !respuesta) 
+		while(índice <= pieza.length-1 && !respuesta) 
 		{
-			if(pieza[Ã­ndice-2]>pieza[Ã­ndice] && !esPar(Ã­ndice)) {
+			if(pieza[índice-2]>pieza[índice] && !esPar(índice)) {
 				respuesta = false;
 			}
 			
-			Ã­ndice++;
+			índice++;
 		}
 		
 		// Mal empleado.
 		/*
-		for(int Ã­ndice = 0; Ã­ndice <= pieza.length-1;Ã­ndice++) {
-			if(!esPar(Ã­ndice)) {
-				if(pieza[Ã­ndice-1]>pieza[Ã­ndice]) {
+		for(int índice = 0; índice <= pieza.length-1;índice++) {
+			if(!esPar(índice)) {
+				if(pieza[índice-1]>pieza[índice]) {
 					respuesta = 0;
 				}
 			}
@@ -224,9 +224,9 @@ public class Ej1 {
 	{
 		int promedio = 0;
 		
-		for(int Ã­ndice=0;Ã­ndice<=(pieza.length-1);Ã­ndice++) {
-			if(!esPar(Ã­ndice)) {
-				promedio = promedio + pieza[Ã­ndice];
+		for(int índice=0;índice<=(pieza.length-1);índice++) {
+			if(!esPar(índice)) {
+				promedio = promedio + pieza[índice];
 			}
 		}
 		promedio=promedio/(pieza.length/2);
@@ -244,8 +244,8 @@ public class Ej1 {
 	{
 		int primos = 0;
 
-		for(int Ã­ndice=0;Ã­ndice <= pieza.length-1;Ã­ndice++) {
-			if(esPrimo(pieza[Ã­ndice]) && esPar(Ã­ndice)){
+		for(int índice=0;índice <= pieza.length-1;índice++) {
+			if(esPrimo(pieza[índice]) && esPar(índice)){
 				primos = primos + 1;
 			}
 		}
@@ -259,11 +259,11 @@ public class Ej1 {
 	 * @return
 	 */
 	public static int piezaMenosUsada(int[] pieza) {
-		int piezaMenosUsada = pieza[1], Ã­ndice;
+		int piezaMenosUsada = pieza[1], índice;
 		
-		for(Ã­ndice = 0;Ã­ndice <= pieza.length-1;Ã­ndice++) {
-			if(pieza[Ã­ndice] <= piezaMenosUsada && !esPar(Ã­ndice)) {
-				piezaMenosUsada = pieza[Ã­ndice-1];
+		for(índice = 0;índice <= pieza.length-1;índice++) {
+			if(pieza[índice] <= piezaMenosUsada && !esPar(índice)) {
+				piezaMenosUsada = pieza[índice-1];
 			}
 		}
 		
@@ -276,29 +276,29 @@ public class Ej1 {
 	 * @return
 	 */
 	public static int piezaMasUsada(int[] pieza) {
-		int piezaMasUsada = pieza[1], Ã­ndice;
+		int piezaMasUsada = pieza[1], índice;
 		
-		for(Ã­ndice = 0;Ã­ndice <= pieza.length-1;Ã­ndice++) {
-			if(pieza[Ã­ndice] >= piezaMasUsada && !esPar(Ã­ndice)) {
-				piezaMasUsada = pieza[Ã­ndice-1];
+		for(índice = 0;índice <= pieza.length-1;índice++) {
+			if(pieza[índice] >= piezaMasUsada && !esPar(índice)) {
+				piezaMasUsada = pieza[índice-1];
 			}
 		}
 		
 		return piezaMasUsada;
 	}
 	
-	public static void mostrarMenÃº(int[] pieza)
+	public static void mostrarMenú(int[] pieza)
 	{
 		int opcion;
 		boolean terminarPrograma;
-		// MenÃº principal
+		// Menú principal
 		terminarPrograma = false;
 		while(!terminarPrograma)
 		{
-			// Carteles del menÃº principal
+			// Carteles del menú principal
 			System.out.println("0- Salir del programa.");
 			System.out.println("1- Cargar datos.");
-			System.out.println("2- Verificar regla de la compaÃ±Ã­a.");
+			System.out.println("2- Verificar regla de la compañía.");
 			System.out.println("3- Promedio de la cantidad de piezas.");
 			System.out.println("4- Verificar si las cantidades de piezas estan ordenadas en forma creciente.");
 			System.out.println("5- La pieza mas usada.");
@@ -339,7 +339,7 @@ public class Ej1 {
 					System.out.println("La pieza menos usada es: " + piezaMenosUsada(pieza));
 					break;
 				case -1:
-					// Eficiencia de 4 segundos con el nÃºmero 2147309137
+					// Eficiencia de 4 segundos con el número 2147309137
 					long start = System.currentTimeMillis();
 					System.out.println("Es primo: " + esPrimo(2147309137));
 					// calcular tiempo transcurrido
@@ -348,7 +348,7 @@ public class Ej1 {
 					System.out.println("Segundos: " + res / 1000);
 					break;
 				case -2:
-					// Determinar si un nÃºmero es primo o no
+					// Determinar si un número es primo o no
 					int test = sc.nextInt();
 					start = System.currentTimeMillis();
 					System.out.println(test + " es primo? Respuesta: " + esPrimo(test));
@@ -358,14 +358,14 @@ public class Ej1 {
 					System.out.println("Segundos: " + res / 1000);
 					break;
 				default:
-					System.out.println("Solo estan disponibles las opciones del menÃº.");
+					System.out.println("Solo estan disponibles las opciones del menú.");
 					break;
 			}
 		}
 	}
 		
 	/**
-	 * Leer n piezas y mostrar menÃº con opciones.
+	 * Leer n piezas y mostrar menú con opciones.
 	 */
 	public static void main(String[] args) {
 		int longitud, cn;
@@ -382,10 +382,10 @@ public class Ej1 {
 		pieza = new int[longitud]; // Inicilizar arreglo
 		
 		if(cn>=2){
-			mostrarMenÃº(pieza);
+			mostrarMenú(pieza);
 		}else
 		{
-			System.out.println("Ingrese como mÃ­nimo 2 piezas. Hasta la proxima.");
+			System.out.println("Ingrese como mínimo 2 piezas. Hasta la proxima.");
 		}
 		
 	}

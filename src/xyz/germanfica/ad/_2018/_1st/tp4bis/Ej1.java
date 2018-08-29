@@ -1,26 +1,26 @@
 package xyz.germanfica.ad._2018._1st.tp4bis;
 
 /*
- * 1. Determinar a trav√©s de trazas cual es el c√°lculo realizado por siguiente funci√≥n:  
+ * 1. Determinar a travÈs de trazas cual es el c·lculo realizado por siguiente funciÛn:  
  * 
- * a) Escribir una funci√≥n iterativa que cumpla la misma funci√≥n y realizar
+ * a) Escribir una funciÛn iterativa que cumpla la misma funciÛn y realizar
  * su traza correspondiente.
  * 
- * b) En el TP4 anterior, cu√°les de los incisos utilizaban este tipo de
- * c√°lculo recursivo?
+ * b) En el TP4 anterior, cu·les de los incisos utilizaban este tipo de
+ * c·lculo recursivo?
  * 
  * c) Si el caso base setea aux = 1, y el caso general en vez de sumar
- * multiplica, qu√© estar√≠a calculando?
+ * multiplica, quÈ estarÌa calculando?
  * 
- * d) En qu√© puntos del TP4 anterior Ud. ve aplicado el tipo de c√°lculo propuesto en c)?
+ * d) En quÈ puntos del TP4 anterior Ud. ve aplicado el tipo de c·lculo propuesto en c)?
  * 
- * e) Qu√© nombre le dar√≠a al algoritmo recursivo propuesto en el c√≥digo? Y en el punto c)? 
+ * e) QuÈ nombre le darÌa al algoritmo recursivo propuesto en el cÛdigo? Y en el punto c)? 
  */
 
 public class Ej1 {
 	
 	public static int func (int n) {
-		//Precondici√≥n: n siempre es un entero positivo.
+		//PrecondiciÛn: n siempre es un entero positivo.
 		int aux;
 		
 		if (n==0) {
