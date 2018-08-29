@@ -4,6 +4,127 @@ import java.util.Scanner;
 
 public class MatrizEntero {
 	private static Scanner sc;
+	
+	/*
+	 * Muestra todos los elementos de una matriz de enteros
+	 */
+	public static void mostrar(int[][] enteros) {
+		// Declaración de variables
+		int cantFilas, cantColumnas;
+		
+		// Inicializaicón de variables
+		cantFilas = enteros.length;
+		cantColumnas = enteros[0].length;
+		for (int i = 0; i <= cantFilas-1; i++) {
+			for (int j = 0; j <= cantColumnas-1; j++) {
+				System.out.print(enteros[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
+	private static int cantFilas(String contenidoFila) {
+		// Declaración de variables
+		int cantFilas;
+		
+		// Inicialización de variables
+		cantFilas = 0;
+		
+		sc = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
+		
+		sc.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
+		
+		int i = 0;
+		
+		// Almacenar los elementos uno por uno
+		while(sc.hasNext()) {
+			cantFilas++;
+			i=i+1;
+		}
+		
+		return cantFilas;
+	}
+	
+	private static int cantColumnas(String contenidoColumna) {
+		// Declaración de variables
+		int cantColumnas;
+		
+		// Inicialización de variables
+		cantColumnas = 0;
+		
+		sc = new Scanner(contenidoColumna); // Le digo al scanner que me analice el contenido del archivo
+		
+		sc.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra una coma
+		
+		int i = 0;
+		
+		// Almacenar los elementos uno por uno
+		while(sc.hasNext()) {
+			cantColumnas++;
+			i=i+1;
+		}
+		
+		return cantColumnas;
+	}
+	
+	public static int[] dimensiones(String contenidoDelArchivo) {
+		// Declaración de variables
+		int[] dimensiones;
+		int cantFilas, cantColumnas;
+		
+		// Inicialización de variables
+		dimensiones = new int[2];
+		cantFilas = 0;
+		cantColumnas = 0;
+		
+		sc = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
+		
+		sc.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra una coma
+		
+		int i = 0;
+		
+		// Almacenar los elementos uno por uno
+		while(sc.hasNext()) {
+			System.out.println(sc.next());
+			i=i+1;
+		}
+		
+		dimensiones[0] = cantFilas;
+		dimensiones[1] = cantColumnas;
+		
+		return dimensiones;
+	}
+	/**
+	 * Este módulo solo funciona con el siguiente formato:
+	 *  . Los elementos de cada fila deben ir separados con una ','.
+	 *  . Al final de cada columna debe terminar con un ';'.
+	 *  
+	 * Ejemplo:
+	 * Fila 0: 0,2,3,4,5,8;
+	 * Fila 1: 0,2,3,4,5,8;
+	 * Fila 2: 1,2,2,3,2,8;
+	 * 
+	 * @param ARCHIVO
+	 * @return
+	 */
+	public static int[][] cargaDesdeArchivo(String ARCHIVO) {
+		// Declaración de variables
+		int[][] enteros;
+		int[] dimensiones;
+		int cantFilas;
+		int cantColumnas;
+		
+		// Inicialización de variables
+		dimensiones = dimensiones();// Determinar la cantidad de filas y columnas
+		cantFilas = dimensiones[0];
+		cantColumnas = dimensiones[1];
+		
+		enteros = new int[2][2];
+		System.out.println(Archivo.leer(ARCHIVO));
+		
+		return enteros;
+	}
+	
 	/**
 	 * Lee la cantidad de filas y cantidad de columnas para una
 	 * matriz. La posicion 0 es la cantidad de filas y la

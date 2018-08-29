@@ -1,6 +1,9 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
+
+import xyz.germanfica.util.Archivo;
+import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.Mensaje;
 
 /*
@@ -9,7 +12,7 @@ import xyz.germanfica.util.Mensaje;
  * realizar las siguientes tareas:
  * 
  * a) Mostrar todos los elementos de una matriz.
- * b) Verificar si la matriz es cuadrada.
+ * b) Verificar si la matriz es cuadrada. (esCuadrada()?)
  * c) Verificar si la matriz es Triangular Superior
  * d) Verificar si la matriz es Matriz Diagonal
  * f) Producto por un escalar
@@ -18,7 +21,16 @@ import xyz.germanfica.util.Mensaje;
  * i) Sumar los elementos de una columna 
  */
 public class Ej2 {
-	public static Scanner sc;
+	private static final String ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej2.txt"; // Ruta del archivo
+	private static Scanner sc;
+	
+	/*
+	 * [1] Mostrar todos los elementos de una matriz
+	 */
+	public static void mostrarMatriz(int[][] enteros) {
+		MatrizEntero.mostrar(enteros);
+	}
+	
 	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
@@ -57,7 +69,7 @@ public class Ej2 {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Mostrar todos los elementos de una matriz
-			case 1: ;break; // Opcion 1
+			case 1: mostrarMatriz(enteros);break; // Opcion 1
 			// [2] Verificar si la matriz es cuadrada
 			case 2: ; break; // Opcion 2
 			// [3] Verificar si la matriz es Triangular Superior
@@ -82,7 +94,7 @@ public class Ej2 {
 		int[][] enteros;
 		
 		// Inicialización de variables
-		enteros = new int[2][2];
+		enteros = cargaDesdeArchivo(ARCHIVO);
 		mostrarMenu(enteros);
 	}
 }
