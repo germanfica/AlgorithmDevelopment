@@ -65,6 +65,17 @@ public class Ej2 {
 	}
 	
 	/*
+	 * [4] Verificar si la matriz es Matriz Diagonal
+	 */
+	public static void mostrarEsDiagonal(int[][] matriz) {
+		if(MatrizEntero.esDiagonal(matriz)) {
+			System.out.println("Es diagonal");
+		}else {
+			System.err.println("No es diagonal");
+		}
+	}
+	
+	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelDeOpciones() {
@@ -72,7 +83,7 @@ public class Ej2 {
 				+ "[1] Mostrar todos los elementos de una matriz (IMPLEMENTADO)\n"
 				+ "[2] Verificar si la matriz es cuadrada (IMPLEMENTADO)\n"
 				+ "[3] Verificar si la matriz es Triangular Superior (IMPLEMENTADO)\n"
-				+ "[4] Verificar si la matriz es Matriz Diagonal\n"
+				+ "[4] Verificar si la matriz es Matriz Diagonal (IMPLEMENTADO)\n"
 				+ "[5] Producto por un escalar\n"
 				+ "[6] Transponer la matriz\n"
 				+ "[7] Sumar los elementos de una fila determinada\n"
@@ -108,7 +119,7 @@ public class Ej2 {
 			// [3] Verificar si la matriz es Triangular Superior
 			case 3: mostrarEsTriangularSuperior(enteros); break; // Opcion 3
 			// [4] Verificar si la matriz es Matriz Diagonal
-			case 4: ; break; // Opcion 4
+			case 4: mostrarEsDiagonal(enteros); break; // Opcion 4
 			// [5] Producto por un escalar
 			case 5: ; break; // Opcion 5
 			// [6] Transponer la matriz

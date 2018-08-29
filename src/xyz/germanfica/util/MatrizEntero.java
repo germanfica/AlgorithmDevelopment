@@ -1,5 +1,7 @@
 package xyz.germanfica.util;
 
+import java.util.Scanner;
+
 /**
  * Copyright 2018 German Fica
  * 
@@ -24,19 +26,66 @@ package xyz.germanfica.util;
  * 
  * @author German Fica
  */
-import java.util.Scanner;
-
-/**
- * Esta clase contiene los módulos relacionados con las matrices
- * de enteros.
- * 
- * @author German Fica
- */
 public class MatrizEntero {
 	private static Scanner sc; // Este Scanner solo se va a encargar de manejar las entradas del sistema.
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
+	/**
+	 * Determina si una matriz de enteros es diagonal.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @return Devuelve verdadero si la matriz de enteros es
+	 * diagonal.
+	 */
+	public static boolean esDiagonal(int[][] matriz) {
+		return esTriangularSuperior(matriz) && esTriangularInferior(matriz);
+	}
+	
+	/**
+	 * Determina si una matriz de enteros es triangular inferior.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @return Devuelve verdadero si la matriz de enteros es
+	 * triangular inferior.
+	 */
+	public static boolean esTriangularInferior(int[][] matriz) {
+		// Declaración de variables
+		int cantFilas, cantColumnas, i, j;
+		boolean esTriangularSuperior;
+		
+		// Inicialización de variables
+		cantFilas = matriz.length;
+		cantColumnas = matriz[0].length;
+		esTriangularSuperior = false;
+		i=0;
+		j=0;
+		
+		// Es una matriz cuadrada?
+		if(Matriz.esCuadrada(cantFilas, cantColumnas)) {
+			esTriangularSuperior = true; // Posiblemente sea triangular superior
+			// Determina si es triangular superior
+			while(i<= cantFilas-1 && esTriangularSuperior) {
+				j = 0; // Reiniciar el j
+				while(j <= cantColumnas-1 && esTriangularSuperior) {
+					if(i<j && matriz[i][j]!=0) {
+						esTriangularSuperior = false;
+					}
+					j++;
+				}
+				i++;
+			}
+		}
+		return esTriangularSuperior;
+	}
+	
+	/**
+	 * Determina si una matriz de enteros es triangular superior.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @return Devuelve verdadero si la matriz de enteros es
+	 * triangular superior.
+	 */
 	public static boolean esTriangularSuperior(int[][] matriz) {
 		// Declaración de variables
 		int cantFilas, cantColumnas, i, j;
