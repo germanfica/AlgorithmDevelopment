@@ -34,7 +34,7 @@ public class Ej2 {
 	 */
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Mostrar todos los elementos de una matriz\n"
+				+ "[1] Mostrar todos los elementos de una matriz (IMPLEMENTADO)\n"
 				+ "[2] Verificar si la matriz es cuadrada\n"
 				+ "[3] Verificar si la matriz es Triangular Superior\n"
 				+ "[4] Verificar si la matriz es Matriz Diagonal\n"
