@@ -1,7 +1,7 @@
-# Desarrollo de Algoritmos
-Este repositorio tiene como objetivo brindar utilidades b√°sicas para el desarrollo con Java.
+# Java
+Este repositorio tiene como objetivo brindar utilidades b·sicas para el desarrollo con Java.
 
-## Cr√©ditos
+## CrÈditos
 - [German Fica](https://www.instagram.com/germanfica/)
 
 ## Licencia
