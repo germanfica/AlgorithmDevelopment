@@ -105,8 +105,9 @@ public class MatrizEntero {
 	 * Fila 1: 0,2,3,4,5,8;
 	 * Fila 2: 1,2,2,3,2,8;
 	 * 
-	 * @param ARCHIVO
-	 * @return
+	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
+	 * @return devuelve una matriz de enteros cargada con los elementos
+	 * del archivo
 	 */
 	public static int[][] cargaDesdeArchivo(String ARCHIVO) {
 		// Declaración de variables
@@ -114,13 +115,14 @@ public class MatrizEntero {
 		int[] dimensiones;
 		int cantFilas;
 		int cantColumnas;
+		String contenidoDelArchivo;
 		
 		// Inicialización de variables
-		dimensiones = dimensiones(Archivo.leer(ARCHIVO));// Determinar la cantidad de filas y columnas
+		contenidoDelArchivo = Archivo.leer(ARCHIVO);
+		dimensiones = dimensiones(contenidoDelArchivo);// Determinar la cantidad de filas y columnas
 		cantFilas = dimensiones[0];
 		cantColumnas = dimensiones[1];
-		
-		enteros = new int[2][2];
+		enteros = new int[cantFilas][cantColumnas];
 		
 		return enteros;
 	}
