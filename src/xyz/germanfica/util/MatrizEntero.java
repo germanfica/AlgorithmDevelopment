@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class MatrizEntero {
 	private static Scanner sc; // Este Scanner solo se va a encargar de manejar las entradas del sistema.
 	private static Scanner scCargaFilaDesdeArchivo;
-	private static Scanner scCantFilas; // Como el Scanner se encarga de una tarea muy específica, y se estaba siendo forzado a hacer dos a la vez, para evitar que se pisen las tareas se ha optado a que resuelva solo la tarea de analizar las filas del contenido del archivo
-	private static Scanner scDimensiones; // Lo mismo para scColumna
 	private static Scanner scCargaDesdeArchivo;
 	
 	/*
@@ -31,68 +29,6 @@ public class MatrizEntero {
 			}
 			System.out.println();
 		}
-	}
-	
-	/*
-	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
-	 */
-	private static int cantColumnas(String contenidoFila) {
-		// Declaración de variables
-		int cantFilas;
-		
-		// Inicialización de variables
-		cantFilas = 0;
-		
-		scCantFilas = new Scanner(contenidoFila); // Le digo al scanner que me analice el contenido del archivo
-		
-		scCantFilas.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra una coma
-		
-		int i = 0;
-		
-		// Almacenar los elementos uno por uno
-		while(scCantFilas.hasNext()) {
-			scCantFilas.next(); // Importante, se debe llamar para verificar si hay un nuevo elemento en el contenido de la fila
-			cantFilas++;
-			i=i+1;
-		}
-		
-		return cantFilas;
-	}
-	
-	/*
-	 * Determina las dimensiones debe tener la matriz de enteros
-	 * con los elementos de un archivo dado
-	 * 
-	 * Se requiere para el módulo 'cargaDesdeArchivo(ARCHIVO)'.
-	 */
-	private static int[] dimensiones(String contenidoDelArchivo) {
-		// Declaración de variables
-		int[] dimensiones;
-		int cantFilas, cantColumnas, mayorCantColumnas;
-		String contenidoFila;
-		
-		// Inicialización de variables
-		dimensiones = new int[2];
-		cantFilas = 0;
-		cantColumnas = 0;
-		mayorCantColumnas = 0;
-		
-		scDimensiones = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
-		scDimensiones.useDelimiter("\\s*;\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
-		
-		// Almacenar los elementos uno por uno
-		while(scDimensiones.hasNext()) {
-			contenidoFila = scDimensiones.next();
-			cantColumnas = cantColumnas(contenidoFila);
-			if(cantColumnas>mayorCantColumnas) {
-				mayorCantColumnas=cantColumnas;
-			}
-			cantColumnas = 0;
-			cantFilas++;
-		}
-		dimensiones[0] = cantFilas;
-		dimensiones[1] = mayorCantColumnas;
-		return dimensiones;
 	}
 	
 	private static int[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
@@ -139,6 +75,10 @@ public class MatrizEntero {
 	 * es decir la de mayor cantidad de elementos.
 	 * 
 	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
+	 * Para obtener el contenido del archivo sólo basta con llamar al módulo
+	 * Archivo.Leer(ARCHIVO), siendo ARCHIVO (la ruta)+(nombre del
+	 * archivo con su extensión), ejemplo: 
+	 * ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej2.txt".
 	 * @return Devuelve una matriz de enteros cargada con los elementos
 	 * del archivo.
 	 */
@@ -151,7 +91,7 @@ public class MatrizEntero {
 		
 		// Inicialización de variables
 		contenidoDelArchivo = Archivo.leer(ARCHIVO);
-		dimensiones = dimensiones(contenidoDelArchivo);// Determinar la cantidad de filas y columnas
+		dimensiones = Matriz.dimensionesArchivo(contenidoDelArchivo);// Llamar al módulo que determina la cantidad de filas y columnas de la matriz del archivo
 		cantFilas = dimensiones[0];
 		cantColumnas = dimensiones[1];
 		enteros = new int[cantFilas][cantColumnas];
@@ -164,13 +104,9 @@ public class MatrizEntero {
 		
 		while(scCargaDesdeArchivo.hasNext()) {
 			contenidoFila = scCargaDesdeArchivo.next();
-			//System.out.println(contenidoFila);
 			enteros[i] = cargaFilaDesdeArchivo(contenidoFila, cantColumnas);
 			i++;
 		}
-		
-		//System.out.println("Cantidad de filas: " + enteros.length);
-		//System.out.println("Cantidad de columnas: " + enteros[0].length);
 		return enteros;
 	}
 	
