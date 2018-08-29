@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class MatrizEntero {
 	private static Scanner sc;
-	private static Scanner scFila;
-	private static Scanner scColumna;
+	private static Scanner scFila; // Como el Scanner se encarga de una tarea muy específica se ha optado a que resuelva solo la tarea de analizar las filas del contenido del archivo
+	private static Scanner scColumna; // Lo mismo para scColumna
 	
 	/*
 	 * Muestra todos los elementos de una matriz de enteros
