@@ -30,12 +30,28 @@ public class Ej2 {
 	}
 	
 	/*
+	 * [2] Verificar si la matriz es cuadrada
+	 */
+	public static void mostrarEsMatriCuadrada(int[][] enteros) {
+		// Declaración de variables
+		int cantFilas, cantColumnas;
+		// Inicialización de variables
+		cantFilas = enteros.length;
+		cantColumnas = enteros[0].length;
+		if(MatrizEntero.esCuadrada(cantFilas, cantColumnas)) {
+			System.out.println("La matriz es cuadrada.");
+		}else {
+			System.err.println("La matriz no es cuadrada.");
+		}
+	}
+	
+	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelDeOpciones() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Mostrar todos los elementos de una matriz (IMPLEMENTADO)\n"
-				+ "[2] Verificar si la matriz es cuadrada\n"
+				+ "[2] Verificar si la matriz es cuadrada (IMPLEMENTADO)\n"
 				+ "[3] Verificar si la matriz es Triangular Superior\n"
 				+ "[4] Verificar si la matriz es Matriz Diagonal\n"
 				+ "[5] Producto por un escalar\n"
@@ -69,7 +85,7 @@ public class Ej2 {
 			// [1] Mostrar todos los elementos de una matriz
 			case 1: mostrarMatriz(enteros);break; // Opcion 1
 			// [2] Verificar si la matriz es cuadrada
-			case 2: ; break; // Opcion 2
+			case 2: mostrarEsMatriCuadrada(enteros); break; // Opcion 2
 			// [3] Verificar si la matriz es Triangular Superior
 			case 3: ; break; // Opcion 3
 			// [4] Verificar si la matriz es Matriz Diagonal

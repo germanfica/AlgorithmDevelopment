@@ -10,6 +10,7 @@ import xyz.germanfica.util.Mensaje;
  * igual a la suma de cada una de las diagonales.
  * 
  * Por ejemplo, la siguiente matriz es un cuadrado mágico:
+ * ...
  */
 public class Ej7 {
 	public static Scanner sc;

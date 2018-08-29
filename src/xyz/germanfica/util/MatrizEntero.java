@@ -13,6 +13,10 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
+	public static boolean esCuadrada(int cantFilas, int cantColumnas) {
+		return cantFilas==cantColumnas;
+	}
+	
 	/*
 	 * Muestra todos los elementos de una matriz de enteros
 	 */
