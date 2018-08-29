@@ -99,7 +99,8 @@ public class MatrizEntero {
 	 * @param dimensiones representa la cantidad de filas y cantidad de
 	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la
 	 * posicion 1 es la cantidad de columnas
-	 * @return
+	 * @param fila es la fila i-esima a la que se le aplica la carga de elementos
+	 * @return matriz de enteros cargada de n enteros en la fila i-esima
 	 */
 	public static int[][] cargaFila(int[] dimensiones, int fila) {
 		return cargaFila(dimensiones,fila,"");

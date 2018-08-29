@@ -22,8 +22,8 @@ public class Archivo {
 	 * es necesario que el contenido sea un texto plano para poder
 	 * pasarlo a un archivo.
 	 * 
-	 * @param contenido
-	 * @param NOMBRE_ARCHIVO
+	 * @param contenido texto plano del contenido que se quiere guardar
+	 * @param NOMBRE_ARCHIVO ruta completa y nombre del archivo
 	 */
 	public static void guardar(String contenido, String NOMBRE_ARCHIVO) {
 		BufferedWriter bw = null;
@@ -51,8 +51,8 @@ public class Archivo {
 	/**
 	 * Leer el contenido de un archivo determinado.
 	 * 
-	 * @param NOMBRE_ARCHIVO ruta completa del archivo
-	 * @return
+	 * @param NOMBRE_ARCHIVO ruta completa y nombre del archivo
+	 * @return texto plano del contenido del archivo solicitado
 	 */
 	public static String leer(String NOMBRE_ARCHIVO) {
 		String contenido = "";
@@ -83,7 +83,7 @@ public class Archivo {
 	 * 
 	 * @param NOMBRE_ARCHIVO ruta completa del archivo
 	 * @param conEspacio mantener los espacios del archivo
-	 * @return
+	 * @return texto plano con espacios del contenido del archivo solicitado
 	 */
 	public static String leer(String NOMBRE_ARCHIVO, boolean conEspacio) {
 		String contenido = "";

@@ -3,10 +3,10 @@ package xyz.germanfica.util;
 public class Polinomio {
 	/**
 	 * Calcula bhaskara 
-	 * @param a
-	 * @param b
-	 * @param c
-	 * @return
+	 * @param a indeterminada de grado 2
+	 * @param b indeterminada de grado 1
+	 * @param c termino independiente
+	 * @return retorna las raices reales de un polinomio real
 	 */
 	public static float[] bhaskara(float a, float b, float c){
 		float x1, x2;

@@ -15,7 +15,7 @@ public class ArregloEntero {
 	 * 
 	 * @param longitud la longitud del que va a tener el arreglo
 	 * @param mensaje es el mensaje que se muestra por cada iteracion
-	 * @return
+	 * @return arreglo un arreglo de enteros cargado de elementos
 	 */
 	public static int[] carga(int longitud, String mensaje) {
 		// Declaracion de variables
@@ -129,16 +129,17 @@ public class ArregloEntero {
 	}
 	
 	/**
-	 * Devuelve el mayor promedio de las mitades
-	 * @param enteros
-	 * @return
+	 * Determina cual es el mayor promedio de las mitades
+	 * 
+	 * @param enteros arreglo de enteros que se quiere analizar
+	 * @return devuelve el mayor promedio de las mitades
 	 */
 	public static double mayorPromDeLasMitades(int[] enteros) {
-		// Declaraci贸n de variables
+		// Declaraci髇 de variables
 		double[] promDeLasMitades;
 		double promPrimeraMitad, promSegundaMitad, mayorProm;
 		
-		// Inicializaci贸n de variables
+		// Inicializaci髇 de variables
 		promDeLasMitades = promDeLasMitades(enteros);
 		promPrimeraMitad = promDeLasMitades[0]; // Promedio de la primera mitad
 		promSegundaMitad = promDeLasMitades[1]; // Promedio de la segunda mitad
@@ -154,18 +155,19 @@ public class ArregloEntero {
 	}
 	
 	/**
-	 * Devuelve el promedio de las mitades
-	 * @param enteros
-	 * @return
+	 * Determina el promedio de las mitades
+	 * 
+	 * @param enteros arreglo de enteros que se quiere analizar
+	 * @return devuelve el promedio de las mitades
 	 */
 	public static double[] promDeLasMitades(int[] enteros) {
-		// Declaraci贸n de variables
+		// Declaraci髇 de variables
 		double[] promDeLasMitades = new double[2];
 		int longitud = enteros.length;
 		int longPrimeraMitad, longSegundaMitad;
 		double sumPrimeraMitad, sumSegundaMitad;
 		
-		// Inicializaci贸n de variables
+		// Inicializaci髇 de variables
 		sumPrimeraMitad = 0;
 		sumSegundaMitad = 0;
 		longPrimeraMitad=longitud/2;

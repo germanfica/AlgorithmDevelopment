@@ -1,6 +1,7 @@
 package xyz.germanfica.util;
 
 public class NumeroEntero {
+	
 	public static int[] intercambio(int x, int y) {
 		int[] vector = new int[2];
 		// Restar el primer numero al segundo
@@ -19,9 +20,11 @@ public class NumeroEntero {
 	}
 	
 	/**
-	 * Calcula el promedio de un nÃºmero
-	 * @param cantidad
-	 * @return
+	 * Calcula el promedio de un número
+	 * 
+	 * @param sumatoria la sumatoria de los elementos a promediar
+	 * @param cantidad la cantidad total de elementos de la sumatoria
+	 * @return promedio
 	 */
 	public static int promedio(int sumatoria, int cantidad){
 		return sumatoria/cantidad;
