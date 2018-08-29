@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
+/*
  * Copyright 2018 German Fica
  * 
  * Permission is hereby granted, free of charge, to any person
@@ -29,8 +29,13 @@ import java.util.Scanner;
  * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+/**
+ * Esta clase contiene todas las utilidades para cargar y guardar
+ * una cadena de texto en el disco duro.
  * 
  * @author German Fica
+ *
  */
 public class Archivo {
 	private static Scanner sc;
