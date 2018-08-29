@@ -37,8 +37,34 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
-	public static boolean esCuadrada(int cantFilas, int cantColumnas) {
-		return cantFilas==cantColumnas;
+	public static boolean esTriangularSuperior(int[][] matriz) {
+		// Declaración de variables
+		int cantFilas, cantColumnas, i, j;
+		boolean esTriangularSuperior;
+		
+		// Inicialización de variables
+		cantFilas = matriz.length;
+		cantColumnas = matriz[0].length;
+		esTriangularSuperior = false;
+		i=0;
+		j=0;
+		
+		// Es una matriz cuadrada?
+		if(Matriz.esCuadrada(cantFilas, cantColumnas)) {
+			esTriangularSuperior = true; // Posiblemente sea triangular superior
+			// Determina si es triangular superior
+			while(i<= cantFilas-1 && esTriangularSuperior) {
+				j = 0; // Reiniciar el j
+				while(j <= cantColumnas-1 && esTriangularSuperior) {
+					if(i>j && matriz[i][j]!=0) {
+						esTriangularSuperior = false;
+					}
+					j++;
+				}
+				i++;
+			}
+		}
+		return esTriangularSuperior;
 	}
 	
 	/*

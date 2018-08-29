@@ -1,6 +1,8 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
+
+import xyz.germanfica.util.Matriz;
 import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.Mensaje;
 
@@ -38,10 +40,27 @@ public class Ej2 {
 		// Inicialización de variables
 		cantFilas = enteros.length;
 		cantColumnas = enteros[0].length;
-		if(MatrizEntero.esCuadrada(cantFilas, cantColumnas)) {
+		if(Matriz.esCuadrada(cantFilas, cantColumnas)) {
 			System.out.println("La matriz es cuadrada.");
 		}else {
 			System.err.println("La matriz no es cuadrada.");
+		}
+	}
+	
+	/*
+	 * [3] Verificar si la matriz es Triangular Superior
+	 */
+	public static void mostrarEsTriangularSuperior(int[][] matriz) {
+		// Declaración de variables
+		boolean esTriangularSuperior;
+		
+		// Inicialización de variables
+		esTriangularSuperior = MatrizEntero.esTriangularSuperior(matriz);
+		
+		if(esTriangularSuperior) {
+			System.out.println("Es triangular superior");
+		}else {
+			System.err.println("No es triangular superior");
 		}
 	}
 	
@@ -52,7 +71,7 @@ public class Ej2 {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Mostrar todos los elementos de una matriz (IMPLEMENTADO)\n"
 				+ "[2] Verificar si la matriz es cuadrada (IMPLEMENTADO)\n"
-				+ "[3] Verificar si la matriz es Triangular Superior\n"
+				+ "[3] Verificar si la matriz es Triangular Superior (IMPLEMENTADO)\n"
 				+ "[4] Verificar si la matriz es Matriz Diagonal\n"
 				+ "[5] Producto por un escalar\n"
 				+ "[6] Transponer la matriz\n"
@@ -87,7 +106,7 @@ public class Ej2 {
 			// [2] Verificar si la matriz es cuadrada
 			case 2: mostrarEsMatriCuadrada(enteros); break; // Opcion 2
 			// [3] Verificar si la matriz es Triangular Superior
-			case 3: ; break; // Opcion 3
+			case 3: mostrarEsTriangularSuperior(enteros); break; // Opcion 3
 			// [4] Verificar si la matriz es Matriz Diagonal
 			case 4: ; break; // Opcion 4
 			// [5] Producto por un escalar

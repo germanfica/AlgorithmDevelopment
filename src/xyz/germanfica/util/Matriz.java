@@ -30,6 +30,17 @@ public class Matriz {
 	private static Scanner scCantFilas; // Como el Scanner se encarga de una tarea muy específica, y se estaba siendo forzado a hacer dos a la vez, para evitar que se pisen las tareas se ha optado a que resuelva solo la tarea de analizar las filas del contenido del archivo
 	private static Scanner scDimensiones; // Lo mismo para scColumna
 	
+	/**
+	 * Determina si una matriz es cuadrada
+	 * 
+	 * @param cantFilas es la cantidad de filas de la matriz
+	 * @param cantColumnas es la cantidad de columnas de la matriz
+	 * @return Devuelve verdadero si existe la matriz cuadrada sino falso
+	 */
+	public static boolean esCuadrada(int cantFilas, int cantColumnas) {
+		return cantFilas==cantColumnas;
+	}
+	
 	/*
 	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
 	 */
