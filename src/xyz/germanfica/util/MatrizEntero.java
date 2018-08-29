@@ -2,6 +2,11 @@ package xyz.germanfica.util;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author German Fica
+ *
+ */
 public class MatrizEntero {
 	private static Scanner sc;
 	
@@ -23,6 +28,9 @@ public class MatrizEntero {
 		}
 	}
 	
+	/*
+	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
+	 */
 	private static int cantFilas(String contenidoFila) {
 		// Declaración de variables
 		int cantFilas;
@@ -45,6 +53,9 @@ public class MatrizEntero {
 		return cantFilas;
 	}
 	
+	/*
+	 * Se requiere para el módulo 'dimensiones(contenidoDelArchivo)'.
+	 */
 	private static int cantColumnas(String contenidoColumna) {
 		// Declaración de variables
 		int cantColumnas;
@@ -67,10 +78,17 @@ public class MatrizEntero {
 		return cantColumnas;
 	}
 	
+	/*
+	 * Determina las dimensiones debe tener la matriz de enteros
+	 * con los elementos de un archivo dado
+	 * 
+	 * Se requiere para el módulo 'cargaDesdeArchivo(ARCHIVO)'.
+	 */
 	private static int[] dimensiones(String contenidoDelArchivo) {
 		// Declaración de variables
 		int[] dimensiones;
 		int cantFilas, cantColumnas;
+		String contenidoFila;
 		
 		// Inicialización de variables
 		dimensiones = new int[2];
@@ -85,8 +103,9 @@ public class MatrizEntero {
 		
 		// Almacenar los elementos uno por uno
 		while(sc.hasNext()) {
+			contenidoFila = sc.next();
 			//cantFilas = cantFilas()
-			System.out.println(sc.next());
+			System.out.println(contenidoFila);
 			i=i+1;
 		}
 		
@@ -95,6 +114,7 @@ public class MatrizEntero {
 		
 		return dimensiones;
 	}
+	
 	/**
 	 * Este módulo solo funciona con el siguiente formato:
 	 *  . Los elementos de cada fila deben ir separados con una ','.
