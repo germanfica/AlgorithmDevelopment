@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Esta clase contiene los módulos relacionados con las matrices
- * de enteros
+ * de enteros.
  * 
  * @author German Fica
  */
@@ -95,7 +95,7 @@ public class MatrizEntero {
 		return dimensiones;
 	}
 	
-	public static int[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
+	private static int[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
 		// Declaración de variables
 		int[] arreglo;
 		int j;
@@ -123,11 +123,11 @@ public class MatrizEntero {
 	}
 	
 	/**
+	 * Carga una matriz de enteros desde un archivo solicitado.
 	 * 
-	 * 
-	 * Este módulo solo funciona con el siguiente formato:
-	 *  . Los elementos de cada fila deben ir separados con una ','.
-	 *  . Al final de cada columna debe terminar con un ';'.
+	 * Este módulo solo funciona si cumple con el siguiente formato:
+	 * Los elementos de cada fila deben ir separados con una ','. 
+	 * Al final de cada columna debe terminar con un ';'.
 	 *  
 	 * Ejemplo:
 	 * Fila 0: 0,2,3,4,5,8;
@@ -139,8 +139,8 @@ public class MatrizEntero {
 	 * es decir la de mayor cantidad de elementos.
 	 * 
 	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
-	 * @return devuelve una matriz de enteros cargada con los elementos
-	 * del archivo
+	 * @return Devuelve una matriz de enteros cargada con los elementos
+	 * del archivo.
 	 */
 	public static int[][] cargaDesdeArchivo(String ARCHIVO) {
 		// Declaración de variables
@@ -180,10 +180,10 @@ public class MatrizEntero {
 	 * posicion 1 es la cantidad de columnas.
 	 * 
 	 * @param primerMensaje este es el mensaje que se mostraria cuando se ingresa
-	 * la cantidad de filas
+	 * la cantidad de filas.
 	 * @param segundoMensaje este es el mensaje que se mostraria cuando se ingresa
-	 * la cantidad de columnas
-	 * @return retorna la cantidad de filas y cantidad de columnas
+	 * la cantidad de columnas.
+	 * @return Devuelve la cantidad de filas y cantidad de columnas.
 	 */
 	public static int[] dimensiones(String primerMensaje, String segundoMensaje) {
 		// Declaracion de variables
@@ -205,7 +205,7 @@ public class MatrizEntero {
 	 * matriz. La posicion 0 es la cantidad de filas y la
 	 * posicion 1 es la cantidad de columnas.
 	 * 
-	 * @return retorna la cantidad de filas y cantidad de columnas
+	 * @return Devuelve la cantidad de filas y cantidad de columnas.
 	 */
 	public static int[] dimensiones() {
 		return dimensiones("", "");
@@ -232,15 +232,15 @@ public class MatrizEntero {
 	
 	/**
 	 * Carga de de n elementos la fila i-esima a una matriz
-	 * de enteros
+	 * de enteros.
 	 * 
 	 * @param dimensiones representa la cantidad de filas y cantidad de
 	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la
-	 * posicion 1 es la cantidad de columnas
+	 * posicion 1 es la cantidad de columnas.
 	 * @param fila es la fila i-esima a la que se le aplica la carga de elementos
 	 * @param mensaje es el mensaje que se muestra cada vez que se le
-	 * pide al usuario agregar un nuevo elemento a la matriz
-	 * @return matriz de enteros cargada de n enteros en la fila i-esima
+	 * pide al usuario agregar un nuevo elemento a la matriz.
+	 * @return Devuelve una matriz de enteros cargada de n enteros en la fila i-esima.
 	 */
 	public static int[][] cargaFila(int[] dimensiones, int fila, String mensaje) {
 		// Declaracion de variables
@@ -264,13 +264,13 @@ public class MatrizEntero {
 	
 	/**
 	 * Carga de de n elementos la fila i-esima a una matriz
-	 * de enteros
+	 * de enteros.
 	 * 
 	 * @param dimensiones representa la cantidad de filas y cantidad de
 	 * columnas para la matriz. La posicion 0 es la cantidad de filas y la
-	 * posicion 1 es la cantidad de columnas
-	 * @param fila es la fila i-esima a la que se le aplica la carga de elementos
-	 * @return matriz de enteros cargada de n enteros en la fila i-esima
+	 * posicion 1 es la cantidad de columnas.
+	 * @param fila es la fila i-esima a la que se le aplica la carga de elementos.
+	 * @return Devuelve una matriz de enteros cargada de n enteros en la fila i-esima.
 	 */
 	public static int[][] cargaFila(int[] dimensiones, int fila) {
 		return cargaFila(dimensiones,fila,"");
