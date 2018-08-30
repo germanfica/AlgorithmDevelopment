@@ -69,7 +69,7 @@ public class MatrizEntero {
 				for (int j = 0; j < cantColumnasMatrizA; j++) {
 					//elem=matrizA[1][i]*matrizB[i][1];
 					//suma+=elem;
-					System.out.println(matrizA[i][j]);
+					//System.out.println(matrizA[i][j]);
 				}
 			}
 			
@@ -78,7 +78,10 @@ public class MatrizEntero {
 			// Columnas de la segunda matriz
 			for (int i = 0; i < cantColumnasMatrizB; i++) {
 				for (int j = 0; j < cantFilasMatrizB; j++) {
-					System.out.println(matrizB[j][i]);
+					//System.out.println(matrizB[j][i]);
+					for (int k = 0; k < cantColumnasMatrizA; k++) { // cantColumnasMatrizA
+	                    System.out.println(matrizA[i][k]);
+	                }
 				}
 			}
 			
@@ -86,9 +89,9 @@ public class MatrizEntero {
 				//System.out.println(k);
 			}
 			
-			for (int i = 0; i < cantFilasMatrizA; i++) { // aRow
-	            for (int j = 0; j < cantColumnasMatrizB; j++) { // bColumn
-	                for (int k = 0; k < cantColumnasMatrizA; k++) { // aColumn
+			for (int i = 0; i < cantFilasMatrizA; i++) { // cantFilasMatrizA
+	            for (int j = 0; j < cantColumnasMatrizB; j++) { // cantColumnasMatrizB
+	                for (int k = 0; k < cantColumnasMatrizA; k++) { // cantColumnasMatrizA
 	                    nuevaMatriz[i][j] += matrizA[i][k] * matrizB[k][j];
 	                }
 	            }
