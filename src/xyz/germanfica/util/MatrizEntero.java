@@ -36,8 +36,61 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
-	public static void producto() {
+	/**
+	 * Para poder definir AB es necesario que el número de
+	 * columnas de la primera matriz coincida con el número
+	 * de filas de la segunda matriz.
+	 * 
+	 * @param matrizA
+	 * @param matrizB
+	 * @return
+	 */
+	public static int[][] producto(int[][] matrizA, int[][] matrizB) {
+		// Declaración de variables
+		int[][] nuevaMatriz;
+		int cantFilas, cantColumnas;
 		
+		// Inicialización de variables
+		cantFilas = matrizA.length;
+		cantColumnas = matrizB[0].length;
+		nuevaMatriz = new int[cantFilas][cantColumnas];
+		
+		// Hacer el producto
+		int elem, suma;
+		suma=0;
+		
+		if(matrizA[0].length==matrizB.length) {
+			
+			// Filas de la primera matriz
+			for (int i = 0; i < matrizA.length; i++) {
+				for (int j = 0; j <= matrizA[0].length-1; j++) {
+					//elem=matrizA[1][i]*matrizB[i][1];
+					//suma+=elem;
+					System.out.println(matrizA[i][j]);
+				}
+			}
+			System.out.println("___________");
+			
+			// Columnas de la segunda matriz
+			for (int i = 0; i < matrizB[0].length; i++) {
+				for (int j = 0; j < matrizB.length; j++) {
+					System.out.println(matrizB[j][i]);
+				}
+			}
+			
+			
+			
+			
+			
+			
+			for (int k = 0; k <= matrizA[0].length-1; k++) {
+				//System.out.println(k);
+			}
+		}else {
+			System.err.println("El número de columnas de la primera matriz no coincide con el número de filas de la segunda matriz.");
+			System.exit(0);
+		}
+		return nuevaMatriz;
 	}
 	
 	/**
