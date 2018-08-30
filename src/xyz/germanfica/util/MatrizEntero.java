@@ -39,48 +39,25 @@ public class MatrizEntero {
 	/**
 	 * <b>Trasponer una matriz.</b>
 	 * 
-	 * Ejemplo:
-	 * <style>
-	 * 	table, th, td {
-     *  	border: 1px solid black;
-     *  }
-	 * </style>
-	 * 
 	 * <pre>
-	 * <font color="red">Esto es una prueba!</font>
-	 * <b><font color="#9933ff">public static void</font></b> main(String[] args) {
-	 * 	<font color="#339933">// Declaración de variables</font>
-	 * 	int[][] matrizTraspuesta;
-     *
-	 * 	<font color="#339933">// Inicialización de variables</font>
-	 * 	int[][] matriz = {{-1,2,5},{-2,3,7}};
-	 *	
-	 * 	<font color="#339933">// Transponemos la matriz</font>
-	 * 	matrizTraspuesta = MatrizEntero.trasponer(matriz);
-	 *	
-	 * 	<font color="#339933">// Mostramos la matriz transpuesta</font>
-	 * 	MatrizEntero.mostrar(matrizTraspuesta);
+	 * <b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;
+	 * 
+	 * <b><font color="#9933ff">public class</font></b> Ejemplo {
+	 *	<b><font color="#9933ff">public static void</font></b> main(String[] args) {
+	 * 		<font color="#339933">// Declaración de variables</font>
+	 * 		<b><font color="#9933ff">int[][]</font></b> matrizTraspuesta;
+	 * 
+	 * 		<font color="#339933">// Inicialización de variables</font>
+	 * 		<b><font color="#9933ff">int[][]</font></b> matriz = {{-1,2,5},{-2,3,7}};
+	 * 		
+	 * 		<font color="#339933">// Transponemos la matriz</font>
+	 * 		matrizTraspuesta = MatrizEntero.trasponer(matriz);
+	 * 		
+	 * 		<font color="#339933">// Mostramos la matriz transpuesta</font>
+	 * 		MatrizEntero.mostrar(matrizTraspuesta);
+	 * 	}
 	 * }
 	 * </pre>
-	 * 
-	 * <table style="width:100%">
-		  <tr>
-		    <th>Firstname</th>
-		    <th>Lastname</th> 
-		    <th>Age</th>
-		  </tr>
-		  <tr>
-		    <td>Jill</td>
-		    <td>Smith</td> 
-		    <td>50</td>
-		  </tr>
-		  <tr>
-		    <td>Eve</td>
-		    <td>Jackson</td> 
-		    <td>94</td>
-		  </tr>
-		</table>
-	 * 
 	 * @param matriz es la matriz de enteros.
 	 * @return Devuelve la matriz traspuesta.
 	 */

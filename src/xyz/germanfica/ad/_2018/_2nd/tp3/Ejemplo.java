@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 
 import xyz.germanfica.util.MatrizEntero;
 
-public class Test {
+public class Ejemplo {
 	public static void main(String[] args) {
 		// Declaración de variables
 		int[][] matrizTraspuesta;
