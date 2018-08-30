@@ -25,8 +25,8 @@ import java.util.Scanner;
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 /**
- * Esta clase contiene todas las utilidades necesarias para
- * operar o que requieren el uso de matrices de enteros.
+ * Esta clase contiene utilidades para el manejo de matrices
+ * de enteros.
  * 
  * @author German Fica
  *
@@ -36,8 +36,18 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
+	public static void sumaFila() {
+		// Declaración de variables
+		
+		// Inicialización de variables
+	}
+	
+	public static void sumaColumna() {
+		//Declaración de variables
+	}
+	
 	/**
-	 * <b>Trasponer una matriz.</b>
+	 * Traspone una matriz de enteros.
 	 * 
 	 *<pre>
 	 *<b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;

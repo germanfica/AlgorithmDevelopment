@@ -27,6 +27,16 @@ package xyz.germanfica.util;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Esta clase contiene utilidades para el manejo de
+ * mensajes. Almacena y recupera información
+ * de un archivo llamado 'Mensaje.txt' que
+ * registra los mensajes de uso más frecuentes 
+ * de la aplicación.
+ * 
+ * @author German Fica
+ *
+ */
 public class Mensaje {
     private static final String NOMBRE_ARCHIVO = "src/xyz/germanfica/mensaje/Mensaje.txt"; // Ruta del archivo Mensaje.txt
     private static Scanner sc;

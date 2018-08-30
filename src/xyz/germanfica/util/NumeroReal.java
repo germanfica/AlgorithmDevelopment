@@ -24,6 +24,13 @@ package xyz.germanfica.util;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de números
+ * de reales.
+ * 
+ * @author German Fica
+ *
+ */
 public class NumeroReal {
 	/**
 	 * Calcula bhaskara de un polinomio dado

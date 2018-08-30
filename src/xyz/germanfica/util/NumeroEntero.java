@@ -24,6 +24,13 @@ package xyz.germanfica.util;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de números
+ * de enteros.
+ * 
+ * @author German Fica
+ *
+ */
 public class NumeroEntero {
 	
 	/**

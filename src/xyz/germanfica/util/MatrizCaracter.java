@@ -26,6 +26,13 @@ import java.util.Scanner;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de matrices
+ * de caracteres.
+ * 
+ * @author German Fica
+ *
+ */
 public class MatrizCaracter {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;

@@ -26,6 +26,13 @@ import java.util.Scanner;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de arreglos
+ * de palabras.
+ * 
+ * @author German Fica
+ *
+ */
 public class ArregloPalabra {
 	private static Scanner sc;
 	

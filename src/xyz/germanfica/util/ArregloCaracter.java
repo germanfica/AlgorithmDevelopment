@@ -24,6 +24,13 @@ package xyz.germanfica.util;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de arreglos
+ * de caracteres.
+ * 
+ * @author German Fica
+ *
+ */
 public class ArregloCaracter {
 	/**
 	 * Cuenta cuantas veces se repite un caracter dado

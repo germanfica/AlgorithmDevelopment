@@ -26,6 +26,13 @@ import java.util.Scanner;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de arreglos
+ * de enteros.
+ * 
+ * @author German Fica
+ *
+ */
 public class ArregloEntero {
 	/*
 	 * Nota: todos los que retornan un valor deben ser valores inmutables.

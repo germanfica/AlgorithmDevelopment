@@ -26,6 +26,13 @@ import java.util.Scanner;
  * 
  * @author German Fica
  */
+/**
+ * Esta clase contiene utilidades para el manejo de arreglos
+ * de letras.
+ * 
+ * @author German Fica
+ *
+ */
 public class ArregloLetra {
 	private static Scanner sc;
 
