@@ -37,11 +37,35 @@ public class MatrizEntero {
 	private static Scanner scCargaDesdeArchivo;
 	
 	/**
+	 * Suma los elementos de una columna determinada
+	 * de una matriz de enteros.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @param columna es la columna para hacer la suma.
+	 * @return Devuelve la suma de la columna escogida.
+	 */
+	public static int sumaColumna(int[][] matriz, int columna) {
+		// Declaración de variables
+		int suma, cantFilas;
+		
+		// Inicialización de variables
+		cantFilas = matriz.length;
+		suma = 0;
+		
+		// Hacer la suma
+		for (int i = 0; i <= cantFilas-1; i++) {
+			suma+=matriz[i][columna];
+		}
+		
+		return suma;
+	}
+	
+	/**
 	 * Suma los elementos de una fila determinada
 	 * de una matriz de enteros.
 	 * 
 	 * @param matriz es la matriz de enteros.
-	 * @param fila es la fila que se quiere para hacer la suma de sus elementos.
+	 * @param fila es la fila para hacer la suma.
 	 * @return Devuelve la suma de la fila escogida.
 	 */
 	public static int sumaFila(int[][] matriz, int fila) {
@@ -58,10 +82,6 @@ public class MatrizEntero {
 		}
 		
 		return suma;
-	}
-	
-	public static void sumaColumna() {
-		//Declaración de variables
 	}
 	
 	/**

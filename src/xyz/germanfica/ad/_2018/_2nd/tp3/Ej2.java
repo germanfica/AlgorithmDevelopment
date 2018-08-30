@@ -122,6 +122,21 @@ public class Ej2 {
 	}
 	
 	/*
+	 * [8] Sumar los elementos de una columna
+	 */
+	public static void mostrarSumaColumna(int[][] matriz) {
+		// Declaración de variables
+		int columna;
+		
+		// Leer la fila
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese la columna:");
+		columna = sc.nextInt();
+		
+		System.out.println("La suma de los elementos de la columna " + columna + " es: " + MatrizEntero.sumaColumna(matriz, columna));
+	}
+	
+	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelDeOpciones() {
@@ -133,7 +148,7 @@ public class Ej2 {
 				+ "[5] Producto por un escalar (IMPLEMENTADO)\n"
 				+ "[6] Transponer la matriz (IMPLEMENTADO)\n"
 				+ "[7] Sumar los elementos de una fila determinada (IMPLEMENTADO)\n"
-				+ "[8] Sumar los elementos de una columna\n"
+				+ "[8] Sumar los elementos de una columna (IMPLEMENTADO)\n"
 				);
 	}
 	
@@ -173,7 +188,7 @@ public class Ej2 {
 			// [7] Sumar los elementos de una fila determinada
 			case 7: mostrarSumaFila(enteros); break; // Opcion 7
 			// [8] Sumar los elementos de una columna
-			case 8: ; break; // Opcion 8
+			case 8: mostrarSumaColumna(enteros); break; // Opcion 8
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
