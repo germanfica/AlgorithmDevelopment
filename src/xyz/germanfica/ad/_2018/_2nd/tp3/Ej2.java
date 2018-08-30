@@ -107,6 +107,21 @@ public class Ej2 {
 	}
 	
 	/*
+	 * [7] Sumar los elementos de una fila determinada
+	 */
+	public static void mostrarSumaFila(int[][] matriz) {
+		// Declaración de variables
+		int fila;
+		
+		// Leer la fila
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese la fila:");
+		fila = sc.nextInt();
+		
+		System.out.println("La suma de los elementos de la fila " + fila + " es: " + MatrizEntero.sumaFila(matriz, fila));
+	}
+	
+	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelDeOpciones() {
@@ -117,7 +132,7 @@ public class Ej2 {
 				+ "[4] Verificar si la matriz es Matriz Diagonal (IMPLEMENTADO)\n"
 				+ "[5] Producto por un escalar (IMPLEMENTADO)\n"
 				+ "[6] Transponer la matriz (IMPLEMENTADO)\n"
-				+ "[7] Sumar los elementos de una fila determinada\n"
+				+ "[7] Sumar los elementos de una fila determinada (IMPLEMENTADO)\n"
 				+ "[8] Sumar los elementos de una columna\n"
 				);
 	}
@@ -156,7 +171,7 @@ public class Ej2 {
 			// [6] Transponer la matriz
 			case 6: mostrarMatrizTraspuesta(enteros); break; // Opcion 6
 			// [7] Sumar los elementos de una fila determinada
-			case 7: ; break; // Opcion 7
+			case 7: mostrarSumaFila(enteros); break; // Opcion 7
 			// [8] Sumar los elementos de una columna
 			case 8: ; break; // Opcion 8
 			default: System.err.println(Mensaje.leer(1)); break;

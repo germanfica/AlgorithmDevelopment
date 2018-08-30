@@ -36,10 +36,28 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
-	public static void sumaFila() {
+	/**
+	 * Suma los elementos de una fila determinada
+	 * de una matriz de enteros.
+	 * 
+	 * @param matriz es la matriz de enteros.
+	 * @param fila es la fila que se quiere para hacer la suma de sus elementos.
+	 * @return Devuelve la suma de la fila escogida.
+	 */
+	public static int sumaFila(int[][] matriz, int fila) {
 		// Declaración de variables
+		int suma, cantColumnas;
 		
 		// Inicialización de variables
+		cantColumnas = matriz[0].length;
+		suma = 0;
+		
+		// Hacer la suma
+		for (int j = 0; j <= cantColumnas-1; j++) {
+			suma+=matriz[fila][j];
+		}
+		
+		return suma;
 	}
 	
 	public static void sumaColumna() {
@@ -204,8 +222,10 @@ public class MatrizEntero {
 		return esTriangularSuperior;
 	}
 	
-	/*
-	 * Muestra todos los elementos de una matriz de enteros
+	/**
+	 * Muestra todos los elementos de una matriz de enteros.
+	 * 
+	 * @param enteros es la matriz que se quiere mostrar por pantalla.
 	 */
 	public static void mostrar(int[][] enteros) {
 		// Declaración de variables
