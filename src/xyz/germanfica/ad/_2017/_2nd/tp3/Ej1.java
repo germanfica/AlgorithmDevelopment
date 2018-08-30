@@ -1,8 +1,7 @@
 package xyz.germanfica.ad._2017._2nd.tp3;
 
 import java.util.Scanner;
-
-import xyz.germanfica.util.Cartel;
+import xyz.germanfica.util.Mensaje;
 
 /*
  * Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que ingrese
@@ -44,9 +43,11 @@ public class Ej1 {
 			letra[i] = sc.next().charAt(0);
 			
 			if(i==i-1)
-				Cartel.mostrarAdvertencia(0);
+				//Cartel.mostrarAdvertencia(0);
+				Mensaje.leer(4);
 			if(letra[i] == '0')
-				Cartel.mostrarAgradecimiento(0);
+				//Cartel.mostrarAgradecimiento(0);
+				Mensaje.leer(5);
 				i=limite;
 		}
 	}

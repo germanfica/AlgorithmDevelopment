@@ -2,7 +2,7 @@ package xyz.germanfica.util;
 
 import java.util.Scanner;
 
-/**
+/*
  * Copyright 2018 German Fica
  * 
  * Permission is hereby granted, free of charge, to any person

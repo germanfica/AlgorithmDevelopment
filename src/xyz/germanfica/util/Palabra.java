@@ -1,6 +1,6 @@
 package xyz.germanfica.util;
 
-/**
+/*
  * Copyright 2018 German Fica
  * 
  * Permission is hereby granted, free of charge, to any person
