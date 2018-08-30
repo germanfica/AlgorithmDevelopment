@@ -45,7 +45,7 @@ public class Ej3 {
 	 */
 	public static void mostrarProducto(int[][] matrizA, int[][] matrizB) {
 		System.out.println("La matriz producto es:");
-		MatrizEntero.producto(matrizA, matrizB);
+		MatrizEntero.mostrar(MatrizEntero.producto(matrizA, matrizB));
 	}
 	
 	/*

@@ -64,8 +64,6 @@ public class MatrizEntero {
 		suma=0;
 		
 		if(cantColumnasMatrizA==cantFilasMatrizB) {
-			// C[i][j] += A[i][k] * B[k][j];
-			
 			// Filas de la primera matriz
 			for (int i = 0; i < cantFilasMatrizA; i++) {
 				for (int j = 0; j < cantColumnasMatrizA; j++) {
@@ -84,14 +82,18 @@ public class MatrizEntero {
 				}
 			}
 			
-			
-			
-			
-			
-			
 			for (int k = 0; k <= matrizA[0].length-1; k++) {
 				//System.out.println(k);
 			}
+			
+			for (int i = 0; i < cantFilasMatrizA; i++) { // aRow
+	            for (int j = 0; j < cantColumnasMatrizB; j++) { // bColumn
+	                for (int k = 0; k < cantColumnasMatrizA; k++) { // aColumn
+	                    nuevaMatriz[i][j] += matrizA[i][k] * matrizB[k][j];
+	                }
+	            }
+	        }
+			
 		}else {
 			System.err.println("El número de columnas de la primera matriz no coincide con el número de filas de la segunda matriz.");
 			System.exit(0);
