@@ -1,18 +1,19 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
-import xyz.germanfica.util.MatrizCaracter;
+import xyz.germanfica.util.MatrizEntero;
 
 public class Test {
-	private static final String ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Test.txt"; // Ruta del archivo
-
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		// Declaración de variables
-		char[][] matriz; // Es la matriz de caracteres
-		
+		int[][] matrizTraspuesta;
+
 		// Inicialización de variables
-		matriz = MatrizCaracter.cargaDesdeArchivo(ARCHIVO);
-		MatrizCaracter.mostrar(matriz);
-		System.out.println("Cantidad de filas: " + matriz.length);
-		System.out.println("Cantidad de columnas: " + matriz[0].length);
+		int[][] matriz = {{-1,2,5},{-2,3,7}};
+		
+		// Transponemos la matriz
+		matrizTraspuesta = MatrizEntero.trasponer(matriz);
+		
+		// Mostramos la matriz transpuesta
+		MatrizEntero.mostrar(matrizTraspuesta);
 	}
 }
