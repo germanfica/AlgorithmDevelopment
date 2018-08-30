@@ -48,22 +48,27 @@ public class MatrizEntero {
 	public static int[][] producto(int[][] matrizA, int[][] matrizB) {
 		// Declaración de variables
 		int[][] nuevaMatriz;
-		int cantFilas, cantColumnas;
+		int cantFilasNuevaMatriz, cantColumnasNuevaMatriz, cantFilasMatrizA, cantColumnasMatrizA, cantFilasMatrizB, cantColumnasMatrizB;
 		
 		// Inicialización de variables
-		cantFilas = matrizA.length;
-		cantColumnas = matrizB[0].length;
-		nuevaMatriz = new int[cantFilas][cantColumnas];
+		cantFilasNuevaMatriz = matrizA.length; // Cantidad de filas de la nueva matriz
+		cantColumnasNuevaMatriz = matrizB[0].length; // Cantidad de columnas de la nueva matriz
+		cantFilasMatrizA = matrizA.length; // Cantidad de filas de la Matriz A
+		cantColumnasMatrizA = matrizA[0].length; // Cantidad de columnas de la Matriz A
+		cantFilasMatrizB = matrizB.length; // Cantidad de filas de la Matriz B
+		cantColumnasMatrizB = matrizB[0].length; // Cantidad de columnas de la Matriz B
+		nuevaMatriz = new int[cantFilasNuevaMatriz][cantColumnasNuevaMatriz];
 		
 		// Hacer el producto
 		int elem, suma;
 		suma=0;
 		
-		if(matrizA[0].length==matrizB.length) {
+		if(cantColumnasMatrizA==cantFilasMatrizB) {
+			// C[i][j] += A[i][k] * B[k][j];
 			
 			// Filas de la primera matriz
-			for (int i = 0; i < matrizA.length; i++) {
-				for (int j = 0; j < matrizA[0].length; j++) {
+			for (int i = 0; i < cantFilasMatrizA; i++) {
+				for (int j = 0; j < cantColumnasMatrizA; j++) {
 					//elem=matrizA[1][i]*matrizB[i][1];
 					//suma+=elem;
 					System.out.println(matrizA[i][j]);
@@ -73,8 +78,8 @@ public class MatrizEntero {
 			System.out.println("___________");
 			
 			// Columnas de la segunda matriz
-			for (int i = 0; i < matrizB[0].length; i++) {
-				for (int j = 0; j < matrizB.length; j++) {
+			for (int i = 0; i < cantColumnasMatrizB; i++) {
+				for (int j = 0; j < cantFilasMatrizB; j++) {
 					System.out.println(matrizB[j][i]);
 				}
 			}
