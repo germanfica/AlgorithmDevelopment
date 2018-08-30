@@ -47,11 +47,12 @@ public class MatrizEntero {
 	}
 	
 	/**
-	 * Traspone una matriz de enteros.
-	 * 
 	 *<dl>
+	 *<dt><span>Description:</span></dt>
+	 *Traspone una matriz de enteros.
 	 *<dt><span>Example:</span></dt>
-	 *<pre style="margin: 5px 0 0 0;"><b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;
+	 *<div style="border: 1px solid #dddddd; border-radius: 5px;">
+	 *<pre style="margin: 10px 10px 10px 10px;"><b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;
 	 *
 	 *<b><font color="#9933ff">public class</font></b> Ejemplo {
 	 *    <b><font color="#9933ff">public static void</font></b> main(String[] args) {
@@ -65,11 +66,11 @@ public class MatrizEntero {
 	 *        matrizTraspuesta = MatrizEntero.trasponer(matriz);
 	 *
 	 *        <font color="#339933">// Mostramos la matriz transpuesta</font>
-	 *        MatrizEntero.mostrar(matrizTraspuesta);
+	 *        {@link xyz.germanfica.util.MatrizEntero#mostrar(int[][]) MatrizEntero.mostrar}(matrizTraspuesta);
 	 *    }
-	 *}</pre></dl>
-	 * @param matriz es la matriz de enteros.
-	 * @return Devuelve la matriz traspuesta.
+	 *}</pre></div></dl>
+	 *@param matriz es la matriz de enteros que se quiere trasponer.
+	 *@return Devuelve la matriz traspuesta.
 	 */
 	public static int[][] trasponer(int[][] matriz) {
 		// Declaración de variables
