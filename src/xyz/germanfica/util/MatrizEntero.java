@@ -49,8 +49,9 @@ public class MatrizEntero {
 	/**
 	 * Traspone una matriz de enteros.
 	 * 
-	 *<pre>
-	 *<b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;
+	 *<dl>
+	 *<dt><span>Example:</span></dt>
+	 *<pre style="margin: 5px 0 0 0;"><b><font color="#9933ff">import</font></b> xyz.germanfica.util.MatrizEntero;
 	 *
 	 *<b><font color="#9933ff">public class</font></b> Ejemplo {
 	 *    <b><font color="#9933ff">public static void</font></b> main(String[] args) {
@@ -66,7 +67,7 @@ public class MatrizEntero {
 	 *        <font color="#339933">// Mostramos la matriz transpuesta</font>
 	 *        MatrizEntero.mostrar(matrizTraspuesta);
 	 *    }
-	 *}</pre>
+	 *}</pre></dl>
 	 * @param matriz es la matriz de enteros.
 	 * @return Devuelve la matriz traspuesta.
 	 */
