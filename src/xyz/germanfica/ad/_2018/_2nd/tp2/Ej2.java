@@ -1,8 +1,9 @@
 package xyz.germanfica.ad._2018._2nd.tp2;
 
 import java.util.Scanner;
+
+import xyz.germanfica.mensaje.Mensaje;
 import xyz.germanfica.util.ArregloEntero;
-import xyz.germanfica.util.Mensaje;
 
 public class Ej2 {
 	private static Scanner sc; // Esto es necesario para poder usar el Scanner en la clase

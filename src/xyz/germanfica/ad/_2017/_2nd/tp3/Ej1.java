@@ -1,7 +1,8 @@
 package xyz.germanfica.ad._2017._2nd.tp3;
 
 import java.util.Scanner;
-import xyz.germanfica.util.Mensaje;
+
+import xyz.germanfica.mensaje.Mensaje;
 
 /*
  * Diseñar un algoritmo que lea un arreglo de caracteres solicitando al usuario que ingrese

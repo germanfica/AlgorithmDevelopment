@@ -1,7 +1,8 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
-import xyz.germanfica.util.Mensaje;
+
+import xyz.germanfica.mensaje.Mensaje;
 
 /*
  * 4. Diseñar un algoritmo para recorrer matrices de nxn de enteros

@@ -1,4 +1,4 @@
-package xyz.germanfica.util;
+package xyz.germanfica.mensaje;
 
 /*
  * Copyright 2018 German Fica
@@ -26,6 +26,8 @@ package xyz.germanfica.util;
  */
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import xyz.germanfica.util.Archivo;
 
 /**
  * Esta clase contiene utilidades para el manejo de

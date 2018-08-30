@@ -1,7 +1,8 @@
 package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
-import xyz.germanfica.util.Mensaje;
+
+import xyz.germanfica.mensaje.Mensaje;
 
 /*
  * 7. Diseñar un algoritmo que verifique si una matriz de enteros

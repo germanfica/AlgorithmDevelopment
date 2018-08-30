@@ -2,6 +2,8 @@ package xyz.germanfica.util;
 
 import java.util.Scanner;
 
+import xyz.germanfica.mensaje.Mensaje;
+
 /*
  * Copyright 2018 German Fica
  * 

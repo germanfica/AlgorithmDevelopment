@@ -2,8 +2,8 @@ package xyz.germanfica.ad._2018._2nd.tp1;
 
 import java.util.Scanner;
 
+import xyz.germanfica.mensaje.Mensaje;
 import xyz.germanfica.util.Archivo;
-import xyz.germanfica.util.Mensaje;
 
 /*
  * 9) En una exposicion de vehículos se administra la informacion de los autos que

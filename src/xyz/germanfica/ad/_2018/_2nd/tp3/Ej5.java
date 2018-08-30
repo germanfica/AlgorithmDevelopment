@@ -2,7 +2,7 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
 
-import xyz.germanfica.util.Mensaje;
+import xyz.germanfica.mensaje.Mensaje;
 
 /*
  * 5. Diseñar un algoritmo que cargue una matriz a partir de un
