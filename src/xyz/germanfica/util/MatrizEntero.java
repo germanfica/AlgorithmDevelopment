@@ -294,18 +294,18 @@ public class MatrizEntero {
 	/**
 	 * Muestra todos los elementos de una matriz de enteros.
 	 * 
-	 * @param enteros es la matriz que se quiere mostrar por pantalla.
+	 * @param matriz es la matriz que se quiere mostrar por pantalla.
 	 */
-	public static void mostrar(int[][] enteros) {
+	public static void mostrar(int[][] matriz) {
 		// Declaración de variables
 		int cantFilas, cantColumnas;
 		
 		// Inicializaicón de variables
-		cantFilas = enteros.length;
-		cantColumnas = enteros[0].length;
+		cantFilas = matriz.length;
+		cantColumnas = matriz[0].length;
 		for (int i = 0; i <= cantFilas-1; i++) {
 			for (int j = 0; j <= cantColumnas-1; j++) {
-				System.out.print(enteros[i][j]);
+				System.out.print(matriz[i][j]);
 			}
 			System.out.println();
 		}
