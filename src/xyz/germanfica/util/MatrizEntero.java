@@ -63,12 +63,13 @@ public class MatrizEntero {
 			
 			// Filas de la primera matriz
 			for (int i = 0; i < matrizA.length; i++) {
-				for (int j = 0; j <= matrizA[0].length-1; j++) {
+				for (int j = 0; j < matrizA[0].length; j++) {
 					//elem=matrizA[1][i]*matrizB[i][1];
 					//suma+=elem;
 					System.out.println(matrizA[i][j]);
 				}
 			}
+			
 			System.out.println("___________");
 			
 			// Columnas de la segunda matriz
