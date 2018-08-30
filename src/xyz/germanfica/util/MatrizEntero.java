@@ -36,6 +36,55 @@ public class MatrizEntero {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
 	
+	public static void producto() {
+		
+	}
+	
+	/**
+	 * Determina si dos matrices tienen el mismo órden.
+	 * 
+	 * @param matrizA es la primera matriz.
+	 * @param matrizB es la segunda matriz.
+	 * @return Devuelve verdadero si coinciden los órdenes de las matrices
+	 * ingresadas sino falso.
+	 */
+	public static boolean mismoOrden(int[][] matrizA, int[][] matrizB) {
+		return matrizA.length==matrizB.length && matrizA[0].length==matrizB[0].length;
+	}
+	
+	/**
+	 * Suma de dos matrices. Si los órdens de las matrices
+	 * no coinciden entonces no se aplica la suma.
+	 * 
+	 * @param matrizA es la primera matriz.
+	 * @param matrizB es la segunda matriz.
+	 * @return Devuelve la matriz suma.
+	 */
+	public static int[][] suma(int[][] matrizA, int[][] matrizB) {
+		// Declaración de variables
+		int[][] nuevaMatriz;
+		int cantFilas, cantColumnas;
+		
+		// Inicialización de variables
+		cantFilas = matrizA.length;
+		cantColumnas = matrizA[0].length;
+		nuevaMatriz = new int[cantFilas][cantColumnas]; // No te preocupes, sé lo que pensas. Si los órdens de las matrices no coinciden entonces no se aplica la suma. Luego retorna una matriz nula.
+		
+		// Suma
+		if(mismoOrden(matrizA, matrizB)) {
+			for (int i = 0; i <= cantFilas-1; i++) {
+				for (int j = 0; j <= cantColumnas-1; j++) {
+					nuevaMatriz[i][j]=matrizA[i][j] + matrizB[i][j];
+					System.out.println(nuevaMatriz[i][j]);
+				}
+			}
+		}else {
+			System.err.println("No coinciden los órdenes de las matrices ingresadas.");
+		}
+		
+		return nuevaMatriz;
+	}
+	
 	/**
 	 * Suma los elementos de una columna determinada
 	 * de una matriz de enteros.
