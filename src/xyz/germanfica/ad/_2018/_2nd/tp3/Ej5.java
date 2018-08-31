@@ -3,6 +3,8 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 import java.util.Scanner;
 
 import xyz.germanfica.mensaje.Mensaje;
+import xyz.germanfica.util.MatrizCaracter;
+import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.NumeroEntero;
 
 /*
@@ -18,7 +20,10 @@ import xyz.germanfica.util.NumeroEntero;
 public class Ej5 {
 	public static Scanner sc;
 	
-	public static void cargaManual(char[][] matriz, char[] arreglo) {
+	/*
+	 * [1] Cargar matriz manualmente
+	 */
+	public static void cargarManualmente(char[][] matriz, char[] arreglo) {
 		// MÓDULO
 		char ch; // Caracter
 		
@@ -37,7 +42,10 @@ public class Ej5 {
 		// FIN MÓDULO
 	}
 	
-	public static void cargaAuto(char[][] matriz, char[] arreglo) {
+	/*
+	 * [2] Cargar automáticamente
+	 */
+	public static void cargarAutomaticamente(char[][] matriz, char[] arreglo) {
 		// Declaración de variables
 		int valorMin, valorMax, posIniArreglo;
 		
@@ -54,7 +62,7 @@ public class Ej5 {
 		
 		// Carga de la matriz apartir del arreglo de 150 caracteres
 		for (int i = 0; i <= matriz.length-1; i++) {
-			for (int j = 0; j < arreglo.length; j++) {
+			for (int j = 0; j <= matriz[0].length-1; j++) {
 				matriz[i][j]=arreglo[posIniArreglo];
 				posIniArreglo++;
 			}
@@ -67,7 +75,7 @@ public class Ej5 {
 	 */
 	public static void mostrarCartelesPanelOpcionesA() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Cargar matriz\n"
+				+ "[1] Cargar matriz manualmente\n"
 				+ "[2] Cargar automáticamente\n"
 				);
 	}
@@ -77,15 +85,20 @@ public class Ej5 {
 	 */
 	public static void mostrarCartelesPanelOpcionesB() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Cargar matriz\n"
+				+ "[1] Cargar matriz manualmente\n"
 				+ "[2] Cargar automáticamente\n"
 				+ "[3] Mostrar matriz\n"
 				);
 	}
 	
-	public static boolean panelOpcionesA(boolean salir) {
+	public static boolean[] panelOpcionesA(char[][] matriz, char[] arreglo) {
 		// Declaración de variables
+		boolean[] condiciones;
+		boolean salir = false, estaCargada=false;
 		int opcion;
+		
+		// Inicialización de variables
+		condiciones = new boolean[2];
 		
 		// Mostrar cartel con las opciones
 		mostrarCartelesPanelOpcionesA();
@@ -95,17 +108,21 @@ public class Ej5 {
 		opcion = sc.nextInt();
 		switch (opcion) {
 		case 0: salir = true; break;
-		// [1] Cargar manual
-		case 1: ;break; // Opcion 1
+		// [1] Cargar matriz manualmente
+		case 1: cargarManualmente(matriz, arreglo);estaCargada=true;break; // Opcion 1
 		// [2] Cargar automáticamente
-		case 2: ;break; // Opcion 1
+		case 2: cargarAutomaticamente(matriz, arreglo);estaCargada=true;break; // Opcion 1
 		default: System.err.println(Mensaje.leer(1)); break;
 		}
-		return salir;
+		condiciones[0] = salir;
+		condiciones[1] = estaCargada;
+		
+		return condiciones;
 	}
 	
-	public static boolean panelOpcionesB(boolean salir) {
+	public static boolean panelOpcionesB(char[][] matriz, char[] arreglo) {
 		// Declaración de variables
+		boolean salir=false;
 		int opcion;
 		
 		// Mostrar cartel con las opciones
@@ -116,12 +133,12 @@ public class Ej5 {
 		opcion = sc.nextInt();
 		switch (opcion) {
 		case 0: salir = true; break;
-		// [1] Cargar manual
+		// [1] Cargar matriz manualmente
 		case 1: ;break; // Opcion 1
 		// [2] Cargar automáticamente
 		case 2: ;break; // Opcion 1
 		// [3] Mostrar matriz
-		case 3: ;break; // Opcion 1
+		case 3: MatrizCaracter.mostrar(matriz);break; // Opcion 1
 		default: System.err.println(Mensaje.leer(1)); break;
 		}
 		return salir;
@@ -132,6 +149,7 @@ public class Ej5 {
 	 * Nota: los modulos no deben ocupar mas de una pantalla
 	 */
 	public static void mostrarMenu(char[][] matriz, char[] arreglo) {
+		boolean[] condiciones;
 		boolean salir = false, estaCargada=false;
 		
 		// Mensaje de bienvenida
@@ -139,9 +157,11 @@ public class Ej5 {
 		
 		while(!salir) {
 			if(!estaCargada) {
-				salir = panelOpcionesA(salir); // Panel de opciones A
+				condiciones = panelOpcionesA(matriz, arreglo);
+				salir = condiciones[0]; // Panel de opciones A
+				estaCargada = condiciones[1];
 			}else {
-				salir = panelOpcionesB(salir); // Panel de opciones B
+				salir = panelOpcionesB(matriz, arreglo); // Panel de opciones B
 			}
 		}
 	}
