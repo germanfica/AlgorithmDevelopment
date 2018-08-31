@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import xyz.germanfica.mensaje.Mensaje;
 import xyz.germanfica.util.MatrizCaracter;
-import xyz.germanfica.util.MatrizEntero;
 import xyz.germanfica.util.NumeroEntero;
 
 /*
@@ -24,20 +23,24 @@ public class Ej5 {
 	 * [1] Cargar matriz manualmente
 	 */
 	public static void cargarManualmente(char[][] matriz, char[] arreglo) {
+		int posIniArreglo=0;
 		// MÓDULO
 		char ch; // Caracter
 		
 		// Carga del arreglo
 		for (int i = 0; i <= arreglo.length-1; i++) {
 			sc = new Scanner(System.in);
-			System.out.println("Ingrese su caracter:");
+			System.out.println("["+i+"]"+" Ingrese su caracter:");
 			ch = sc.next().charAt(0);
 			arreglo[i] = ch;
 		}
 		
 		// Carga de la matriz apartir del arreglo de 150 caracteres
 		for (int i = 0; i <= matriz.length-1; i++) {
-			
+			for (int j = 0; j <= matriz[0].length-1; j++) {
+				matriz[i][j]=arreglo[posIniArreglo];
+				posIniArreglo++;
+			}
 		}
 		// FIN MÓDULO
 	}
@@ -75,8 +78,8 @@ public class Ej5 {
 	 */
 	public static void mostrarCartelesPanelOpcionesA() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Cargar matriz manualmente\n"
-				+ "[2] Cargar automáticamente\n"
+				+ "[1] Cargar matriz manualmente (IMPLEMENTADO)\n"
+				+ "[2] Cargar automáticamente (IMPLEMENTADO)\n"
 				);
 	}
 	
@@ -85,9 +88,9 @@ public class Ej5 {
 	 */
 	public static void mostrarCartelesPanelOpcionesB() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Cargar matriz manualmente\n"
-				+ "[2] Cargar automáticamente\n"
-				+ "[3] Mostrar matriz\n"
+				+ "[1] Cargar matriz manualmente (IMPLEMENTADO)\n"
+				+ "[2] Cargar automáticamente (IMPLEMENTADO)\n"
+				+ "[3] Mostrar matriz (IMPLEMENTADO)\n"
 				);
 	}
 	
@@ -134,9 +137,9 @@ public class Ej5 {
 		switch (opcion) {
 		case 0: salir = true; break;
 		// [1] Cargar matriz manualmente
-		case 1: ;break; // Opcion 1
+		case 1: cargarManualmente(matriz, arreglo);break; // Opcion 1
 		// [2] Cargar automáticamente
-		case 2: ;break; // Opcion 1
+		case 2: cargarAutomaticamente(matriz, arreglo);break; // Opcion 1
 		// [3] Mostrar matriz
 		case 3: MatrizCaracter.mostrar(matriz);break; // Opcion 1
 		default: System.err.println(Mensaje.leer(1)); break;
