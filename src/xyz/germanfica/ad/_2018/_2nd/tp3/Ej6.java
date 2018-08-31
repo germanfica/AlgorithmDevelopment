@@ -3,6 +3,7 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 import java.util.Scanner;
 
 import xyz.germanfica.mensaje.Mensaje;
+import xyz.germanfica.util.ArregloEntero;
 import xyz.germanfica.util.Matriz;
 import xyz.germanfica.util.MatrizEntero;
 
@@ -15,21 +16,31 @@ public class Ej6 {
 	private static final String ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej6.txt"; // Ruta del archivo
 	public static Scanner sc;
 	
-	public static int[][] matrizEspiral(int[][] matriz) {
+	public static int[] arregloEspiral(int[][] matriz) {
 		// Declaración de variables
-		int[][] matrizEspiral;
+		int[] arregloEspiral;
 		int cantFilas, cantColumnas;
 		
 		// Inicialización de variables
 		cantFilas = matriz.length;
 		cantColumnas = matriz[0].length;
-		matrizEspiral = new int[cantFilas][cantColumnas];
+		arregloEspiral = new int[cantFilas*cantColumnas];
 		
 		// Cambiar la disposición de los elementos
+		int jPosInv; // La posición inversa pero de j, es decir la pos inversa de la columna actual. 
+		
 		if(Matriz.esCuadrada(cantFilas, cantColumnas)) {
 			for (int i = 0; i <= cantFilas-1; i++) {
 				for (int j = 0; j <= cantColumnas-1; j++) {
+					// Recore las columnas
+					if(i==0 && j<=cantFilas-1) {
+						arregloEspiral[i] = matriz[i][j];	
+					}
+					if(i!=0 && j==cantColumnas-1) {
+						arregloEspiral[i] = matriz[i][j];
+					}
 					
+					// Hacer el cambio acá
 				}
 			}	
 		}else {
@@ -37,7 +48,7 @@ public class Ej6 {
 			System.exit(0);
 		}
 		
-		return matrizEspiral;
+		return arregloEspiral;
 	}
 	
 	/*
@@ -74,7 +85,7 @@ public class Ej6 {
 			// [1] Mostrar matriz original
 			case 1: MatrizEntero.mostrar(matriz);break; // Opcion 1
 			// [2] Mostrar matriz pero recorriéndola en espiral
-			case 2: MatrizEntero.mostrar(matrizEspiral(matriz)); break; // Opcion 2
+			case 2: ArregloEntero.mostrar(arregloEspiral(matriz));; break; // Opcion 2
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
