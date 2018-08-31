@@ -43,7 +43,7 @@ public class Ej5 {
 	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
-	public static void mostrarCartelDeOpcionesA() {
+	public static void mostrarCartelesPanelOpcionesA() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar matriz\n"
 				+ "[2] Cargar automática\n"
@@ -53,7 +53,7 @@ public class Ej5 {
 	/*
 	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
-	public static void mostrarCartelDeOpcionesB() {
+	public static void mostrarCartelesPanelOpcionesB() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar matriz\n"
 				+ "[2] Cargar automática\n"
@@ -66,7 +66,7 @@ public class Ej5 {
 		int opcion;
 		
 		// Mostrar cartel con las opciones
-		mostrarCartelDeOpcionesA();
+		mostrarCartelesPanelOpcionesA();
 		
 		// Leer opcion del menu principal
 		sc = new Scanner(System.in);
@@ -87,7 +87,7 @@ public class Ej5 {
 		int opcion;
 		
 		// Mostrar cartel con las opciones
-		mostrarCartelDeOpcionesB();
+		mostrarCartelesPanelOpcionesB();
 		
 		// Leer opcion del menu principal
 		sc = new Scanner(System.in);
@@ -117,9 +117,9 @@ public class Ej5 {
 		
 		while(!salir) {
 			if(!estaCargada) {
-				salir = panelOpcionesA(salir);
+				salir = panelOpcionesA(salir); // Panel de opciones A
 			}else {
-				salir = panelOpcionesB(salir);
+				salir = panelOpcionesB(salir); // Panel de opciones B
 			}
 		}
 	}
