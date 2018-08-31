@@ -3,6 +3,7 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 import java.util.Scanner;
 
 import xyz.germanfica.mensaje.Mensaje;
+import xyz.germanfica.util.Matriz;
 import xyz.germanfica.util.MatrizEntero;
 
 /*
@@ -25,7 +26,16 @@ public class Ej6 {
 		matrizEspiral = new int[cantFilas][cantColumnas];
 		
 		// Cambiar la disposición de los elementos
-		
+		if(Matriz.esCuadrada(cantFilas, cantColumnas)) {
+			for (int i = 0; i <= cantFilas-1; i++) {
+				for (int j = 0; j <= cantColumnas-1; j++) {
+					
+				}
+			}	
+		}else {
+			System.err.println("Su matriz no es cuadrada. Porfavor modifique el archivo e ingrese una matriz de órden nxn.");
+			System.exit(0);
+		}
 		
 		return matrizEspiral;
 	}
@@ -64,7 +74,7 @@ public class Ej6 {
 			// [1] Mostrar matriz original
 			case 1: MatrizEntero.mostrar(matriz);break; // Opcion 1
 			// [2] Mostrar matriz pero recorriéndola en espiral
-			case 2: ; break; // Opcion 2
+			case 2: MatrizEntero.mostrar(matrizEspiral(matriz)); break; // Opcion 2
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
