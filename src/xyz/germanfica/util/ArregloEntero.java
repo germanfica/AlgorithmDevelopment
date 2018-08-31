@@ -41,14 +41,30 @@ public class ArregloEntero {
 	 */
 	private static Scanner sc;
 	/**
-	 * En este modulo voy a mostrar los enteros del arreglo de
-	 * esnteros
+	 * Muestra todos los elementos de una matriz de enteros.
 	 * 
-	 * @param enteros es el arreglo de enteros
+	 * @param enteros es el arreglo de enteros.
 	 */
 	public static void mostrar(int[] enteros) {
-		for (int i = 0; i < enteros.length; i++) {
-			System.out.println(enteros[i]);
+		mostrar(enteros, true);
+	}
+	
+	/**
+	 * Muestra todos los elementos de una matriz de enteros.
+	 * 
+	 * @param enteros es el arreglo de enteros.
+	 * @param conEspacios verifica si se muestran los elementos
+	 * con o sin espacio.
+	 */
+	public static void mostrar(int[] enteros, boolean conEspacios) {
+		if(conEspacios) {
+			for (int i = 0; i < enteros.length; i++) {
+				System.out.print(enteros[i] + " ");
+			}	
+		}else {
+			for (int i = 0; i < enteros.length; i++) {
+				System.out.print(enteros[i]);
+			}
 		}
 	}
 	
