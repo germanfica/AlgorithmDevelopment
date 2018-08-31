@@ -65,7 +65,7 @@ public class Ej3 {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar los elementos de las matrices (IMPLEMENTADO)\n"
 				+ "[2] Realizar la suma de dos matrices (IMPLEMENTADO)\n"
-				+ "[3] Realizar el producto de dos matrices\n"
+				+ "[3] Realizar el producto de dos matrices (IMPLEMENTADO)\n"
 				+ "[4] Mostrar las matrices (IMPLEMENTADO)\n"
 				);
 	}

@@ -41,13 +41,13 @@ public class MatrizEntero {
 	 * columnas de la primera matriz coincida con el número
 	 * de filas de la segunda matriz.
 	 * 
-	 * @param matrizA
-	 * @param matrizB
-	 * @return
+	 * @param matrizA es la matriz A de enteros.
+	 * @param matrizB es la matriz B de enteros.
+	 * @return Devuelve la matriz producto.
 	 */
 	public static int[][] producto(int[][] matrizA, int[][] matrizB) {
 		// Declaración de variables
-		int[][] nuevaMatriz;
+		int[][] matrizProducto;
 		int cantFilasNuevaMatriz, cantColumnasNuevaMatriz, cantFilasMatrizA, cantColumnasMatrizA, cantFilasMatrizB, cantColumnasMatrizB;
 		
 		// Inicialización de variables
@@ -57,7 +57,7 @@ public class MatrizEntero {
 		cantColumnasMatrizA = matrizA[0].length; // Cantidad de columnas de la Matriz A
 		cantFilasMatrizB = matrizB.length; // Cantidad de filas de la Matriz B
 		cantColumnasMatrizB = matrizB[0].length; // Cantidad de columnas de la Matriz B
-		nuevaMatriz = new int[cantFilasNuevaMatriz][cantColumnasNuevaMatriz];
+		matrizProducto = new int[cantFilasNuevaMatriz][cantColumnasNuevaMatriz];
 		
 		// Hacer el producto
 		int elem, suma;
@@ -92,7 +92,7 @@ public class MatrizEntero {
 			for (int i = 0; i < cantFilasMatrizA; i++) { // cantFilasMatrizA
 	            for (int j = 0; j < cantColumnasMatrizB; j++) { // cantColumnasMatrizB
 	                for (int k = 0; k < cantColumnasMatrizA; k++) { // cantColumnasMatrizA
-	                    nuevaMatriz[i][j] += matrizA[i][k] * matrizB[k][j];
+	                	matrizProducto[i][j] += matrizA[i][k] * matrizB[k][j];
 	                }
 	            }
 	        }
@@ -101,7 +101,7 @@ public class MatrizEntero {
 			System.err.println("El número de columnas de la primera matriz no coincide con el número de filas de la segunda matriz.");
 			System.exit(0);
 		}
-		return nuevaMatriz;
+		return matrizProducto;
 	}
 	
 	/**
