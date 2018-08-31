@@ -3,6 +3,7 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 import java.util.Scanner;
 
 import xyz.germanfica.mensaje.Mensaje;
+import xyz.germanfica.util.NumeroEntero;
 
 /*
  * 5. Diseñar un algoritmo que cargue una matriz
@@ -37,26 +38,47 @@ public class Ej5 {
 	}
 	
 	public static void cargaAuto(char[][] matriz, char[] arreglo) {
+		// Declaración de variables
+		int valorMin, valorMax, posIniArreglo;
 		
+		// Inicilización de variables
+		valorMin=33;
+		valorMax=126;
+		posIniArreglo=0;
+		
+		// MÓDULO
+		// Carga del arreglo
+		for (int i = 0; i <= arreglo.length-1; i++) {
+			arreglo[i] = (char)NumeroEntero.aleatorio(valorMin, valorMax);
+		}
+		
+		// Carga de la matriz apartir del arreglo de 150 caracteres
+		for (int i = 0; i <= matriz.length-1; i++) {
+			for (int j = 0; j < arreglo.length; j++) {
+				matriz[i][j]=arreglo[posIniArreglo];
+				posIniArreglo++;
+			}
+		}
+		// FIN MÓDULO
 	}
 	
 	/*
-	 * Este modulo se encarga de mostrar los carteles del menu
+	 * Este módulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelesPanelOpcionesA() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar matriz\n"
-				+ "[2] Cargar automática\n"
+				+ "[2] Cargar automáticamente\n"
 				);
 	}
 	
 	/*
-	 * Este modulo se encarga de mostrar los carteles del menu
+	 * Este módulo se encarga de mostrar los carteles del menu
 	 */
 	public static void mostrarCartelesPanelOpcionesB() {
 		System.out.print("[0] Salir (IMPLEMENTADO)\n"
 				+ "[1] Cargar matriz\n"
-				+ "[2] Cargar automática\n"
+				+ "[2] Cargar automáticamente\n"
 				+ "[3] Mostrar matriz\n"
 				);
 	}
@@ -75,7 +97,7 @@ public class Ej5 {
 		case 0: salir = true; break;
 		// [1] Cargar manual
 		case 1: ;break; // Opcion 1
-		// [2] Cargar automática
+		// [2] Cargar automáticamente
 		case 2: ;break; // Opcion 1
 		default: System.err.println(Mensaje.leer(1)); break;
 		}
@@ -96,7 +118,7 @@ public class Ej5 {
 		case 0: salir = true; break;
 		// [1] Cargar manual
 		case 1: ;break; // Opcion 1
-		// [2] Cargar automática
+		// [2] Cargar automáticamente
 		case 2: ;break; // Opcion 1
 		// [3] Mostrar matriz
 		case 3: ;break; // Opcion 1

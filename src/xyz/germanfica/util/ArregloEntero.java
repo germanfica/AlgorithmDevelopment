@@ -40,7 +40,6 @@ public class ArregloEntero {
 	 * se muestra, pero no el valor de retorno.
 	 */
 	private static Scanner sc;
-	
 	/**
 	 * Carga de de n elementos a un arreglo de enteros
 	 * 

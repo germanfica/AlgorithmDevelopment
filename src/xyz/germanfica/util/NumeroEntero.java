@@ -32,6 +32,22 @@ package xyz.germanfica.util;
  *
  */
 public class NumeroEntero {
+	/**
+	 * Devuelve una posición aleatoria dentro de
+	 * un rango determinado, establecido por
+	 * parámetro.
+	 */
+	public static int aleatorio(int min, int max) {
+	  // Declaración de variables
+	  double pos;
+
+	  // Generar una nueva posición de manera aleatoria
+	  //
+	  pos=Math.floor(Math.random()/(1/((double)max-(double)min)))+(double)min;
+
+	  // Retorna la nueva posición
+	  return (int)pos;
+	}
 	
 	/**
 	 * Determian si un numero es par

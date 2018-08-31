@@ -33,6 +33,23 @@ package xyz.germanfica.util;
  */
 public class NumeroReal {
 	/**
+	 * Devuelve una posición aleatoria dentro de
+	 * un rango determinado, establecido por
+	 * parámetro.
+	 */
+	public static double aleatorio(double min, double max) {
+	  // Declaración de variables
+	  double pos;
+
+	  // Generar una nueva posición de manera aleatoria
+	  //
+	  pos=Math.floor(Math.random()/(1/(max-min)))+min;
+
+	  // Retorna la nueva posición
+	  return pos;
+	}
+	
+	/**
 	 * Calcula bhaskara de un polinomio dado
 	 * 
 	 * @param a indeterminada de grado 2
