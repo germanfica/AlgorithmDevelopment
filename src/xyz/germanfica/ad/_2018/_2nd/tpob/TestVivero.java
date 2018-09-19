@@ -38,7 +38,7 @@ public class TestVivero {
 		hayObjetos = true;
 		seRepite = false;
 		
-		// Buscar si se repite el árbol en el arreglo de árboles
+		// Busca si se repite el árbol en el arreglo de árboles
 		while (i<=arboles.length-1 && !seRepite && hayObjetos) {
 			if(arboles[i]==null) {
 				hayObjetos = false;
@@ -54,15 +54,41 @@ public class TestVivero {
 	}
 	
 	/*
-	 * [1] Carga de datos
+	 * Cargar un objeto de tipo árbol
 	 */
-	public static Arbol[] cargaArbol(int cantidadArboles) {
+	public static Arbol cargaArbol() {
+		String nombre;
+		int altura, profRaices, tempMinima;
+		boolean frutos;
+		
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese nombre:");
+		nombre = sc.next();
+		System.out.println("Ingrese altura:");
+		altura = sc.nextInt();
+		System.out.println("Ingrese las raices:");
+		profRaices = sc.nextInt();
+		System.out.println("Ingrese si tiene frutos:");
+		frutos = sc.nextBoolean();
+		System.out.println("Ingrese la temperatura mín. que soporta:");
+		tempMinima = sc.nextInt();
+		
+		return new Arbol(nombre, altura, profRaices, frutos, tempMinima);
+	}
+	
+	/*
+	 * [1] Carga de datos
+	 * 
+	 * Se genera el arreglo de árboles con tantos datos como el
+	 * usuario desee. Esta opción debe poder ejecutarse repetidas veces, es decir,
+	 * se deben poder agregar árboles al arreglo las veces que haga falta. En la
+	 * carga de datos se debe controlar de no guardar datos repetidos.
+	 */
+	public static Arbol[] cargaArboles(int cantidadArboles) {
 		// Declaración de variables
 		Arbol[] arboles;
 		Arbol arbol;
-		String nombre;
-		int altura, profRaices, tempMinima, i;
-		boolean frutos;
+		int i;
 		
 		// Inicialización de variables
 		arboles = new Arbol[cantidadArboles]; // Le doy una nueva longitud al arreglo de árboles
@@ -70,20 +96,7 @@ public class TestVivero {
 		
 		// Leo los valores para el nuevo árbol que va a estar en el arreglo
 		while(i <= cantidadArboles-1) {
-			sc = new Scanner(System.in);
-			System.out.println("Ingrese nombre:");
-			nombre = sc.next();
-			System.out.println("Ingrese altura:");
-			altura = sc.nextInt();
-			System.out.println("Ingrese las raices:");
-			profRaices = sc.nextInt();
-			System.out.println("Ingrese si tiene frutos:");
-			frutos = sc.nextBoolean();
-			System.out.println("Ingrese la temperatura mín. que soporta:");
-			tempMinima = sc.nextInt();
-			
-			// Genero el árbol
-			arbol = new Arbol(nombre, altura, profRaices, frutos, tempMinima);
+			arbol = cargaArbol(); // Genero un nuevo árbol
 			
 			// Se repite el árbol en el arreglo de árboles?
 			if(existeEsteArbol(arboles, arbol)) {
@@ -116,10 +129,21 @@ public class TestVivero {
 				);
 	}
 	
+	public static void opcion1(Arbol[] arboles) {
+		// Declaración de variables
+		int cantidadArboles;
+		
+		// Leer la cantidad de árboles
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese la nueva cantidad de árboles del vivero:");
+		cantidadArboles = sc.nextInt();
+		arboles = cargaArboles(cantidadArboles); // Modifica el arreglo que tengo por referencia
+	}
+	
 	/*
 	 * Mostrar el menu de la aplicacion
 	 */
-	public static void mostrarMenu(Arbol[] arbol) {
+	public static void mostrarMenu(Arbol[] arboles) {
 		boolean salir = false;
 		int opcion;
 		
@@ -137,13 +161,14 @@ public class TestVivero {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Carga de datos
-			case 1: ;break; // Opcion 1
+			case 1: opcion1(arboles);break; // Opcion 1
 			// [2] Listado de árboles
 			case 2: ; break; // Opcion 2
 			// [3] Cantidad de árboles que soportan los 0°
 			case 3: ; break; // Opcion 3
 			// [4] Mostrar el nombre de todos los árboles
-			case 4: mostrarArboles(arbol); break; // Opcion 4
+			case 4: ; break; // Opcion 4
+			case 5: ; break;
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
@@ -153,11 +178,11 @@ public class TestVivero {
 		Arbol[] arbol; // Arreglo de los árboles que el vivero tiene a la venta
 		int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
 		
-		// Carga de datos al arreglo
+		// Carga de datos al arreglo por primera vez
 		sc = new Scanner(System.in);
 		System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
 		cantidadArboles = sc.nextInt();
-		arbol = cargaArbol(cantidadArboles);
+		arbol = cargaArboles(cantidadArboles);
 		
 		// Mostrar menú
 		mostrarMenu(arbol);
