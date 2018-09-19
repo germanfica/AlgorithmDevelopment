@@ -75,17 +75,7 @@ public class Arbol {
 				;
 	}
 	
-	public int equals (Arbol a) {
-		// Declaración de variables
-		int isEquals;
-		
-		// Inicialización de variables
-		isEquals = 0; // No es igual
-		
-		if(nombre==a.nombre && altura==a.altura && profRaices==a.profRaices && frutos==a.frutos && tempMinima==a.tempMinima) {
-			isEquals = 1; // Es igual
-		}
-		
-		return isEquals;
+	public boolean equals (Arbol a) {
+		return nombre.equals(a.nombre) && altura==a.altura && profRaices==a.profRaices && frutos==a.frutos && tempMinima==a.tempMinima;
 	}
 }
