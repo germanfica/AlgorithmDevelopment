@@ -3,7 +3,6 @@ package xyz.germanfica.ad._2018._2nd.tpob;
 import java.util.Scanner;
 import xyz.germanfica.mensaje.Mensaje;
 import xyz.germanfica.util.Archivo;
-import xyz.germanfica.util.Matriz;
 
 /*
  * Escribir en Java la clase TestVivero para implementar un programa que:
@@ -31,6 +30,15 @@ public class TestVivero {
 	private static Scanner sc;
 	private static final String NOMBRE_ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tpob/Arboles.txt"; // Ruta del archivo
 
+	/*
+	 * [5] Mostrar todos los árboles
+	 * Mustra todos los árboles del arreglo de árboles
+	 */
+	public static void mostrarArboles(Arbol[] arbol) {
+		for (int i = 0; i <= arbol.length-1; i++) {
+			System.out.println(arbol[i].toString());
+		}
+	}
 	
 	/*
 	 * [4] Mostrar el nombre de todos los árboles que son frutales
@@ -104,7 +112,7 @@ public class TestVivero {
 		
 		// Leo los valores para el nuevo árbol que va a estar en el arreglo
 		while(i <= cantidadArboles-1) {
-			arbol = cargaArbol(); // Genero un nuevo árbol
+			arbol = generaArbol(); // Genero un nuevo árbol
 			
 			// Se repite el árbol en el arreglo de árboles?
 			if(existeEsteArbol(arregloArbol, arbol)) {
@@ -118,25 +126,15 @@ public class TestVivero {
 		return arregloArbol;
 	}
 	
-	public static void mostrarArboles(Arbol[] arbol) {
-		for (int i = 0; i <= arbol.length-1; i++) {
-			System.out.println(arbol[i].toString());
-		}
-	}
-	
-	/*
-	 * Este modulo se encarga de mostrar los carteles del menu
+	/**
+	 * Determina si un árbol determinado ya existe en el arreglo
+	 * de árboles solicitado.
+	 * 
+	 * @param arboles es el arreglo de árboles a analizar
+	 * @param arbol es el árbol que se quiere comparar
+	 * para saber si existe en el arreglo de árboles
+	 * @return
 	 */
-	public static void mostrarCartelDeOpciones() {
-		System.out.print("[0] Salir (IMPLEMENTADO)\n"
-				+ "[1] Carga de datos (IMPLEMENTADO)\n"
-				+ "[2] Listado de árboles de más de 10m de altura (IMPLEMENTADO)\n"
-				+ "[3] Cantidad de árboles que soportan por debajo de los 0° (IMPLEMENTADO)\n"
-				+ "[4] Mostrar el nombre de todos los árboles que son frutales (IMPLEMENTADO)\n"
-				+ "[5] Mostrar todos los árboles (IMPLEMENTADO)\n"
-				);
-	}
-	
 	public static boolean existeEsteArbol(Arbol[] arboles, Arbol arbol) {
 		// Declaración de variables
 		boolean seRepite, hayObjetos;
@@ -149,7 +147,7 @@ public class TestVivero {
 		
 		// Busca si se repite el árbol en el arreglo de árboles
 		while (i<=arboles.length-1 && !seRepite && hayObjetos) {
-			if(arboles[i]==null) {
+			if(arboles[i]==null) { // No tiene que ser núlo
 				hayObjetos = false;
 			}else {
 				if(arboles[i].equals(arbol)) {
@@ -162,10 +160,13 @@ public class TestVivero {
 		return seRepite;
 	}
 	
-	/*
-	 * Cargar un objeto de tipo árbol
+	/**
+	 * Genera un objeto de tipo árbol
+	 *
+	 * @return devuelve un objeto de tipo árbol con sus atributos
+	 * inicializados
 	 */
-	public static Arbol cargaArbol() {
+	public static Arbol generaArbol() {
 		String nombre;
 		int altura, profRaices, tempMinima;
 		boolean frutos;
@@ -190,7 +191,8 @@ public class TestVivero {
 	 * 
 	 * @param arboles es el arreglo o listado de todos los árboles del vivero
 	 * @param temp es la temperatura mínima que va a soportar el árbol
-	 * @return devuelve la cantidad de árboles que soportan temperaturas por debajo de los 0ºC
+	 * @return devuelve la cantidad de árboles que soportan temperaturas por
+	 * debajo de los 0ºC
 	 */
 	public static int cantSopTem(Arbol[] arboles, int temp) {
 		int cant;
@@ -203,42 +205,72 @@ public class TestVivero {
 		return cant;
 	}
 	
-	/*
-	 * Mostrar el menu de la aplicacion
+	/**
+	 * Carga de datos al arreglo pero de forma manual.
+	 * 
+	 * @return devuelve un arreglo de árboles cargado de elementos
 	 */
-	public static void mostrarMenu(Arbol[] arboles) {
-		boolean salir = false;
+	public static Arbol[] cargaManual() {
+		int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
+		
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
+		cantidadArboles = sc.nextInt();
+		
+		return cargaArboles(cantidadArboles);
+	}
+	
+	/**
+	 * En este módulo se pretende hacer la primera carga al arreglo
+	 * de árboles. Se mostrará un menú con dos opciones a elegir. Según la
+	 * opción es el tipo de carga que se lleva a cabo.
+	 * 
+	 * Los dos tipos de carga son:
+	 * - Manual.
+	 * - Desde el archivo.
+	 * @return devuelve un arreglo de árboles cargado de elementos
+	 */
+	public static Arbol[] cargaInicial() {
+		Arbol[] arbol;
 		int opcion;
 		
-		// Mensaje de bienvenida
-		System.out.println(Mensaje.leer(0));
+		System.out.println("¿Quiere cargar desde el archivo o de manera manual?");
+		System.out.print("[1] Desde el archivo (IMPLEMENTADO)\n"
+				+ "[2] Manual (IMPLEMENTADO)\n"
+				);
+		sc = new Scanner(System.in);
+		opcion = sc.nextInt();
 		
-		while(!salir) {
-			// Mostrar cartel con las opciones
-			mostrarCartelDeOpciones();
+		switch (opcion) {
+		case 1: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO);break;
+		case 2:
+			int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
 			
-			// Leer opcion del menu principal
+			// Carga de datos al arreglo por primera vez
 			sc = new Scanner(System.in);
-			opcion = sc.nextInt();
-			
-			switch (opcion) {
-			case 0: salir = true; break;
-			// [1] Carga de datos
-			case 1: arboles = cargaManual();break; // Opcion 1
-			// [2] Listado de árboles de más de 10m de altura
-			case 2: mostrarArbAlt10(arboles);; break; // Opcion 2
-			// [3] Cantidad de árboles que soportan por debajo de los 0°
-			case 3: mostrarCantSopTem(arboles);; break; // Opcion 3
-			// [4] Mostrar el nombre de todos los árboles que son frutales
-			case 4: mostrarNombArbFrut(arboles);; break; // Opcion 4
-			// [5] Mostrar todos los árboles pero el más reciente
-			case 5: mostrarArboles(arboles); break;
-			default: System.err.println(Mensaje.leer(1)); break;
-			}
+			System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
+			cantidadArboles = sc.nextInt();
+			arbol = cargaArboles(cantidadArboles);
+			;break;
+		default: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO); break; // Por defecto hago la carga desde el archivo
 		}
+		
+		return arbol;
 	}
 	
 	private static Scanner scLongitudDelArchivo;
+	/**
+	 * Determina la longitud que tendrá un arreglo cualquiera,
+	 * tomando como identificador el ; para contar los elementos
+	 * que hay en el archivo.
+	 * 
+	 * @param contenidoDelArchivo es el contenido del archivo. Para obtener
+	 * el contenido del archivo sólo basta con llamar al módulo
+	 * Archivo.Leer(ARCHIVO), siendo ARCHIVO (la ruta)+(nombre del
+	 * archivo con su extensión), ejemplo: 
+	 * ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej2.txt".
+	 * @return Devuelve la longitud que debe tener un arreglo según los elementos del archivo
+	 */
 	public static int longitudDelArchivo(String contenidoDelArchivo) {
 		int longitud = 0;
 		scLongitudDelArchivo = new Scanner(contenidoDelArchivo); // Le digo al scanner que me analice el contenido del archivo
@@ -253,6 +285,29 @@ public class TestVivero {
 	
 	private static Scanner scArregloArbol;
 	private static Scanner scArbol;
+	/**
+	 * Carga un arreglo de árboles desde un archivo solicitado.
+	 * 
+	 * Este módulo solo funciona si cumple con el siguiente formato:
+	 * 
+	 * Cada atributo del árbol dentro del archivo deben ir separados
+	 * con una ','.
+	 * Y se debe terminar con un ';'.
+	 *  
+	 * Ejemplo:
+	 * Árbol 1: Abedul, 10, 3, false, -2;
+	 * Árbol 2: Naranjo, 5, 6, true, 15;
+	 * 
+	 * Nota: éste módulo contempla que hayan árboles repetidos.
+	 * 
+	 * @param ARCHIVO ruta del archivo. Acá no va el contenido del archivo.
+	 * Para obtener el contenido del archivo sólo basta con llamar al módulo
+	 * Archivo.Leer(ARCHIVO), siendo ARCHIVO (la ruta)+(nombre del
+	 * archivo con su extensión), ejemplo: 
+	 * ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej2.txt".
+	 * @return Devuelve una arreglo de árboles cargada con los elementos
+	 * del archivo.
+	 */
 	public static Arbol[] cargaDesdeArchivo(String ARCHIVO) {
 		// Declaración de variables
 		Arbol[] arregloArbol;
@@ -285,44 +340,51 @@ public class TestVivero {
 	}
 	
 	/*
-	 * Carga de datos al arreglo de forma manual
+	 * Este modulo se encarga de mostrar los carteles del menu
 	 */
-	public static Arbol[] cargaManual() {
-		int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
-		
-		sc = new Scanner(System.in);
-		System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
-		cantidadArboles = sc.nextInt();
-		
-		return cargaArboles(cantidadArboles);
+	public static void mostrarCartelDeOpciones() {
+		System.out.print("[0] Salir (IMPLEMENTADO)\n"
+				+ "[1] Carga de datos (IMPLEMENTADO)\n"
+				+ "[2] Listado de árboles de más de 10m de altura (IMPLEMENTADO)\n"
+				+ "[3] Cantidad de árboles que soportan por debajo de los 0° (IMPLEMENTADO)\n"
+				+ "[4] Mostrar el nombre de todos los árboles que son frutales (IMPLEMENTADO)\n"
+				+ "[5] Mostrar todos los árboles (IMPLEMENTADO)\n"
+				);
 	}
 	
-	public static Arbol[] cargaInicial() {
-		Arbol[] arbol;
+	/*
+	 * Mostrar el menú de la aplicación
+	 */
+	public static void mostrarMenu(Arbol[] arboles) {
+		boolean salir = false;
 		int opcion;
 		
-		System.out.println("¿Quiere cargar desde el archivo o de manera manual?");
-		System.out.print("[1] Desde el archivo (IMPLEMENTADO)\n"
-				+ "[2] Manual (IMPLEMENTADO)\n"
-				);
-		sc = new Scanner(System.in);
-		opcion = sc.nextInt();
+		// Mensaje de bienvenida
+		System.out.println(Mensaje.leer(0));
 		
-		switch (opcion) {
-		case 1: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO);break;
-		case 2:
-			int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
+		while(!salir) {
+			// Mostrar cartel con las opciones
+			mostrarCartelDeOpciones();
 			
-			// Carga de datos al arreglo por primera vez
+			// Leer opcion del menu principal
 			sc = new Scanner(System.in);
-			System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
-			cantidadArboles = sc.nextInt();
-			arbol = cargaArboles(cantidadArboles);
-			;break;
-		default: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO); break; // Por defecto hago la carga desde el archivo
+			opcion = sc.nextInt();
+			
+			switch (opcion) {
+			case 0: salir = true; break;
+			// [1] Carga de datos
+			case 1: arboles = cargaManual();break; // Opcion 1
+			// [2] Listado de árboles de más de 10m de altura
+			case 2: mostrarArbAlt10(arboles);; break; // Opcion 2
+			// [3] Cantidad de árboles que soportan por debajo de los 0°
+			case 3: mostrarCantSopTem(arboles);; break; // Opcion 3
+			// [4] Mostrar el nombre de todos los árboles que son frutales
+			case 4: mostrarNombArbFrut(arboles);; break; // Opcion 4
+			// [5] Mostrar todos los árboles pero el más reciente
+			case 5: mostrarArboles(arboles); break;
+			default: System.err.println(Mensaje.leer(1)); break;
+			}
 		}
-		
-		return arbol;
 	}
 	
 	public static void main(String[] args) {
