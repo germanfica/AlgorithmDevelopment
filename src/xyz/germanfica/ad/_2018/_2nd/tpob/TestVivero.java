@@ -204,21 +204,6 @@ public class TestVivero {
 	}
 	
 	/*
-	 * Este módulo lee nuevamente la cantidad de árboles para
-	 * del vivero y carga los árboles al arreglo de árboles
-	 */
-	public static void opcion1(Arbol[] arboles) {
-		// Declaración de variables
-		int cantidadArboles;
-		
-		// Leer la cantidad de árboles
-		sc = new Scanner(System.in);
-		System.out.println("Ingrese la nueva cantidad de árboles del vivero:");
-		cantidadArboles = sc.nextInt();
-		arboles = cargaArboles(cantidadArboles); // Modifica el arreglo que tengo por referencia
-	}
-	
-	/*
 	 * Mostrar el menu de la aplicacion
 	 */
 	public static void mostrarMenu(Arbol[] arboles) {
@@ -239,7 +224,7 @@ public class TestVivero {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Carga de datos
-			case 1: opcion1(arboles);break; // Opcion 1
+			case 1: arboles = cargaManual();break; // Opcion 1
 			// [2] Listado de árboles de más de 10m de altura
 			case 2: mostrarArbAlt10(arboles);; break; // Opcion 2
 			// [3] Cantidad de árboles que soportan por debajo de los 0°
@@ -299,32 +284,53 @@ public class TestVivero {
 		return arregloArbol;
 	}
 	
-	public static void mostrarMenuDeCargaInicial(Arbol[] arbol) {
-		boolean esManual;
-		//int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
+	/*
+	 * Carga de datos al arreglo de forma manual
+	 */
+	public static Arbol[] cargaManual() {
+		int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
 		
-		// Carga de datos al arreglo por primera vez
-		//sc = new Scanner(System.in);
-		//System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
-		//cantidadArboles = sc.nextInt();
-		//arbol = cargaArboles(cantidadArboles);
+		sc = new Scanner(System.in);
+		System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
+		cantidadArboles = sc.nextInt();
+		
+		return cargaArboles(cantidadArboles);
+	}
+	
+	public static Arbol[] cargaInicial() {
+		Arbol[] arbol;
+		int opcion;
+		
 		System.out.println("¿Quiere cargar desde el archivo o de manera manual?");
 		System.out.print("[1] Desde el archivo (IMPLEMENTADO)\n"
 				+ "[2] Manual (IMPLEMENTADO)\n"
 				);
 		sc = new Scanner(System.in);
-		esManual = sc.nextBoolean();
-		if(esManual) {
+		opcion = sc.nextInt();
+		
+		switch (opcion) {
+		case 1: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO);break;
+		case 2:
+			int cantidadArboles; // La cantidad de árboles que el vivero tiene a la venta
 			
-		}else {
-			arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO);	
+			// Carga de datos al arreglo por primera vez
+			sc = new Scanner(System.in);
+			System.out.println("Ingrese la cantidad de árboles que hay en el vivero: ");
+			cantidadArboles = sc.nextInt();
+			arbol = cargaArboles(cantidadArboles);
+			;break;
+		default: arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO); break; // Por defecto hago la carga desde el archivo
 		}
+		
+		return arbol;
 	}
 	
 	public static void main(String[] args) {
-		Arbol[] arbol = new Arbol[0]; // Arreglo de los árboles que el vivero tiene a la venta
+		Arbol[] arbol; // Arreglo de los árboles que el vivero tiene a la venta
 		// Mostrar menú para la carga inicial del arreglo
-		mostrarMenuDeCargaInicial(arbol);
+		arbol = cargaInicial();
+		//arbol = cargaManual(); // Carga manual
+		//arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Carga desde el archivo
 		// Mostrar menú
 		mostrarMenu(arbol);
 	}
