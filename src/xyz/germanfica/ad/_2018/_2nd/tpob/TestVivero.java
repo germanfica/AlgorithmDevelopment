@@ -355,12 +355,17 @@ public class TestVivero {
 	/*
 	 * Mostrar el menú de la aplicación
 	 */
-	public static void mostrarMenu(Arbol[] arboles) {
+	public static void mostrarMenu() {
+		Arbol[] arregloArbol; // Arreglo de los árboles que el vivero tiene a la venta
 		boolean salir = false;
 		int opcion;
 		
 		// Mensaje de bienvenida
 		System.out.println(Mensaje.leer(0));
+		
+		arregloArbol = cargaInicial(); // Carga inicial del arreglo
+		//arboles = cargaManual(); // Carga manual
+		//arboles = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Carga desde el archivo
 		
 		while(!salir) {
 			// Mostrar cartel con las opciones
@@ -373,27 +378,22 @@ public class TestVivero {
 			switch (opcion) {
 			case 0: salir = true; break;
 			// [1] Carga de datos
-			case 1: arboles = cargaManual();break; // Opcion 1
+			case 1: arregloArbol = cargaManual();break; // Opcion 1
 			// [2] Listado de árboles de más de 10m de altura
-			case 2: mostrarArbAlt10(arboles);; break; // Opcion 2
+			case 2: mostrarArbAlt10(arregloArbol);; break; // Opcion 2
 			// [3] Cantidad de árboles que soportan por debajo de los 0°
-			case 3: mostrarCantSopTem(arboles);; break; // Opcion 3
+			case 3: mostrarCantSopTem(arregloArbol);; break; // Opcion 3
 			// [4] Mostrar el nombre de todos los árboles que son frutales
-			case 4: mostrarNombArbFrut(arboles);; break; // Opcion 4
+			case 4: mostrarNombArbFrut(arregloArbol);; break; // Opcion 4
 			// [5] Mostrar todos los árboles pero el más reciente
-			case 5: mostrarArboles(arboles); break;
+			case 5: mostrarArboles(arregloArbol); break;
 			default: System.err.println(Mensaje.leer(1)); break;
 			}
 		}
 	}
 	
 	public static void main(String[] args) {
-		Arbol[] arbol; // Arreglo de los árboles que el vivero tiene a la venta
-		// Mostrar menú para la carga inicial del arreglo
-		arbol = cargaInicial();
-		//arbol = cargaManual(); // Carga manual
-		//arbol = cargaDesdeArchivo(NOMBRE_ARCHIVO); // Carga desde el archivo
 		// Mostrar menú
-		mostrarMenu(arbol);
+		mostrarMenu();
 	}
 }
