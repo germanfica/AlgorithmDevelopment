@@ -1,0 +1,2 @@
+Abedul, 10, 3, false, -2;
+Naranjero, 5, 6, true, 15;

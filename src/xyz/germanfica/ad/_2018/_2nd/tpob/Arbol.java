@@ -14,7 +14,7 @@ public class Arbol {
 	
 	public Arbol (String nom, int alt, int pRaices, boolean fr, int tMin) {
 		nombre = nom;
-		alt = altura;
+		altura = alt;
 		profRaices = pRaices;
 		frutos = fr;
 		tempMinima = tMin;
