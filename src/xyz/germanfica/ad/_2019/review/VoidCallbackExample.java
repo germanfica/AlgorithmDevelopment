@@ -6,6 +6,11 @@ import xyz.germanfica.util.VoidCallback;
 //void run();
 //}
 
+// Fuente:
+// https://stackoverflow.com/questions/42463830/java-simple-callback
+// https://stackoverflow.com/questions/443708/callback-functions-in-java/26776520
+// Runnable callback
+
 /*
  * SEGUNDO PARCIAL 14/06/2018 – Desarrollo de Algoritmos
  */
