@@ -2,10 +2,14 @@ package xyz.germanfica.ad._2019.review;
 
 import xyz.germanfica.util.VoidCallback;
 
+//interface VoidCallback{
+//void run();
+//}
+
 /*
  * SEGUNDO PARCIAL 14/06/2018 – Desarrollo de Algoritmos
  */
-public class SegundoParcial {
+public class VoidCallbackExample {
 	private static int contador = 0;
 	/*
 	 * 1- Dada un arreglo de enteros, desarrolle un método recursivo que verifique
