@@ -1,5 +1,9 @@
 package xyz.germanfica.ad._2019.review;
 
+interface VoidCallback{
+    void run();
+}
+
 /*
  * SEGUNDO PARCIAL 14/06/2018 – Desarrollo de Algoritmos
  */
@@ -27,7 +31,7 @@ public class SegundoParcial {
 	 *            arreglo de enteros
 	 * @return
 	 */
-	private static boolean ordenado(int i, int j, int[] elementos, Runnable callback) {
+	private static boolean ordenado(int i, int j, int[] elementos, VoidCallback onEnd) {
 		if (i <= elementos.length - 2) {
 			// A
 			if (j <= elementos.length - 2) {
@@ -38,15 +42,15 @@ public class SegundoParcial {
 				System.out.println("j: " + j);
 				System.out.println("element: " + elementos[j]);
 
-				ordenado(i, j + 1, elementos, callback);
+				ordenado(i, j + 1, elementos, onEnd);
 			} else {
 				// C
 				// System.out.println("Índice: " + i);
-				ordenado(i + 1, 0, elementos, callback);
+				ordenado(i + 1, 0, elementos, onEnd);
 			}
 		} else {
 			// FIN
-			callback.run();
+			onEnd.run();
 		}
 
 		return false;
@@ -54,11 +58,11 @@ public class SegundoParcial {
 
 	public static void main(String[] args) {
 		final int[] elementos = { 5, 5, 8, 7, 9, 6 };
-		boolean ordenados = ordenado(0, 0, elementos, new Runnable() {
+		boolean ordenados = ordenado(0, 0, elementos, new VoidCallback() {
 			@Override
 			public void run() {
-				// Running callback
-				System.out.println("HOLAAA");
+				// TODO Auto-generated method stub
+				System.out.println("HOLAA");
 			}
 		});
 
