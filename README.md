@@ -9,3 +9,6 @@ Este repositorio tiene como objetivo brindar utilidades básicas para el desarro
 
 ## Licencia
 [MIT](https://opensource.org/licenses/MIT)
+
+## Eclipse auto-format code
+On Windows: Ctrl + Shift + F
