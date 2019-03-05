@@ -1,7 +1,5 @@
 package xyz.germanfica.ad._2019.review;
 
-import xyz.germanfica.util.VoidCallback;
-
 /*
  * SEGUNDO PARCIAL 14/06/2018 – Desarrollo de Algoritmos
  */
@@ -16,10 +14,11 @@ public class SegundoParcial {
 	 */
 
 	/**
-	 * Cuando deja de cumplirse la condición de (j <= elementos.length - 2), sucede
-	 * que j ahora pasa a ser j = elementos.length - 2 + 1. Por esa razón, si se
-	 * requiere evaluar j en C es recomendable setear una variable que se llame jC.
-	 * Es decir, jC = elementos.length - 2; // j sin el incremento
+	 * Este módulo verifica que todos los elementos del arreglo estén ordenados de
+	 * menor a mayor.
+	 * 
+	 * Nota: cuando deja de cumplirse la condición de (j <= elementos.length - 2),
+	 * sucede que j ahora pasa a ser j = elementos.length - 2 + 1.
 	 * 
 	 * @param i
 	 *            iterador i
@@ -29,41 +28,43 @@ public class SegundoParcial {
 	 *            arreglo de enteros
 	 * @return
 	 */
-	private static boolean ordenado(int i, int j, int[] elementos, VoidCallback onEnd) {
-		if (i <= elementos.length - 2) {
-			// A
+	private static boolean ordenado(int i, int j, int[] elementos) {
+		boolean respuesta = true;
+		if (i <= elementos.length - 2 && respuesta) {
 			if (j <= elementos.length - 2) {
-				// B
+				int a = elementos[i]; // Elemento A
+				int b = elementos[j + 1]; // Elemento B
+
 				contador++;
 				System.out.println(contador);
-				System.out.println("i: " + i);
-				System.out.println("j: " + j);
-				System.out.println("element: " + elementos[j]);
+				// System.out.println("i: " + i);
+				// System.out.println("j: " + j);
+				System.out.println("element: " + a);
+				System.out.println("element: " + b);
 
-				ordenado(i, j + 1, elementos, onEnd);
+				// Verificar si es menor
+				if (a > b) {
+					respuesta = false;
+					System.out.println(respuesta);
+				} else {
+					respuesta = ordenado(i, j + 1, elementos);
+				}
 			} else {
-				// C
-				// System.out.println("Índice: " + i);
-				ordenado(i + 1, 0, elementos, onEnd);
+				respuesta = ordenado(i + 1, i + 1, elementos);
 			}
-		} else {
-			// FIN
-			onEnd.run();
 		}
 
-		return false;
+		return respuesta;
 	}
 
 	public static void main(String[] args) {
-		final int[] elementos = { 5, 5, 8, 7, 9, 6 };
-		boolean ordenados = ordenado(0, 0, elementos, new VoidCallback() {
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				System.out.println("HOLAA");
-			}
-		});
+		boolean ordenados;
+		final int[] arregloA = { 5, 5, 8, 7, 9, 6 };
+		final int[] arregloB = { 1, 2, 3, 4, 5, 6 };
 
+		ordenados = ordenado(0, 0, arregloA);
+		System.out.println("¿Están los elementos ordenados? " + ordenados);
+		ordenados = ordenado(0, 0, arregloB);
 		System.out.println("¿Están los elementos ordenados? " + ordenados);
 	}
 }
