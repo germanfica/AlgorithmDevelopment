@@ -111,9 +111,7 @@ public class ArreglosUnidimensionales {
 		return cant;
 	}
 
-	public static void mostrarMenu() {
-		int[] pin = pin();
-		int[] cn = cn(pin, pin.length);
+	public static void mostrarMenu(int[] pin, int[] cn) {
 		int opcion = 0;
 
 		while (opcion != -1) {
@@ -146,6 +144,9 @@ public class ArreglosUnidimensionales {
 	}
 
 	public static void main(String[] args) {
-		mostrarMenu();
+		int[] pin = pin();
+		int[] cn = cn(pin, pin.length);
+		
+		mostrarMenu(pin, cn);
 	}
 }

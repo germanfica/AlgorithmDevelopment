@@ -33,6 +33,7 @@ import xyz.germanfica.mensaje.Mensaje;
  * - ALGORITMO calcularAreaCirculo( REAL radio) RETORNA REAL
  * - ALGORITMO calcularPerimetroCirculo( REAL radio) RETORNA REAL
  */
+/*
 public class Ej10 {
 	private static Scanner sc;
 	
@@ -95,11 +96,13 @@ public class Ej10 {
 				"[4] Perímetro y area de un círculo\n"
 				);
 	}
+	*/
 	
 	/**
 	 * Mostrar menú de la aplicacion
 	 * Los modulos no deben ocupar mas de una pantalla
 	 */
+/*
 	public static void mostrarMenú() {
 		boolean salir = false;
 		int opcion;
@@ -131,4 +134,7 @@ public class Ej10 {
 	public static void main(String[] args) {
 		mostrarMenú();
 	}
+	
 }
+
+*/
