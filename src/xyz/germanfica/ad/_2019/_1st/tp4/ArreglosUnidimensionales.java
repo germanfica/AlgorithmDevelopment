@@ -111,18 +111,37 @@ public class ArreglosUnidimensionales {
 		return cant;
 	}
 
-	public static void mostrarMenu(int[] pin, int[] cn) {
+	public static void mostrarMenu() {
+		System.out.println("Bienvenido!");
+		System.out.println("[0] Mostrar pin codificado");
+		System.out.println("[1] Mostrar la cantidad de dígitos equivalentes de 3 o más cifras");
+		System.out.println("[2] Mostrar la cantidad de dígitos equivalentes de 1 cifra");
+		System.out.println("[3] Mostrar la cantidad de dígitos equivalentes entre 20 y 40");
+	}
+	
+	public static int leerOpcion() {
+		int opcion;
+		Scanner sc = new Scanner(System.in);
+		opcion = sc.nextInt();
+		
+		return opcion;
+	}
+	
+	/*
+	 * El algoritmo principal tiene que ser el cerebro el que maneja
+	 * y da las ordenes de qué hacer.
+	 */
+	public static void main(String[] args) {
+		int[] pin = pin();
+		int[] cn = cn(pin, pin.length);
+		
 		int opcion = 0;
+		
+		mostrarMenu();
+		opcion = leerOpcion();
 
 		while (opcion != -1) {
-			System.out.println("Bienvenido!");
-			System.out.println("[0] Mostrar pin codificado");
-			System.out.println("[1] Mostrar la cantidad de dígitos equivalentes de 3 o más cifras");
-			System.out.println("[2] Mostrar la cantidad de dígitos equivalentes de 1 cifra");
-			System.out.println("[3] Mostrar la cantidad de dígitos equivalentes entre 20 y 40");
-
-			Scanner sc = new Scanner(System.in);
-			opcion = sc.nextInt();
+			opcion = leerOpcion();
 			switch (opcion) {
 			case 0:
 				mostrarElemArrEnt(cn);
@@ -141,11 +160,6 @@ public class ArreglosUnidimensionales {
 				break;
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		int[] pin = pin();
-		int[] cn = cn(pin, pin.length);
 		
 		mostrarMenu(pin, cn);
 	}
