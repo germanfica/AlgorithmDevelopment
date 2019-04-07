@@ -78,7 +78,7 @@ public class ArreglosUnidimensionales {
 		}
 		return cantCifras;
 	}
-	
+
 	public static int cantDigEqDeCif(int[] cn, int num) {
 		int cant = 0;
 
@@ -89,7 +89,7 @@ public class ArreglosUnidimensionales {
 		}
 		return cant;
 	}
-	
+
 	public static int cantDigEqDeCifMayIgual(int[] cn, int cantCif) {
 		int cant = 0;
 
@@ -103,7 +103,7 @@ public class ArreglosUnidimensionales {
 
 	public static int cantDigEqEntre(int[] cn, int ini, int fin) {
 		int cant = 0;
-		for (int i = 1; i <= cn.length-1; i=i+2) {
+		for (int i = 1; i <= cn.length - 1; i = i + 2) {
 			if (cn[i] >= ini && cn[i] <= fin) {
 				cant++;
 			}
@@ -118,25 +118,25 @@ public class ArreglosUnidimensionales {
 		System.out.println("[2] Mostrar la cantidad de dígitos equivalentes de 1 cifra");
 		System.out.println("[3] Mostrar la cantidad de dígitos equivalentes entre 20 y 40");
 	}
-	
+
 	public static int leerOpcion() {
 		int opcion;
 		Scanner sc = new Scanner(System.in);
 		opcion = sc.nextInt();
-		
+
 		return opcion;
 	}
-	
+
 	/*
-	 * El algoritmo principal tiene que ser el cerebro el que maneja
-	 * y da las ordenes de qué hacer.
+	 * El algoritmo principal tiene que ser el cerebro el que maneja y da las
+	 * ordenes de qué hacer.
 	 */
 	public static void main(String[] args) {
 		int[] pin = pin();
 		int[] cn = cn(pin, pin.length);
-		
+
 		int opcion = 0;
-		
+
 		mostrarMenu();
 		opcion = leerOpcion();
 
@@ -160,7 +160,5 @@ public class ArreglosUnidimensionales {
 				break;
 			}
 		}
-		
-		mostrarMenu(pin, cn);
 	}
 }

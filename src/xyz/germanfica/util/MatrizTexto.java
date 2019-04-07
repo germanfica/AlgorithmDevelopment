@@ -2,48 +2,24 @@ package xyz.germanfica.util;
 
 import java.util.Scanner;
 
-/**
- * Esta clase contiene utilidades para el manejo de matrices
- * de caracteres.
- * 
- * @author German Fica - {@link germanfica.xyz}
- */
-public class MatrizCaracter {
+public class MatrizTexto {
 	private static Scanner scCargaFilaDesdeArchivo;
 	private static Scanner scCargaDesdeArchivo;
-
-	/*
-	 * Muestra todos los elementos de una matriz de caracteres
-	 */
-	public static void mostrar(char[][] caracteres) {
-		// Declaración de variables
-		int cantFilas, cantColumnas;
-		
-		// Inicializaicón de variables
-		cantFilas = caracteres.length;
-		cantColumnas = caracteres[0].length;
-		for (int i = 0; i <= cantFilas-1; i++) {
-			for (int j = 0; j <= cantColumnas-1; j++) {
-				System.out.print(caracteres[i][j]);
-			}
-			System.out.println();
-		}
-	}
 	
 	/*
-	 * Muestra todos los elementos de una matriz de caracteres
+	 * Muestra todos los elementos de una matriz de texto
 	 * seperados con un espacio
 	 */
-	public static void mostrarConEspacio(char[][] caracteres) {
+	public static void mostrarConEspacio(String[][] matrizTexto) {
 		// Declaración de variables
 		int cantFilas, cantColumnas;
 		
 		// Inicializaicón de variables
-		cantFilas = caracteres.length;
-		cantColumnas = caracteres[0].length;
+		cantFilas = matrizTexto.length;
+		cantColumnas = matrizTexto[0].length;
 		for (int i = 0; i <= cantFilas-1; i++) {
 			for (int j = 0; j <= cantColumnas-1; j++) {
-				System.out.print(caracteres[i][j]);
+				System.out.print(matrizTexto[i][j]);
 				System.out.print(" ");
 			}
 			System.out.println();
@@ -53,13 +29,13 @@ public class MatrizCaracter {
 	/*
 	 * Se requiere para el módulo 'cargaDesdeArchivo(ARCHIVO)'.
 	 */
-	private static char[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
+	private static String[] cargaFilaDesdeArchivo(String contenidoFila, int cantColumnas) {
 		// Declaración de variables
-		char[] arreglo;
+		String[] arreglo;
 		int j;
 		
 		// Inicialización de variables
-		arreglo = new char[cantColumnas];
+		arreglo = new String[cantColumnas];
 		j=0;
 		
 		// Carga de elementos
@@ -67,14 +43,14 @@ public class MatrizCaracter {
 		scCargaFilaDesdeArchivo.useDelimiter("\\s*,\\s*"); // Clasifica los elementos cuando encuntra un punto y coma
 		
 		while(scCargaFilaDesdeArchivo.hasNext()) {
-			arreglo[j] = scCargaFilaDesdeArchivo.next().charAt(0);
+			arreglo[j] = scCargaFilaDesdeArchivo.next();
 			j++;
 		}
 		return arreglo;
 	}
 	
 	/**
-	 * Carga una matriz de caracteres desde un archivo solicitado.
+	 * Carga una matriz de texto desde un archivo solicitado.
 	 * 
 	 * Este módulo solo funciona si cumple con el siguiente formato:
 	 * Los elementos de cada fila deben ir separados con una ','. 
@@ -95,12 +71,12 @@ public class MatrizCaracter {
 	 * Archivo.Leer(ARCHIVO), siendo ARCHIVO (la ruta)+(nombre del
 	 * archivo con su extensión), ejemplo: 
 	 * ARCHIVO = "src/xyz/germanfica/ad/_2018/_2nd/tp3/Ej2.txt".
-	 * @return Devuelve una matriz de caracteres cargada con los elementos
+	 * @return Devuelve una matriz de texto cargada con los elementos
 	 * del archivo.
 	 */
-	public static char[][] cargaDesdeArchivo(String ARCHIVO) {
+	public static String[][] cargaDesdeArchivo(String ARCHIVO) {
 		// Declaración de variables
-		char[][] caracteres;
+		String[][] matrizTexto;
 		int[] dimensiones;
 		int cantFilas, cantColumnas, i;
 		String contenidoDelArchivo, contenidoFila;
@@ -110,7 +86,7 @@ public class MatrizCaracter {
 		dimensiones = Matriz.dimensionesArchivo(contenidoDelArchivo);// Llamar al módulo que determina la cantidad de filas y columnas de la matriz del archivo
 		cantFilas = dimensiones[0];
 		cantColumnas = dimensiones[1];
-		caracteres = new char[cantFilas][cantColumnas];
+		matrizTexto = new String[cantFilas][cantColumnas];
 		i = 0;
 		
 		// Carga de elementos
@@ -120,9 +96,9 @@ public class MatrizCaracter {
 		
 		while(scCargaDesdeArchivo.hasNext()) {
 			contenidoFila = scCargaDesdeArchivo.next();
-			caracteres[i] = cargaFilaDesdeArchivo(contenidoFila, cantColumnas);
+			matrizTexto[i] = cargaFilaDesdeArchivo(contenidoFila, cantColumnas);
 			i++;
 		}
-		return caracteres;
+		return matrizTexto;
 	}
 }
