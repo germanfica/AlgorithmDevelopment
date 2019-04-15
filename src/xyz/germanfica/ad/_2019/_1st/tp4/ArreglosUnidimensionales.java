@@ -111,7 +111,7 @@ public class ArreglosUnidimensionales {
 		return cant;
 	}
 
-	public static void mostrarMenu() {
+	public static void mostrarOpciones() {
 		System.out.println("Bienvenido!");
 		System.out.println("[0] Mostrar pin codificado");
 		System.out.println("[1] Mostrar la cantidad de dígitos equivalentes de 3 o más cifras");
@@ -136,8 +136,13 @@ public class ArreglosUnidimensionales {
 		int[] cn = cn(pin, pin.length);
 
 		int opcion = 0;
+<<<<<<< HEAD
+		
+		mostrarOpciones();
+=======
 
 		mostrarMenu();
+>>>>>>> 344cf7513dd535ebf578ae3537b01f496836dbaf
 		opcion = leerOpcion();
 
 		while (opcion != -1) {
