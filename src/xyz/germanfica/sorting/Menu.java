@@ -35,7 +35,7 @@ public class Menu {
 	 * @return
 	 */
 	public static int[] cargaDesdeArchivo(String ruta) {
-		String contenidoDelArchivo = Archivo.leer(ruta);
+		String contenidoDelArchivo = Archivo.leer(ruta).getTexto();
 		int[] arreglo = new int[longitud(contenidoDelArchivo)];
 		
 		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo

@@ -171,7 +171,7 @@ public class EntregaEntregadaNoTocar {
 				salir = true;
 				break;
 			case 5:
-				System.out.println(cambioEnLasVocales(Archivo.leer(COLORES_ARCHIVO), 0));
+				System.out.println(cambioEnLasVocales(Archivo.leer(COLORES_ARCHIVO).getTexto(), 0));
 				break;
 			case 6:
 				verificarColorImpresion(colores);
@@ -198,7 +198,7 @@ public class EntregaEntregadaNoTocar {
 	
 	public static String[] cargaColoresDesdeArchivo(int longitud) {
 		String[] arreglo = new String[longitud];
-		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
+		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO).getTexto();
 		
 		// Convercion a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);

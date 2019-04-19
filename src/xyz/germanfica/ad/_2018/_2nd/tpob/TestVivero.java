@@ -315,7 +315,7 @@ public class TestVivero {
 		String contenidoDelArchivo;
 		
 		// Inicialización de variables
-		contenidoDelArchivo = Archivo.leer(ARCHIVO);
+		contenidoDelArchivo = Archivo.leer(ARCHIVO).getTexto();
 		arregloArbol = new Arbol[longitudDelArchivo(contenidoDelArchivo)]; // longitudDelArchivo()
 		i=0;
 		

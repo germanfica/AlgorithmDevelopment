@@ -55,7 +55,7 @@ public class Archivo {
 	 * @param NOMBRE_ARCHIVO ruta completa y nombre del archivo
 	 * @return texto plano del contenido del archivo solicitado
 	 */
-	public static String leer(String NOMBRE_ARCHIVO) {
+	public static Texto leer(String NOMBRE_ARCHIVO) {
 		String contenido = "";
 		
     	try {
@@ -76,7 +76,7 @@ public class Archivo {
             System.err.println("Error al leer o escribir en el archivo.");
         }
 		
-		return contenido;
+		return new Texto(contenido);
 	}
 	
 	/**

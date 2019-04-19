@@ -28,7 +28,7 @@ public class Ej9 {
     
 	public static Auto[] autos(int longitud) {
 		Auto[] autos = new Auto[longitud];
-		String archivo = Archivo.leer(NOMBRE_ARCHIVO);
+		String archivo = Archivo.leer(NOMBRE_ARCHIVO).getTexto();
 		
 		sc = new Scanner(archivo); // Asignacion de tarea al scanner para analizar el archivo
 		

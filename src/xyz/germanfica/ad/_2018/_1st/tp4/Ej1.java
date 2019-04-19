@@ -76,7 +76,7 @@ public class Ej1 {
 	 */
 	public static String[] cargaColoresDesdeArchivo(int longitud) {
 		String[] arreglo = new String[longitud];
-		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO);
+		String contenidoDelArchivo = Archivo.leer(COLORES_ARCHIVO).getTexto();
 		
 		// Convercion a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
@@ -207,7 +207,7 @@ public class Ej1 {
 	
 	public static int[][] cargaImpresionesDesdeArchivo(int longitudFila, int longitudColumna) {
 		int[][] matriz = new int[longitudFila][longitudColumna];
-		String contenidoDelArchivo = Archivo.leer(IMPRESIONES_ARCHIVO);
+		String contenidoDelArchivo = Archivo.leer(IMPRESIONES_ARCHIVO).getTexto();
 		
 		// Convercion a mayúsculas antes de realizar la carga al arreglo
 		contenidoDelArchivo = pasarAMayúsculas(contenidoDelArchivo);
@@ -304,7 +304,7 @@ public class Ej1 {
 				mostrarColores(colores);
 				break;
 			case 5:
-				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO)));
+				System.out.println(cambioAVocales(Archivo.leer(COLORES_ARCHIVO).getTexto()));
 				break;
 			case 6:
 				verificarColorImpresion(colores);
