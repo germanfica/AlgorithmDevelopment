@@ -136,13 +136,10 @@ public class ArreglosUnidimensionales {
 		int[] cn = cn(pin, pin.length);
 
 		int opcion = 0;
-<<<<<<< HEAD
 		
 		mostrarOpciones();
-=======
 
-		mostrarMenu();
->>>>>>> 344cf7513dd535ebf578ae3537b01f496836dbaf
+		mostrarOpciones();
 		opcion = leerOpcion();
 
 		while (opcion != -1) {
