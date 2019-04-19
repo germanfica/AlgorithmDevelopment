@@ -46,7 +46,7 @@ public class Mensaje {
     
 	private static ArrayList<String> lista() {
 		lista = new ArrayList<String>();
-		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO, true);
+		String contenidoDelArchivo = Archivo.leer(NOMBRE_ARCHIVO, true).getTexto();
 		
 		sc = new Scanner(contenidoDelArchivo); // Asignacion de tarea al scanner para analizar el contenido del archivo
 		
