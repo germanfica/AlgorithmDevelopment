@@ -1,0 +1,10 @@
+firulais, gonzales, caniche, 2017, 800, true, 5;
+valdo, quintana, caniche, 2018, 800, false, 5;
+buggi, romano, caniche, 2016, 800, false, 5;
+fidel, castro, caniche, 2015, 800, false, 5;
+stanlin, isof, caniche, 2014, 800, false, 5;
+macri, mauricio, caniche, 2013, 800, false, 5;
+cristina, fernandez, caniche, 2012, 800, false, 5;
+lavagna, marcos, caniche, 2011, 800, false, 5;
+jack, laki, caniche, 2010, 800, false, 5;
+emilio, mendez, caniche, 2009, 800, false, 5;
