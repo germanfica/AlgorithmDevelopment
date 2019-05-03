@@ -1,0 +1,10 @@
+bosque encantado, 50, true, 29484, avenida siempre viva, 100;
+soyem, 60, true, 296547, avenida centenario, 200;
+circulo policial, 70, false, 294747, julio sosa, 150;
+club bancario, 80, true, 2547, anibal troilo, 190;
+casino gendarmeria, 90, true, 321547, lamadrid, 50;
+casino magic, 20, false, 297547, lavalle, 300;
+pasos perdidos, 30, true, 24547, sarmiento, 400;
+la polvareda, 40, false, 29547, olascoaga, 250;
+complejo del chivito, 10, true, 2947, 4 de agosto, 90;
+amejun, 5, false, 2447, urquiza, 75;
