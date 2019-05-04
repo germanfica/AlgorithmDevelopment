@@ -1,26 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ar.martin.salon;
-
-import java.util.Scanner;
-import xyz.germanfica.util.Archivo;
-
-/**
- *
- * @author Martin
- */
-public class TestSalon {
-	private static String NOMBRE_ARCHIVO = "src/ar/martin/salon/TDASalon.txt"; // Se recomienda usar una ruta relativa
-
-	public static void main(String[] args) {
+public static void main(String[] args) {
         //este algoritmo....
         //declaracion de variables
         Scanner sc = new Scanner(System.in);
+        String NOMBRE_ARCHIVO = "src/xyz/martinquintana/util/TDASalon.txt"; // Se recomienda usar una ruta relativa
         String TDASalon = Archivo.leer(NOMBRE_ARCHIVO).getTexto();
-        boolean salir = false;
 
         
         int numElegido, cantidad;
@@ -31,19 +14,15 @@ public class TestSalon {
         Salon[] arregloSalon = new Salon[10];
         cargarArregloSalon(arregloSalon);
 
-        
-        while (!salir) {
-        	//pedimos y leemos datos del usuario        
-            mostrarMenu();
-            numElegido = new Scanner(System.in).nextInt();
+        //pedimos y leemos datos del usuario        
+        mostrarMenu();
+        numElegido = TecladoIn.readLineInt();
+        while (numElegido != 0) {
 
             switch (numElegido) {
-            case 0:
-            	salir = true;
-            	break;
                 case 1:
                     System.out.println("ingrese el nombre del salon:");
-                    nombreSalon = new Scanner(System.in).next();
+                    nombreSalon = TecladoIn.readLine();
                     salonesIguales(nombreSalon, arregloSalon);
                     break;
 
@@ -61,17 +40,17 @@ public class TestSalon {
 
                 case 5:
                     System.out.println("ingrese el nombre del salon:");
-                    nombreSalon = new Scanner(System.in).next();
+                    nombreSalon = TecladoIn.readLine();
                     System.out.println("ingrese la nueva capacidad:");
-                    capacidad = new Scanner(System.in).nextDouble();
+                    capacidad = TecladoIn.readLineDouble();
                     modificarCapacidad(nombreSalon, capacidad, arregloSalon);
                     break;
 
                 case 6:
                     System.out.println("ingrese el nombre del salon:");
-                    nombreSalon = new Scanner(System.in).next();
+                    nombreSalon = TecladoIn.readLine();
                     System.out.println("ingrese la cantidad de invitados:");
-                    cantidad = new Scanner(System.in).nextInt();
+                    cantidad = TecladoIn.readLineInt();
                     mostrarCantidadAdecuada(arregloSalon, nombreSalon, cantidad);
                     break;
 
@@ -87,7 +66,7 @@ public class TestSalon {
     public static void cargarArregloSalon(Salon[] arregloSalon) {
         //este modulo carga el arreglo
         for (int i = 0; i < arregloSalon.length; i++) {
-            arregloSalon[i] = Salon.fromString(Archivo.leer(NOMBRE_ARCHIVO).toArray()[i]);
+            arregloSalon[i] = Salon.fromString(Archivo.leer("src/xyz/martinquintana/util/TDASalon.txt").toArray()[i]);
         }
     }
 
@@ -123,12 +102,9 @@ public class TestSalon {
     }
 
     public static void mostrarDatosDeSalones(Salon[] arregloSalon) {
-    	
         //este modulo muestra los datos de los salones
-        System.out.println("longitud arreglo: " +arregloSalon.length);
-        for (int i = 0; i < 2; i++) {
-            System.out.println(arregloSalon[i].toString());
-            System.out.println("i: "+i);
+        for (int i = 0; i < arregloSalon.length; i++) {
+            arregloSalon[i].toString();
         }
     }
 
@@ -179,4 +155,3 @@ public class TestSalon {
 
     }
 }
-

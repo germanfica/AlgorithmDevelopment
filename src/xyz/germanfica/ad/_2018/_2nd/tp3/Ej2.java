@@ -2,9 +2,9 @@ package xyz.germanfica.ad._2018._2nd.tp3;
 
 import java.util.Scanner;
 
-import xyz.germanfica.mensaje.Mensaje;
 import xyz.germanfica.util.Matriz;
 import xyz.germanfica.util.MatrizEntero;
+import xyz.germanfica.mensaje.Mensaje;
 
 /*
  * 2. Diseñar un algoritmo que declare una matriz de nxm de enteros

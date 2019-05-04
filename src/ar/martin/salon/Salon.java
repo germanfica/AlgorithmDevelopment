@@ -8,10 +8,6 @@ package ar.martin.salon;
 import java.util.Scanner;
 import xyz.germanfica.util.Delimitador;
 
-/**
- *
- * @author Martin
- */
 public class Salon {
 
     //atributos
@@ -33,9 +29,11 @@ public class Salon {
         this.capacidad = capacidad;
     }
 
-    Salon() {
+    /*Salon(String nombre) {
+        //inicializar los atributos en vacio en -1
+        this.nombre = nombre;
         this.adecuadoCantInvitados = " ";
-    }
+    }*/
 
     //observadores
     public double getCapacidad() {
@@ -57,13 +55,11 @@ public class Salon {
 
     //propias del tipo
     public boolean equals(Salon nombre) {
-        //compara el nombre que entra con el nombre de la clase?
-        /*que nombre de la clase compara? uno o todos?
-        porque es getnombre? si el nombre lo ingresa el usuario 
-        y no esta en el txt...*/
+        
         return this.nombre.equalsIgnoreCase(nombre.getNombre());
     }
 
+    @Override
     public String toString() {
         return "nombre: " + this.nombre + " disponibilidad: " + this.disponibilidad
                 + " con musica: " + this.conMusica + " direccion: " + this.direccion + " telefono: "
@@ -71,18 +67,18 @@ public class Salon {
     }
 
     public int compareTo(String nombre) {
-        return this.nombre.compareToIgnoreCase(nombre);
+        int num = this.nombre.compareToIgnoreCase(nombre);
+        return num;
     }
 
     public String adecuadoCantInvitados(int cantidad) {
-        /*retorna â€œmuyâ€� si la cantidad estÃ¡ entre el 75% y 85% de la 
-        capacidad, â€œregularâ€� si estÃ¡ en el valor superior al 85% 
-        hasta el 100% o inferior al 75%,y â€œnulaâ€� si es menor al 5% 
+        /*retorna “muy” si la cantidad está entre el 75% y 85% de la 
+        capacidad, “regular” si está en el valor superior al 85% 
+        hasta el 100% o inferior al 75%,y “nula” si es menor al 5% 
         o mayor que el 100% de la capacidad*/
-        //arreglar estoooo
-        /*compara la "cantidad" de todos los salones o de un solo salon?*/
-        double porcentajeGente= (cantidad*this.disponibilidad)/100;
-        
+
+        double porcentajeGente = (cantidad * this.disponibilidad) / 100;
+
         if ((porcentajeGente >= 75) && (porcentajeGente <= 85)) {
             adecuadoCantInvitados = "muy";
         }
@@ -92,7 +88,7 @@ public class Salon {
             adecuadoCantInvitados = "regular";
         }
 
-        if ((porcentajeGente >= 5) || (porcentajeGente < 100)) {
+        if ((porcentajeGente < 5) || (porcentajeGente > 100)) {
             adecuadoCantInvitados = "nula";
         }
         return adecuadoCantInvitados;
@@ -112,3 +108,4 @@ public class Salon {
         return new Salon(nombre, disponibilidad, conMusica, telefono, direccion, capacidad);
     }
 }
+
