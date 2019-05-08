@@ -1,6 +1,7 @@
 package xyz.germanfica.ad._2019._1st.tp5;
 
 import java.util.Scanner;
+
 import xyz.germanfica.util.MatrizEntero;
 
 public class Cantidades {
