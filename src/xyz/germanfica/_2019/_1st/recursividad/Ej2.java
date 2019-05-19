@@ -1,6 +1,6 @@
 package xyz.germanfica._2019._1st.recursividad;
 
-public class Ej1 {
+public class Ej2 {
 	public static int divisionRestaSucesiva(int dividendo, int divisor) {
 		int contador;
 		dividendo = dividendo - divisor;
@@ -35,9 +35,49 @@ public class Ej1 {
 		return numInv;
 	}
 
+	// Suma los dígitos de un número
+	public static int sumaDigNum(int num) {
+		int suma; // Nunca se inicializa la variable de retorno en recursividad
+		int cociente = num / 10;
+		int resto = num % 10;
+
+		if (cociente > 0) {
+			suma = sumaDigNum(cociente) + resto;
+		} else {
+			suma = resto;
+		}
+
+		return suma;
+	}
+
+	public static boolean esPar(int num) {
+		return num % 2 == 0;
+	}
+
+	// Contar cuantos digitos pares tiene un numero
+	public static int cuentaDigPares(int num) {
+		int cantDigPares;
+		int cociente = num / 10;
+		int resto = num % 10;
+
+		if (cociente > 0) {
+			if (esPar(resto)) {
+				cantDigPares = cuentaDigPares(cociente) + 1;
+			} else {
+				cantDigPares = cuentaDigPares(cociente);
+			}
+		} else {
+			cantDigPares = 0;
+		}
+
+		return cantDigPares;
+	}
+
 	public static void main(String[] args) {
 		// System.out.println(divisionRestaSucesiva(8, 4));
 		// System.out.println(numeroInvertido(4321));
-		System.out.println(numeroInvertido(4321));
+		// System.out.println(numeroInvertido(4321));
+		// System.out.println(sumaDigNum(5376));
+		System.out.println(cuentaDigPares(5276));
 	}
 }
