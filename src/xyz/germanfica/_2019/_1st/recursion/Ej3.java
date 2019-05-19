@@ -1,4 +1,4 @@
-package xyz.germanfica._2019._1st.recursividad;
+package xyz.germanfica._2019._1st.recursion;
 
 public class Ej3 {
 
