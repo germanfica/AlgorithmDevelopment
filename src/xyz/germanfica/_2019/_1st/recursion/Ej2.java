@@ -26,7 +26,7 @@ public class Ej2 {
 
 		if (cociente > 0) {
 			// Caso recursivo
-			numInv = (int) (resto * Math.pow(10, cantDig-1) + numeroInvertido(cociente, cantDig-1));
+			numInv = (int) (resto * Math.pow(10, cantDig - 1) + numeroInvertido(cociente, cantDig - 1));
 		} else {
 			// Caso base
 			numInv = resto;
@@ -67,7 +67,11 @@ public class Ej2 {
 				cantDigPares = cuentaDigPares(cociente);
 			}
 		} else {
-			cantDigPares = 0;
+			if (esPar(resto)) {
+				cantDigPares = 1;
+			} else {
+				cantDigPares = 0;
+			}
 		}
 
 		return cantDigPares;
@@ -76,8 +80,10 @@ public class Ej2 {
 	public static void main(String[] args) {
 		// System.out.println(divisionRestaSucesiva(8, 4));
 		// System.out.println(numeroInvertido(4321));
-		System.out.println(numeroInvertido(7814,4));
+		// System.out.println(numeroInvertido(7814,4));
 		// System.out.println(sumaDigNum(5376));
-		// System.out.println(cuentaDigPares(5276));
+		System.out.println(cuentaDigPares(5276));
+		System.out.println(cuentaDigPares(111));
+		System.out.println(cuentaDigPares(444));
 	}
 }
