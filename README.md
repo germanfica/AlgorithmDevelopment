@@ -5,7 +5,7 @@ Este repositorio tiene como objetivo brindar utilidades básicas para el desarro
 [https://germanfica.xyz/java-training/docs](https://germanfica.xyz/java-training/docs)
 
 ## Créditos
-- [German Fica](https://www.instagram.com/germanfica/)
+- [German Fica](https://www.instagram.com/germanfica/) <3
 
 ## Licencia
 [MIT](https://opensource.org/licenses/MIT)
