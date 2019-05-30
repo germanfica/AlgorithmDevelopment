@@ -26,6 +26,7 @@ public class Hornero {
 		} else {
 			num = fibo(pos - 1) + fibo(pos - 2);
 		}
+		// System.out.println(num);
 
 		return num;
 	}
@@ -67,6 +68,22 @@ public class Hornero {
 
 	}
 
+	public static boolean esPalindromo(String palabra) {
+		int i = 0;
+		int j = palabra.length() - 1;
+		boolean es = true;
+
+		while (i <= j && es) {
+			if (palabra.charAt(i) != palabra.charAt(j)) {
+				es = false;
+			}
+			i++;
+			j--;
+		}
+
+		return es;
+	}
+
 	/**
 	 * Palíndromos son las palabras que se leen igual al derecho que al revés.
 	 * 
@@ -74,31 +91,44 @@ public class Hornero {
 	 * 
 	 * Considere que las palabras están separadas por un "_".
 	 * 
-	 * Ejemplo:
-	 * Para la entrada:"sos_un_gran_programador_php" la salida es:2.
-	 * Para la entrada:"sos_de_neuquen_sos_de_la_patagonia", la salida es:3.
+	 * Ejemplo: Para la entrada:"sos_un_gran_programador_php" la salida es:2. Para
+	 * la entrada:"sos_de_neuquen_sos_de_la_patagonia", la salida es:3.
 	 */
-	public static int palindromo(String oracion, String palabra, ) {
+	public static int cantPalindromo(String oracion) {
+		String palabra;
 		int cantPalin;
-		String palabra = oracion.substring(0, oracion.indexOf("_"));
-		
-		if(oracion.length()>0) {
-			if() {
-				
+		int posGuionBajo = oracion.indexOf("_");
+
+		if (posGuionBajo != -1) {
+			String nuevOracion = oracion.substring(posGuionBajo + 1, oracion.length());
+			palabra = oracion.substring(0, posGuionBajo);
+			if (esPalindromo(palabra)) {
+				cantPalin = cantPalindromo(nuevOracion) + 1;
+			} else {
+				cantPalin = cantPalindromo(nuevOracion) + 0;
 			}
-		}else {
-			cantPalin = 0;
+		} else {
+			palabra = oracion;
+			if (esPalindromo(palabra)) {
+				cantPalin = 1;
+			} else {
+				cantPalin = 0;
+			}
 		}
-		
-		
+
 		return cantPalin;
-		
-		
+
 	}
 
 	public static void main(String[] args) {
 		// System.out.println(fibo(1));
 		// System.out.println(sumaDig(9999985));
-		System.out.println(reverso("hola german", 0));
+		// System.out.println(reverso("hola german", 0));
+		// System.out.println(fibo(50)); fobo 50 nunca ejecuta
+		// System.out.println(fibo(49));
+		// System.out.println(fibo(50));
+		// System.out.println(esPalindromo("neuquen"));
+		System.out.println(cantPalindromo("sos_un_gran_programador_php"));
+		System.out.println(cantPalindromo("sos_de_neuquen_sos_de_la_patagonia"));
 	}
 }
