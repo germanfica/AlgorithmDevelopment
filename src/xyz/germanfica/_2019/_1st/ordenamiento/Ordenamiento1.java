@@ -2,7 +2,7 @@ package xyz.germanfica._2019._1st.ordenamiento;
 
 import xyz.germanfica.util.ArregloEntero;
 
-public class Ordenamiento {
+public class Ordenamiento1 {
 	public static void ordSel(int[] arr) {
 		int actual;
 		int posMenor = 1;

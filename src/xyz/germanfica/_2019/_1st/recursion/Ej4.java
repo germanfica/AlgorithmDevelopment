@@ -21,27 +21,26 @@ public class Ej4 {
 	 * @param numMayor
 	 * @return
 	 */
-	public static int mayor(int[][] enteros, int i, int j, int numMayor) {
-		int aux;
+	public static int mayor(int[][] enteros, int i, int j) {
+		int num;
 
 		if (i <= enteros.length - 1) {
 			if (j <= enteros[i].length - 1) {
-				// System.out.println(enteros[i][j]);
+				num = enteros[i][j];
 				// Preguntar si es más grande
-				if (enteros[i][j] > numMayor) {
-					aux = enteros[i][j];
+				if (num > mayor(enteros, i, j + 1)) {
+					num = enteros[i][j];
 				} else {
-					aux = numMayor;
+					num = mayor(enteros, i, j + 1);
 				}
-				aux = mayor(enteros, i, j + 1, aux);
 			} else {
-				aux = mayor(enteros, i + 1, 0, numMayor);
+				num = mayor(enteros, i + 1, 0);
 			}
 		} else {
-			aux = numMayor;
+			num = -1;
 		}
 
-		return aux;
+		return num;
 	}
 
 	public static boolean coincidencia(int[][] enteros, int i, int j, int num) {
@@ -66,8 +65,11 @@ public class Ej4 {
 	}
 
 	public static void main(String[] args) {
-		int[][] enteros = { { 5, 7, 6 }, { 1, 2, 3 }, { 23, 15 }, { 5, 7, 8 } };
-		System.out.println("num mayor: " + mayor(enteros, 0, 0, enteros[0][0]));
+		// int[][] enteros = { { 5, 7, 6 }, { 1, 2, 3 }, { 23, 15 }, { 5, 7, 8 } };
+		// int[][] enteros = { { 5 } };
+		int[][] enteros = { { 23, 2, 3 }, { 45, 6, 8 } };
+
+		System.out.println("num mayor: " + mayor(enteros, 0, 0));
 		int num = 8;
 		System.out.println("coincidencia con " + num + ": " + coincidencia(enteros, 0, 0, num));
 	}
