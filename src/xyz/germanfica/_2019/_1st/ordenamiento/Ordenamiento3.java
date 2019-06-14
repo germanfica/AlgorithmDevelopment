@@ -52,13 +52,31 @@ public class Ordenamiento3 {
 		return posNum;
 	}
 
+	public static int[] generaArregloImpar(int cantElementos) {
+		int num = 1;
+		int[] numeros = new int[cantElementos];
+		System.out.println("lenght" + numeros.length);
+
+		for (int i = 0; i < numeros.length; i++) {
+			System.out.println(num);
+			numeros[i] = num;
+			num = num + 2;
+		}
+
+		return numeros;
+
+	}
+
 	public static void main(String[] args) {
 		// int[] numeros = { 5, 8, 7, 655, 41, 3, 4, 8, 78, 9, 744, 5 };
 		int[] numeros = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
 
 		System.out.println("asd: " + 5 / 2);
 
+		numeros = generaArregloImpar(500);
+		ArregloEntero.mostrar(numeros);
+
 		// System.out.println(busquedaSecuencial(numeros, 78));
-		System.out.println("busBin: " + busquedaBinaria(numeros, 16));
+		System.out.println("busBin: " + busquedaBinaria(numeros, 91));
 	}
 }
