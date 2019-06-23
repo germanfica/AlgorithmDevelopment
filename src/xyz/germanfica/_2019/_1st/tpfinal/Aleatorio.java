@@ -30,15 +30,15 @@ public class Aleatorio {
 	}
 
 	/**
-	 * Si el numAleatorio de la clase es más pequeño al parametro, devuelve -1.
+	 * Si el número entero es menor al parametro, devuelve -1.
 	 * 
-	 * Si el numAleatorio de la clase es mayor al parametro, retorna 1.
+	 * Si el número entero es mayor al parametro, devuelve 1.
 	 * 
-	 * Si el numAleatorio de la clase es igual al parametro, retorna 0.
+	 * Si el número entero es igual al parametro, devuelve 0.
 	 * 
 	 * Fuente: https://www.tutorialspoint.com/java/number_compareto.htm
 	 * 
-	 * @return
+	 * @return 
 	 */
 	public int compareTo(Aleatorio objBuscado) {
 		int resultado;
