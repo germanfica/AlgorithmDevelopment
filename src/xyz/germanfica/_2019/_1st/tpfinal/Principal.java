@@ -169,7 +169,5 @@ public class Principal {
 				System.out.println("Opción inválida");
 			}
 		}
-
 	}
-
 }
