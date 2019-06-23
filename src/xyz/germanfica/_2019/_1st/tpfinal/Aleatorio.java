@@ -64,13 +64,11 @@ public class Aleatorio {
 		int resto = num % 10;
 		int numCompa = num / 10;
 		int restoCompa = numCompa % 10;
-		System.out.println("¿SON IGUALES? " + resto + "==" + restoCompa);
 
 		if (num > 0) {
 			// Caso recursivo
 			gemelos = tieneGem(num / 10);
 		} else if (resto == restoCompa || resto != 0 || restoCompa != 0) {
-			System.out.println("SON IGUALES: " + resto + "==" + restoCompa);
 			gemelos = true;
 		} else {
 			gemelos = false;

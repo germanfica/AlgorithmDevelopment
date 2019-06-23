@@ -114,6 +114,7 @@ public class Principal {
 		System.out.println("[3] Metodo burbuja.");
 		System.out.println("[4] Metodo inserción");
 		System.out.println("[5] Metodo selección");
+		System.out.println("[6] Test de la clase Aleatorio.");
 	}
 
 	/*
@@ -126,12 +127,6 @@ public class Principal {
 		boolean salir = false;
 
 		generarArregloAleatorio(arregloAleatorio); // Genera un arreglo de enteros
-
-		// Test
-		Aleatorio _aleatorio = new Aleatorio();
-		System.out.println("Pertenece a fibo?: " + _aleatorio.getPerteneceFibo());
-
-		System.out.println("Tiene num gemelos: " + _aleatorio.tieneGem(55132));
 
 		while (!salir) {
 			mostrarOpciones(); // Muestra las opciones del menu
@@ -161,6 +156,12 @@ public class Principal {
 				arregloEnteros = clonarArreglo(arregloAleatorio);
 				ordSel(arregloEnteros);
 				ArregloEntero.mostrar(arregloEnteros);
+				break;
+			case 6:
+				// Test de la clase Aleatorio
+				Aleatorio _aleatorio = new Aleatorio();
+				System.out.println("Pertenece a fibo?: " + _aleatorio.getPerteneceFibo());
+				System.out.println("Tiene num gemelos: " + _aleatorio.tieneGem(55132));
 				break;
 			default:
 				System.out.println("Opción inválida");
