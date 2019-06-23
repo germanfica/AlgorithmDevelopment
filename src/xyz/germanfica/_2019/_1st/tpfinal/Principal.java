@@ -56,6 +56,11 @@ public class Principal {
 		return esDecreciente;
 	}
 
+	/**
+	 * Ordena un arreglo de enteros de forma decreciente.
+	 * 
+	 * @param arreglo es el arreglo a ordenar
+	 */
 	public static void ordSel(int[] arr) {
 		int actual;
 		int posMenor = 1;
@@ -75,6 +80,11 @@ public class Principal {
 		}
 	}
 
+	/**
+	 * Ordena un arreglo de enteros de forma decreciente.
+	 * 
+	 * @param arreglo es el arreglo a ordenar
+	 */
 	public static void burbujaMejorado(int[] arreglo) {
 		int auxiliar, i;
 		boolean ordenado;
@@ -97,6 +107,11 @@ public class Principal {
 		}
 	}
 
+	/**
+	 * Ordena un arreglo de enteros de forma decreciente.
+	 * 
+	 * @param arreglo es el arreglo a ordenar
+	 */
 	public static void insercion(int[] arreglo) {
 		int auxiliar, j;
 
@@ -113,7 +128,7 @@ public class Principal {
 	}
 
 	/**
-	 * Lee una opcion
+	 * Lee una opcion para el menu de la app.
 	 * 
 	 * @return devuelve un numero entero
 	 */
@@ -121,6 +136,9 @@ public class Principal {
 		return new Scanner(System.in).nextInt();
 	}
 
+	/**
+	 * Muestra las opciones disponibles en el menu de la app
+	 */
 	public static void mostrarOpciones() {
 		System.out.println("Bienvenido!");
 		System.out.println("[0] Salir.");
@@ -132,6 +150,13 @@ public class Principal {
 		System.out.println("[6] Test de la clase Aleatorio.");
 	}
 
+	/**
+	 * Calcula el tiempo total en segundos dado un tiempo inicial y tiempo final.
+	 * 
+	 * @param startTime es el tiempo inicial
+	 * @param endTime   es el tiempo final
+	 * @return devuelve tiempo en segundos
+	 */
 	public static double totalTimeInSecond(long startTime, long endTime) {
 		return (double) (endTime - startTime) / 1_000_000_000;
 	}
