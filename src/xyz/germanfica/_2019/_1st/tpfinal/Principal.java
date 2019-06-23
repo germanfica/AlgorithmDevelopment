@@ -4,28 +4,26 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import xyz.germanfica.util.ArregloEntero;
 
+/*
+public static int[] clonarArreglo(Aleatorio[] arreglo) {
+	int[] nuevoArreglo = new int[arreglo.length];
+
+	for (int i = 0; i <= arreglo.length - 1; i++) {
+		nuevoArreglo[i] = arreglo[i].getNumAleatorio();
+	}
+	return nuevoArreglo;
+}
+*/
+
 public class Principal {
-
-	/*
-	 * long startTime = System.nanoTime();
-	 * 
-	 * .....your program....
-	 * 
-	 * long endTime = System.nanoTime();
-	 * 
-	 * long totalTime = endTime - startTime;
-	 *
-	 * System.out.println(totalTime);
-	 */
-
 	/**
-	 * Este algoritmo clona y convierte un arreglo de objetos a un arreglo de
+	 * Este algoritmo convierte un arreglo de objetos aleatorios en un arreglo de
 	 * enteros.
 	 * 
 	 * @param arreglo
-	 * @return
+	 * @return devuelve un arreglo de enteros.
 	 */
-	public static int[] clonarArreglo(Aleatorio[] arreglo) {
+	public static int[] toIntArray(Aleatorio[] arreglo) {
 		int[] nuevoArreglo = new int[arreglo.length];
 
 		for (int i = 0; i <= arreglo.length - 1; i++) {
@@ -34,7 +32,12 @@ public class Principal {
 		return nuevoArreglo;
 	}
 
-	public static void generarArregloAleatorio(Aleatorio[] arreglo) {
+	/**
+	 * Carga un arreglo de objetos aleatorios.
+	 * 
+	 * @param arreglo es el arreglo de objetos aleatorios a ser cargado
+	 */
+	public static void cargaArreglo(Aleatorio[] arreglo) {
 		for (int i = 0; i < arreglo.length; i++) {
 			arreglo[i] = new Aleatorio();
 		}
@@ -138,14 +141,14 @@ public class Principal {
 	 * ordenes de qué hacer.
 	 */
 	public static void main(String[] args) {
-		Aleatorio[] arregloAleatorio = new Aleatorio[1000];
+		Aleatorio[] arregloAleatorios = new Aleatorio[1000];
 		int[] arregloEnteros = new int[1000];
 		boolean salir = false;
 		DecimalFormat df = new DecimalFormat("#.00000000");
 		long startTime;
 		long endTime;
 
-		generarArregloAleatorio(arregloAleatorio); // Genera un arreglo de enteros
+		cargaArreglo(arregloAleatorios); // Carga del arreglo
 
 		while (!salir) {
 			mostrarOpciones(); // Muestra las opciones del menu
@@ -155,14 +158,14 @@ public class Principal {
 				salir = true;
 				break;
 			case 1:
-				clonarArreglo(arregloAleatorio); // Clonar arreglo
+				toIntArray(arregloAleatorios); // Clonar arreglo
 				break;
 			case 2:
-				System.out
-						.println("está ordenado de forma decreciente: " + verificaArregloDecreciente(arregloAleatorio));
+				System.out.println(
+						"está ordenado de forma decreciente: " + verificaArregloDecreciente(arregloAleatorios));
 				break;
 			case 3:
-				arregloEnteros = clonarArreglo(arregloAleatorio);
+				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
 				burbujaMejorado(arregloEnteros); // Algoritmo
@@ -172,7 +175,7 @@ public class Principal {
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
 			case 4:
-				arregloEnteros = clonarArreglo(arregloAleatorio);
+				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
 				insercion(arregloEnteros); // Algoritmo
@@ -182,7 +185,7 @@ public class Principal {
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
 			case 5:
-				arregloEnteros = clonarArreglo(arregloAleatorio);
+				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
 				ordSel(arregloEnteros); // Algoritmo
