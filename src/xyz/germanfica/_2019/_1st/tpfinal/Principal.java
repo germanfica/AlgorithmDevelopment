@@ -4,17 +4,10 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import xyz.germanfica.util.ArregloEntero;
 
-/*
-public static int[] clonarArreglo(Aleatorio[] arreglo) {
-	int[] nuevoArreglo = new int[arreglo.length];
-
-	for (int i = 0; i <= arreglo.length - 1; i++) {
-		nuevoArreglo[i] = arreglo[i].getNumAleatorio();
-	}
-	return nuevoArreglo;
-}
-*/
-
+/**
+ * @authors [GERMAN LUIS GUILLERMO FICA, GONZALO DARIO OLMOS]
+ *
+ */
 public class Principal {
 	/**
 	 * Este algoritmo convierte un arreglo de objetos aleatorios en un arreglo de
@@ -43,12 +36,19 @@ public class Principal {
 		}
 	}
 
-	public static boolean verificaArregloDecreciente(Aleatorio[] arregloAleatorio) {
+	/**
+	 * Verifica si un arreglo de objetos aleatorios está ordenado de forma
+	 * decreciente.
+	 * 
+	 * @param arreglo es el arreglo de objetos aleatorios a verificar.
+	 * @return devuelve verdadero si está ordenado de forma decreciente.
+	 */
+	public static boolean esDecreciente(Aleatorio[] arreglo) {
 		boolean esDecreciente = true;
 		int i = 0;
 
 		while (esDecreciente == true) {
-			if (arregloAleatorio[i].compareTo(arregloAleatorio[i + 1]) == -1) {
+			if (arreglo[i].compareTo(arreglo[i + 1]) == -1) {
 				esDecreciente = false;
 			}
 			i++;
@@ -161,8 +161,7 @@ public class Principal {
 				toIntArray(arregloAleatorios); // Clonar arreglo
 				break;
 			case 2:
-				System.out.println(
-						"está ordenado de forma decreciente: " + verificaArregloDecreciente(arregloAleatorios));
+				System.out.println("está ordenado de forma decreciente: " + esDecreciente(arregloAleatorios));
 				break;
 			case 3:
 				arregloEnteros = toIntArray(arregloAleatorios);
