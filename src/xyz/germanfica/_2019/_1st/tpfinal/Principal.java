@@ -125,7 +125,13 @@ public class Principal {
 		int[] arregloEnteros = new int[1000];
 		boolean salir = false;
 
-		generarArregloAleatorio(arregloAleatorio);
+		generarArregloAleatorio(arregloAleatorio); // Genera un arreglo de enteros
+
+		// Test
+		Aleatorio _aleatorio = new Aleatorio();
+		System.out.println("Pertenece a fibo?: " + _aleatorio.getPerteneceFibo());
+
+		System.out.println("Tiene num gemelos: " + _aleatorio.tieneGem(55132));
 
 		while (!salir) {
 			mostrarOpciones(); // Muestra las opciones del menu

@@ -29,6 +29,61 @@ public class Aleatorio {
 				+ perteneceFibo + "}";
 	}
 
+	private int fibo(int pos) {
+		int num;
+		if (pos == 1) {
+			num = 0;
+		} else if (pos == 2) {
+			num = 1;
+		} else {
+			num = fibo(pos - 1) + fibo(pos - 2);
+		}
+		// System.out.println(num);
+
+		return num;
+	}
+
+	private boolean pertFibo(int num, int i) {
+		boolean aux;
+
+		int fibo = fibo(i);
+
+		if (fibo == num) {
+			aux = true;
+		} else if (fibo > num) {
+			aux = false;
+		} else {
+			aux = pertFibo(num, i + 1);
+		}
+
+		return aux;
+	}
+
+	public boolean tieneGem(int num) {
+		boolean gemelos;
+		int resto = num % 10;
+		int numCompa = num / 10;
+		int restoCompa = numCompa % 10;
+		System.out.println("¿SON IGUALES? " + resto + "==" + restoCompa);
+
+		if (num > 0) {
+			// Caso recursivo
+			gemelos = tieneGem(num / 10);
+		} else if (resto == restoCompa || resto != 0 || restoCompa != 0) {
+			System.out.println("SON IGUALES: " + resto + "==" + restoCompa);
+			gemelos = true;
+		} else {
+			gemelos = false;
+		}
+
+		return gemelos;
+
+	}
+
+	public boolean getPerteneceFibo() {
+		return pertFibo(numAleatorio, 1);
+	}
+
 	/**
 	 * Si el número entero es menor al parametro, devuelve -1.
 	 * 
@@ -38,7 +93,7 @@ public class Aleatorio {
 	 * 
 	 * Fuente: https://www.tutorialspoint.com/java/number_compareto.htm
 	 * 
-	 * @return 
+	 * @return
 	 */
 	public int compareTo(Aleatorio objBuscado) {
 		int resultado;
