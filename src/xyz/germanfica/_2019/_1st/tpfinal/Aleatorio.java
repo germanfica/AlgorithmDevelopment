@@ -44,10 +44,10 @@ public class Aleatorio {
 		int resultado;
 
 		if (numAleatorio < objBuscado.numAleatorio) {
-			// menor
+			// es menor
 			resultado = -1;
 		} else if (numAleatorio > objBuscado.numAleatorio) {
-			// mayor
+			// es mayor
 			resultado = 1;
 		} else {
 			// son iguales
