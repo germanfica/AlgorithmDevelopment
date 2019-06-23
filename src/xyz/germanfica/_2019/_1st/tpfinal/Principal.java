@@ -41,17 +41,6 @@ public class Principal {
 		return esDecreciente;
 	}
 
-	public static void mostrarOpciones() {
-		System.out.println("Bienvenido!");
-		System.out.println("[0] Salir.");
-		System.out.println("[1] Generar arreglo con 1000 objetos aleatorios.");
-		System.out.println("[2] Clonar el arreglo creado.");
-		System.out.println("[3] Verificar si el arreglo está ordenado de forma decreciente.");
-		System.out.println("[4] Metodo burbuja.");
-		System.out.println("[5] Metodo inserción");
-		System.out.println("[6] Metodo selección");
-	}
-
 	public static void ordSel(int[] arr) {
 		int actual;
 		int posMenor = 1;
@@ -117,6 +106,16 @@ public class Principal {
 		return new Scanner(System.in).nextInt();
 	}
 
+	public static void mostrarOpciones() {
+		System.out.println("Bienvenido!");
+		System.out.println("[0] Salir.");
+		System.out.println("[1] Clonar el arreglo creado.");
+		System.out.println("[2] Verificar si el arreglo está ordenado de forma decreciente.");
+		System.out.println("[3] Metodo burbuja.");
+		System.out.println("[4] Metodo inserción");
+		System.out.println("[5] Metodo selección");
+	}
+
 	/*
 	 * El algoritmo principal tiene que ser el cerebro el que maneja y da las
 	 * ordenes de qué hacer.
@@ -126,6 +125,8 @@ public class Principal {
 		int[] arregloEnteros = new int[1000];
 		boolean salir = false;
 
+		generarArregloAleatorio(arregloAleatorio);
+
 		while (!salir) {
 			mostrarOpciones(); // Muestra las opciones del menu
 
@@ -134,25 +135,23 @@ public class Principal {
 				salir = true;
 				break;
 			case 1:
-				generarArregloAleatorio(arregloAleatorio);
-				break;
-			case 2:
 				clonarArreglo(arregloAleatorio); // Clonar arreglo
 				break;
-			case 3:
-				verificaArregloDecreciente(arregloAleatorio);
+			case 2:
+				System.out
+						.println("está ordenado de forma decreciente: " + verificaArregloDecreciente(arregloAleatorio));
 				break;
-			case 4:
+			case 3:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
 				burbujaMejorado(arregloEnteros);
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
-			case 5:
+			case 4:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
 				insercion(arregloEnteros);
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
-			case 6:
+			case 5:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
 				ordSel(arregloEnteros);
 				ArregloEntero.mostrar(arregloEnteros);
