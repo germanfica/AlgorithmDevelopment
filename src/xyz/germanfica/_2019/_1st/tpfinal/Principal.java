@@ -26,6 +26,21 @@ public class Principal {
 	}
 
 	/**
+	 * Clona un arreglo de objetos aleatorios.
+	 * 
+	 * @param arr es el arreglo a clonar
+	 * @return devuelve un arreglo clon.
+	 */
+	public static Aleatorio[] clonarArreglo(Aleatorio[] arr) {
+		Aleatorio[] nuevoArreglo;
+		nuevoArreglo = new Aleatorio[arr.length];
+		for (int i = 0; i <= arr.length - 1; i++) {
+			nuevoArreglo[i] = arr[i].clonar();
+		}
+		return nuevoArreglo;
+	}
+
+	/**
 	 * Carga un arreglo de objetos aleatorios.
 	 * 
 	 * @param arreglo es el arreglo de objetos aleatorios a ser cargado
@@ -151,6 +166,17 @@ public class Principal {
 	}
 
 	/**
+	 * Muestra los numeros aleatorios de una arreglo de objetos aleatorios.
+	 * 
+	 * @param arr es el arreglo de objetos aleatorios.
+	 */
+	public static void mostrarNumAleatorios(Aleatorio[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i].getNumAleatorio() + " ");
+		}
+	}
+
+	/**
 	 * Calcula el tiempo total en segundos dado un tiempo inicial y tiempo final.
 	 * 
 	 * @param startTime es el tiempo inicial
@@ -183,7 +209,7 @@ public class Principal {
 				salir = true;
 				break;
 			case 1:
-				toIntArray(arregloAleatorios); // Clonar arreglo
+				mostrarNumAleatorios(clonarArreglo(arregloAleatorios)); // Clonar arreglo);
 				break;
 			case 2:
 				System.out.println("está ordenado de forma decreciente: " + esDecreciente(arregloAleatorios));
