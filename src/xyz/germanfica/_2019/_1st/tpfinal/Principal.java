@@ -1,10 +1,22 @@
 package xyz.germanfica._2019._1st.tpfinal;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
-
 import xyz.germanfica.util.ArregloEntero;
 
 public class Principal {
+
+	/*
+	 * long startTime = System.nanoTime();
+	 * 
+	 * .....your program....
+	 * 
+	 * long endTime = System.nanoTime();
+	 * 
+	 * long totalTime = endTime - startTime;
+	 *
+	 * System.out.println(totalTime);
+	 */
 
 	/**
 	 * Este algoritmo clona y convierte un arreglo de objetos a un arreglo de
@@ -117,6 +129,10 @@ public class Principal {
 		System.out.println("[6] Test de la clase Aleatorio.");
 	}
 
+	public static double totalTimeInSecond(long startTime, long endTime) {
+		return (double) (endTime - startTime) / 1_000_000_000;
+	}
+
 	/*
 	 * El algoritmo principal tiene que ser el cerebro el que maneja y da las
 	 * ordenes de qué hacer.
@@ -125,6 +141,9 @@ public class Principal {
 		Aleatorio[] arregloAleatorio = new Aleatorio[1000];
 		int[] arregloEnteros = new int[1000];
 		boolean salir = false;
+		DecimalFormat df = new DecimalFormat("#.00000000");
+		long startTime;
+		long endTime;
 
 		generarArregloAleatorio(arregloAleatorio); // Genera un arreglo de enteros
 
@@ -144,17 +163,32 @@ public class Principal {
 				break;
 			case 3:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
-				burbujaMejorado(arregloEnteros);
+
+				startTime = System.nanoTime(); // Tiempo inicial
+				burbujaMejorado(arregloEnteros); // Algoritmo
+				endTime = System.nanoTime(); // Tiempo final
+				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
+
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
 			case 4:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
-				insercion(arregloEnteros);
+
+				startTime = System.nanoTime(); // Tiempo inicial
+				insercion(arregloEnteros); // Algoritmo
+				endTime = System.nanoTime(); // Tiempo final
+				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
+
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
 			case 5:
 				arregloEnteros = clonarArreglo(arregloAleatorio);
-				ordSel(arregloEnteros);
+
+				startTime = System.nanoTime(); // Tiempo inicial
+				ordSel(arregloEnteros); // Algoritmo
+				endTime = System.nanoTime(); // Tiempo final
+				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
+
 				ArregloEntero.mostrar(arregloEnteros);
 				break;
 			case 6:
