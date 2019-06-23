@@ -162,6 +162,8 @@ public class Principal {
 				Aleatorio _aleatorio = new Aleatorio();
 				System.out.println("Pertenece a fibo?: " + _aleatorio.getPerteneceFibo());
 				System.out.println("Tiene num gemelos: " + _aleatorio.tieneGem(55132));
+				System.out.println("Original: " + _aleatorio.getNumAleatorio());
+				System.out.println("Copia clon: " + _aleatorio.clonar().getNumAleatorio());
 				break;
 			default:
 				System.out.println("Opción inválida");

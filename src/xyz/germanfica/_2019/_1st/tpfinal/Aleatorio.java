@@ -29,6 +29,52 @@ public class Aleatorio {
 				+ perteneceFibo + "}";
 	}
 
+	/**
+	 * Si el número entero es menor al parametro, devuelve -1.
+	 * 
+	 * Si el número entero es mayor al parametro, devuelve 1.
+	 * 
+	 * Si el número entero es igual al parametro, devuelve 0.
+	 * 
+	 * Fuente: https://www.tutorialspoint.com/java/number_compareto.htm
+	 * 
+	 * @return
+	 */
+	public int compareTo(Aleatorio objBuscado) {
+		int resultado;
+
+		if (numAleatorio < objBuscado.numAleatorio) {
+			// es menor
+			resultado = -1;
+		} else if (numAleatorio > objBuscado.numAleatorio) {
+			// es mayor
+			resultado = 1;
+		} else {
+			// son iguales
+			resultado = 0;
+		}
+		return resultado;
+	}
+
+	public boolean tieneGem(int num) {
+		boolean gemelos;
+		int resto = num % 10;
+		int numCompa = num / 10;
+		int restoCompa = numCompa % 10;
+
+		if (num > 0) {
+			// Caso recursivo
+			gemelos = tieneGem(num / 10);
+		} else if (resto == restoCompa || resto != 0 || restoCompa != 0) {
+			gemelos = true;
+		} else {
+			gemelos = false;
+		}
+
+		return gemelos;
+
+	}
+
 	private int fibo(int pos) {
 		int num;
 		if (pos == 1) {
@@ -59,58 +105,14 @@ public class Aleatorio {
 		return aux;
 	}
 
-	public boolean tieneGem(int num) {
-		boolean gemelos;
-		int resto = num % 10;
-		int numCompa = num / 10;
-		int restoCompa = numCompa % 10;
-
-		if (num > 0) {
-			// Caso recursivo
-			gemelos = tieneGem(num / 10);
-		} else if (resto == restoCompa || resto != 0 || restoCompa != 0) {
-			gemelos = true;
-		} else {
-			gemelos = false;
-		}
-
-		return gemelos;
-
-	}
-
 	public boolean getPerteneceFibo() {
 		return pertFibo(numAleatorio, 1);
-	}
-
-	/**
-	 * Si el número entero es menor al parametro, devuelve -1.
-	 * 
-	 * Si el número entero es mayor al parametro, devuelve 1.
-	 * 
-	 * Si el número entero es igual al parametro, devuelve 0.
-	 * 
-	 * Fuente: https://www.tutorialspoint.com/java/number_compareto.htm
-	 * 
-	 * @return
-	 */
-	public int compareTo(Aleatorio objBuscado) {
-		int resultado;
-
-		if (numAleatorio < objBuscado.numAleatorio) {
-			// es menor
-			resultado = -1;
-		} else if (numAleatorio > objBuscado.numAleatorio) {
-			// es mayor
-			resultado = 1;
-		} else {
-			// son iguales
-			resultado = 0;
-		}
-		return resultado;
 	}
 
 	// Mofificadores
 
 	// Propias del tipo
-
+	public Aleatorio clonar() {
+		return this;
+	}
 }
