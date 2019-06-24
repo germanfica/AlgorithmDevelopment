@@ -58,11 +58,11 @@ public class Principal {
 	 * @param arr es el arreglo de objetos aleatorios a verificar.
 	 * @return devuelve verdadero si está ordenado de forma decreciente.
 	 */
-	public static boolean esDecreciente(Aleatorio[] arr) {
+	public static boolean esDecreciente(Aleatorio[] arr, int n) {
 		boolean esDecreciente = true;
 		int i = 0;
 
-		while (esDecreciente == true) {
+		while (esDecreciente == true && i <= n - 1) {
 			if (arr[i].compareTo(arr[i + 1]) == -1) {
 				esDecreciente = false;
 			}
@@ -212,7 +212,8 @@ public class Principal {
 				mostrarNumAleatorios(clonarArreglo(arregloAleatorios)); // Clonar arreglo);
 				break;
 			case 2:
-				System.out.println("está ordenado de forma decreciente: " + esDecreciente(arregloAleatorios));
+				System.out.println("está ordenado de forma decreciente: "
+						+ esDecreciente(arregloAleatorios, arregloAleatorios.length));
 				break;
 			case 3:
 				arregloEnteros = toIntArray(arregloAleatorios);
