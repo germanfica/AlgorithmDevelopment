@@ -13,14 +13,14 @@ public class Principal {
 	 * Este algoritmo convierte un arreglo de objetos aleatorios en un arreglo de
 	 * enteros.
 	 * 
-	 * @param arreglo
+	 * @param arr
 	 * @return devuelve un arreglo de enteros.
 	 */
-	public static int[] toIntArray(Aleatorio[] arreglo) {
-		int[] nuevoArreglo = new int[arreglo.length];
+	public static int[] toIntArray(Aleatorio[] arr) {
+		int[] nuevoArreglo = new int[arr.length];
 
-		for (int i = 0; i <= arreglo.length - 1; i++) {
-			nuevoArreglo[i] = arreglo[i].getNumAleatorio();
+		for (int i = 0; i <= arr.length - 1; i++) {
+			nuevoArreglo[i] = arr[i].getNumAleatorio();
 		}
 		return nuevoArreglo;
 	}
@@ -43,11 +43,11 @@ public class Principal {
 	/**
 	 * Carga un arreglo de objetos aleatorios.
 	 * 
-	 * @param arreglo es el arreglo de objetos aleatorios a ser cargado
+	 * @param arr es el arreglo de objetos aleatorios a ser cargado
 	 */
-	public static void cargaArreglo(Aleatorio[] arreglo) {
-		for (int i = 0; i < arreglo.length; i++) {
-			arreglo[i] = new Aleatorio();
+	public static void cargaArreglo(Aleatorio[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = new Aleatorio();
 		}
 	}
 
@@ -55,15 +55,15 @@ public class Principal {
 	 * Verifica si un arreglo de objetos aleatorios está ordenado de forma
 	 * decreciente.
 	 * 
-	 * @param arreglo es el arreglo de objetos aleatorios a verificar.
+	 * @param arr es el arreglo de objetos aleatorios a verificar.
 	 * @return devuelve verdadero si está ordenado de forma decreciente.
 	 */
-	public static boolean esDecreciente(Aleatorio[] arreglo) {
+	public static boolean esDecreciente(Aleatorio[] arr) {
 		boolean esDecreciente = true;
 		int i = 0;
 
 		while (esDecreciente == true) {
-			if (arreglo[i].compareTo(arreglo[i + 1]) == -1) {
+			if (arr[i].compareTo(arr[i + 1]) == -1) {
 				esDecreciente = false;
 			}
 			i++;
@@ -74,7 +74,7 @@ public class Principal {
 	/**
 	 * Ordena un arreglo de enteros de forma decreciente.
 	 * 
-	 * @param arreglo es el arreglo a ordenar
+	 * @param arr es el arreglo a ordenar
 	 */
 	public static void ordSel(int[] arr) {
 		int actual;

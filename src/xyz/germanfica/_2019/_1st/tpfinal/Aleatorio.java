@@ -16,14 +16,28 @@ public class Aleatorio {
 	}
 
 	// Observadores
+	/**
+	 * Obtiene el numero aleatorio de la clase
+	 * 
+	 * @return devuelve el numero aleatorio de la clase
+	 */
 	public int getNumAleatorio() {
 		return numAleatorio;
 	}
 
+	/**
+	 * Compara dos objetos aleatorios
+	 * 
+	 * @param a es el objeto aleatorio a comparar
+	 * @return devuelve verdadero si son identicos
+	 */
 	public boolean equals(Aleatorio a) {
 		return numAleatorio == a.numAleatorio;
 	}
 
+	/**
+	 * Devuelve json del objeto aleatorio
+	 */
 	public String toString() {
 		return "{\"numAleatorio\": " + numAleatorio + ", \"tieneDigGem\": " + tieneDigGem + ", \"perteneceFibo\": "
 				+ perteneceFibo + "}";
@@ -56,6 +70,12 @@ public class Aleatorio {
 		return resultado;
 	}
 
+	/**
+	 * Verifica si tiene numeros gemelos
+	 * 
+	 * @param num es el numero a verificar
+	 * @return devuelve verdadero si tiene numeros gemelos
+	 */
 	public boolean tieneGem(int num) {
 		boolean gemelos;
 		int resto = num % 10;
@@ -75,6 +95,12 @@ public class Aleatorio {
 
 	}
 
+	/**
+	 * Busca el numero de la serie que esta la posicion solicitada
+	 * 
+	 * @param pos es la posicion de la serie de fibo
+	 * @return devuelve el numero de fibo
+	 */
 	private int fibo(int pos) {
 		int num;
 		if (pos == 1) {
@@ -84,11 +110,17 @@ public class Aleatorio {
 		} else {
 			num = fibo(pos - 1) + fibo(pos - 2);
 		}
-		// System.out.println(num);
 
 		return num;
 	}
 
+	/**
+	 * Verifica si el numero solicitado pertenece a la serie de fibo
+	 * 
+	 * @param num
+	 * @param i
+	 * @return devuelve verdadero si pertenece a la serie
+	 */
 	private boolean pertFibo(int num, int i) {
 		boolean aux;
 
@@ -105,6 +137,17 @@ public class Aleatorio {
 		return aux;
 	}
 
+	/**
+	 * Obtiene el numero aleatorio de la clase
+	 * 
+	 * @return devuelve el numero aleatorio de la clase
+	 */
+
+	/**
+	 * Obtiene si pertenece o no a la serie fibo
+	 * 
+	 * @return devuelve si pertenece o no a la serie fibo
+	 */
 	public boolean getPerteneceFibo() {
 		return pertFibo(numAleatorio, 1);
 	}
@@ -112,6 +155,11 @@ public class Aleatorio {
 	// Mofificadores
 
 	// Propias del tipo
+	/**
+	 * Clona el objeto
+	 * 
+	 * @return devuelve el clon del objeto
+	 */
 	public Aleatorio clonar() {
 		return this;
 	}
