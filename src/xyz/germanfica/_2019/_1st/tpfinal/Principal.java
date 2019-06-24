@@ -76,13 +76,13 @@ public class Principal {
 	 * 
 	 * @param arr es el arreglo a ordenar
 	 */
-	public static void ordSel(int[] arr) {
+	public static void ordSel(int[] arr, int n) {
 		int actual;
 		int posMenor = 1;
 		int aux;
 
-		for (int i = 1; i <= arr.length - 1; i++) {
-			for (int j = i; j <= arr.length - 1; j++) {
+		for (int i = 1; i <= n - 1; i++) {
+			for (int j = i; j <= n - 1; j++) {
 				actual = arr[j];
 				if (actual > arr[posMenor]) {
 					posMenor = j;
@@ -100,17 +100,17 @@ public class Principal {
 	 * 
 	 * @param arreglo es el arreglo a ordenar
 	 */
-	public static void burbujaMejorado(int[] arreglo) {
+	public static void burbujaMejorado(int[] arreglo, int n) {
 		int auxiliar, i;
 		boolean ordenado;
 
 		ordenado = false;
 		i = 0;
 
-		while (i <= arreglo.length - 1 && ordenado == false) {
+		while (i <= (n - 1) && ordenado == false) {
 			ordenado = true;
 
-			for (int j = 0; j <= (arreglo.length - i - 2); j++) {
+			for (int j = 0; j <= (n - i - 2); j++) {
 				if (arreglo[j] < arreglo[j + 1]) {
 					ordenado = false;
 					auxiliar = arreglo[j];
@@ -218,7 +218,7 @@ public class Principal {
 				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
-				burbujaMejorado(arregloEnteros); // Algoritmo
+				burbujaMejorado(arregloEnteros, arregloEnteros.length); // Algoritmo
 				endTime = System.nanoTime(); // Tiempo final
 				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
 
@@ -238,7 +238,7 @@ public class Principal {
 				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
-				ordSel(arregloEnteros); // Algoritmo
+				ordSel(arregloEnteros, arregloEnteros.length); // Algoritmo
 				endTime = System.nanoTime(); // Tiempo final
 				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
 
