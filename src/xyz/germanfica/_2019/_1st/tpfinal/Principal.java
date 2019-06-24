@@ -127,10 +127,10 @@ public class Principal {
 	 * 
 	 * @param arreglo es el arreglo a ordenar
 	 */
-	public static void insercion(int[] arreglo) {
+	public static void insercion(int[] arreglo, int n) {
 		int auxiliar, j;
 
-		for (int i = 1; i <= arreglo.length - 1; i++) {
+		for (int i = 1; i <= n - 1; i++) {
 			j = i;
 			auxiliar = arreglo[j];
 
@@ -228,7 +228,7 @@ public class Principal {
 				arregloEnteros = toIntArray(arregloAleatorios);
 
 				startTime = System.nanoTime(); // Tiempo inicial
-				insercion(arregloEnteros); // Algoritmo
+				insercion(arregloEnteros, arregloEnteros.length); // Algoritmo
 				endTime = System.nanoTime(); // Tiempo final
 				System.out.println("Tiempo total: " + df.format(totalTimeInSecond(startTime, endTime)) + " segundos.");
 
