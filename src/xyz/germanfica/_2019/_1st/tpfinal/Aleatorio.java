@@ -10,6 +10,10 @@ public class Aleatorio {
 	private boolean perteneceFibo;
 
 	Aleatorio() {
+		// Comentario de Fede:
+		// El constructor de aleatorio debería realizar las determinaciones para gemelos
+		// y fibonacci.
+
 		numAleatorio = (int) (Math.random() * 3798);
 		tieneDigGem = false;
 		perteneceFibo = false;
@@ -161,6 +165,10 @@ public class Aleatorio {
 	 * @return devuelve el clon del objeto
 	 */
 	public Aleatorio clonar() {
+		// Comentario de Fede:
+		// Clonar debería entregar una copia del objeto, no el mismo objeto.
+		// Si retorna this, retorna el puntero al mismo objeto, no a una copia como se
+		// supone debería.
 		return this;
 	}
 }

@@ -150,6 +150,14 @@ public class Principal {
 	public static int leerOpcion() {
 		return new Scanner(System.in).nextInt();
 	}
+	
+	public static void pruebas() {
+		int[] arr = {3,2};
+		
+		insercion(arr, arr.length);
+		
+		ArregloEntero.mostrar(arr);
+	}
 
 	/**
 	 * Muestra las opciones disponibles en el menu de la app
@@ -163,6 +171,7 @@ public class Principal {
 		System.out.println("[4] Metodo inserción");
 		System.out.println("[5] Metodo selección");
 		System.out.println("[6] Test de la clase Aleatorio.");
+		System.out.println("[7] Pruebas.");
 	}
 
 	/**
@@ -252,6 +261,10 @@ public class Principal {
 				System.out.println("Tiene num gemelos: " + _aleatorio.tieneGem(55132));
 				System.out.println("Original: " + _aleatorio.getNumAleatorio());
 				System.out.println("Copia clon: " + _aleatorio.clonar().getNumAleatorio());
+				break;
+			case 7:
+				System.out.println("Pruebas:");
+				pruebas();
 				break;
 			default:
 				System.out.println("Opción inválida");
