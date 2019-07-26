@@ -19,12 +19,14 @@ public class PracticaInsercion {
 				arreglo[j] = arreglo[j - 1]; // Cambia posición
 				j--;
 			}
-			arreglo[j] = pivote; // Reubica pivote
+			arreglo[j] = pivote; // Reubica pivote, enviarlo a su nueva casa
 		}
 	}
 
 	public static void main(String[] args) {
-		int[] numeros = { 5, 3, 4, 1 };
+		// int[] numeros = { 7, 2, 8, 1 };
+		int[] numeros = { 2, 7, 8, 1 };
+		// int[] numeros = { 5, 3, 4, 1 };
 		insercion(numeros, numeros.length);
 		ArregloEntero.mostrar(numeros);
 

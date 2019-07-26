@@ -20,7 +20,8 @@ public class PracticaSeleccion {
 	 * @return
 	 */
 	public static int posMenor(int desde, int[] arr, int n) {
-		int pos = desde;
+		// int pos = desde; // MAL, tiene que ser desde la posición anterior
+		int pos = desde - 1;
 
 		for (int i = desde; i <= n - 1; i++) {
 			if (arr[i] < arr[pos]) {
@@ -90,8 +91,8 @@ public class PracticaSeleccion {
 		int[] numeros = { 3, 7, 1, 9 };
 		// int[] numeros = { 1, 7, 9, 2 };
 		// int numeros[] = {64,25,12,22,11};
-		// seleccion(numeros, numeros.length);
-		seleccionPapel(numeros, numeros.length);
+		seleccion(numeros, numeros.length);
+		// seleccionPapel(numeros, numeros.length);
 		// sort(numeros);
 		ArregloEntero.mostrar(numeros);
 	}
