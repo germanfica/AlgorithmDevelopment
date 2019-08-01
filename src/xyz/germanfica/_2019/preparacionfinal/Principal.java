@@ -1,4 +1,4 @@
-package xyz.germanfica._2019._1st.tpfinal;
+package xyz.germanfica._2019.preparacionfinal;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
