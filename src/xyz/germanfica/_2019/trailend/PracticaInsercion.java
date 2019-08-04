@@ -1,4 +1,4 @@
-package xyz.germanfica._2019._1st.tpfinal;
+package xyz.germanfica._2019.trailend;
 
 import xyz.germanfica.util.ArregloEntero;
 
@@ -25,7 +25,8 @@ public class PracticaInsercion {
 
 	public static void main(String[] args) {
 		// int[] numeros = { 7, 2, 8, 1 };
-		int[] numeros = { 2, 7, 8, 1 };
+		// int[] numeros = { 2, 7, 8, 1 };
+		int[] numeros = { 3, 7, 5, 1 };
 		// int[] numeros = { 5, 3, 4, 1 };
 		insercion(numeros, numeros.length);
 		ArregloEntero.mostrar(numeros);

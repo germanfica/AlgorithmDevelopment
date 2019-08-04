@@ -59,6 +59,8 @@ public class Ej1 {
 		
 		// Crear nuevo arreglo con la cantidad correcta de numero primos.
 		resultado = new int[primosEncontrados];
+		System.out.println("Primos encontrados: " + primosEncontrados);
+		
 		for(indice = 0; indice < resultado.length; indice++) {
 			resultado[indice] = primo[indice];
 		}

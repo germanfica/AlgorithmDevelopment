@@ -1,4 +1,4 @@
-package xyz.germanfica._2019.finalagosto;
+package xyz.germanfica._2019.trailend;
 
 import java.util.Scanner;
 
