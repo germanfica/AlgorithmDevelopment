@@ -1,4 +1,4 @@
-package xyz.germanfica.ejfinal;
+package xyz.germanfica.recursionfinal;
 
 public class Ej1 {
 
