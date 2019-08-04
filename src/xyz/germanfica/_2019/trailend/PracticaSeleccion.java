@@ -1,8 +1,8 @@
-<<<<<<< HEAD:src/xyz/germanfica/_2019/trailend/PracticaSeleccion.java
+//<<<<<<< HEAD:src/xyz/germanfica/_2019/trailend/PracticaSeleccion.java
 package xyz.germanfica._2019.trailend;
-=======
-package xyz.germanfica._2019.preparacionfinal;
->>>>>>> aa7053f22433a98639ef4a27764a9b8d55132e95:src/xyz/germanfica/_2019/preparacionfinal/PracticaSeleccion.java
+//=======
+//package xyz.germanfica._2019.preparacionfinal;
+//>>>>>>> aa7053f22433a98639ef4a27764a9b8d55132e95:src/xyz/germanfica/_2019/preparacionfinal/PracticaSeleccion.java
 
 import xyz.germanfica.util.ArregloEntero;
 

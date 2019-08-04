@@ -1,8 +1,8 @@
-<<<<<<< HEAD:src/xyz/germanfica/_2019/trailend/Ej1FinalDesarrollo.java
-package xyz.germanfica._2019.trailend;
-=======
+//<<<<<<< HEAD:src/xyz/germanfica/_2019/trailend/Ej1FinalDesarrollo.java
+//package xyz.germanfica._2019.trailend;
+//=======
 package xyz.germanfica._2019.preparacionfinal;
->>>>>>> aa7053f22433a98639ef4a27764a9b8d55132e95:src/xyz/germanfica/_2019/preparacionfinal/Ej1FinalDesarrollo.java
+//>>>>>>> aa7053f22433a98639ef4a27764a9b8d55132e95:src/xyz/germanfica/_2019/preparacionfinal/Ej1FinalDesarrollo.java
 
 public class Ej1FinalDesarrollo {
 	/**
