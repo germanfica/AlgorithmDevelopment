@@ -1,6 +1,6 @@
 package xyz.germanfica.ejfinal;
 
-public class Ej1Rec {
+public class Ej1 {
 
 	public static int cantNumPares(int[] arr, int n) {
 		int cant;

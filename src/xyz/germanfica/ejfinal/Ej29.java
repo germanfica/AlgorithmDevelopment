@@ -1,6 +1,6 @@
 package xyz.germanfica.ejfinal;
 
-public class Ej29Rec {
+public class Ej29 {
 
 	public static boolean codigoValido(int n) {
 		boolean esValido;
