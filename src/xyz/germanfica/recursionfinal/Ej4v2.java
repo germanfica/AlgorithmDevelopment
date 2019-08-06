@@ -1,14 +1,15 @@
 package xyz.germanfica.recursionfinal;
 
-public class Ej4 {
-
-	public static int binADeci(int num, int i) {
+public class Ej4v2 {
+	public static int binADeci(int bin, int i) {
 		int deci;
 
-		if (num / 10 == 0) {
-			deci = (num % 10) * (int) (Math.pow(2, i));
+		if (bin == 1) {
+			deci = 1 * (int) (Math.pow(2, i));
+		} else if (bin == 0) {
+			deci = 0;
 		} else {
-			deci = binADeci(num / 10, i + 1) + (num % 10) * (int) (Math.pow(2, i));
+			deci = (bin % 10) * (int) (Math.pow(2, i)) + binADeci(bin / 10, i + 1);
 		}
 
 		return deci;

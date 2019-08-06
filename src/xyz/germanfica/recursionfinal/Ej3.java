@@ -6,10 +6,10 @@ public class Ej3 {
 		int bin;
 
 		if (num == 1) {
-			bin = num % 2;
-
+			bin = 1;
+		} else if (num == 0) {
+			bin = 0;
 		} else {
-
 			bin = deciABin(num / 2) * 10 + (num % 2);
 		}
 
@@ -17,6 +17,6 @@ public class Ej3 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("binario: " + deciABin(13));
+		System.out.println("binario: " + deciABin(3));
 	}
 }
