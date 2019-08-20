@@ -1,6 +1,7 @@
 //<<<<<<< HEAD:src/xyz/germanfica/_2019/trailend/PracticaBurbujaMejorado.java
 package xyz.germanfica._2019.trailend;
 //=======
+
 //package xyz.germanfica._2019.preparacionfinal;
 //>>>>>>> aa7053f22433a98639ef4a27764a9b8d55132e95:src/xyz/germanfica/_2019/preparacionfinal/PracticaBurbujaMejorado.java
 
@@ -8,7 +9,7 @@ import xyz.germanfica.util.ArregloEntero;
 
 public class PracticaBurbujaMejorado {
 
-	public static void burbujaMejorado(int[] arr, int n) {
+	public static void burbujaMejorado1(int[] arr, int n) {
 		boolean salir = false;
 		int i = 0;
 		int aux;
@@ -28,8 +29,27 @@ public class PracticaBurbujaMejorado {
 		}
 	}
 
+	public static void burbujaMejorado(int[] arr, int n) {
+		boolean salir = false; int i = 0; int aux;
+
+		while (!salir && i <= n - 2) {
+			salir = true;
+			for (int j = 1; j <= n - i - 1; j++) {
+				if (arr[j - 1] > arr[j]) {
+					salir = false;
+					// Intercambio
+					aux = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] = aux;
+				}
+			}
+			i++;
+		}
+	}
+
 	public static void main(String[] args) {
-		int[] numeros = { 7, 4, 9, 1 };
+		// int[] numeros = { 7, 4, 9, 1 };
+		int[] numeros = { 7, 6, 5, 4 };
 		burbujaMejorado(numeros, numeros.length);
 		ArregloEntero.mostrar(numeros);
 	}
